@@ -1,0 +1,9 @@
+project.source.dir = D:\xampp\htdocs\web-ir\demo
+sync.source.dir = ${project.source.dir}
+phinx.bin = D:\xampp\htdocs\web-ir\demo\vendor\robmorgan\phinx\bin\phinx.bat
+phinx.config = phinx.yml
+pdo.driver = mysql
+db.host = localhost
+db.name = demo
+db.user = root
+db.pass = 

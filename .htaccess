@@ -1,0 +1,5 @@
+#SetEnv ZF2_PATH /home/username/zf2lib
+RewriteEngine On
+
+RewriteCond %{REQUEST_URI} !/public
+RewriteRule (.*) /public/$1 [L]

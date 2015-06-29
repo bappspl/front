@@ -1,0 +1,4 @@
+first:
+  sender_email: mailer@web-ir.pl
+  sender: Nadawca
+  footer: Przykładowa stopka wiadomości

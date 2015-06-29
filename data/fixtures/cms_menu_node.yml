@@ -1,0 +1,32 @@
+first:
+  tree_id: 1
+  parent_id: null
+  depth: 0
+  is_visible: 1
+  provider_type: page_provider
+  settings: null
+  position: 0
+second:
+  tree_id: 1
+  parent_id: null
+  depth: 0
+  is_visible: 1
+  provider_type: page_provider
+  settings: null
+  position: 1
+third:
+  tree_id: 1
+  parent_id: 2
+  depth: 1
+  is_visible: 1
+  provider_type: page_provider
+  settings: null
+  position: 0
+fourth:
+  tree_id: 1
+  parent_id: 2
+  depth: 1
+  is_visible: 1
+  provider_type: page_provider
+  settings: null
+  position: 1

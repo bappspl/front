@@ -1,0 +1,25 @@
+<div class="text-center">
+    <h1>BŁĄD</h1>
+    <h3>Dziekujemy za znalezienie błędu. Już pracujemy nad naprawą.</h3>
+</div>
+<div class="login-wrapper" style="margin-top: 0">
+    <h1 class="error-number"><i class="fa fa-meh-o icon-xl icon-square"></i></h1>
+    <p class="text-center"><strong><a href="#" onclick="referrerAnchor()" style="color: rgb(101, 109, 120);">Wróć do poprzedniej strony</a></strong></p>
+</div>
+
+
+<?php $this->headScript()->captureStart(); ?>
+
+    function referrerAnchor()
+    {
+        var oldUrl = document.referrer;
+        if(oldUrl.length > 0)
+        {
+            window.location.href = oldUrl;
+        } else
+        {
+            window.location.href = '/cms-ir/dashboard';
+        }
+    }
+
+<?php $this->headScript()->captureEnd(); ?>

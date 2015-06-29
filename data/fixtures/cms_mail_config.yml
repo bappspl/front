@@ -1,0 +1,4 @@
+mail:
+  host: mail.web-ir.pl
+  username: mailer@web-ir.pl
+  password: web-ir

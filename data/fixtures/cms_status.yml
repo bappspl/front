@@ -1,0 +1,18 @@
+active:
+  name: Active
+  slug: active
+inactive:
+  name: Inactive
+  slug: inactive
+send:
+  name: Send
+  slug: send
+draft:
+  name: Draft
+  slug: draft
+confirmed:
+  name: Confirmed
+  slug: confirmed
+unconfirmed:
+  name: Unconfirmed
+  slug: unconfirmed

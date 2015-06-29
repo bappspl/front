@@ -1,0 +1,24 @@
+first_person:
+  name: Krzysiek
+  surname: Idzik
+  password: 6abdccf54929ab26927437ae6c537039
+  password_salt: ^ZgfTp&6N|'o`pf2qlY@8aVuTo.{},:/=oHQ_rV`oT3c$c86xc
+  email: k.idzik@web-ir.pl
+  email_confirmed: 1
+  role: 4
+  active: 1
+  filename: NULL
+  registration_date: 2002-09-24-06:00
+  registration_token: 6bd917489c0a854aaaef6082c12f4805
+second_person:
+  name: Wojciech
+  surname: Rybiński
+  password: 44698946f69f56033395e69b2139d144
+  password_salt: O/IlGw2SfO$:c_xY&kD[yf=w0m4[rt%<m>;$6stHj}BWfMZ)l]
+  email: w.rybinski@web-ir.pl
+  email_confirmed: 1
+  role: 4
+  active: 1
+  filename: NULL
+  registration_date: 2002-09-24-06:00
+  registration_token: 6bd917489c0a854aaaef6082c12f4805

@@ -1,0 +1,20 @@
+first:
+  node_id: 1
+  label: Strona 1
+  url: strona-1
+  position: 0
+second:
+  node_id: 2
+  label: Strona 2
+  url: strona-2
+  position: 0
+third:
+  node_id: 3
+  label: Strona 2-1
+  url: strona-2-1
+  position: 0
+fourth:
+  node_id: 4
+  label: Strona 2-2
+  url: strona-2-2
+  position: 0
