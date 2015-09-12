@@ -6,6 +6,8 @@ use CmsIr\Category\Model\Category;
 use CmsIr\Category\Service\CategoryService;
 use CmsIr\Dictionary\Model\Dictionary;
 use CmsIr\Dictionary\Model\DictionaryTable;
+use CmsIr\System\Model\StatusTable;
+use Product\Model\Product;
 use Product\Model\ProductTable;
 use Zend\Console\Prompt;
 use Zend\Mvc\Controller\AbstractActionController;
@@ -29,12 +31,17 @@ class ProductCommand extends AbstractActionController
      * @var ProductTable
      */
     protected $productTable;
+    /**
+     * @var StatusTable
+     */
+    protected $statusTable;
 
-    public function __construct(CategoryService $categoryService, DictionaryTable $dictionaryTable, ProductTable $productTable)
+    public function __construct(CategoryService $categoryService, DictionaryTable $dictionaryTable, ProductTable $productTable, StatusTable $statusTable)
     {
         $this->categoryService = $categoryService;
         $this->dictionaryTable = $dictionaryTable;
         $this->productTable = $productTable;
+        $this->statusTable = $statusTable;
     }
 
     protected function writeLine($message)
@@ -67,16 +74,17 @@ class ProductCommand extends AbstractActionController
                 $obj = array();
                 $obj[$naglowki[0]] = $kategoria;
 
-                for ($c=1; $c < $num; $c++)
+                for ($c = 1; $c < $num; $c++)
                 {
-                    if(strpos($naglowki[$c], 'unit') !== false)
+                    $wartosc = $data[$c];
+                    if (strpos($naglowki[$c], 'unit') !== false && $wartosc !== '-')
                     {
                         $unit = explode('_', $naglowki[$c]);
                         $obj['unit'] = $unit[1];
                     } else
                     {
-                        $wartosc = $data[$c];
-                        if($wartosc === '-')
+
+                        if ($wartosc === '-')
                         {
                             $wartosc = null;
                         }
@@ -85,11 +93,15 @@ class ProductCommand extends AbstractActionController
                     }
 
                 }
+
                 $produkty[] = $obj;
+
+
             }
             fclose($handle);
 
             $this->writeLine(sprintf('Plik sparsowany, nastepuje zwolnienie blokady..'));
+            $this->writeLine(sprintf(' - Tworzenie produktow - '));
 
             foreach($produkty as $produkt)
             {
@@ -99,13 +111,116 @@ class ProductCommand extends AbstractActionController
                 $class = $produkt['class'];
                 $length = $produkt['length'];
                 $height = $produkt['height'];
-                $unit = $produkt['unit'];
+                $width = $produkt['width'];
+                $volume = $produkt['volume'];
+                $weight = $produkt['weight'];
+
+                if(array_key_exists('unit', $produkt))
+                {
+                    $unit = $produkt['unit'];
+                } else
+                {
+                    $unit = null;
+                }
+
                 $price = $produkt['price'];
 
-                $categoryId = $this->getCategoryIdByCategoryName($category);
-                $classId = $this->getClassIdByName($class, $categoryId);
-                $lengthId = $this->getDictionaryIdByNameAndCategory($length, 'class');
+                if($price && strpos($price, ',') !== false)
+                {
+                    $price = substr($price, 0, strpos($price, ','));
+                    $price = str_replace(' ', '', $price);
+                }
 
+                $categoryId = $this->getCategoryIdByCategoryName($category);
+
+                if($class)
+                {
+                    $classId = $this->getClassIdByName($class, $categoryId);
+                } else
+                {
+                    $classId = null;
+                }
+
+                if($length)
+                {
+                    $lengthId = $this->getDictionaryIdByNameAndCategory($length, 'length');
+                } else
+                {
+                    $lengthId = null;
+                }
+
+                if($height)
+                {
+                    $heightId = $this->getDictionaryIdByNameAndCategory($height, 'height');
+                } else
+                {
+                    $heightId = null;
+                }
+
+                if($width)
+                {
+                    $widthId = $this->getDictionaryIdByNameAndCategory($width, 'width');
+                } else
+                {
+                    $widthId = null;
+                }
+
+                if($volume)
+                {
+                    $volumeId = $this->getDictionaryIdByNameAndCategory($volume, 'volume');
+                } else
+                {
+                    $volumeId = null;
+                }
+
+                if($weight)
+                {
+                    $weightId = $this->getDictionaryIdByNameAndCategory($weight, 'weight');
+                } else
+                {
+                    $weightId = null;
+                }
+
+                if($unit)
+                {
+                    $unitId = $this->getDictionaryIdByNameAndCategory($unit, 'unit');
+                } else
+                {
+                    $unitId = null;
+                }
+
+                $this->writeLine(sprintf(' - Zapis produktu - '));
+
+                /* @var $newProduct \Product\Model\Product */
+                $newProduct = $this->checkProductAlreadyExists($categoryId, $name,  $catalogNumber);
+                if(!$newProduct)
+                {
+                    $this->writeLine(sprintf('Produkt nie istnieje - tworzenie'));
+                    /* @var $inactiveStatus \CmsIr\System\Model\Status */
+                    $inactiveStatus = $this->statusTable->getOneBy(array('slug' => 'inactive'));
+                    $inactiveStatusId = $inactiveStatus->getId();
+
+                    $newProduct = new Product();
+                    $newProduct->setStatusId($inactiveStatusId);
+                } else
+                {
+                    $this->writeLine(sprintf('Produkt istnieje - aktualizacja'));
+                }
+
+                $newProduct->setName($name);
+                $newProduct->setPrice($price);
+                $newProduct->setCatalogNumber($catalogNumber);
+                $newProduct->setCategoryId($categoryId);
+                $newProduct->setClassId($classId);
+                $newProduct->setLengthId($lengthId);
+                $newProduct->setHeightId($heightId);
+                $newProduct->setWidthId($widthId);
+                $newProduct->setVolumeId($volumeId);
+                $newProduct->setWeightId($weightId);
+                $newProduct->setUnitId($unitId);
+
+                $this->productTable->save($newProduct);
+                $this->writeLine(sprintf(' - Utworzono produkt - '));
             }
         }
 
@@ -114,8 +229,20 @@ class ProductCommand extends AbstractActionController
         $this->writeLine(sprintf('Koniec %s', $date->format('Y-m-d H:i:s') . PHP_EOL));
     }
 
+    protected function checkProductAlreadyExists($categoryId, $name,  $catalogNumber)
+    {
+        $product = $this->productTable->getOneBy(array(
+            'category_id' => $categoryId,
+            'name' => $name,
+            'catalog_number' => $catalogNumber
+        ));
+
+        return $product;
+    }
+
     protected function getCategoryIdByCategoryName($category)
     {
+        $this->writeLine(sprintf('Sprawdzam, czy istnieje kategoria:' . $category));
         /* @var $categoryEntity \CmsIr\Category\Model\Category */
         $categoryEntity = $this->categoryService->getCategoryTable()->getOneBy(array('name' => $category));
 
@@ -123,12 +250,14 @@ class ProductCommand extends AbstractActionController
         if($categoryEntity)
         {
             $categoryId = $categoryEntity->getId();
+            $this->writeLine(sprintf('Istnieje -> zwracam id -> '. $categoryId));
         } else // nie istnieje kategoria - tworzymy
         {
             $newCategory = new Category();
             $newCategory->setName($category);
-            $newCategory->setFilename('');
+            $newCategory->setFilename(null);
             $categoryId = $this->categoryService->getCategoryTable()->save($newCategory);
+            $this->writeLine(sprintf('Nie istnieje -> tworze nowa -> zwracam id -> '. $categoryId));
         }
 
         return $categoryId;
@@ -136,43 +265,49 @@ class ProductCommand extends AbstractActionController
 
     protected function getDictionaryIdByNameAndCategory($name, $category)
     {
+        $this->writeLine(sprintf('Sprawdzam, czy istnieje slownik: '.$name.' z kategorii: '. $category));
         /* @var $dictionaryEntity \CmsIr\Dictionary\Model\Dictionary */
         $dictionaryEntity = $this->dictionaryTable->getOneBy(array('name' => $name, 'category' => $category));
 
         //istnieje slownik - bierzemy id
         if($dictionaryEntity)
         {
-            $categoryId = $dictionaryEntity->getId();
+            $dictionaryId = $dictionaryEntity->getId();
+            $this->writeLine(sprintf('Istnieje -> zwracam id -> '. $dictionaryId));
         } else // nie istnieje slownik - tworzymy
         {
             $newDictionary = new Dictionary();
             $newDictionary->setName($name);
             $newDictionary->setCategory($category);
-            $categoryId = $this->dictionaryTable->save($newDictionary);
+            $dictionaryId = $this->dictionaryTable->save($newDictionary);
+            $this->writeLine(sprintf('Nie istnieje -> tworze nowy -> zwracam id -> '. $dictionaryId));
         }
 
-        return $categoryId;
+        return $dictionaryId;
     }
 
     protected function getClassIdByName($class, $categoryId)
     {
+        $this->writeLine(sprintf('Sprawdzam, czy istnieje slownik: '.$class.' z kategorii: '. $categoryId));
         /* @var $dictionaryEntity \CmsIr\Dictionary\Model\Dictionary */
         $dictionaryEntity = $this->dictionaryTable->getOneBy(array('name' => $class, 'category' => 'class'));
 
         //istnieje slownik - bierzemy id
         if($dictionaryEntity)
         {
-            $categoryId = $dictionaryEntity->getId();
+            $classId = $dictionaryEntity->getId();
+            $this->writeLine(sprintf('Istnieje -> zwracam id -> '. $classId));
         } else // nie istnieje slownik - tworzymy
         {
             $newDictionary = new Dictionary();
             $newDictionary->setName($class);
             $newDictionary->setCategory('class');
             $newDictionary->setCategoryId($categoryId);
-            $categoryId = $this->dictionaryTable->save($newDictionary);
+            $classId = $this->dictionaryTable->save($newDictionary);
+            $this->writeLine(sprintf('Nie istnieje -> tworze nowy -> zwracam id -> '. $classId));
         }
 
-        return $categoryId;
+        return $classId;
     }
 
     /**
