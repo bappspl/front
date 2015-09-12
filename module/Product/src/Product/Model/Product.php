@@ -15,6 +15,15 @@ class Product extends Model
     protected $show_price;
     protected $category_id;
 
+    // dictionary
+    protected $class_id;
+    protected $length_id;
+    protected $height_id;
+    protected $width_id;
+    protected $volume_id;
+    protected $weight_id;
+    protected $unit_id;
+
     // virtual
     protected $blocks;
 
@@ -29,6 +38,15 @@ class Product extends Model
         $this->show_price = (!empty($data['show_price'])) ? $data['show_price'] : 0;
         $this->category_id = (!empty($data['category_id'])) ? $data['category_id'] : null;
         $this->blocks = (!empty($data['blocks'])) ? $data['blocks'] : null;
+
+        // dictionary
+        $this->class_id = (!empty($data['class_id'])) ? $data['class_id'] : null;
+        $this->length_id = (!empty($data['length_id'])) ? $data['length_id'] : null;
+        $this->height_id = (!empty($data['height_id'])) ? $data['height_id'] : null;
+        $this->width_id = (!empty($data['width_id'])) ? $data['width_id'] : null;
+        $this->volume_id = (!empty($data['volume_id'])) ? $data['volume_id'] : null;
+        $this->weight_id = (!empty($data['weight_id'])) ? $data['weight_id'] : null;
+        $this->unit_id = (!empty($data['unit_id'])) ? $data['unit_id'] : null;
     }
 
     /**
@@ -174,4 +192,117 @@ class Product extends Model
     {
         $this->blocks = $blocks;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getClassId()
+    {
+        return $this->class_id;
+    }
+
+    /**
+     * @param mixed $class_id
+     */
+    public function setClassId($class_id)
+    {
+        $this->class_id = $class_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLengthId()
+    {
+        return $this->length_id;
+    }
+
+    /**
+     * @param mixed $length_id
+     */
+    public function setLengthId($length_id)
+    {
+        $this->length_id = $length_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWidthId()
+    {
+        return $this->width_id;
+    }
+
+    /**
+     * @param mixed $width_id
+     */
+    public function setWidthId($width_id)
+    {
+        $this->width_id = $width_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getVolumeId()
+    {
+        return $this->volume_id;
+    }
+
+    /**
+     * @param mixed $volume_id
+     */
+    public function setVolumeId($volume_id)
+    {
+        $this->volume_id = $volume_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getWeightId()
+    {
+        return $this->weight_id;
+    }
+
+    /**
+     * @param mixed $weight_id
+     */
+    public function setWeightId($weight_id)
+    {
+        $this->weight_id = $weight_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getUnitId()
+    {
+        return $this->unit_id;
+    }
+
+    /**
+     * @param mixed $unit_id
+     */
+    public function setUnitId($unit_id)
+    {
+        $this->unit_id = $unit_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getHeightId()
+    {
+        return $this->height_id;
+    }
+
+    /**
+     * @param mixed $height_id
+     */
+    public function setHeightId($height_id)
+    {
+        $this->height_id = $height_id;
+    }
+
 }

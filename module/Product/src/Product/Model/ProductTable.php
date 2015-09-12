@@ -77,6 +77,14 @@ class ProductTable extends ModelTable implements ServiceLocatorAwareInterface
             'bestseller' => $product->getBestseller(),
             'show_price' => $product->getShowPrice(),
             'category_id' => $product->getCategoryId(),
+
+            'class_id' => $product->getClassId(),
+            'length_id' => $product->getLengthId(),
+            'height_id' => $product->getHeightId(),
+            'width_id' => $product->getWidthId(),
+            'volume_id' => $product->getVolumeId(),
+            'weight_id' => $product->getWeightId(),
+            'unit_id' => $product->getUnitId(),
         );
 
         $id = (int) $product->getId();

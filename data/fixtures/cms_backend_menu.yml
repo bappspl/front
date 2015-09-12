@@ -267,48 +267,69 @@ slowniki:
   route: dictionary-main
   class: fa fa-book
   access: 2
-parametry-lista:
-  name: parametry-lista
-  label: Parametry
+klasa-lista:
+  name: klasa-lista
+  label: Klasa
   route: dictionary
   visible_in_primary: true
   parent_id: slowniki
-  params: "'category' => 'parameters'"
-parametry-tworzenie:
-  name: parametry-tworzenie
-  label: Tworzenie parametrów
+  params: "'category' => 'class'"
+klasa-tworzenie:
+  name: klasa-tworzenie
+  label: Tworzenie klasy
   route: dictionary/create
   visible_in_primary: false
   parent_id: slowniki
-  params: "'category' => 'parameters'"
-parametry-edycja:
-  name: parametry-edycja
-  label: Edycja parametrów
+  params: "'category' => 'class'"
+klasa-edycja:
+  name: klasa-edycja
+  label: Edycja klasy
   route: dictionary/edit
   visible_in_primary: false
   parent_id: slowniki
-  params: "'category' => 'parameters'"
-legenda-lista:
-  name: legenda-lista
-  label: Legenda
+  params: "'category' => 'class'"
+dlugosc-lista:
+  name: dlugosc-lista
+  label: Długość
   route: dictionary
   visible_in_primary: true
   parent_id: slowniki
-  params: "'category' => 'legend'"
-legenda-tworzenie:
-  name: legenda-tworzenie
-  label: Tworzenie legendy
+  params: "'category' => 'length'"
+dlugosc-tworzenie:
+  name: dlugosc-tworzenie
+  label: Tworzenie długości
   route: dictionary/create
   visible_in_primary: false
   parent_id: slowniki
-  params: "'category' => 'legend'"
-legenda-edycja:
-  name: legenda-edycja
-  label: Edycja legendy
+  params: "'category' => 'length'"
+dlugosc-edycja:
+  name: dlugosc-edycja
+  label: Edycja długości
   route: dictionary/edit
   visible_in_primary: false
   parent_id: slowniki
-  params: "'category' => 'legend'"
+  params: "'category' => 'length'"
+wysokosc-lista:
+  name: wysokosc-lista
+  label: Wysokość
+  route: dictionary
+  visible_in_primary: true
+  parent_id: slowniki
+  params: "'category' => 'height'"
+wysokosc-tworzenie:
+  name: wysokosc-tworzenie
+  label: Tworzenie wysokości
+  route: dictionary/create
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'height'"
+wysokosc-edycja:
+  name: wysokosc-edycja
+  label: Edycja wysokości
+  route: dictionary/edit
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'height'"
 szerokosc-lista:
   name: szerokosc-lista
   label: Szerokość
@@ -330,6 +351,69 @@ szerokosc-edycja:
   visible_in_primary: false
   parent_id: slowniki
   params: "'category' => 'width'"
+objetosc-lista:
+  name: objetosc-lista
+  label: Objętość
+  route: dictionary
+  visible_in_primary: true
+  parent_id: slowniki
+  params: "'category' => 'volume'"
+objetosc-tworzenie:
+  name: objetosc-tworzenie
+  label: Tworzenie objętości
+  route: dictionary/create
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'volume'"
+objetosc-edycja:
+  name: objetosc-edycja
+  label: Edycja objętości
+  route: dictionary/edit
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'volume'"
+waga-lista:
+  name: waga-lista
+  label: Waga
+  route: dictionary
+  visible_in_primary: true
+  parent_id: slowniki
+  params: "'category' => 'weight'"
+waga-tworzenie:
+  name: waga-tworzenie
+  label: Tworzenie wagi
+  route: dictionary/create
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'weight'"
+waga-edycja:
+  name: waga-edycja
+  label: Edycja objętości
+  route: dictionary/edit
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'weight'"
+jednostka-lista:
+  name: jednostka-lista
+  label: Jednostka
+  route: dictionary
+  visible_in_primary: true
+  parent_id: slowniki
+  params: "'category' => 'unit'"
+jednostka-tworzenie:
+  name: jednostka-tworzenie
+  label: Tworzenie jednostki
+  route: dictionary/create
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'unit'"
+jednostka-edycja:
+  name: jednostka-edycja
+  label: Edycja jednostki
+  route: dictionary/edit
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'unit'"
 kategorie:
   name: kategorie
   label: Kategorie

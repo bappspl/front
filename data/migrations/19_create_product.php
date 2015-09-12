@@ -14,10 +14,24 @@ class CreateProduct extends AbstractMigration
              ->addColumn('bestseller', 'string', array('null'=>true))
              ->addColumn('show_price', 'string', array('null'=>true))
              ->addColumn('category_id', 'integer', array('null'=>true))
-            ->addColumn('status_id', 'integer')
-            ->addForeignKey('category_id', 'cms_category', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
-            ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
-            ->save();
+             ->addColumn('status_id', 'integer')
+             ->addColumn('class_id', 'integer', array('null'=>true))
+             ->addColumn('length_id', 'integer', array('null'=>true))
+             ->addColumn('height_id', 'integer', array('null'=>true))
+             ->addColumn('width_id', 'integer', array('null'=>true))
+             ->addColumn('volume_id', 'integer', array('null'=>true))
+             ->addColumn('weight_id', 'integer', array('null'=>true))
+             ->addColumn('unit_id', 'integer', array('null'=>true))
+             ->addForeignKey('category_id', 'cms_category', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+             ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+             ->addForeignKey('class_id', 'cms_dictionary', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+             ->addForeignKey('length_id', 'cms_dictionary', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+             ->addForeignKey('height_id', 'cms_dictionary', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+             ->addForeignKey('width_id', 'cms_dictionary', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+             ->addForeignKey('volume_id', 'cms_dictionary', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+             ->addForeignKey('weight_id', 'cms_dictionary', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+             ->addForeignKey('unit_id', 'cms_dictionary', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+             ->save();
 
         $this->createDirectory(array('files/product', 'temp_files/product'));
     }
