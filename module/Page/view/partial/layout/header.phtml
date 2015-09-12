@@ -90,12 +90,16 @@
                             switch ($langUp) {
                                 case 'PL':
                                     echo '<li><a href="' . $this->url('home', array('lang' => 'en')) . '">Angielski</a></li>';
+                                    echo '<li><a href="' . $this->url('home', array('lang' => 'de')) . '">Niemiecki</a></li>';
                                     break;
                                 case 'EN':
                                     echo '<li><a href="' . $this->url('home', array('lang' => 'pl')) . '">Polski</a></li>';
+                                    echo '<li><a href="' . $this->url('home', array('lang' => 'de')) . '">Niemiecki</a></li>';
                                     break;
-
-
+                                case 'DE':
+                                    echo '<li><a href="' . $this->url('home', array('lang' => 'pl')) . '">Polski</a></li>';
+                                    echo '<li><a href="' . $this->url('home', array('lang' => 'en')) . '">Angielski</a></li>';
+                                    break;
                             }
                         ?>
 
