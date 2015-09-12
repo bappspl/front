@@ -172,171 +172,104 @@
 <hr class="mt-0 mb-0 "/>
 <!-- End Divider -->
 
-<!-- Services Section -->
-<section class="page-section" id="services">
-    <div class="container relative">
+<?php if(!empty($categories)): ?>
 
-        <h2 class="font-alt mb-sm-40 text-center">
-            Oferta
-        </h2>
+    <!-- Services Section -->
+    <section class="page-section" id="services">
+        <div class="container relative">
 
-        <!-- Nav tabs -->
-        <ul class="nav nav-tabs tpl-alt-tabs font-alt pt-30 pt-sm-0 pb-30 pb-sm-0">
-            <li class="active">
-                <a href="#tarcica" data-toggle="tab">
+            <h2 class="font-alt mb-sm-40 text-center">
+                Oferta
+            </h2>
 
-                    <div class="alt-tabs-icon">
-                        <img src="images/tarcica.png" alt="tarcica"/>
-                    </div>
+            <!-- Nav tabs -->
+            <ul class="nav nav-tabs tpl-alt-tabs font-alt pt-30 pt-sm-0 pb-30 pb-sm-0">
 
-                    Tarcica sucha
-                </a>
-            </li>
-            <li>
-                <a href="#deska" data-toggle="tab">
+                <?php /* @var $category \CmsIr\Category\Model\Category */ ?>
+                <?php foreach($categories as $k => $category): ?>
 
-                    <div class="alt-tabs-icon">
-                        <img src="images/deska.png" alt="deska"/>
-                    </div>
+                    <?php
+                        switch ($category->getTitle())
+                        {
+                            case 'Tarcica sucha':
+                                $img = '<img src="images/tarcica.png" alt="tarcica"/>';
+                                break;
+                            case 'Deska podłogowa':
+                                $img = '<img src="images/deska.png" alt="tarcica"/>';
+                                break;
+                            case 'Więźba dachowa':
+                                $img = '<img src="images/wiezba.png" alt="tarcica"/>';
+                                break;
+                            case 'Elementy klejone':
+                                $img = '<img src="images/klejone.png" alt="tarcica"/>';
+                                break;
+                            case 'Ramiak drzwiowy':
+                                $img = '<img src="images/ramiak.png" alt="tarcica"/>';
+                                break;
+                            case 'Akcesoria':
+                                $img = '<img src="images/akcesoria.png" alt="tarcica"/>';
+                                break;
+                            default:
+                                $img = '<img src="images/tarcica.png" alt="tarcica"/>';
+                        }
+                    ?>
 
-                    Deska podłogowa
-                </a>
-            </li>
-            <li>
-                <a href="#wiezba" data-toggle="tab">
+                    <li <?php echo $k == 0 ? 'class="active"' : '' ?>>
+                        <a href="#<?php echo $category->getName() ?>" data-toggle="tab">
 
-                    <div class="alt-tabs-icon">
-                        <img src="images/wiezba.png" alt="deska"/>
-                    </div>
+                            <div class="alt-tabs-icon">
+                                <?php echo $img ?>
+                            </div>
 
-                    Więźba dachowa
-                </a>
-            </li>
-            <li>
-                <a href="#klejone" data-toggle="tab">
+                            <?php echo $category->getTitle() ?>
+                        </a>
+                    </li>
 
-                    <div class="alt-tabs-icon">
-                        <img src="images/klejone.png" alt="deska"/>
-                    </div>
+                <?php endforeach ?>
 
-                    Elementy klejone
-                </a>
-            </li>
-            <li>
-                <a href="#ramiak" data-toggle="tab">
+            </ul>
+            <!-- End Nav tabs -->
 
-                    <div class="alt-tabs-icon">
-                        <img src="images/ramiak.png" alt="deska"/>
-                    </div>
+            <!-- Tab panes -->
+            <div class="tab-content tpl-tabs-cont">
 
-                    Ramiak drzwiowy
-                </a>
-            </li>
-            <li>
-                <a href="#akcesoria" data-toggle="tab">
+            <?php foreach($categories as $k => $category): ?>
 
-                    <div class="alt-tabs-icon">
-                        <img src="images/akcesoria.png" alt="deska"/>
-                    </div>
+                <div class="tab-pane fade in <?php echo $k == 0 ? 'active' : '' ?>" id="<?php echo $category->getName() ?>">
 
-                    Akcesoria
-                </a>
-            </li>
+                    <div class="section-text">
+                        <div class="row">
+                            <div class="col-md-4 mb-md-40 mb-xs-30">
 
-        </ul>
-        <!-- End Nav tabs -->
+                                <?php if(!empty($category->getFilename())): ?>
 
-        <!-- Tab panes -->
-        <div class="tab-content tpl-tabs-cont">
+                                    <img src="<?php echo $this->basePath('files/category/' . $category->getFilename()) ?>" alt="deski"/>
 
-            <!-- Service Item -->
-            <div class="tab-pane fade in active" id="tarcica">
+                                <?php endif ?>
+                            </div>
+                            <div class="col-md-8 col-sm-6 mb-sm-50 mb-xs-30">
 
-                <div class="section-text">
-                    <div class="row">
-                        <div class="col-md-4 mb-md-40 mb-xs-30">
-                            <img src="images/deski.png" alt="deski"/>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                            Maecenas volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur
-                            fermentum
-                            volutpat nibh, accumsan purus. Lorem ipsum dolor sit semper amet, consectetur adipiscing
-                            elit.
-                            In maximus ligula metus pellentesque mattis.
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                            Donec vel ultricies purus. Nam dictum sem, ipsum aliquam . Etiam sit amet fringilla lacus.
-                            Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus.
-                            Praesent sed nisi eleifend, fermentum orci amet, iaculis libero.
+                               <?php echo $category->getContent() ?>
+
+                            </div>
                         </div>
                     </div>
+
+                    <div class="align-right" style="margin-right: 50px; margin-top: -40px">
+                        <a href="pages-services-1.html" class="section-more font-alt"><i class="fa fa-angle-down fa-2x"></i> Zobacz asortyment</a>
+                    </div>
+
                 </div>
 
-            </div>
-            <!-- End Service Item -->
-
-            <!-- Service Item -->
-            <div class="tab-pane fade in" id="deska">
-
-                <div class="section-text">
-                    <div class="row">
-                        <div class="col-md-4 mb-md-40 mb-xs-30">
-                            <img src="images/deski.png" alt="deski"/>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                            Maecenas volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur
-                            fermentum
-                            volutpat nibh, accumsan purus. Lorem ipsum dolor sit semper amet, consectetur adipiscing
-                            elit.
-                            In maximus ligula metus pellentesque mattis.
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                            Donec vel ultricies purus. Nam dictum sem, ipsum aliquam . Etiam sit amet fringilla lacus.
-                            Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus.
-                            Praesent sed nisi eleifend, fermentum orci amet, iaculis libero.
-                        </div>
-                    </div>
-                </div>
+            <?php endforeach ?>
 
             </div>
-            <!-- End Service Item -->
-
-            <!-- Service Item -->
-            <div class="tab-pane fade in" id="wiezba">
-
-                <div class="section-text">
-                    <div class="row">
-                        <div class="col-md-4 mb-md-40 mb-xs-30">
-                            <img src="images/deski.png" alt="deski"/>
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                            Maecenas volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur
-                            fermentum
-                            volutpat nibh, accumsan purus. Lorem ipsum dolor sit semper amet, consectetur adipiscing
-                            elit.
-                            In maximus ligula metus pellentesque mattis.
-                        </div>
-                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
-                            Donec vel ultricies purus. Nam dictum sem, ipsum aliquam . Etiam sit amet fringilla lacus.
-                            Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus.
-                            Praesent sed nisi eleifend, fermentum orci amet, iaculis libero.
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-            <!-- End Service Item -->
 
         </div>
-        <!-- End Tab panes -->
+    </section>
+    <!-- End Services Section -->
 
-        <div class="align-right" style="margin-right: 50px; margin-top: -40px">
-            <a href="pages-services-1.html" class="section-more font-alt"><i class="fa fa-angle-down fa-2x"></i> Zobacz asortyment</a>
-        </div>
-
-    </div>
-</section>
-<!-- End Services Section -->
+<?php endif ?>
 
 <?php if(!empty($opinions)): ?>
 

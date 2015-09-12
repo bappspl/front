@@ -52,12 +52,15 @@ class PageController extends AbstractActionController
         $history = $this->getPageService()->findOneByUrlAndLangIdWithBlocks($url, $lang->getId());
         $posts = $this->getPostService()->findLastPostsByLangIdWithBlocks($lang->getId(), 'news', 'j F', 3);
         $opinions = $this->getPostService()->findLastPostsByLangIdWithBlocks($lang->getId(), 'opinion', 'j M');
+        $categories = $this->getCategoryService()->findAllWithBlocks($lang->getId());
+        $categories = array_values($categories);
 
         $viewParams = array();
         $viewParams['history'] = $history;
         $viewParams['lang'] = $lang->getUrlShortcut();
         $viewParams['posts'] = $posts;
         $viewParams['opinions'] = $opinions;
+        $viewParams['categories'] = $categories;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
@@ -378,5 +381,13 @@ class PageController extends AbstractActionController
     public function getPostService()
     {
         return $this->getServiceLocator()->get('CmsIr\Post\Service\PostService');
+    }
+
+    /**
+     * @return \CmsIr\Category\Service\CategoryService
+     */
+    public function getCategoryService()
+    {
+        return $this->getServiceLocator()->get('CmsIr\Category\Service\CategoryService');
     }
 }
