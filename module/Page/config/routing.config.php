@@ -78,4 +78,14 @@ return array(
             ),
         ),
     ),
+    'offer-list' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/[:lang]/oferty',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'offerList',
+            ),
+        ),
+    ),
 );

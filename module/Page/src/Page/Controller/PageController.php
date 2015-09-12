@@ -285,6 +285,24 @@ class PageController extends AbstractActionController
         return array();
     }
 
+    public function offerListAction()
+    {
+        $this->layout('layout/home');
+
+        $url = $this->params('url');
+
+        $lang = $this->getLangId($this->params()->fromRoute('lang'));
+
+
+
+        $viewParams = array();
+        $viewParams['lang'] = $lang->getUrlShortcut();
+        $viewModel = new ViewModel();
+        $viewModel->setVariables($viewParams);
+
+        return $viewModel;
+    }
+
     public function getSessionLangId()
     {
         $session = new Container();
