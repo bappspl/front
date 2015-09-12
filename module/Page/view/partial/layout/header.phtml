@@ -39,7 +39,7 @@
                                     </div>
 
 
-                                    <h3 class="poznaj-nas">POZNAJ NAS</h3>
+                                    <h3 class="poznaj-nas"><?php echo $this->translate('POZNAJ NAS'); ?></h3>
 
 
                                 </div>
@@ -93,12 +93,12 @@
                                     echo '<li><a href="' . $this->url('home', array('lang' => 'de')) . '">Niemiecki</a></li>';
                                     break;
                                 case 'EN':
-                                    echo '<li><a href="' . $this->url('home', array('lang' => 'pl')) . '">Polski</a></li>';
-                                    echo '<li><a href="' . $this->url('home', array('lang' => 'de')) . '">Niemiecki</a></li>';
+                                    echo '<li><a href="' . $this->url('home', array('lang' => 'pl')) . '">Polish</a></li>';
+                                    echo '<li><a href="' . $this->url('home', array('lang' => 'de')) . '">German</a></li>';
                                     break;
                                 case 'DE':
-                                    echo '<li><a href="' . $this->url('home', array('lang' => 'pl')) . '">Polski</a></li>';
-                                    echo '<li><a href="' . $this->url('home', array('lang' => 'en')) . '">Angielski</a></li>';
+                                    echo '<li><a href="' . $this->url('home', array('lang' => 'pl')) . '">Polnisch</a></li>';
+                                    echo '<li><a href="' . $this->url('home', array('lang' => 'en')) . '">Englisch</a></li>';
                                     break;
                             }
                         ?>

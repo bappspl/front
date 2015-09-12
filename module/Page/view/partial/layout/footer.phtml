@@ -3,13 +3,12 @@
     <div class="container relative">
 
         <h2 class="font-alt align-center mb-70 mb-sm-40">
-            Bestsellery w ofercie
+            <?php echo $this->translate('Bestsellery w ofercie'); ?>
 
             <span class="section-title font-alt align-center mb-70 mb-sm-40"
                   style="position: absolute; right: 3%;">
 
-                <a href="#" class="section-more right" style="letter-spacing: 0.2em !important;">Zobacz
-                    wszystkie <i class="fa fa-angle-right"></i></a>
+                <a href="#" class="section-more right" style="letter-spacing: 0.2em !important;"><?php echo $this->translate('Zobacz wszystkie'); ?> <i class="fa fa-angle-right"></i></a>
 
             </span>
 
@@ -26,7 +25,7 @@
                     <a href="shop-single.html">G-Star Polo Applique Jersey</a>
                 </div>
                 <div class="post-prev-more align-center">
-                    <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i class="fa fa-angle-right"></i></a>
+                    <a href="#" class="btn btn-mod btn-gray btn-round"><?php echo $this->translate('Zobacz więcej'); ?> <i class="fa fa-angle-right"></i></a>
                 </div>
             </div>
             <!-- End Shop Item -->
@@ -84,21 +83,21 @@
                 <div class="col-md-8 col-md-offset-2">
 
                     <div class="newsletter-label font-alt" style="color: white; opacity: .9">
-                        Zapisz się do naszego newslettera
+                        <?php echo $this->translate('Zapisz się do naszego newslettera'); ?>
                     </div>
 
                     <div class="mb-20">
-                        <input placeholder="Wpisz adres email"
+                        <input placeholder="<?php echo $this->translate('Wpisz adres email'); ?>"
                                class="newsletter-field form-control input-md round mb-xs-10" type="email"
                                pattern=".{5,100}" required/>
 
                         <button id="newsletter-submit" type="submit" class="btn btn-mod btn-medium btn-round mb-xs-10 subs">
-                            Subskrybuj
+                            <?php echo $this->translate('Subskrybuj');?>
                         </button>
                     </div>
 
                     <div class="newsletter-label font-alt" style="color: white; opacity: .9; font-size: 13px">
-                        Nigdy nie wysyłamy spamu
+                        <?php echo $this->translate('Nigdy nie wysyłamy spamu'); ?>
                     </div>
 
                     <div id="subscribe-result"></div>
@@ -116,7 +115,7 @@
     <div class="container relative">
 
         <h2 class="font-alt mb-70 mb-sm-40 text-center">
-            Kontakt
+            <?php echo $this->translate('Kontakt'); ?>
         </h2>
 
         <p class="text-center" style="font-size: 22px; text-transform: uppercase; letter-spacing: 3px;">
@@ -146,12 +145,12 @@
 
                             <!-- Name -->
                             <div class="form-group">
-                                <input type="text" name="name" id="name" class="input-md round form-control" placeholder="Imię" pattern=".{3,100}" required>
+                                <input type="text" name="name" id="name" class="input-md round form-control" placeholder="<?php echo $this->translate('Imię'); ?>" pattern=".{3,100}" required>
                             </div>
 
                             <!-- Email -->
                             <div class="form-group">
-                                <input type="text" name="surname" id="surname" class="input-md round form-control" placeholder="Nazwisko" pattern=".{5,100}" required>
+                                <input type="text" name="surname" id="surname" class="input-md round form-control" placeholder="<?php echo $this->translate('Nazwisko'); ?>" pattern=".{5,100}" required>
                             </div>
 
                         </div>
@@ -160,7 +159,7 @@
 
                             <!-- Message -->
                             <div class="form-group">
-                                <textarea name="message" id="message" class="input-md round form-control" style="height: 84px;" placeholder="Wiadomość"></textarea>
+                                <textarea name="message" id="message" class="input-md round form-control" style="height: 84px;" placeholder="<?php echo $this->translate('Wiadomość'); ?>"></textarea>
                             </div>
 
                         </div>
@@ -173,7 +172,7 @@
 
                             <!-- Name -->
                             <div class="form-group">
-                                <input type="text" name="phone" id="phone" class="input-md round form-control" placeholder="Telefon" pattern=".{3,100}" required>
+                                <input type="text" name="phone" id="phone" class="input-md round form-control" placeholder="<?php echo $this->translate('Telefon'); ?>" pattern=".{3,100}" required>
                             </div>
 
                         </div>
@@ -182,7 +181,7 @@
 
                             <!-- Send Button -->
                             <div class="align-right pt-10">
-                                <button class="submit_btn btn btn-mod btn-medium btn-round" id="submit_btn">Wyślij wiadomość</button>
+                                <button class="submit_btn btn btn-mod btn-medium btn-round" id="submit_btn"><?php echo $this->translate('Wyślij wiadomość'); ?></button>
                             </div>
 
                         </div>
@@ -207,7 +206,7 @@
     <div class="container relative">
 
         <div class="align-center">
-            <h3 class="banner-heading font-alt">Dołącz do naszych znajomych</h3>
+            <h3 class="banner-heading font-alt"><?php echo $this->translate('Dołącz do naszych znajomych'); ?></h3>
 
             <div>
                 <a href="" class="btn btn-mod btn-w btn-medium btn-round" style="background: #c9baa9"><img src="images/facebook.png" alt="facebook"/></a>
