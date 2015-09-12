@@ -68,3 +68,117 @@ Stack trace:
 #14 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
 #15 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
 #16 {main}
+2015-09-12T14:45:13+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SUCHA' at line 1' in D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php:239
+Stack trace:
+#0 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php(239): PDOStatement->execute()
+#1 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(233): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#2 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 D:\xampp\htdocs\web-ir\tartak\vendor\cms-ir\cms-ir\src\CmsIr\System\src\System\Model\ModelTable.php(85): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#4 D:\xampp\htdocs\web-ir\tartak\module\Product\src\Product\Console\ProductCommand.php(89): CmsIr\System\Model\ModelTable->getOneBy(Array)
+#5 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): Product\Console\ProductCommand->parseCsvAction()
+#6 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Console\Request), Object(Zend\Console\Response))
+#11 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#12 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#13 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 D:\xampp\htdocs\web-ir\tartak\public\index.php(17): Zend\Mvc\Application->run()
+#16 {main}
+
+Next exception 'Zend\Db\Adapter\Exception\InvalidQueryException' with message 'Statement could not be executed (42000 - 1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SUCHA' at line 1)' in D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php:244
+Stack trace:
+#0 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(233): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 D:\xampp\htdocs\web-ir\tartak\vendor\cms-ir\cms-ir\src\CmsIr\System\src\System\Model\ModelTable.php(85): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#3 D:\xampp\htdocs\web-ir\tartak\module\Product\src\Product\Console\ProductCommand.php(89): CmsIr\System\Model\ModelTable->getOneBy(Array)
+#4 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): Product\Console\ProductCommand->parseCsvAction()
+#5 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Console\Request), Object(Zend\Console\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 D:\xampp\htdocs\web-ir\tartak\public\index.php(17): Zend\Mvc\Application->run()
+#15 {main}
+2015-09-12T14:48:47+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SUCHA' at line 1' in D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php:239
+Stack trace:
+#0 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php(239): PDOStatement->execute()
+#1 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(233): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#2 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 D:\xampp\htdocs\web-ir\tartak\vendor\cms-ir\cms-ir\src\CmsIr\System\src\System\Model\ModelTable.php(85): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#4 D:\xampp\htdocs\web-ir\tartak\module\Product\src\Product\Console\ProductCommand.php(89): CmsIr\System\Model\ModelTable->getOneBy(Array)
+#5 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): Product\Console\ProductCommand->parseCsvAction()
+#6 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Console\Request), Object(Zend\Console\Response))
+#11 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#12 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#13 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 D:\xampp\htdocs\web-ir\tartak\public\index.php(17): Zend\Mvc\Application->run()
+#16 {main}
+
+Next exception 'Zend\Db\Adapter\Exception\InvalidQueryException' with message 'Statement could not be executed (42000 - 1064 - You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'SUCHA' at line 1)' in D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php:244
+Stack trace:
+#0 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(233): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 D:\xampp\htdocs\web-ir\tartak\vendor\cms-ir\cms-ir\src\CmsIr\System\src\System\Model\ModelTable.php(85): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#3 D:\xampp\htdocs\web-ir\tartak\module\Product\src\Product\Console\ProductCommand.php(89): CmsIr\System\Model\ModelTable->getOneBy(Array)
+#4 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): Product\Console\ProductCommand->parseCsvAction()
+#5 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Console\Request), Object(Zend\Console\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 D:\xampp\htdocs\web-ir\tartak\public\index.php(17): Zend\Mvc\Application->run()
+#15 {main}
+2015-09-12T14:50:20+02:00 CRIT (2): exception 'PDOException' with message 'SQLSTATE[42S22]: Column not found: 1054 Unknown column 'aa' in 'where clause'' in D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php:239
+Stack trace:
+#0 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php(239): PDOStatement->execute()
+#1 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(233): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#2 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#3 D:\xampp\htdocs\web-ir\tartak\vendor\cms-ir\cms-ir\src\CmsIr\System\src\System\Model\ModelTable.php(85): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#4 D:\xampp\htdocs\web-ir\tartak\module\Product\src\Product\Console\ProductCommand.php(89): CmsIr\System\Model\ModelTable->getOneBy(Array)
+#5 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): Product\Console\ProductCommand->parseCsvAction()
+#6 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Console\Request), Object(Zend\Console\Response))
+#11 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#12 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#13 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#15 D:\xampp\htdocs\web-ir\tartak\public\index.php(17): Zend\Mvc\Application->run()
+#16 {main}
+
+Next exception 'Zend\Db\Adapter\Exception\InvalidQueryException' with message 'Statement could not be executed (42S22 - 1054 - Unknown column 'aa' in 'where clause')' in D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\Adapter\Driver\Pdo\Statement.php:244
+Stack trace:
+#0 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(233): Zend\Db\Adapter\Driver\Pdo\Statement->execute()
+#1 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Db\TableGateway\AbstractTableGateway.php(208): Zend\Db\TableGateway\AbstractTableGateway->executeSelect(Object(Zend\Db\Sql\Select))
+#2 D:\xampp\htdocs\web-ir\tartak\vendor\cms-ir\cms-ir\src\CmsIr\System\src\System\Model\ModelTable.php(85): Zend\Db\TableGateway\AbstractTableGateway->selectWith(Object(Zend\Db\Sql\Select))
+#3 D:\xampp\htdocs\web-ir\tartak\module\Product\src\Product\Console\ProductCommand.php(89): CmsIr\System\Model\ModelTable->getOneBy(Array)
+#4 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractActionController.php(83): Product\Console\ProductCommand->parseCsvAction()
+#5 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#6 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#7 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Controller\AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Console\Request), Object(Zend\Console\Response))
+#10 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#11 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#14 D:\xampp\htdocs\web-ir\tartak\public\index.php(17): Zend\Mvc\Application->run()
+#15 {main}

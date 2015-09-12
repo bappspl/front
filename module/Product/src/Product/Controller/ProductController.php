@@ -1,6 +1,7 @@
 <?php
 namespace Product\Controller;
 
+use CmsIr\Category\Model\Category;
 use CmsIr\File\Model\File;
 use Product\Form\ProductForm;
 use Product\Form\ProductFormFilter;
@@ -358,5 +359,13 @@ class ProductController extends AbstractActionController
     public function getTagService()
     {
         return $this->getServiceLocator()->get('CmsIr\Tag\Service\TagService');
+    }
+
+    /**
+     * @return \CmsIr\Dictionary\Model\DictionaryTable
+     */
+    public function getDictionaryTable()
+    {
+        return $this->getServiceLocator()->get('CmsIr\Dictionary\Model\DictionaryTable');
     }
 }

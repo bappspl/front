@@ -72,6 +72,9 @@ return array(
                 'Product\Controller\Product' => array(
                     'all'	=> 'superadmin',
                 ),
+                'Product\Console\ProductCommand' => array(
+                    'all'	=> 'guest',
+                ),
                 'CmsIr\Tag\Controller\Tag' => array(
                     'all'	=> 'superadmin',
                 ),

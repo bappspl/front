@@ -4,6 +4,10 @@ return array(
         'invokables' => array(
             'Product\Controller\Product' => 'Product\Controller\ProductController'
         ),
+
+        'factories' => array(
+            'Product\Console\ProductCommand' => 'Product\Console\ProductCommandFactory',
+        )
     ),
     'router' => array(
         'routes' =>  include __DIR__ . '/routing.config.php',
@@ -32,6 +36,11 @@ return array(
             'paths' => array(
                 __DIR__ . '/../public',
             ),
+        ),
+    ),
+    'console' => array(
+        'router' => array(
+            'routes' => include __DIR__ . '/console.config.php',
         ),
     ),
 );

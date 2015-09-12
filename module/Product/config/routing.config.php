@@ -106,6 +106,18 @@ return array(
                     ),
                 ),
             ),
+            'parse-csv' => array(
+                'may_terminate' => true,
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/parse-csv',
+                    'defaults' => array(
+                        'module' => 'Product',
+                        'controller' => 'Product\Controller\Product',
+                        'action' => 'parseCsv',
+                    ),
+                ),
+            ),
         ),
     ),
 );
