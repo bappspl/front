@@ -156,7 +156,10 @@ class ProductController extends AbstractActionController
 
                 $this->getBlockService()->saveBlocks($id, 'Product', $request->getPost()->toArray(), 'product_name');
 
-                $this->getTagService()->saveTags($request->getPost()->toArray()['tag_id'], $id, 'Product');
+                if(!empty($request->getPost()->toArray()['tag_id']))
+                {
+                    $this->getTagService()->saveTags($request->getPost()->toArray()['tag_id'], $id, 'Product');
+                }
 
                 $this->flashMessenger()->addMessage('Produkt został edytowany poprawnie.');
 
