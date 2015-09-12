@@ -1,0 +1,101 @@
+2015-08-26T18:52:28+02:00 CRIT (2): exception 'Zend\ServiceManager\Exception\ServiceNotFoundException' with message 'Zend\Mvc\Controller\ControllerManager::createFromInvokable: failed retrieving "cmsirtagcontrollertag(alias: CmsIr\Tag\Controller\Tag)" via invokable class "CmsIr\Tag\Controller\TagController"; class does not exist' in /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/AbstractPluginManager.php:168
+Stack trace:
+#0 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromInvokable('cmsirtagcontrol...', 'CmsIr\\Tag\\Contr...')
+#1 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(593): Zend\ServiceManager\ServiceManager->doCreate('CmsIr\\Tag\\Contr...', 'cmsirtagcontrol...')
+#2 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(525): Zend\ServiceManager\ServiceManager->create(Array)
+#3 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/AbstractPluginManager.php(103): Zend\ServiceManager\ServiceManager->get('CmsIr\\Tag\\Contr...', false)
+#4 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Controller/ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('CmsIr\\Tag\\Contr...', Array, false)
+#5 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/DispatchListener.php(96): Zend\Mvc\Controller\ControllerManager->get('CmsIr\\Tag\\Contr...')
+#6 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
+#11 {main}
+2015-08-26T18:52:47+02:00 CRIT (2): exception 'Zend\ServiceManager\Exception\ServiceNotFoundException' with message 'Zend\Mvc\Controller\ControllerManager::createFromInvokable: failed retrieving "cmsirtagcontrollertag(alias: CmsIr\Tag\Controller\Tag)" via invokable class "CmsIr\Tag\Controller\TagController"; class does not exist' in /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/AbstractPluginManager.php:168
+Stack trace:
+#0 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromInvokable('cmsirtagcontrol...', 'CmsIr\\Tag\\Contr...')
+#1 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(593): Zend\ServiceManager\ServiceManager->doCreate('CmsIr\\Tag\\Contr...', 'cmsirtagcontrol...')
+#2 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(525): Zend\ServiceManager\ServiceManager->create(Array)
+#3 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/AbstractPluginManager.php(103): Zend\ServiceManager\ServiceManager->get('CmsIr\\Tag\\Contr...', false)
+#4 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Controller/ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('CmsIr\\Tag\\Contr...', Array, false)
+#5 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/DispatchListener.php(96): Zend\Mvc\Controller\ControllerManager->get('CmsIr\\Tag\\Contr...')
+#6 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
+#11 {main}
+2015-08-26T18:53:32+02:00 CRIT (2): exception 'Zend\ServiceManager\Exception\ServiceNotFoundException' with message 'Zend\Mvc\Controller\ControllerManager::createFromInvokable: failed retrieving "cmsirtagcontrollertag(alias: CmsIr\Tag\Controller\Tag)" via invokable class "CmsIr\Tag\Controller\TagController"; class does not exist' in /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/AbstractPluginManager.php:168
+Stack trace:
+#0 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromInvokable('cmsirtagcontrol...', 'CmsIr\\Tag\\Contr...')
+#1 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(593): Zend\ServiceManager\ServiceManager->doCreate('CmsIr\\Tag\\Contr...', 'cmsirtagcontrol...')
+#2 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(525): Zend\ServiceManager\ServiceManager->create(Array)
+#3 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/AbstractPluginManager.php(103): Zend\ServiceManager\ServiceManager->get('CmsIr\\Tag\\Contr...', false)
+#4 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Controller/ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('CmsIr\\Tag\\Contr...', Array, false)
+#5 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/DispatchListener.php(96): Zend\Mvc\Controller\ControllerManager->get('CmsIr\\Tag\\Contr...')
+#6 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
+#11 {main}
+2015-08-26T18:55:17+02:00 CRIT (2): exception 'Zend\ServiceManager\Exception\ServiceNotFoundException' with message 'Zend\Mvc\Controller\ControllerManager::createFromInvokable: failed retrieving "cmsirtagcontrollertag(alias: CmsIr\Tag\Controller\Tag)" via invokable class "CmsIr\Tag\Controller\TagController"; class does not exist' in /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/AbstractPluginManager.php:168
+Stack trace:
+#0 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(637): Zend\ServiceManager\AbstractPluginManager->createFromInvokable('cmsirtagcontrol...', 'CmsIr\\Tag\\Contr...')
+#1 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(593): Zend\ServiceManager\ServiceManager->doCreate('CmsIr\\Tag\\Contr...', 'cmsirtagcontrol...')
+#2 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php(525): Zend\ServiceManager\ServiceManager->create(Array)
+#3 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/AbstractPluginManager.php(103): Zend\ServiceManager\ServiceManager->get('CmsIr\\Tag\\Contr...', false)
+#4 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Controller/ControllerManager.php(137): Zend\ServiceManager\AbstractPluginManager->get('CmsIr\\Tag\\Contr...', Array, false)
+#5 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/DispatchListener.php(96): Zend\Mvc\Controller\ControllerManager->get('CmsIr\\Tag\\Contr...')
+#6 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#7 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#9 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#10 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
+#11 {main}
+2015-08-26T18:57:41+02:00 CRIT (2): exception 'Zend\Form\Exception\InvalidElementException' with message 'No element by the name of [filename] found in form' in /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Form/Fieldset.php:223
+Stack trace:
+#0 /media/wtk13/Reszta/htdocs/tartak/vendor/cms-ir/cms-ir/src/CmsIr/Tag/view/cms-ir/tag/edit.phtml(7): Zend\Form\Fieldset->get('filename')
+#1 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/media/wtk13/Re...')
+#2 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#3 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(233): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#4 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(198): Zend\View\View->renderChildren(Object(Zend\View\Model\ViewModel))
+#5 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/View/Http/DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#6 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#7 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#9 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#10 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#11 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
+#12 {main}
+2015-08-26T19:37:19+02:00 CRIT (2): exception 'Zend\Form\Exception\InvalidElementException' with message 'No element by the name of [tag_id] found in form' in /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Form/Fieldset.php:223
+Stack trace:
+#0 /media/wtk13/Reszta/htdocs/tartak/module/Product/view/product/product/create.phtml(29): Zend\Form\Fieldset->get('tag_id')
+#1 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/media/wtk13/Re...')
+#2 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#3 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(233): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#4 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(198): Zend\View\View->renderChildren(Object(Zend\View\Model\ViewModel))
+#5 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/View/Http/DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#6 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#7 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#9 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#10 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#11 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
+#12 {main}
+2015-08-26T19:37:22+02:00 CRIT (2): exception 'Zend\Form\Exception\InvalidElementException' with message 'No element by the name of [tag_id] found in form' in /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Form/Fieldset.php:223
+Stack trace:
+#0 /media/wtk13/Reszta/htdocs/tartak/module/Product/view/product/product/create.phtml(29): Zend\Form\Fieldset->get('tag_id')
+#1 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/media/wtk13/Re...')
+#2 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#3 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(233): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#4 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(198): Zend\View\View->renderChildren(Object(Zend\View\Model\ViewModel))
+#5 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/View/Http/DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#6 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#7 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#9 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#10 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#11 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
+#12 {main}

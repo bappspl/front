@@ -1,0 +1,20 @@
+2015-09-11T20:35:21+02:00 CRIT (2): exception 'Zend\View\Exception\RuntimeException' with message 'Zend\View\Renderer\PhpRenderer::render: Unable to render template "partial/paginator"; resolver could not resolve to a file' in /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php:498
+Stack trace:
+#0 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Helper/Partial.php(61): Zend\View\Renderer\PhpRenderer->render('partial/paginat...', Array)
+#1 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Helper/PaginationControl.php(96): Zend\View\Helper\Partial->__invoke('partial/paginat...', Array)
+#2 [internal function]: Zend\View\Helper\PaginationControl->__invoke(Object(Zend\Paginator\Paginator), 'sliding', 'partial/paginat...')
+#3 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(399): call_user_func_array(Object(Zend\View\Helper\PaginationControl), Array)
+#4 /media/wtk13/Reszta/htdocs/tartak/module/Page/view/page/page/news-list.phtml(158): Zend\View\Renderer\PhpRenderer->__call('paginationContr...', Array)
+#5 /media/wtk13/Reszta/htdocs/tartak/module/Page/view/page/page/news-list.phtml(158): Zend\View\Renderer\PhpRenderer->paginationControl(Object(Zend\Paginator\Paginator), 'sliding', 'partial/paginat...')
+#6 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/media/wtk13/Re...')
+#7 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#8 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(233): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#9 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(198): Zend\View\View->renderChildren(Object(Zend\View\Model\ViewModel))
+#10 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/View/Http/DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#11 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#12 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#13 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#14 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#15 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#16 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
+#17 {main}

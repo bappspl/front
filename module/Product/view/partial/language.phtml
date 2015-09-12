@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel with-nav-tabs panel-default">
+            <div class="panel-heading">
+                <ul class="nav nav-tabs">
+
+                    <?php /* @var $lang \CmsIr\System\Model\Language */ ?>
+                    <?php foreach($languages as $lang): ?>
+
+                        <li role="presentation" class="<?php echo $lang->getUrlShortcut() == 'pl' ? 'active' : '' ?>"><a aria-controls="<?php echo $lang->getUrlShortcut() ?>" role="tab" data-toggle="tab" href="#<?php echo $lang->getUrlShortcut() ?>"><?php echo $lang->getName() ?></a></li>
+
+                    <?php endforeach ?>
+
+                </ul>
+            </div>
+            <div class="panel-body">
+                <div class="tab-content">
+
+                    <?php foreach($languages as $lang): ?>
+
+                        <div role="tabpanel" class="tab-pane fade in <?php echo $lang->getUrlShortcut() == 'pl' ? 'active' : '' ?>" id="<?php echo $lang->getUrlShortcut() ?>">
+
+                            <div class="form-group  has-feedback">
+                                <label> Nazwa produktu </label>
+                                <input name="<?php echo $lang->getUrlShortcut() ?>-product_name" id="product_name" type="text" placeholder="Wprowadź nazwę produktu" value="<?php echo isset($values[$lang->getUrlShortcut(). '-product_name']) ? $values[$lang->getUrlShortcut(). '-product_name'] : '' ?>" class="form-control">
+                            </div>
+
+                            <div class="form-group  has-feedback">
+                                <label> Opis </label>
+                                <textarea name="<?php echo $lang->getUrlShortcut() ?>-description" id="description" placeholder="Wprowadź opis" class="summernote-lg"><?php echo isset($values[$lang->getUrlShortcut(). '-description']) ? $values[$lang->getUrlShortcut(). '-description'] : '' ?></textarea>
+                            </div>
+
+                        </div>
+
+                    <?php endforeach ?>
+
+                </div>
+            </div><!-- /.panel-body -->
+        </div>
+    </div>
+</div>
+
+

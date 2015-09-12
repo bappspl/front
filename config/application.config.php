@@ -19,7 +19,12 @@ return array(
         'CmsIr\Dictionary',
         'CmsIr\File',
         'CmsIr\Banner',
-        'CmsIr\Place'
+        'CmsIr\Place',
+        'CmsIr\Meta',
+        'CmsIr\Category',
+        'CmsIr\Tag',
+
+        'Product'
     ),
     'module_listener_options' => array(
         'module_paths' => array(

@@ -1,0 +1,107 @@
+<?php
+$form = $this->form;
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+
+<?php echo $this->customFormHelper($form->get('filename')); ?>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="the-box">
+
+                <h4 class="small-title">Dane podstawowe</h4>
+
+                <?php echo $this->customFormHelper($form->get('name')) ?>
+
+                <div class="form-group">
+                    <label><?php echo $this->formLabel($form->get('status_id')); ?></label>
+                    <?php echo $this->formSelect($form->get('status_id')); ?>
+                </div>
+
+                <div class="form-group">
+                    <label><?php echo $this->formLabel($form->get('category_id')); ?></label>
+                    <?php echo $this->formSelect($form->get('category_id')); ?>
+                </div>
+
+                <div class="form-group">
+                    <label><?php echo $this->formLabel($form->get('tag_id')); ?></label>
+                    <?php echo $this->formSelect($form->get('tag_id')); ?>
+                </div>
+
+                <?php echo $this->customFormHelper($form->get('catalog_number')) ?>
+
+                <?php echo $this->customFormHelper($form->get('price')) ?>
+
+                <label>
+                    <input type="hidden" name="bestseller" value="0">
+                    <input type="checkbox" name="bestseller" value="1">
+                    <span>Bestseller</span>
+                </label>
+
+                <label style="margin-left: 20px">
+                    <input type="hidden" name="show_price" value="0">
+                    <input type="checkbox" name="show_price" value="1">
+                    <span>Pokaż cenę</span>
+                </label>
+
+            </div>
+        </div>
+        <div class="col-sm-6">
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="the-box">
+                        <h4 class="small-title">Galeria zdjęć</h4>
+
+                        <div class="form-group">
+
+                            <?php echo $this->customFormHelper($form->get('upload')); ?>
+
+                            <a href="javascript:$('#upload').uploadifive('upload')" class="btn btn-facebook">Rozpocznij upload</a>
+                            <a href="javascript:$('#upload').uploadifive('clearQueue')" class="btn btn-warning">Anuluj wszystkie</a>
+
+                            <div id="queue"></div>
+                            <div class="files">
+                                <?php if(!empty($productFiles)): ?>
+                                    <?php /* @var $file \CmsIr\File\Model\File */ ?>
+                                    <?php foreach($productFiles as $file): ?>
+                                        <div id="<?php echo $file->getId() ?>" class="deletePhoto">
+                                            <i class="fa fa-times" data-toggle="tooltip" title="Usuń zdjęcie"></i>
+                                            <img src="/files/product/<?php echo $file->getFilename() ?>" alt="<?php echo $file->getFilename() ?>" class="thumb" />
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <?php echo $this->languageHelper('partial/language-product', $blocks) ?>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="the-box">
+                <div class="input-group col-sm-12 text-right">
+                    <a class="btn btn-default" href="<?php echo $this->url('product'); ?>">Anuluj</a> &nbsp
+                    <?php echo $this->formInput($form->get('submit')); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/summernote.min.css'); ?>
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/uploadifive.css'); ?>
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/product.css'); ?>
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/select2.min.css'); ?>
+
+<?php $this->headScript()->appendFile($this->basePath().'/js/summernote.min.js'); ?>
+
+<?php $this->headScript()->appendFile($this->basePath().'/js/jquery.uploadifive.min.js'); ?>
+<?php $this->headScript()->appendFile($this->basePath().'/js/product-form.js'); ?>
+<?php $this->headScript()->appendFile($this->basePath().'/js/select2.min.js'); ?>

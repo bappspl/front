@@ -1,9 +1,10 @@
-8_cms_create_backend_menu.phpdashboard:
+dashboard:
   name: dashboard
   label: Dashboard
   route: dashboard
   class: fa fa-home
   access: 2
+  visible_in_primary: true
 menu:
   name: menu
   label: Menu
@@ -86,34 +87,6 @@ podglad-newsa:
   visible_in_primary: false
   parent_id: wpisy
   params: "'category' => 'news'"
-lista-referencji:
-  name: lista-referencji
-  label: Lista referencji
-  route: post
-  visible_in_primary: true
-  parent_id: wpisy
-  params: "'category' => 'testimonials'"
-tworzenie-referencji:
-  name: tworzenie-referencji
-  label: Tworzenie referencji
-  route: post/create
-  visible_in_primary: false
-  parent_id: wpisy
-  params: "'category' => 'testimonials'"
-edycja-referencji:
-  name: edycja-referencji
-  label: Edycja referencji
-  route: post/edit
-  visible_in_primary: false
-  parent_id: wpisy
-  params: "'category' => 'testimonials'"
-podglad-referencji:
-  name: podglad-referencji
-  label: Podgląd referencji
-  route: post/preview
-  visible_in_primary: false
-  parent_id: wpisy
-  params: "'category' => 'testimonials'"
 slider:
   name: slider
   label: Slider
@@ -124,7 +97,7 @@ tworzenie-slidera:
   name: tworzenie-slidera
   label: Tworzenie slidera
   route: slider/create
-  visible_in_primary: true
+  visible_in_primary: false
   parent_id: slider
 lista-slidera:
   name: lista-slidera
@@ -164,7 +137,7 @@ edycja-elementu:
   parent_id: slider
 uzytkownicy:
   name: uzytkownicy
-  label: Specjaliści
+  label: Użytkownicy
   route: users-main
   class: fa fa-users
   access: 4
@@ -176,25 +149,25 @@ tworzenie-uzytkownika:
   parent_id: uzytkownicy
 lista-uzytkownikow:
   name: lista-uzytkownikow
-  label: Lista specjalistów
+  label: Lista użytkowników
   route: users
   visible_in_primary: true
   parent_id: uzytkownicy
 edycja-uzytkownikow:
   name: edycja-uzytkownikow
-  label: Edycja specjalisty
+  label: Edycja użytkownika
   route: users/edit
   visible_in_primary: false
   parent_id: uzytkownicy
 podglad-uzytkownikwa:
   name: podglad-uzytkownikowa
-  label: Podgląd specjalisty
+  label: Podgląd użytkwnika
   route: users/preview
   visible_in_primary: false
   parent_id: uzytkownicy
 usuwanie-uzytkownikowa:
   name: usuwanie-uzytkownikowa
-  label: Usuwanie specjalisty
+  label: Usuwanie użytkownika
   route: users/delete
   visible_in_primary: false
   parent_id: uzytkownicy
@@ -288,146 +261,197 @@ ustawienia:
   route: newsletter/settings
   visible_in_primary: true
   parent_id: newsletter
-miejsca:
-  name: miejsca
-  label: Miejsca
-  route: place-main
-  class: fa fa-globe
-  access: 4
-tworzenie-miejsca:
-  name: tworzenie-miejsca
-  label: Dodaj nowy
-  route: place/create
-  visible_in_primary: true
-  parent_id: miejsca
-lista-miejsc:
-  name: lista-miejsc
-  label: Lista miejsc
-  route: place
-  visible_in_primary: true
-  parent_id: miejsca
-edycja-miejsca:
-  name: edycja-miejsca
-  label: Edycja miejsca
-  route: place/edit
-  visible_in_primary: false
-  parent_id: miejsca
-podglad-miejsca:
-  name: podglad-miejsca
-  label: Podgląd miejsca
-  route: place/preview
-  visible_in_primary: false
-  parent_id: miejsca
-usuwanie-miejsca:
-  name: usuwanie-miejsca
-  label: Usuwanie miejsca
-  route: place/delete
-  visible_in_primary: false
-  parent_id: miejsca
 slowniki:
   name: slowniki
   label: Słowniki
   route: dictionary-main
   class: fa fa-book
   access: 2
-testowa-lista:
-  name: testowa-lista
-  label: Testowa lista
+parametry-lista:
+  name: parametry-lista
+  label: Parametry
   route: dictionary
   visible_in_primary: true
   parent_id: slowniki
-  params: "'category' => 'position'"
-testowe-tworzenie:
-  name: testowe-tworzenie
-  label: Testowe tworzenie
+  params: "'category' => 'parameters'"
+parametry-tworzenie:
+  name: parametry-tworzenie
+  label: Tworzenie parametrów
   route: dictionary/create
   visible_in_primary: false
   parent_id: slowniki
-  params: "'category' => 'position'"
-testowa-edycja:
-  name: testowe-tworzenie
-  label: Testowe tworzenie
+  params: "'category' => 'parameters'"
+parametry-edycja:
+  name: parametry-edycja
+  label: Edycja parametrów
   route: dictionary/edit
   visible_in_primary: false
   parent_id: slowniki
-  params: "'category' => 'position'"
-apteka:
-  name: apteka
-  label: Apteki
-  route: pharmacy-main
-  class: fa fa-stethoscope
-  access: 4
-tworzenie-apteki:
-  name: tworzenie-apteki
+  params: "'category' => 'parameters'"
+legenda-lista:
+  name: legenda-lista
+  label: Legenda
+  route: dictionary
+  visible_in_primary: true
+  parent_id: slowniki
+  params: "'category' => 'legend'"
+legenda-tworzenie:
+  name: legenda-tworzenie
+  label: Tworzenie legendy
+  route: dictionary/create
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'legend'"
+legenda-edycja:
+  name: legenda-edycja
+  label: Edycja legendy
+  route: dictionary/edit
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'legend'"
+szerokosc-lista:
+  name: szerokosc-lista
+  label: Szerokość
+  route: dictionary
+  visible_in_primary: true
+  parent_id: slowniki
+  params: "'category' => 'width'"
+szerokosc-tworzenie:
+  name: szerokosc-tworzenie
+  label: Tworzenie szerokości
+  route: dictionary/create
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'width'"
+szerokosc-edycja:
+  name: szerokosc-edycja
+  label: Edycja Szerokości
+  route: dictionary/edit
+  visible_in_primary: false
+  parent_id: slowniki
+  params: "'category' => 'width'"
+kategorie:
+  name: kategorie
+  label: Kategorie
+  route: category-main
+  class: fa fa-cubes
+  access: 2
+nowa-kategoria:
+  name: nowa-kategoria
   label: Dodaj nową
-  route: pharmacy/create
+  route: category/create
   visible_in_primary: true
-  parent_id: apteka
-lista-aptek:
-  name: lista-aptek
-  label: Lista aptek
-  route: pharmacy
+  parent_id: kategorie
+lista-kategorii:
+  name: lista-kategorii
+  label: Lista kategorii
+  route: category
   visible_in_primary: true
-  parent_id: apteka
-edycja-aptek:
-  name: edycja-aptek
-  label: Edycja apteki
-  route: pharmacy/edit
+  parent_id: kategorie
+edycja-kategorii:
+  name: edycja-kategorii
+  label: Edycja kategorii
+  route: category/edit
   visible_in_primary: false
-  parent_id: apteka
-usuwanie-apteki:
-  name: usuwanie-apteki
-  label: Usuwanie apteki
-  route: pharmacy/delete
+  parent_id: kategorie
+usuwanie-kategorii:
+  name: usuwanie-kategorii
+  label: Usuwanie kategorii
+  route: category/delete
   visible_in_primary: false
-  parent_id: apteka
-leki:
-  name: leki
-  label: O lekach
-  route: medicaments-main
-  class: fa fa-medkit
-  access: 4
-tworzenie-lekow:
-  name: tworzenie-lekow
-  label: Dodaj nową
-  route: medicaments/create
+  parent_id: kategorie
+produkty:
+  name: produkty
+  label: Produkty
+  route: product-main
+  class: fa fa-shopping-cart
+  access: 2
+nowy-produkt:
+  name: nowy-produkt
+  label: Dodaj nowy
+  route: product/create
   visible_in_primary: true
-  parent_id: leki
-lista-lekow:
-  name: lista-lekow
-  label: Lista
-  route: medicaments
+  parent_id: produkty
+lista-produktow:
+  name: lista-produkotw
+  label: Lista produktów
+  route: product
   visible_in_primary: true
-  parent_id: leki
-edycja-lekow:
-  name: edycja-lekow
-  label: Edycja
-  route: medicaments/edit
+  parent_id: produkty
+edycja-produktow:
+  name: edycja-produktow
+  label: Edycja produktu
+  route: product/edit
   visible_in_primary: false
-  parent_id: leki
-usuwanie-lekow:
-  name: usuwanie-lekow
-  label: Usuwanie
-  route: medicaments/delete
+  parent_id: produkty
+usuwanie-produktu:
+  name: usuwanie-produktu
+  label: Usuwanie produktu
+  route: product/delete
   visible_in_primary: false
-  parent_id: leki
-galeria:
-  name: galeria
-  label: Gazetka
-  route: gallery-main
-  visible_in_primary: true
-  class: fa fa-file-image-o
-  access: 4
-galeria-edycja:
-  name: galeria-edycja
-  label: Edycja gazetki
-  route: gallery/edit
-  parent_id: galeria
-  visible_in_primary: true
-  params: "'gallery_id' => '1'"
+  parent_id: produkty
 konfiguracja-maila:
   name: konfiguracja-maila
   label: Ustawienia E-mail
   route: mail-config
   class: fa fa-cog
   access: 4
+  visible_in_primary: true
+tag:
+  name: tagi
+  label: Tagi
+  route: tag-main
+  class: fa fa-tags
+  access: 2
+nowy-tag:
+  name: nowy-tag
+  label: Dodaj nowy
+  route: tag/create
+  visible_in_primary: true
+  parent_id: tag
+lista-tagow:
+  name: lista-produkotw
+  label: Lista tagów
+  route: tag
+  visible_in_primary: true
+  parent_id: tag
+edycja-tagow:
+  name: edycja-tagow
+  label: Edycja tagu
+  route: tag/edit
+  visible_in_primary: false
+  parent_id: tag
+usuwanie-tagu:
+  name: usuwanie-tagu
+  label: Usuwanie tagu
+  route: tag/delete
+  visible_in_primary: false
+  parent_id: tag
+lista-opinii:
+  name: lista-opinii
+  label: Lista opinii
+  route: post
+  visible_in_primary: true
+  parent_id: wpisy
+  params: "'category' => 'opinion'"
+tworzenie-opinii:
+  name: tworzenie-opinii
+  label: Tworzenie opinii
+  route: post/create
+  visible_in_primary: false
+  parent_id: wpisy
+  params: "'category' => 'opinion'"
+edycja-opinii:
+  name: edycja-opinii
+  label: Edycja opinii
+  route: post/edit
+  visible_in_primary: false
+  parent_id: wpisy
+  params: "'category' => 'opinion'"
+podglad-opinii:
+  name: podglad-opinii
+  label: Podgląd opinii
+  route: post/preview
+  visible_in_primary: false
+  parent_id: wpisy
+  params: "'category' => 'opinion'"

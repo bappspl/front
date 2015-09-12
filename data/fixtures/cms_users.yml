@@ -10,6 +10,7 @@ first_person:
   filename: NULL
   registration_date: 2002-09-24-06:00
   registration_token: 6bd917489c0a854aaaef6082c12f4805
+  host: localhost
 second_person:
   name: Wojciech
   surname: Rybiński
@@ -22,3 +23,4 @@ second_person:
   filename: NULL
   registration_date: 2002-09-24-06:00
   registration_token: 6bd917489c0a854aaaef6082c12f4805
+  host: localhost

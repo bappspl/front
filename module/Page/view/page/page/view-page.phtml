@@ -1,0 +1,86 @@
+<?php /* @var $page \CmsIr\Page\Model\Page */ ?>
+<?php $files = $page->getFiles() ?>
+<?php $blocks = $page->getBlocks() ?>
+
+<?php if(!empty($page->getFilenameMain())): ?>
+
+    <!-- Head Section -->
+    <section class="page-section"
+             style="padding: 215px 0 140px 0; background: url(<?php echo $this->basePath('files/page/' . $page->getFilenameMain()) ?>) no-repeat; background-size: 100% 100%;">
+        <div class="relative container align-left">
+
+            <div class="row">
+
+                <div class="col-md-8">
+                    <h1 class="hs-line-11 font-alt mb-20 mb-xs-0" style="color: white"><?php echo $page->getTitle() ?></h1>
+
+<!--                    <div class="hs-line-4 font-alt">-->
+<!--                        --><?php //echo $page->getSubtitle() ?>
+<!--                    </div>-->
+                </div>
+
+                <div class="col-md-4 mt-30">
+                    <div class="mod-breadcrumbs font-alt align-right" style="color: white">
+                        <a href="<?php echo $this->url('home', array('lang' => $lang)) ?>" style="color: white">Home</a>&nbsp;/&nbsp;<a href="#" style="color: white"><?php echo $page->getTitle() ?></a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Head Section -->
+
+<?php endif ?>
+
+<!-- Section -->
+<section class="page-section">
+    <div class="container relative">
+
+        <div class="row">
+
+            <!-- Content -->
+            <div class="col-sm-10 col-sm-offset-1">
+
+                <!-- Post -->
+                <div class="blog-item">
+
+                    <!-- Post Title -->
+                    <h2 class="font-alt text-center"><?php echo $page->getSubtitle() ?></h2>
+
+                    <?php if(!empty($files)): ?>
+
+                        <!-- Media Gallery -->
+                        <div class="blog-media">
+                            <ul class="clearlist content-slider">
+
+                                <?php /* @var $file \CmsIr\File\Model\File */ ?>
+                                <?php foreach($files as $file): ?>
+
+                                    <li>
+                                        <img class="img-responsive" style="max-height: 532px" src="<?php echo $this->basePath('files/page/' . $file->getFilename()) ?>" alt=""/>
+                                    </li>
+
+                                <?php endforeach ?>
+
+                            </ul>
+                        </div>
+
+                    <?php endif ?>
+
+                    <!-- Text Intro -->
+                    <div class="blog-item-body">
+                       <?php echo $page->getContent() ?>
+                    </div>
+
+                </div>
+                <!-- End Post -->
+
+            </div>
+            <!-- End Content -->
+
+        </div>
+
+    </div>
+</section>
+<!-- End Section -->

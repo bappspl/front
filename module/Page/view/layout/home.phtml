@@ -13,7 +13,13 @@
     <!-- Le styles -->
     <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
         // MAIN CSS (REQUIRED ALL PAGE)
-        ->appendStylesheet($this->basePath() . '/css/test.css')
+        ->appendStylesheet($this->basePath() . '/css-front/bootstrap.min.css')
+        ->appendStylesheet($this->basePath() . '/css-front/style.css')
+        ->appendStylesheet($this->basePath() . '/css-front/style-responsive.css')
+        ->appendStylesheet($this->basePath() . '/css-front/animate.min.css')
+        ->appendStylesheet($this->basePath() . '/css-front/vertical-rhythm.min.css')
+        ->appendStylesheet($this->basePath() . '/css-front/owl.carousel.css')
+        ->appendStylesheet($this->basePath() . '/css-front/magnific-popup.css')
     ?>
     <!-- Scripts -->
 
@@ -22,12 +28,14 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-    <?php echo $this->headScript()
-        ->appendFile($this->basePath() . '/js/test.js', 'text/javascript')
+    <?php //echo $this->headScript()
+//        ->appendFile($this->basePath() . '/js/test.js', 'text/javascript')
     ?>
 
 </head>
-<body>
+<body class="appear-animate">
+
+    <div class="page" id="top">
 
     <?php echo $this->partial('partial/layout/header'); ?>
 
@@ -36,8 +44,31 @@
     <?php echo $this->partial('partial/layout/footer'); ?>
 
     <?php echo $this->inlineScript()
-        ->appendFile($this->basePath() . '/js/bootstrap-front.min.js')
+        ->appendFile($this->basePath() . '/js/jquery-1.11.2.min.js')
+        ->appendFile($this->basePath() . '/js/jquery.easing.1.3.js')
+        ->appendFile($this->basePath() . '/js/bootstrap.min.js')
+        ->appendFile($this->basePath() . '/js/SmoothScroll.js')
+        ->appendFile($this->basePath() . '/js/jquery.scrollTo.min.js')
+        ->appendFile($this->basePath() . '/js/jquery.localScroll.min.js')
+        ->appendFile($this->basePath() . '/js/jquery.viewport.mini.js')
+        ->appendFile($this->basePath() . '/js/jquery.countTo.js')
+        ->appendFile($this->basePath() . '/js/jquery.appear.js')
+        ->appendFile($this->basePath() . '/js/jquery.sticky.js')
+        ->appendFile($this->basePath() . '/js/jquery.parallax-1.1.3.js')
+        ->appendFile($this->basePath() . '/js/jquery.fitvids.js')
+        ->appendFile($this->basePath() . '/js/owl.carousel.min.js')
+        ->appendFile($this->basePath() . '/js/isotope.pkgd.min.js')
+        ->appendFile($this->basePath() . '/js/imagesloaded.pkgd.min.js')
+        ->appendFile($this->basePath() . '/js/jquery.magnific-popup.min.js')
+        ->appendFile('http://maps.google.com/maps/api/js?sensor=false&amp;language=en')
+        ->appendFile($this->basePath() . '/js/gmap3.min.js')
+        ->appendFile($this->basePath() . '/js/wow.min.js')
+        ->appendFile($this->basePath() . '/js/jquery.simple-text-rotator.min.js')
+        ->appendFile($this->basePath() . '/js/all.js')
+        ->appendFile($this->basePath() . '/js/jquery.ajaxchimp.min.js')
     ?>
+    <!--[if lt IE 10]>
+    <script type="text/javascript" src="/js/placeholder.js"></script><![endif]-->
 
 </body>
 </html>

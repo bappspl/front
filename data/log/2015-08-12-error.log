@@ -1,0 +1,17 @@
+2015-08-12T19:18:54+02:00 CRIT (2): exception 'Zend\ServiceManager\Exception\ServiceNotFoundException' with message 'Zend\ServiceManager\ServiceManager::get was unable to fetch or create an instance for CmsIr\System\Model\BlockTablee' in /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php:550
+Stack trace:
+#0 /media/wtk13/Reszta/htdocs/tartak/vendor/cms-ir/cms-ir/src/CmsIr/Page/src/Page/Service/PageService.php(77): Zend\ServiceManager\ServiceManager->get('CmsIr\\System\\Mo...')
+#1 /media/wtk13/Reszta/htdocs/tartak/vendor/cms-ir/cms-ir/src/CmsIr/Page/src/Page/Service/PageService.php(39): CmsIr\Page\Service\PageService->getBlockTable()
+#2 /media/wtk13/Reszta/htdocs/tartak/vendor/cms-ir/cms-ir/src/CmsIr/Menu/src/Menu/Controller/MenuController.php(49): CmsIr\Page\Service\PageService->findAllByLanguageShortcutAndBy('pl', Array)
+#3 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Controller/AbstractActionController.php(83): CmsIr\Menu\Controller\MenuController->editAction()
+#4 [internal function]: Zend\Mvc\Controller\AbstractActionController->onDispatch(Object(Zend\Mvc\MvcEvent))
+#5 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#6 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#7 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Controller/AbstractController.php(116): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#8 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/DispatchListener.php(113): Zend\Mvc\Controller\AbstractController->dispatch(Object(Zend\Http\PhpEnvironment\Request), Object(Zend\Http\PhpEnvironment\Response))
+#9 [internal function]: Zend\Mvc\DispatchListener->onDispatch(Object(Zend\Mvc\MvcEvent))
+#10 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#11 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#12 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
+#13 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
+#14 {main}

@@ -1,0 +1,19 @@
+2015-08-03T22:11:55+02:00 CRIT (2): exception 'Zend\View\Exception\RuntimeException' with message 'Zend\View\Renderer\PhpRenderer::render: Unable to render template "partial/meta-form"; resolver could not resolve to a file' in /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php:498
+Stack trace:
+#0 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Helper/Partial.php(61): Zend\View\Renderer\PhpRenderer->render('partial/meta-fo...', Array)
+#1 [internal function]: Zend\View\Helper\Partial->__invoke('partial/meta-fo...', Array)
+#2 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(399): call_user_func_array(Object(Zend\View\Helper\Partial), Array)
+#3 /media/wtk13/Reszta/htdocs/tartak/vendor/cms-ir/cms-ir/src/CmsIr/Page/view/cms-ir/page/create.phtml(69): Zend\View\Renderer\PhpRenderer->__call('partial', Array)
+#4 /media/wtk13/Reszta/htdocs/tartak/vendor/cms-ir/cms-ir/src/CmsIr/Page/view/cms-ir/page/create.phtml(69): Zend\View\Renderer\PhpRenderer->partial('partial/meta-fo...', Array)
+#5 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/media/wtk13/Re...')
+#6 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#7 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(233): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#8 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(198): Zend\View\View->renderChildren(Object(Zend\View\Model\ViewModel))
+#9 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/View/Http/DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#10 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#11 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#13 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#14 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#15 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
+#16 {main}

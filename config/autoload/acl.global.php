@@ -65,6 +65,16 @@ return array(
                 'CmsIr\File\Controller\File' => array(
                     'all'	=> 'superadmin',
                 ),
+                'CmsIr\Category\Controller\Category' => array(
+                    'all'	=> 'superadmin',
+                ),
+
+                'Product\Controller\Product' => array(
+                    'all'	=> 'superadmin',
+                ),
+                'CmsIr\Tag\Controller\Tag' => array(
+                    'all'	=> 'superadmin',
+                ),
             )
         )
     )

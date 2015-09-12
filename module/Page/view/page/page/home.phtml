@@ -1,0 +1,413 @@
+<?php /* @var $history \CmsIr\Page\Model\Page */ ?>
+<?php if(isset($history)): ?>
+    <section class="page-section" id="historia">
+        <div class="container relative">
+
+            <h2 class="font-alt mb-sm-40 text-center">
+                <?php echo $history->getTitle() ?>
+            </h2>
+
+            <div class="section-text">
+
+                <div class="row">
+
+                    <!-- Team item -->
+                    <div class="col-md-4 mb-xs-30 wow fadeInUp">
+                        <div class="team-item">
+
+                            <?php $files = reset($history->getFiles()) ?>
+
+                            <?php if(isset($files)): ?>
+
+                                <img src="<?php echo $this->basePath('files/page/' . $files->getFilename()) ?>" alt="historia"/>
+
+                            <?php endif ?>
+
+                            <div class="team-item-descr font-alt">
+
+                                <div class="team-item-name">
+                                    TARTAK MICHALSKI
+                                </div>
+
+                                <div class="team-item-role">
+                                    ROK 1972
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- End Team item -->
+
+                    <?php $content = $history->getContent() ?>
+                    <?php if(isset($content)): ?>
+                        <?php $output = str_split($content, 760) ?>
+                        <?php if(isset($output[1])): ?>
+
+                            <?php $dot = strripos($content, '.') ?>
+                            <?php $output[0] = substr($output[0], 0, 760 - $dot) ?>
+                            <?php $output[1] = substr($output[1], 760 - $dot) ?>
+
+                        <?php endif ?>
+
+                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+
+                            <?php echo $output[0] ?>
+
+                        </div>
+
+                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+
+                            <?php echo isset($output[1]) ? $output[1] : '' ?>
+
+                        </div>
+
+                    <?php endif ?>
+
+                </div>
+
+            </div>
+
+            <div class="align-right" style="margin-right: 50px; margin-top: -40px">
+                <a href="<?php echo $this->url('view-page', array('lang' => $lang, 'url' => $history->getUrl())) ?>" class="section-more font-alt"><i class="fa fa-angle-down fa-2x"></i> Czytaj
+                    więcej</a>
+            </div>
+
+        </div>
+    </section>
+    <!-- End Services Section -->
+
+<?php endif ?>
+
+<!-- Call Action Section -->
+<section class="small-section bg-dark">
+    <div class="container relative">
+
+        <div class="align-center">
+            <img src="images/logo_tartak_1.svg" alt="logo" class="img-responsive center-block" style="height: 100px"/>
+        </div>
+
+    </div>
+</section>
+<!-- End Call Action Section -->
+
+<?php if(!empty($posts)): ?>
+
+    <!-- About Section -->
+    <section class="page-section" id="about">
+        <div class="container relative">
+
+            <h2 class="font-alt align-center mb-50 mb-sm-40">
+                <?php echo $this->translate('Aktualności') ?>
+
+                        <span class="section-title font-alt align-center mb-50 mb-sm-40"
+                              style="position: absolute; right: 3%;">
+
+                            <a href="<?php echo $this->url('news-list', array('lang' => $lang)) ?>" class="section-more right" style="letter-spacing: 0.2em !important;">Zobacz
+                                wszystkie aktualności <i class="fa fa-angle-right"></i></a>
+
+                        </span>
+
+            </h2>
+
+            <div class="row multi-columns-row">
+
+                <?php /* @var $post \CmsIr\Post\Model\Post */ ?>
+                <?php foreach($posts as $post): ?>
+                    <?php $files = $post->getFiles() ?>
+
+                    <!-- Post Item -->
+                    <div class="col-sm-6 col-md-4 col-lg-4 mb-60 mb-xs-40">
+
+                        <div class="post-prev-img">
+                            <a href="<?php echo $this->url('view-news', array('lang' => $lang, 'url' => $post->getUrl())) ?>">
+
+                                <?php if(empty($files)): ?>
+
+                                    <img src="images/blog/post-prev-1.jpg" alt=""/>
+
+                                <?php else: ?>
+
+                                    <?php /* @var $file \CmsIr\File\Model\File */ ?>
+                                    <?php $file = reset($files) ?>
+
+                                    <img src="<?php echo $this->basePath('files/post/' . $file->getFilename()) ?>" alt=""/>
+
+                                <?php endif ?>
+
+                            </a>
+                        </div>
+
+                        <div class="post-prev-title font-alt">
+                            <a href="<?php echo $this->url('view-news', array('lang' => $lang, 'url' => $post->getUrl())) ?>"><?php echo $post->getTitle() ?></a>
+                        </div>
+
+                        <div class="post-prev-info font-alt">
+                            <?php echo $post->getAuthor() ?> | <?php echo $post->getDate() ?>
+                        </div>
+
+                        <div class="post-prev-text">
+                            <?php echo mb_substr($post->getContent(), 0 , 200, 'utf-8') ?>
+                        </div>
+
+                        <div class="post-prev-more">
+                            <a href="<?php echo $this->url('view-news', array('lang' => $lang, 'url' => $post->getUrl())) ?>" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i
+                                    class="fa fa-angle-right"></i></a>
+                        </div>
+
+                    </div>
+                    <!-- End Post Item -->
+
+                <?php endforeach ?>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End About Section -->
+
+<?php endif ?>
+
+<!-- Divider -->
+<hr class="mt-0 mb-0 "/>
+<!-- End Divider -->
+
+<!-- Services Section -->
+<section class="page-section" id="services">
+    <div class="container relative">
+
+        <h2 class="font-alt mb-sm-40 text-center">
+            Oferta
+        </h2>
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs tpl-alt-tabs font-alt pt-30 pt-sm-0 pb-30 pb-sm-0">
+            <li class="active">
+                <a href="#tarcica" data-toggle="tab">
+
+                    <div class="alt-tabs-icon">
+                        <img src="images/tarcica.png" alt="tarcica"/>
+                    </div>
+
+                    Tarcica sucha
+                </a>
+            </li>
+            <li>
+                <a href="#deska" data-toggle="tab">
+
+                    <div class="alt-tabs-icon">
+                        <img src="images/deska.png" alt="deska"/>
+                    </div>
+
+                    Deska podłogowa
+                </a>
+            </li>
+            <li>
+                <a href="#wiezba" data-toggle="tab">
+
+                    <div class="alt-tabs-icon">
+                        <img src="images/wiezba.png" alt="deska"/>
+                    </div>
+
+                    Więźba dachowa
+                </a>
+            </li>
+            <li>
+                <a href="#klejone" data-toggle="tab">
+
+                    <div class="alt-tabs-icon">
+                        <img src="images/klejone.png" alt="deska"/>
+                    </div>
+
+                    Elementy klejone
+                </a>
+            </li>
+            <li>
+                <a href="#ramiak" data-toggle="tab">
+
+                    <div class="alt-tabs-icon">
+                        <img src="images/ramiak.png" alt="deska"/>
+                    </div>
+
+                    Ramiak drzwiowy
+                </a>
+            </li>
+            <li>
+                <a href="#akcesoria" data-toggle="tab">
+
+                    <div class="alt-tabs-icon">
+                        <img src="images/akcesoria.png" alt="deska"/>
+                    </div>
+
+                    Akcesoria
+                </a>
+            </li>
+
+        </ul>
+        <!-- End Nav tabs -->
+
+        <!-- Tab panes -->
+        <div class="tab-content tpl-tabs-cont">
+
+            <!-- Service Item -->
+            <div class="tab-pane fade in active" id="tarcica">
+
+                <div class="section-text">
+                    <div class="row">
+                        <div class="col-md-4 mb-md-40 mb-xs-30">
+                            <img src="images/deski.png" alt="deski"/>
+                        </div>
+                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+                            Maecenas volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur
+                            fermentum
+                            volutpat nibh, accumsan purus. Lorem ipsum dolor sit semper amet, consectetur adipiscing
+                            elit.
+                            In maximus ligula metus pellentesque mattis.
+                        </div>
+                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+                            Donec vel ultricies purus. Nam dictum sem, ipsum aliquam . Etiam sit amet fringilla lacus.
+                            Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus.
+                            Praesent sed nisi eleifend, fermentum orci amet, iaculis libero.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Service Item -->
+
+            <!-- Service Item -->
+            <div class="tab-pane fade in" id="deska">
+
+                <div class="section-text">
+                    <div class="row">
+                        <div class="col-md-4 mb-md-40 mb-xs-30">
+                            <img src="images/deski.png" alt="deski"/>
+                        </div>
+                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+                            Maecenas volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur
+                            fermentum
+                            volutpat nibh, accumsan purus. Lorem ipsum dolor sit semper amet, consectetur adipiscing
+                            elit.
+                            In maximus ligula metus pellentesque mattis.
+                        </div>
+                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+                            Donec vel ultricies purus. Nam dictum sem, ipsum aliquam . Etiam sit amet fringilla lacus.
+                            Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus.
+                            Praesent sed nisi eleifend, fermentum orci amet, iaculis libero.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Service Item -->
+
+            <!-- Service Item -->
+            <div class="tab-pane fade in" id="wiezba">
+
+                <div class="section-text">
+                    <div class="row">
+                        <div class="col-md-4 mb-md-40 mb-xs-30">
+                            <img src="images/deski.png" alt="deski"/>
+                        </div>
+                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+                            Maecenas volutpat, diam enim sagittis quam, id porta quam. Sed id dolor consectetur
+                            fermentum
+                            volutpat nibh, accumsan purus. Lorem ipsum dolor sit semper amet, consectetur adipiscing
+                            elit.
+                            In maximus ligula metus pellentesque mattis.
+                        </div>
+                        <div class="col-md-4 col-sm-6 mb-sm-50 mb-xs-30">
+                            Donec vel ultricies purus. Nam dictum sem, ipsum aliquam . Etiam sit amet fringilla lacus.
+                            Pellentesque suscipit ante at ullamcorper pulvinar neque porttitor. Integer lectus.
+                            Praesent sed nisi eleifend, fermentum orci amet, iaculis libero.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- End Service Item -->
+
+        </div>
+        <!-- End Tab panes -->
+
+        <div class="align-right" style="margin-right: 50px; margin-top: -40px">
+            <a href="pages-services-1.html" class="section-more font-alt"><i class="fa fa-angle-down fa-2x"></i> Zobacz asortyment</a>
+        </div>
+
+    </div>
+</section>
+<!-- End Services Section -->
+
+<section class="page-section bg-gray fullwidth-slider1 bg-scroll" data-background="images/slider-tlo.png" style="padding: 125px 0">
+
+    <!-- Slide Item -->
+    <div>
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 align-center">
+
+                    <!-- Section Title -->
+                    <h2 class="small-title font-alt" style="color: white; opacity: .8;">Opinie klientów na nasz temat</h2>
+                    <blockquote class="testimonial" style="color: white">
+                        <p>
+                            Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
+                            risus utaliquam dapibus. Thanks!
+                        </p>
+                        <footer class="testimonial-author">
+                            John Doe, doodle inc.
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Slide Item -->
+
+    <!-- Slide Item -->
+    <div>
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 align-center">
+
+                    <!-- Section Title -->
+                    <h2 class="small-title font-alt" style="color: white; opacity: .8;">Opinie klientów na nasz temat</h2>
+                    <blockquote class="testimonial" style="color: white">
+                        <p>
+                            Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
+                            risus utaliquam dapibus. Thanks!
+                        </p>
+                        <footer class="testimonial-author">
+                            John Doe, doodle inc.
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Slide Item -->
+
+    <!-- Slide Item -->
+    <div>
+        <div class="container relative">
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2 align-center">
+
+                    <!-- Section Title -->
+                    <h2 class="small-title font-alt" style="color: white">Opinie klientów na nasz temat</h2>
+                    <blockquote class="testimonial" style="color: white">
+                        <p>
+                            Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
+                            risus utaliquam dapibus. Thanks!
+                        </p>
+                        <footer class="testimonial-author">
+                            John Doe, doodle inc.
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Slide Item -->
+
+</section>
+<!-- End Testimonials Section -->

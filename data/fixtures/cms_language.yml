@@ -1,0 +1,10 @@
+pl:
+  name: Polski
+  shortcut: pl_PL
+  url_shortcut: pl
+  filename: null
+en:
+  name: Angielski
+  shortcut: en_GB
+  url_shortcut: en
+  filename: null

@@ -1,0 +1,15 @@
+2015-08-07T19:15:38+02:00 CRIT (2): exception 'Zend\Form\Exception\InvalidElementException' with message 'No element by the name of [url] found in form' in /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Form/Fieldset.php:223
+Stack trace:
+#0 /media/wtk13/Reszta/htdocs/tartak/vendor/cms-ir/cms-ir/src/CmsIr/Page/view/cms-ir/page/edit.phtml(19): Zend\Form\Fieldset->get('url')
+#1 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/media/wtk13/Re...')
+#2 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#3 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(233): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#4 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/View/View.php(198): Zend\View\View->renderChildren(Object(Zend\View\Model\ViewModel))
+#5 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/View/Http/DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#6 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#7 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#8 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#9 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#10 /media/wtk13/Reszta/htdocs/tartak/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#11 /media/wtk13/Reszta/htdocs/tartak/public/index.php(17): Zend\Mvc\Application->run()
+#12 {main}

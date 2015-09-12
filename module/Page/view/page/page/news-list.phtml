@@ -1,0 +1,114 @@
+<!-- Head Section -->
+<section class="page-section"
+         style="padding: 215px 0 140px 0; background: url(<?php echo $this->basePath('images/aktualnosci-bg.png') ?>) no-repeat; background-size: 100% 100%;">
+    <div class="relative container align-left">
+
+        <div class="row">
+
+            <div class="col-md-8">
+                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0" style="color: white">Aktualności</h1>
+
+                <div class="hs-line-4 font-alt">
+                    Najnowsze ciekawostki i informacje z naszej branży
+                </div>
+            </div>
+
+            <div class="col-md-4 mt-30">
+                <div class="mod-breadcrumbs font-alt align-right" style="color: white">
+                    <a href="<?php echo $this->url('home', array('lang' => $lang)) ?>" style="color: white">Home</a>&nbsp;/&nbsp;<a href="#" style="color: white">Aktualności</a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+</section>
+<!-- End Head Section -->
+
+<!-- Section -->
+<section class="page-section">
+    <div class="container relative">
+
+        <div class="row">
+
+            <!-- Content -->
+            <div class="col-sm-10 col-sm-offset-1">
+
+                <?php /* @var $post \CmsIr\Post\Model\Post */ ?>
+                <?php foreach($paginator as $post) : ?>
+
+                    <div class="blog-item">
+
+                        <?php $date = explode(' ', $post->getDate()) ?>
+
+                        <!-- Date -->
+                        <div class="blog-item-date">
+                            <span class="date-num"><?php echo $date[0] ?></span><?php echo $date[1] ?>
+                        </div>
+
+                        <!-- Post Title -->
+                        <h2 class="blog-item-title font-alt"><?php echo $post->getTitle() ?></h2>
+
+                        <!-- Author, Categories, Comments -->
+                        <div class="blog-item-data">
+                            <i class="fa fa-user"></i> <?php echo $post->getAuthor() ?>
+                        </div>
+
+                        <?php $files = $post->getFiles() ?>
+
+                        <?php if(!empty($files)): ?>
+
+                            <!-- Media Gallery -->
+                            <div class="blog-media">
+                                <ul class="clearlist content-slider">
+
+                                    <?php /* @var $file \CmsIr\File\Model\File */ ?>
+                                    <?php foreach($files as $file): ?>
+
+                                        <li>
+                                            <img class="img-responsive" style="max-width: 945px; max-height: 532px;" src="<?php echo $this->basePath('files/post/' . $file->getFilename()) ?>" alt=""/>
+                                        </li>
+
+                                    <?php endforeach ?>
+
+                                </ul>
+                            </div>
+
+                        <?php endif ?>
+
+                        <!-- Text Intro -->
+                        <div class="blog-item-body">
+                            <?php echo mb_substr($post->getContent(), 0, 500, 'utf-8') ?>
+                        </div>
+
+                        <div class="post-prev-more">
+                            <a href="<?php echo $this->url('view-news', array('lang' => $lang, 'url' => $post->getUrl())) ?>" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i
+                                    class="fa fa-angle-right"></i></a>
+                        </div>
+
+                    </div>
+
+                <?php endforeach; ?>
+
+                <?php
+                // add at the end of the file after the table
+                echo $this->paginationControl(
+                // the paginator object
+                    $this->paginator,
+                    // the scrolling style
+                    'sliding',
+                    // the partial to use to render the control
+                    'partial/pagination',
+                    // the route to link to when a user clicks a control link
+                    array('lang' => $lang)
+                );
+                ?>
+
+            </div>
+            <!-- End Content -->
+
+        </div>
+
+    </div>
+</section>
+<!-- End Section -->

@@ -9,11 +9,11 @@ class CmsCreatePage extends AbstractMigration
     {
         $this->table('cms_page', array())
              ->addColumn('name', 'string')
-             ->addColumn('subtitle', 'string', array('null'=>true))
-             ->addColumn('slug', 'string')
-             ->addColumn('url', 'string')
+//             ->addColumn('title', 'string', array('null'=>true))
+//             ->addColumn('subtitle', 'string', array('null'=>true))
+//             ->addColumn('url', 'string')
              ->addColumn('status_id', 'integer')
-             ->addColumn('content', 'text', array('null'=>true))
+//             ->addColumn('content', 'text', array('null'=>true))
              ->addColumn('filename_main', 'string', array('null'=>true))
              ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
              ->save();

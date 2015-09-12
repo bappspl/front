@@ -1,9 +1,9 @@
-project.source.dir = D:\xampp\htdocs\web-ir\demo
+project.source.dir = /media/wtk13/Reszta/htdocs/tartak
 sync.source.dir = ${project.source.dir}
-phinx.bin = D:\xampp\htdocs\web-ir\demo\vendor\robmorgan\phinx\bin\phinx.bat
+phinx.bin = php ./vendor/bin/phinx
 phinx.config = phinx.yml
 pdo.driver = mysql
-db.host = localhost
-db.name = demo
+db.host = 127.0.0.1
+db.name = grodzka
 db.user = root
 db.pass = 

@@ -9,10 +9,10 @@ class CmsCreatePost extends AbstractMigration
     {
         $this->table('cms_post', array())
              ->addColumn('name', 'string')
-             ->addColumn('url', 'string')
+//             ->addColumn('url', 'string')
              ->addColumn('status_id', 'integer')
              ->addColumn('category', 'string', array('null'=>true))
-             ->addColumn('text', 'text')
+//             ->addColumn('text', 'text')
              ->addColumn('date', 'datetime', array('null'=>true))
              ->addColumn('author_id', 'integer')
              ->addColumn('filename_main', 'string', array('null'=>true))

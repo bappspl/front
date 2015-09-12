@@ -6,6 +6,11 @@ use CmsIr\Page\Model\Page;
 use CmsIr\Post\Model\Post;
 use Zend\Db\Sql\Predicate\IsNotNull;
 use Zend\Mvc\Controller\AbstractActionController;
+use Zend\Paginator\Adapter\ArrayAdapter;
+use Zend\Paginator\Adapter\DbSelect;
+use Zend\Paginator\Adapter\Iterator;
+use Zend\Paginator\Paginator;
+use Zend\Session\Container;
 use Zend\View\Model\ViewModel;
 
 use Zend\Json\Json;
@@ -24,7 +29,34 @@ class PageController extends AbstractActionController
 {
     public function homeAction()
     {
+        $this->layout('layout/home');
+
+        $home = 'home';
+        $this->layout()->setVariable('home', $home);
+
+        $slider = $this->getSliderService()->findOneBySlug('slider-glowny');
+        $items = $slider->getItems();
+
+        $this->layout()->setVariable('items', $items);
+
+        $lang = $this->getLangId($this->params()->fromRoute('lang'));
+
+        if($lang->getId() == 1)
+        {
+            $url = 'historia';
+        } else
+        {
+            $url = 'history';
+        }
+
+        $history = $this->getPageService()->findOneByUrlAndLangIdWithBlocks($url, $lang->getId());
+
+        $posts = $this->getPostService()->findLastPostsByLangIdWithBlocks($lang->getId(), 'j F', 3);
+
         $viewParams = array();
+        $viewParams['history'] = $history;
+        $viewParams['lang'] = $lang->getUrlShortcut();
+        $viewParams['posts'] = $posts;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
@@ -34,14 +66,20 @@ class PageController extends AbstractActionController
     {
         $this->layout('layout/home');
 
-        $slug = $this->params('slug');
+        $url = $this->params('url');
 
-        $page = $this->getPageService()->findOneBySlug($slug);
-        if(empty($page)){
+        $lang = $this->getLangId($this->params()->fromRoute('lang'));
+
+        $page = $this->getPageService()->findOneByUrlAndLangIdWithBlocks($url, $lang->getId());
+
+        if(empty($page))
+        {
             $this->getResponse()->setStatusCode(404);
         }
 
         $viewParams = array();
+        $viewParams['page'] = $page;
+        $viewParams['lang'] = $lang->getUrlShortcut();
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
 
@@ -52,7 +90,20 @@ class PageController extends AbstractActionController
     {
         $this->layout('layout/home');
 
+        $lang = $this->getLangId($this->params()->fromRoute('lang'));
+
+        $page = $this->params()->fromRoute('page') ? (int) $this->params()->fromRoute('page') : 1;
+
+        $posts = $this->getPostService()->findLastPostsByLangIdWithBlocks($lang->getId(), 'j M');
+
+        $paginator = new Paginator(new ArrayAdapter($posts));
+        $paginator->setCurrentPageNumber($page)
+            ->setItemCountPerPage(3);
+
         $viewParams = array();
+        $viewParams['page'] = $page;
+        $viewParams['paginator'] = $paginator;
+        $viewParams['lang'] = $lang->getUrlShortcut();
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
@@ -62,9 +113,20 @@ class PageController extends AbstractActionController
     {
         $this->layout('layout/home');
 
-        $slug = $this->params('slug');
+        $url = $this->params('url');
+
+        $lang = $this->getLangId($this->params()->fromRoute('lang'));
+
+        $post = $this->getPostService()->findOneByUrlAndLangIdWithBlocks($url, $lang->getId(), 'news');
+
+        if(empty($post))
+        {
+            $this->getResponse()->setStatusCode(404);
+        }
 
         $viewParams = array();
+        $viewParams['post'] = $post;
+        $viewParams['lang'] = $lang->getUrlShortcut();
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
@@ -218,6 +280,25 @@ class PageController extends AbstractActionController
 
         return array();
     }
+
+    public function getSessionLangId()
+    {
+        $session = new Container();
+        return isset($session->id) ? $session->id : 1;
+    }
+
+    public function getLangId($lang)
+    {
+        if(isset($lang))
+        {
+            $langId = $this->getLanguageTable()->getOneBy(array('url_shortcut' => $lang));
+            return $langId;
+        } else
+        {
+            return 1;
+        }
+    }
+
     /**
      * @return \CmsIr\Menu\Service\MenuService
      */
@@ -267,22 +348,6 @@ class PageController extends AbstractActionController
     }
 
     /**
-     * @return \CmsIr\Post\Model\PostFileTable
-     */
-    public function getPostFileTable()
-    {
-        return $this->getServiceLocator()->get('CmsIr\Post\Model\PostFileTable');
-    }
-
-    /**
-     * @return \CmsIr\Users\Service\UsersService
-     */
-    public function getUsersService()
-    {
-        return $this->getServiceLocator()->get('CmsIr\Users\Service\UsersService');
-    }
-
-    /**
      * @return \CmsIr\File\Model\FileTable
      */
     public function getFileTable()
@@ -296,5 +361,21 @@ class PageController extends AbstractActionController
     public function getPlaceTable()
     {
         return $this->getServiceLocator()->get('CmsIr\Place\Model\PlaceTable');
+    }
+
+    /**
+     * @return \CmsIr\System\Model\LanguageTable
+     */
+    public function getLanguageTable()
+    {
+        return $this->getServiceLocator()->get('CmsIr\System\Model\LanguageTable');
+    }
+
+    /**
+     * @return \CmsIr\Post\Service\PostService
+     */
+    public function getPostService()
+    {
+        return $this->getServiceLocator()->get('CmsIr\Post\Service\PostService');
     }
 }
