@@ -252,7 +252,7 @@ class PageController extends AbstractActionController
 
             $htmlMarkup = "Imię i Nazwisko: " . $name .  ' ' . $surname . "<br>" .
                 "Telefon: " . $phone . "<br>" .
-                "Email: " . $email . "<br>" .
+                "Telefon: " . $phone . "<br>" .
                 "Treść: " . $text;
 
             $html = new MimePart($htmlMarkup);

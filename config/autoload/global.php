@@ -17,5 +17,5 @@ return array(
      'app_name' => 'tartak',
      'logger_mail' => false,
      'piwik' => 'http://piwik.web-ir.pl',
-     'languages' => array('pl', 'en')
+     'languages' => array('pl', 'en', 'de')
 );

@@ -49,7 +49,105 @@
         init_map();
         init_wow();
         init_masonry();
+
+        $('#newsletter-submit').click(function(e) {
+            e.preventDefault();
+
+            var input = $('.newsletter-field').val();
+
+            if(input.length > 0 && IsEmail(input)) {
+                $('.newsletter-field').css('border', '1px solid rgba(0,0,0, .1)');
+
+                $.ajax({
+                    type: "POST",
+                    url: "/save-new-subscriber",
+                    dataType : 'json',
+                    data: {
+                        email: input
+                    },
+                    success: function(json)
+                    {
+                        $('.newsletter-field').val('');
+                        $('#newsletter-submit').addClass('disabled').text('Poprawnie dodano');
+                    }
+                });
+
+
+            } else {
+                $('.newsletter-field').css('border', '2px solid red');
+            }
+
+        });
+
+        $('#submit_btn').click(function(e) {
+            e.preventDefault();
+
+            var name = $('#name').val();
+            var surname = $('#surname').val();
+            var phone = $('#phone').val();
+            var message = $('#message').val();
+
+            var error = 0;
+
+            if(name == '') {
+                $('#name').css('border', '1px solid red');
+                error++;
+            } else {
+                $('#name').css('border', '1px solid rgba(0,0,0, .1)');
+            }
+
+            if(surname == '') {
+                $('#surname').css('border', '1px solid red');
+                error++;
+            } else {
+                $('#surname').css('border', '1px solid rgba(0,0,0, .1)');
+            }
+
+            if(phone == '') {
+                $('#phone').css('border', '1px solid red');
+                error++;
+            } else {
+                $('#phone').css('border', '1px solid rgba(0,0,0, .1)');
+            }
+
+            if(message == '') {
+                $('#message').css('border', '1px solid red');
+                error++;
+            } else {
+                $('#message').css('border', '1px solid rgba(0,0,0, .1)');
+            }
+
+            if(error == 0) {
+                $.ajax({
+                    type: "POST",
+                    url: "/contact-form",
+                    dataType : 'json',
+                    data: {
+                        name: name,
+                        surname: surname,
+                        phone: phone,
+                        text: message
+                    },
+                    success: function(json)
+                    {
+                        $('#name').val('');
+                        $('#surname').val('');
+                        $('#phone').val('');
+                        $('#message').val('');
+                        $('#submit_btn').addClass('disabled').text('Poprawnie wysłano');
+                    }
+                });
+            }
+
+        });
+
+
     });
+
+    function IsEmail(email) {
+        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+        return regex.test(email);
+    }
     
     $(window).resize(function(){
         
