@@ -338,76 +338,40 @@
 </section>
 <!-- End Services Section -->
 
-<section class="page-section bg-gray fullwidth-slider1 bg-scroll" data-background="images/slider-tlo.png" style="padding: 125px 0">
+<?php if(!empty($opinions)): ?>
 
-    <!-- Slide Item -->
-    <div>
-        <div class="container relative">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 align-center">
+    <section class="page-section bg-gray fullwidth-slider1 bg-scroll" data-background="images/slider-tlo.png" style="padding: 125px 0">
 
-                    <!-- Section Title -->
-                    <h2 class="small-title font-alt" style="color: white; opacity: .8;">Opinie klientów na nasz temat</h2>
-                    <blockquote class="testimonial" style="color: white">
-                        <p>
-                            Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
-                            risus utaliquam dapibus. Thanks!
-                        </p>
-                        <footer class="testimonial-author">
-                            John Doe, doodle inc.
-                        </footer>
-                    </blockquote>
+        <?php /* @var $opinion \CmsIr\Post\Model\Post */ ?>
+        <?php foreach($opinions as $opinion): ?>
+
+            <!-- Slide Item -->
+            <div>
+                <div class="container relative">
+                    <div class="row">
+                        <div class="col-md-8 col-md-offset-2 align-center">
+
+                            <!-- Section Title -->
+                            <h2 class="small-title font-alt" style="color: white; opacity: .8;">Opinie klientów na nasz temat</h2>
+                            <blockquote class="testimonial" style="color: white">
+
+                                <?php echo $opinion->getContent() ?>
+
+                                <footer class="testimonial-author">
+
+                                    <?php echo $opinion->getClient() ?>
+
+                                </footer>
+                            </blockquote>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <!-- End Slide Item -->
+            <!-- End Slide Item -->
 
-    <!-- Slide Item -->
-    <div>
-        <div class="container relative">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 align-center">
+        <?php endforeach ?>
 
-                    <!-- Section Title -->
-                    <h2 class="small-title font-alt" style="color: white; opacity: .8;">Opinie klientów na nasz temat</h2>
-                    <blockquote class="testimonial" style="color: white">
-                        <p>
-                            Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
-                            risus utaliquam dapibus. Thanks!
-                        </p>
-                        <footer class="testimonial-author">
-                            John Doe, doodle inc.
-                        </footer>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Slide Item -->
+    </section>
+    <!-- End Testimonials Section -->
 
-    <!-- Slide Item -->
-    <div>
-        <div class="container relative">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2 align-center">
-
-                    <!-- Section Title -->
-                    <h2 class="small-title font-alt" style="color: white">Opinie klientów na nasz temat</h2>
-                    <blockquote class="testimonial" style="color: white">
-                        <p>
-                            Phasellus luctus commodo ullamcorper a posuere rhoncus commodo elit. Aenean congue,
-                            risus utaliquam dapibus. Thanks!
-                        </p>
-                        <footer class="testimonial-author">
-                            John Doe, doodle inc.
-                        </footer>
-                    </blockquote>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- End Slide Item -->
-
-</section>
-<!-- End Testimonials Section -->
+<?php endif ?>

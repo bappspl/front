@@ -50,13 +50,14 @@ class PageController extends AbstractActionController
         }
 
         $history = $this->getPageService()->findOneByUrlAndLangIdWithBlocks($url, $lang->getId());
-
-        $posts = $this->getPostService()->findLastPostsByLangIdWithBlocks($lang->getId(), 'j F', 3);
+        $posts = $this->getPostService()->findLastPostsByLangIdWithBlocks($lang->getId(), 'news', 'j F', 3);
+        $opinions = $this->getPostService()->findLastPostsByLangIdWithBlocks($lang->getId(), 'opinion', 'j M');
 
         $viewParams = array();
         $viewParams['history'] = $history;
         $viewParams['lang'] = $lang->getUrlShortcut();
         $viewParams['posts'] = $posts;
+        $viewParams['opinions'] = $opinions;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
@@ -94,7 +95,7 @@ class PageController extends AbstractActionController
 
         $page = $this->params()->fromRoute('page') ? (int) $this->params()->fromRoute('page') : 1;
 
-        $posts = $this->getPostService()->findLastPostsByLangIdWithBlocks($lang->getId(), 'j M');
+        $posts = $this->getPostService()->findLastPostsByLangIdWithBlocks($lang->getId(), 'news', 'j M');
 
         $paginator = new Paginator(new ArrayAdapter($posts));
         $paginator->setCurrentPageNumber($page)
