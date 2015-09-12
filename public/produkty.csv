@@ -1,327 +1,321 @@
-TARCICA SUCHA;TD-28/E;TARCICA D•B;Extra;2,5-3,5;28;-;-;-;1;-;-;-;-;3 570,00 z≥
-;TD-28/I;TARCICA D•B;I;2,5-3,5;28;-;-;-;1;-;-;-;-;3 050,00 z≥
-;TD-28/II;TARCICA D•B;II;2,5-3,5;28;-;-;-;1;-;-;-;-;2 260,00 z≥
-;TD-28/III;TARCICA D•B;III;2,5-3,5;28;-;-;-;1;-;-;-;-;1 450,00 z≥
-;TDD-28/E;TARCICA D•B D£UGA;Extra;4,5;28;-;-;-;1;-;-;-;-;3 250,00 z≥
-;TDD-28/I;TARCICA D•B D£UGA;I;4,5;28;-;-;-;1;-;-;-;-;3 250,00 z≥
-;TDD-28/II;TARCICA D•B D£UGA;II;4,5;28;-;-;-;1;-;-;-;-;2 460,00 z≥
-;TDD-28/III;TARCICA D•B D£UGA;III;4,5;28;-;-;-;1;-;-;-;-;1 650,00 z≥
-;TD-38/E;TARCICA D•B;Extra;2,5-3,5;38;-;-;-;1;-;-;-;-;3 700,00 z≥
-;TD-38/I;TARCICA D•B;I;2,5-3,5;38;-;-;-;1;-;-;-;-;3 300,00 z≥
-;TD-38/II;TARCICA D•B;II;2,5-3,5;38;-;-;-;1;-;-;-;-;2 360,00 z≥
-;TD-38/III;TARCICA D•B;III;2,5-3,5;38;-;-;-;1;-;-;-;-;1 550,00 z≥
-;TD-50/E;TARCICA D•B;Extra;2,5-3,5;50;-;-;-;1;-;-;-;-;3 980,00 z≥
-;TD-50/I;TARCICA D•B;I;2,5-3,5;50;-;-;-;1;-;-;-;-;3 470,00 z≥
-;TD-50/II;TARCICA D•B;II;2,5-3,5;50;-;-;-;1;-;-;-;-;2 530,00 z≥
-;TD-50/III;TARCICA D•B;III;2,5-3,5;50;-;-;-;1;-;-;-;-;1 650,00 z≥
-;TDD-50/E;TARCICA D•B D£UGA;Extra;4,5;50;-;-;-;1;-;-;-;-;4 180,00 z≥
-;TDD-50/I;TARCICA D•B D£UGA;I;4,5;50;-;-;-;1;-;-;-;-;3 670,00 z≥
-;TDD-50/II;TARCICA D•B D£UGA;II;4,5;50;-;-;-;1;-;-;-;-;2 730,00 z≥
-;TDD-50/III;TARCICA D•B D£UGA;III;4,5;50;-;-;-;1;-;-;-;-;1 850,00 z≥
-;TJ-28/E;TARCICA JESION;Extra;2,5-3,5;28;-;-;-;1;-;-;-;-;2 910,00 z≥
-;TJ-28/I;TARCICA JESION;I;2,5-3,5;28;-;-;-;1;-;-;-;-;2 220,00 z≥
-;TJ-28/II;TARCICA JESION;II;2,5-3,5;28;-;-;-;1;-;-;-;-;1 790,00 z≥
-;TJ-28/III;TARCICA JESION;III;2,5-3,5;28;-;-;-;1;-;-;-;-;880,00 z≥
-;TJD-28/E;TARCICA JESION D£UGA;Extra;4,5;28;-;-;-;1;-;-;-;-;3 110,00 z≥
-;TJD-28/I;TARCICA JESION D£UGA;I;4,5;28;-;-;-;1;-;-;-;-;2 420,00 z≥
-;TJD-28/II;TARCICA JESION D£UGA;II;4,5;28;-;-;-;1;-;-;-;-;1 990,00 z≥
-;TJD-28/III;TARCICA JESION D£UGA;III;4,5;28;-;-;-;1;-;-;-;-;1 080,00 z≥
-;TJ-38/E;TARCICA JESION;Extra;2,5-3,5;38;-;-;-;1;-;-;-;-;3 170,00 z≥
-;TJ-38/I;TARCICA JESION;I;2,5-3,5;38;-;-;-;1;-;-;-;-;2 480,00 z≥
-;TJ-38/II;TARCICA JESION;II;2,5-3,5;38;-;-;-;1;-;-;-;-;1 850,00 z≥
-;TJ-38/III;TARCICA JESION;III;2,5-3,5;38;-;-;-;1;-;-;-;-;980,00 z≥
-;TJ-50/E;TARCICA JESION;Extra;2,5-3,5;50;-;-;-;1;-;-;-;-;3 170,00 z≥
-;TJ-50/I;TARCICA JESION;I;2,5-3,5;50;-;-;-;1;-;-;-;-;2 480,00 z≥
-;TJ-50/II;TARCICA JESION;II;2,5-3,5;50;-;-;-;1;-;-;-;-;1 850,00 z≥
-;TJ-50/III;TARCICA JESION;III;2,5-3,5;50;-;-;-;1;-;-;-;-;980,00 z≥
-;TJD-50/E;TARCICA JESION D£UGA;Extra;4,5;50;-;-;-;1;-;-;-;-;3 370,00 z≥
-;TJD-50/I;TARCICA JESION D£UGA;I;4,5;50;-;-;-;1;-;-;-;-;2 680,00 z≥
-;TJD-50/II;TARCICA JESION D£UGA;II;4,5;50;-;-;-;1;-;-;-;-;2 050,00 z≥
-;TJD-50/III;TARCICA JESION D£UGA;III;4,5;50;-;-;-;1;-;-;-;-;1 180,00 z≥
-;TJ-65/E;TARCICA JESION;Extra;4,5;65;-;-;-;1;-;-;-;-;3 370,00 z≥
-;TJ-65/I;TARCICA JESION;I;4,5;65;-;-;-;1;-;-;-;-;2 680,00 z≥
-;TJ-65/II;TARCICA JESION;II;4,5;65;-;-;-;1;-;-;-;-;2 050,00 z≥
-;TJ-65/III;TARCICA JESION;III;4,5;65;-;-;-;1;-;-;-;-;1 180,00 z≥
-;TB-26/E;TARCICA BUK;Extra;2,5-3,5;26;-;-;-;1;-;-;-;-;1 800,00 z≥
-;TB-26/I;TARCICA BUK;I;2,5-3,5;26;-;-;-;1;-;-;-;-;1 450,00 z≥
-;TB-26/II;TARCICA BUK;II;2,5-3,5;26;-;-;-;1;-;-;-;-;1 250,00 z≥
-;TB-26/III;TARCICA BUK;III;2,5-3,5;26;-;-;-;1;-;-;-;-;750,00 z≥
-;TB-26/T;TARCICA BUK;Twar.;2,5-3,5;26;-;-;-;1;-;-;-;-;1 150,00 z≥
-;TB-38/E;TARCICA BUK;Extra;2,5-3,5;38;-;-;-;1;-;-;-;-;1 980,00 z≥
-;TB-38/I;TARCICA BUK;I;2,5-3,5;38;-;-;-;1;-;-;-;-;1 530,00 z≥
-;TB-38/II;TARCICA BUK;II;2,5-3,5;38;-;-;-;1;-;-;-;-;1 330,00 z≥
-;TB-38/III;TARCICA BUK;III;2,5-3,5;38;-;-;-;1;-;-;-;-;980,00 z≥
-;TB-38/T;TARCICA BUK;Twar.;2,5-3,5;38;-;-;-;1;-;-;-;-;1 380,00 z≥
-;TB-50/E;TARCICA BUK;Extra;2,5-3,5;50;-;-;-;1;-;-;-;-;1 980,00 z≥
-;TB-50/I;TARCICA BUK;I;2,5-3,5;50;-;-;-;1;-;-;-;-;1 530,00 z≥
-;TB-50/II;TARCICA BUK;II;2,5-3,5;50;-;-;-;1;-;-;-;-;1 330,00 z≥
-;TB-50/III;TARCICA BUK;III;2,5-3,5;50;-;-;-;1;-;-;-;-;980,00 z≥
-;TB-50/T;TARCICA BUK;Twar.;2,5-3,5;50;-;-;-;1;-;-;-;;1 380,00 z≥
-;TBP-26/E;TARCICA BUK PARZONY;Extra;2,5-3,5;26;-;-;-;1;-;-;-;-;1 800,00 z≥
-;TBP-26/I;TARCICA BUK PARZONY;I;2,5-3,5;26;-;-;-;1;-;-;-;-;1 600,00 z≥
-;TBP-26/II;TARCICA BUK PARZONY;II;2,5-3,5;26;-;-;-;1;-;-;-;-;1 400,00 z≥
-;TBP-26/III;TARCICA BUK PARZONY;III;2,5-3,5;26;-;-;-;1;-;-;-;-;900,00 z≥
-;TBP-26/T;TARCICA BUK PARZONY;Twar.;2,5-3,5;26;-;-;-;1;-;-;-;-;1 300,00 z≥
-;TBP-38/E;TARCICA BUK PARZONY;Extra;2,5-3,5;38;-;-;-;1;-;-;-;-;2 190,00 z≥
-;TBP-38/I;TARCICA BUK PARZONY;I;2,5-3,5;38;-;-;-;1;-;-;-;-;1 680,00 z≥
-;TBP-38/II;TARCICA BUK PARZONY;II;2,5-3,5;38;-;-;-;1;-;-;-;-;1 480,00 z≥
-;TBP-38/III;TARCICA BUK PARZONY;III;2,5-3,5;38;-;-;-;1;-;-;-;-;980,00 z≥
-;TBP-38/T;TARCICA BUK PARZONY;Twar.;2,5-3,5;38;-;-;-;1;-;-;-;-;1 380,00 z≥
-;TBP-50/E;TARCICA BUK PARZONY;Extra;2,5-3,5;50;-;-;-;1;-;-;-;-;2 190,00 z≥
-;TBP-50/I;TARCICA BUK PARZONY;I;2,5-3,5;50;-;-;-;1;-;-;-;-;1 680,00 z≥
-;TBP-50/II;TARCICA BUK PARZONY;II;2,5-3,5;50;-;-;-;1;-;-;-;-;1 480,00 z≥
-;TBP-50/III;TARCICA BUK PARZONY;III;2,5-3,5;50;-;-;-;1;-;-;-;-;980,00 z≥
-;TBP-50/T;TARCICA BUK PARZONY;Twar.;2,5-3,5;50;-;-;-;1;-;-;-;-;1 380,00 z≥
-;TBP-80/I;TARCICA BUK PARZONY;I;2,5-3,5;80;-;-;-;1;-;-;-;-;1 880,00 z≥
-;TS-25/E;TARCICA SOSNA;Extra;05-mar;25;-;-;-;1;-;-;-;-;1 680,00 z≥
-;TS-25/I;TARCICA SOSNA;I;05-mar;25;-;-;-;1;-;-;-;-;1 300,00 z≥
-;TS-25/II;TARCICA SOSNA;II;05-mar;25;-;-;-;1;-;-;-;-;890,00 z≥
-;TS-25/III;TARCICA SOSNA;III;05-mar;25;-;-;-;1;-;-;-;-;680,00 z≥
-;TS-32/E;TARCICA SOSNA;Extra;05-mar;32;-;-;-;1;-;-;-;-;1 780,00 z≥
-;TS-32/I;TARCICA SOSNA;I;05-mar;32;-;-;-;1;-;-;-;-;1 380,00 z≥
-;TS-32/II;TARCICA SOSNA;II;05-mar;32;-;-;-;1;-;-;-;-;940,00 z≥
-;TS-32/III;TARCICA SOSNA;III;05-mar;32;-;-;-;1;-;-;-;-;750,00 z≥
-;TS-38/E;TARCICA SOSNA;Extra;3-4,3;38;-;-;-;1;-;-;-;-;1 780,00 z≥
-;TS-38/I;TARCICA SOSNA;I;3-4,3;38;-;-;-;1;-;-;-;-;1 380,00 z≥
-;TS-38/II;TARCICA SOSNA;II;3-4,3;38;-;-;-;1;-;-;-;-;940,00 z≥
-;TS-38/III;TARCICA SOSNA;III;3-4,3;38;-;-;-;1;-;-;-;-;750,00 z≥
-;TS-50/E;TARCICA SOSNA;Extra;4,3;50;-;-;-;1;-;-;-;-;1 780,00 z≥
-;TS-50/I;TARCICA SOSNA;I;4,3;50;-;-;-;1;-;-;-;-;1 380,00 z≥
-;TS-50/II;TARCICA SOSNA;II;4,3;50;-;-;-;1;-;-;-;-;940,00 z≥
-;TS-50/III;TARCICA SOSNA;III;4,3;50;-;-;-;1;-;-;-;-;750,00 z≥
-;TS-63/E;TARCICA SOSNA;Extra;4,3;63;-;-;-;1;-;-;-;-;1 780,00 z≥
-;TS-63/I;TARCICA SOSNA;I;4,3;63;-;-;-;1;-;-;-;-;1 380,00 z≥
-;TS-63/II;TARCICA SOSNA;II;4,3;63;-;-;-;1;-;-;-;-;940,00 z≥
-;TS-63/III;TARCICA SOSNA;III;4,3;63;-;-;-;1;-;-;-;-;750,00 z≥
-;TS-76/E;TARCICA SOSNA;Extra;4,3;76;-;-;-;1;-;-;-;-;1 780,00 z≥
-;TS-76/I;TARCICA SOSNA;I;4,3;76;-;-;-;1;-;-;-;-;1 380,00 z≥
-;TS-76/II;TARCICA SOSNA;II;4,3;76;-;-;-;1;-;-;-;-;940,00 z≥
-;TS-76/III;TARCICA SOSNA;III;4,3;76;-;-;-;1;-;-;-;-;750,00 z≥
-;TBR-28/E;TARCICA BRZOZA;Extra;2,5-3;28;-;-;-;1;-;-;-;-;1 620,00 z≥
-;TBR-28/I;TARCICA BRZOZA;I;2,5-3;28;-;-;-;1;-;-;-;-;1 300,00 z≥
-;TBR-28/II;TARCICA BRZOZA;II;2,5-3;28;-;-;-;1;-;-;-;-;880,00 z≥
-;TBR-28/III;TARCICA BRZOZA;III;2,5-3;28;-;-;-;1;-;-;-;-;680,00 z≥
-;TBR-38/E;TARCICA BRZOZA;Extra;2,5-3;38;-;-;-;1;-;-;-;-;1 720,00 z≥
-;TBR-38/I;TARCICA BRZOZA;I;2,5-3;38;-;-;-;1;-;-;-;-;1 380,00 z≥
-;TBR-38/II;TARCICA BRZOZA;II;2,5-3;38;-;-;-;1;-;-;-;-;900,00 z≥
-;TBR-38/III;TARCICA BRZOZA;III;2,5-3;38;-;-;-;1;-;-;-;-;680,00 z≥
-;TBR-50/E;TARCICA BRZOZA;Extra;2,5-3;50;-;-;-;1;-;-;-;-;1 720,00 z≥
-;TBR-50/I;TARCICA BRZOZA;I;2,5-3;50;-;-;-;1;-;-;-;-;1 380,00 z≥
-;TBR-50/II;TARCICA BRZOZA;II;2,5-3;50;-;-;-;1;-;-;-;-;900,00 z≥
-;TBR-50/III;TARCICA BRZOZA;III;2,5-3;50;-;-;-;1;-;-;-;-;680,00 z≥
-;TO-28/E;TARCICA OLCHA;Extra;2,5-3;28;-;-;-;1;-;-;-;-;1 680,00 z≥
-;TO-28/I;TARCICA OLCHA;I;2,5-3;28;-;-;-;1;-;-;-;-;1 380,00 z≥
-;TO-28/II;TARCICA OLCHA;II;2,5-3;28;-;-;-;1;-;-;-;-;990,00 z≥
-;TO-28/III;TARCICA OLCHA;III;2,5-3;28;-;-;-;1;-;-;-;-;700,00 z≥
-;TO-38/E;TARCICA OLCHA;Extra;2,5-3;38;-;-;-;1;-;-;-;-;1 780,00 z≥
-;TO-38/I;TARCICA OLCHA;I;2,5-3;38;-;-;-;1;-;-;-;-;1 410,00 z≥
-;TO-38/II;TARCICA OLCHA;II;2,5-3;38;-;-;-;1;-;-;-;-;990,00 z≥
-;TO-38/III;TARCICA OLCHA;III;2,5-3;38;-;-;-;1;-;-;-;-;700,00 z≥
-;TO-38/T;TARCICA OLCHA;Twar.;2,5-3;38;-;-;-;1;-;-;-;-;780,00 z≥
-;TO-50/E;TARCICA OLCHA;Extra;2,5-3;50;-;-;-;1;-;-;-;-;1 780,00 z≥
-;TO-50/I;TARCICA OLCHA;I;2,5-3;50;-;-;-;1;-;-;-;-;1 410,00 z≥
-;TO-50/II;TARCICA OLCHA;II;2,5-3;50;-;-;-;1;-;-;-;-;990,00 z≥
-;TO-50/III;TARCICA OLCHA;III;2,5-3;50;-;-;-;1;-;-;-;-;700,00 z≥
-;TO-50/T;TARCICA OLCHA;Twar.;2,5-3;50;-;-;-;1;-;-;-;-;780,00 z≥
-;TO-65/E;TARCICA OLCHA;Extra;2,5-3;65;-;-;-;1;-;-;-;-;1 780,00 z≥
-;TO-65/I;TARCICA OLCHA;I;2,5-3;65;-;-;-;1;-;-;-;-;1 410,00 z≥
-;TO-65/II;TARCICA OLCHA;II;2,5-3;65;-;-;-;1;-;-;-;-;990,00 z≥
-;TO-65/III;TARCICA OLCHA;III;2,5-3;65;-;-;-;1;-;-;-;-;700,00 z≥
-;TM-32/E;TARCICA MODRZEW;Extra;05-mar;32;-;-;-;1;-;-;-;-;2 100,00 z≥
-;TM-32/I;TARCICA MODRZEW;I;05-mar;32;-;-;-;1;-;-;-;-;1 680,00 z≥
-;TM-32/II;TARCICA MODRZEW;II;05-mar;32;-;-;-;1;-;-;-;-;1 080,00 z≥
-;TM-32/III;TARCICA MODRZEW;III;05-mar;32;-;-;-;1;-;-;-;-;780,00 z≥
-;TM-50/E;TARCICA MODRZEW;Extra;4;50;-;-;-;1;-;-;-;-;2 100,00 z≥
-;TM-50/I;TARCICA MODRZEW;I;4;50;-;-;-;1;-;-;-;-;1 680,00 z≥
-;TM-50/II;TARCICA MODRZEW;II;4;50;-;-;-;1;-;-;-;-;1 080,00 z≥
-;TM-50/III;TARCICA MODRZEW;III;4;50;-;-;-;1;-;-;-;-;780,00 z≥
-;TK-50/E;TARCICA KLON;Extra;2,5-3;50;-;-;-;1;-;-;-;-;3 390,00 z≥
-;TK-50/I;TARCICA KLON;I;2,5-3;50;-;-;-;1;-;-;-;-;2 850,00 z≥
-;TK-50/II;TARCICA KLON;II;2,5-3;50;-;-;-;1;-;-;-;-;1 980,00 z≥
-;TK-50/III;TARCICA KLON;III;2,5-3;50;-;-;-;1;-;-;-;-;1 350,00 z≥
-;TCZ-28/E;TARCICA CZEREåNIA;Extra;2,5-3;28;-;-;-;1;-;-;-;-;3 650,00 z≥
-;TCZ-28/I;TARCICA CZEREåNIA;I;2,5-3;28;-;-;-;1;-;-;-;-;2 950,00 z≥
-;TCZ-28/II;TARCICA CZEREåNIA;II;2,5-3;28;-;-;-;1;-;-;-;-;2 150,00 z≥
-;TCZ-28/III;TARCICA CZEREåNIA;III;2,5-3;28;-;-;-;1;-;-;-;-;1 350,00 z≥
-;TCZ-38/E;TARCICA CZEREåNIA;Extra;2,5-3;38;-;-;-;1;-;-;-;-;3 650,00 z≥
-;TCZ-38/I;TARCICA CZEREåNIA;I;2,5-3;38;-;-;-;1;-;-;-;-;3 950,00 z≥
-;TCZ-38/II;TARCICA CZEREåNIA;II;2,5-3;38;-;-;-;1;-;-;-;-;2 150,00 z≥
-;TCZ-38/III;TARCICA CZEREåNIA;III;2,5-3;38;-;-;-;1;-;-;-;-;1 350,00 z≥
-;TA-28/I;TARCICA AKACJA PARZONA;I;2-3,5;28;-;-;-;1;-;-;-;-;2 350,00 z≥
-;TA-28/II;TARCICA AKACJA PARZONA;II;2-3,5;28;-;-;-;1;-;-;-;-;1 850,00 z≥
-;TA-28/III;TARCICA AKACJA PARZONA;III;2-3,5;28;-;-;-;1;-;-;-;-;1 250,00 z≥
-;TA-50/I;TARCICA AKACJA PARZONA;I;2,5-3;50;-;-;-;1;-;-;-;-;2 350,00 z≥
-;TA-50/II;TARCICA AKACJA PARZONA;II;2,5-3;50;-;-;-;1;-;-;-;-;1 850,00 z≥
-;TA-50/III;TARCICA AKACJA PARZONA;III;2,5-3;50;-;-;-;1;-;-;-;-;1 250,00 z≥
-;;;;;;;;;;;;;;
-WI èBA DACHOWA SOSNA;TSN-25;TARCICA NIEIMPREGNOWANA;-;04-lut;25;-;-;-;1;-;-;-;-;550,00 z≥
-;TSI-25;TARCICA IMPREGNOWANA;-;04-lut;25;-;-;-;1;-;-;-;-;600,00 z≥
-;£S;£ATA;-;4;40;60;-;-;-;-;1;-;-;1,95 z≥
-;£S;£ATA;-;4;40;60;-;-;1;-;-;-;-;815,00 z≥
-;KS;KONTR£ATA;-;04-lut;25;50;-;-;-;-;1;-;-;1,00 z≥
-;KS;KONTR£ATA;-;04-lut;25;50;-;-;1;-;-;-;-;800,00 z≥
-;KRSN;KRAW DZIAKI NIEIMPREGNOWANE;-;0-13;-;-;-;-;1;-;-;-;-;780,00 z≥
-;KRSI;KRAW DZIAKI IMPREGNOWANE;-;0-13;-;-;-;-;1;-;-;-;-;800,00 z≥
-;BS-17;BOAZERIA;-;03-lut;17;90;-;-;-;1;-;-;-;29,50 z≥
-;BS-22;BOAZERIA;-;3;22;110;-;-;-;1;-;-;-;23,00 z≥
-;;;;;;;;;;;;;;
-DESKA POD£OGOWA;DPDS-145/1,2;D•B;SELECT;0,4-1,2;22;145;-;-;-;1;-;-;-;210,00 z≥
-;DPDS-145/1,8;D•B;SELECT;1,2-1,8;22;145;-;-;-;1;-;-;-;246,00 z≥
-;DPDS-145/2,2;D•B;SELECT;1,8-2,2;22;145;-;-;-;1;-;-;-;296,00 z≥
-;DPDN-145/1,2;D•B;NATURAL;0,4-1,2;22;145;-;-;-;1;-;-;-;162,00 z≥
-;DPDN-145/1,8;D•B;NATURAL;1,2-1,8;22;145;-;-;-;1;-;-;-;196,00 z≥
-;DPDN-145/2,2;D•B;NATURAL;1,8-2,2;22;145;-;-;-;1;-;-;-;248,00 z≥
-;DPDR-145/1,2;D•B;RUSTICAL;0,4-1,2;22;145;-;-;-;1;-;-;-;118,00 z≥
-;DPDR-145/1,8;D•B;RUSTICAL;1,2-1,8;22;145;-;-;-;1;-;-;-;155,00 z≥
-;DPDR-145/2,2;D•B;RUSTICAL;1,8-2,2;22;145;-;-;-;1;-;-;-;176,00 z≥
-;DPDN-180/1,2;D•B;NATURAL;0,4-1,2;22;180;-;-;-;1;-;-;-;240,00 z≥
-;DPDN-180/1,2;D•B;RUSTICAL;0,4-1,2;22;180;-;-;-;1;-;-;-;160,00 z≥
-;DPS-AB/3;SOSNA;AB;3;28;130;-;-;-;1;-;-;-;45,00 z≥
-;DPS-AB/4;SOSNA;AB;4;28;130;-;-;-;1;-;-;-;55,00 z≥
-;DPS-AB/4,5;SOSNA;AB;4,5;28;130;-;-;-;1;-;-;-;55,00 z≥
-;DPS-AB/5;SOSNA;AB;5;28;130;-;-;-;1;-;-;-;60,00 z≥
-;DPS-B/3;SOSNA;B;3;28;130;-;-;-;1;-;-;-;40,00 z≥
-;DPS-B/4;SOSNA;B;4;28;130;-;-;-;1;-;-;-;45,00 z≥
-;DPS-B/4,5;SOSNA;B;4,5;28;130;-;-;-;1;-;-;-;45,00 z≥
-;DPS-B/5;SOSNA;B;5;28;130;-;-;-;1;-;-;-;50,00 z≥
-;DPM-AB/3;MODRZEW;AB;3;28;130;-;-;-;1;-;-;-;70,00 z≥
-;DPM-AB/4;MODRZEW;AB;4;28;130;-;-;-;1;-;-;-;75,00 z≥
-;DPM-AB/4,5;MODRZEW;AB;4,5;28;130;-;-;-;1;-;-;-;75,00 z≥
-;DPM-AB/5;MODRZEW;AB;5;28;130;-;-;-;1;-;-;-;85,00 z≥
-;DPM-B/3;MODRZEW;B;3;28;130;-;-;-;1;-;-;-;50,00 z≥
-;DPM-B/4;MODRZEW;B;4;28;130;-;-;-;1;-;-;-;55,00 z≥
-;DPM-B/4,5;MODRZEW;B;4,5;28;130;-;-;-;1;-;-;-;55,00 z≥
-;DPM-B/5;MODRZEW;B;5;28;130;-;-;-;1;-;-;-;65,00 z≥
-;DPO-145/1,2;ORZECH;-;0,4-1,2;22;145;-;-;-;1;-;-;-;380,00 z≥
-;DPCZ-145/1,2;CZEREåNIA;-;0,4-1,2;22;145;-;-;-;1;-;-;-;235,00 z≥
-;DPB-AB/1,2;BUK PARZONY;AB;0,4-1,2;22;145;-;-;-;1;-;-;-;120,00 z≥
-;DPB-B/1,2;BUK PARZONY;B;0,4-1,2;22;145;-;-;-;1;-;-;-;89,00 z≥
-;DPK-N/1,2;KLON;NATURAL;0,4-1,2;22;145;-;-;-;1;-;-;-;162,00 z≥
-;DPK-N/1,8;KLON;NATURAL;1,2-1,8;22;145;-;-;-;1;-;-;-;178,00 z≥
-;DPK-N/2,2;KLON;NATURAL;1,8-2,2;22;145;-;-;-;1;-;-;-;215,00 z≥
-;DPK-R/1,2;KLON;RUSTICAL;0,4-1,2;22;145;-;-;-;1;-;-;-;118,00 z≥
-;DPK-R/1,8;KLON;RUSTICAL;1,2-1,8;22;145;-;-;-;1;-;-;-;144,00 z≥
-;DPK-R/2,2;KLON;RUSTICAL;1,8-2,2;22;145;-;-;-;1;-;-;-;165,00 z≥
-;DPBR-AB/1,2;BRZOZA;AB;0,4-1,2;22;145;-;-;-;1;-;-;-;75,00 z≥
-;DPBR-AB/1,8;BRZOZA;AB;1,2-1,8;22;145;-;-;-;1;-;-;-;85,00 z≥
-;DPBR-B/1,2;BRZOZA;B;0,4-1,2;22;145;-;-;-;1;-;-;-;52,00 z≥
-;DPBR-B/1,8;BRZOZA;B;1,2-1,8;22;145;-;-;-;1;-;-;-;62,00 z≥
-;DPDL;LONG D•B;-;0-7,2;22;do 205;-;-;-;1;-;-;-;98,00 z≥
-;DPJL;LONG JESION;-;0-7,2;22;do 205;-;-;-;1;-;-;-;93,00 z≥
-;DPDP-180/2,2;POSTARZANA D BOWA;-;0,4-2,2;22;180;-;-;-;1;-;-;-;380,00 z≥
-;DPDP-145/180/2,2;POSTARZANA D BOWA;-;0,4-2,2;22;145-180;-;-;-;1;-;-;-;330,00 z≥
-;DPDP-145/2,2;POSTARZANA D BOWA;-;0,4-2,2;22;145;-;-;-;1;-;-;-;320,00 z≥
-;DTS-140/3;DESKA TARASOWA SOSNA;AB;3;28;140;-;-;-;1;-;-;-;45,00 z≥
-;DTS-140/4,5;DESKA TARASOWA SOSNA;AB;4m-4,5m;28;140;-;-;-;1;-;-;-;55,00 z≥
-;DTS-140/5;DESKA TARASOWA SOSNA;AB;5;28;140;-;-;-;1;-;-;-;60,00 z≥
-;DTM-140/3;DESKA TARASOWA MODRZEW;AB;3;28;140;-;-;-;1;-;-;-;75,00 z≥
-;DTM-140/4,5;DESKA TARASOWA MODRZEW;AB;4m-4,5m;28;140;-;-;-;1;-;-;-;80,00 z≥
-;DTM-140/5;DESKA TARASOWA MODRZEW;AB;5;28;140;-;-;-;1;-;-;-;90,00 z≥
-;LS-22;LEGAR 22;-;4,5;22;65;-;-;-;-;1;-;-;2,55 z≥
-;LS-44;LEGAR 44;-;4,5;44;65;-;-;-;-;1;-;-;5,10 z≥
-;LS-66;LEGAR 66;-;4,5;66;65;-;-;-;-;1;-;;7,64 z≥
-;LS-88;LEGAR 88;-;4,5;88;65;-;-;-;-;1;-;-;10,18 z≥
-;LS-110;LEGAR 110;-;4,5;110;65;-;-;-;-;1;-;-;12,73 z≥
-;LS-132;LEGAR 132;-;4,5;132;65;-;-;-;-;1;-;-;15,27 z≥
-;LPD-65;LISTWA PRZYPOD£OGOWA D•B;-;1;22;65;-;-;-;-;1;-;-;12,00 z≥
-;LPJ-65;LISTWA PRZYPOD£OGOWA JESION;-;1;22;65;-;-;-;-;1;-;-;12,00 z≥
-;LPA-65;LISTWA PRZYPOD£OGOWA AKACJA;-;1;22;65;-;-;-;-;1;-;-;12,00 z≥
-;LPS-65;LISTWA PRZYPOD£OGOWA SOSNA;-;1;22;65;-;-;-;-;1;-;-;7,00 z≥
-;LPM-65;LISTWA PRZYPOD£OGOWA MODZREW;-;1;22;65;-;-;-;-;1;-;-;8,00 z≥
-;LPO-65;LISTWA PRZYPOD£OGOWA ORZECH;-;1;22;65;-;-;-;-;1;-;-;20,00 z≥
-;LPCZ-65;LISTWA PRZYPOD£OGOWA CZEREåNIA;-;1;22;65;-;-;-;-;1;-;-;14,00 z≥
-;LPBP-65/AB;LISTWA PRZYPOD£OGOWA BUK PARZONY KL AB;-;1;22;65;-;-;-;-;1;-;-;12,00 z≥
-;LPBP-65/B;LISTWA PRZYPOD£OGOWA BUK PARZONY KL B;-;1;22;65;-;-;-;-;1;-;-;9,00 z≥
-;LPK-65;LISTWA PRZYPOD£OGOWA KLON;-;1;22;65;-;-;-;-;1;-;-;12,00 z≥
-;LPBR-65;LISTWA PRZYPOD£OGOWA BRZOZA;-;1;22;65;-;-;-;-;1;-;-;7,00 z≥
-;LPDP-65;LISTWA PRZYPOD£OGOWA POSTARZANY D•B;-;1;22;65;-;-;-;-;1;-;-;26,00 z≥
-;;;;;;;;;;;;;;
-ELEMENTY KLEJONE;EKDL-AA/1,5;ELEMENTY D BOWE LITE NA D£UGOå∆;AA;0-1,5;44;-;-;-;-;1;-;-;-;330,00 z≥
-;EKDL-AB/1,5;ELEMENTY D BOWE LITE NA D£UGOå∆;AB;0-1,5;44;-;-;-;-;1;-;-;-;250,00 z≥
-;EKDL-AA/3;ELEMENTY D BOWE LITE NA D£UGOå∆;AA;1,5-3;44;-;-;-;-;1;-;-;-;450,00 z≥
-;EKDL-AB/3;ELEMENTY D BOWE LITE NA D£UGOå∆;AB;1,5-3;44;-;-;-;-;1;-;-;-;360,00 z≥
-;EKDL-AA/4;ELEMENTY D BOWE LITE NA D£UGOå∆;AA;04-mar;44;-;-;-;-;1;-;-;-;550,00 z≥
-;EKDL-AB/4;ELEMENTY D BOWE LITE NA D£UGOå∆;AB;04-mar;44;-;-;-;-;1;-;-;-;450,00 z≥
-;EKDK-AA/4;ELEMENTY D BOWE KLEJONE NA D£UGOå∆;AA;0-4;44;-;-;-;-;1;-;-;-;330,00 z≥
-;EKDK-AB/4;ELEMENTY D BOWE KLEJONE NA D£UGOå∆;AB;0-4;44;-;-;-;-;1;-;-;-;250,00 z≥
-;EKJL-AA/1,5;ELEMENTY JESIONOWE LITE NA D£UGOå∆;AA;0-1,5;44;-;-;-;-;1;-;-;-;330,00 z≥
-;EKJL-AB/1,5;ELEMENTY JESIONOWE LITE NA D£UGOå∆;AB;0-,15;44;-;-;-;-;1;-;-;-;250,00 z≥
-;EKJL-AA/3;ELEMENTY JESIONOWE LITE NA D£UGOå∆;AA;1,5-3;44;-;-;-;-;1;-;-;-;400,00 z≥
-;EKJL-AB/3;ELEMENTY JESIONOWE LITE NA D£UGOå∆;AB;1,5-3;44;-;-;-;-;1;-;-;-;360,00 z≥
-;EKJL-AA/4;ELEMENTY JESIONOWE LITE NA D£UGOå∆;AA;04-mar;44;-;-;-;-;1;-;-;-;525,00 z≥
-;EKJL-AB/4;ELEMENTY JESIONOWE LITE NA D£UGOå∆;AB;04-mar;44;-;-;-;-;1;-;-;-;400,00 z≥
-;EKJK-AA/4;ELEMENTY JESIONOWE KLEJONE NA D£UGOå∆;AA;0-4;44;-;-;-;-;1;-;-;-;330,00 z≥
-;EKJK-AB/4;ELEMENTY JESIONOWE KLEJONE NA D£UGOå∆;AB;0-4;44;-;-;-;-;1;-;-;-;250,00 z≥
-;EKBL-AA/1,5;ELEMENTY BUKOWE LITE NA D£UGOå∆;AA;0-1,5;44;-;-;-;-;1;-;-;-;330,00 z≥
-;EKBL-AB/1,5;ELEMENTY BUKOWE LITE NA D£UGOå∆;AB;0-,15;44;-;-;-;-;1;-;-;-;250,00 z≥
-;EKBL-AA/3;ELEMENTY BUKOWE LITE NA D£UGOå∆;AA;1,5-3;44;-;-;-;-;1;-;-;-;400,00 z≥
-;EKBL-AB/3;ELEMENTY BUKOWE LITE NA D£UGOå∆;AB;1,5-3;44;-;-;-;-;1;-;-;-;360,00 z≥
-;EKBK-AA/4;ELEMENTY BUKOWE KLEJONE NA D£UGOå∆;AA;0-4;44;-;-;-;-;1;-;-;-;330,00 z≥
-;EKBK-AB/4;ELEMENTY BUKOWE KLEJONE NA D£UGOå∆;AB;0-4;44;-;-;-;-;1;-;-;-;250,00 z≥
-;EKSL-AA/1,5;ELEMENTY SOSNOWE LITE NA D£UGOå∆;AA;0-1,5;44;-;-;-;-;1;-;-;-;180,00 z≥
-;EKSL-AB/1,5;ELEMENTY SOSNOWE LITE NA D£UGOå∆;AB;0-,15;44;-;-;-;-;1;-;-;-;150,00 z≥
-;EKSL-AA/3;ELEMENTY SOSNOWE LITE NA D£UGOå∆;AA;1,5-3;44;-;-;-;-;1;-;-;-;200,00 z≥
-;EKSL-AB/3;ELEMENTY SOSNOWE LITE NA D£UGOå∆;AB;1,5-3;44;-;-;-;-;1;-;-;-;170,00 z≥
-;EKSL-AA/4;ELEMENTY SOSNOWE LITE NA D£UGOå∆;AA;04-mar;44;-;-;-;-;1;-;-;-;300,00 z≥
-;EKSL-AB/4;ELEMENTY SOSNOWE LITE NA D£UGOå∆;AB;04-mar;44;-;-;-;-;1;-;-;-;200,00 z≥
-;EKSK-AA/4;ELEMENTY SOSNOWE KLEJONE NA D£UGOå∆;AA;0-4;44;-;-;-;-;1;-;-;-;180,00 z≥
-;EKSK-AB/4;ELEMENTY SOSNOWE KLEJONE NA D£UGOå∆;AB;0-4;44;-;-;-;-;1;-;-;-;150,00 z≥
-;;;;;;;;;;;;;-;
-;SZJ;SZLIFOWANIE JEDNOSTRONNE;-;-;-;-;-;-;-;1;-;-;-;20,00 z≥
-;SZD;SZLIFOWANIE DWUSTRONNE;-;-;-;-;-;-;-;1;-;-;-;40,00 z≥
-;F;FORMATYZOWANIE;;;;;;;;;;;;10% WARTOåCI MATERIA£U
-;PMB;P£YTA MEBLOWA BUKOWA (ZAPYTAJ U SPRZEDAWCY);;;;;;;;;;;;
-;;;;;;;;;;;;;;
-RAMIAK DRZWIOWY;RDD-43/125;KLEJONKA D BOWA OB£OGOWANA OB£OG• D BOW•;-;2,15;43;125;-;-;-;-;1;-;-;38,00 z≥
-;RDD-43/135;KLEJONKA D BOWA OB£OGOWANA OB£OG• D BOW•;-;2,15;43;135;-;-;-;-;1;-;-;41,00 z≥
-;RDD-43/145;KLEJONKA D BOWA OB£OGOWANA OB£OG• D BOW•;-;2,15;43;145;-;-;-;-;1;-;-;44,00 z≥
-;RDJ-43/125;KLEJONKA JESIONOWA OB£OGOWANA OB£OG• JESIONOW•;-;2,15;43;125;-;-;-;-;1;-;-;35,00 z≥
-;RDJ-43/135;KLEJONKA JESIONOWA OB£OGOWANA OB£OG• JESIONOW•;-;2,15;43;135;-;-;-;-;1;-;-;38,00 z≥
-;RDJ-43/145;KLEJONKA JESIONOWA OB£OGOWANA OB£OG• JESIONOW•;-;2,15;43;145;-;-;-;-;1;-;-;41,00 z≥
-;RDO-43/125;KLEJONKA OLCHOWA OB£OGOWANA OB£OG• OLCHOW•;-;2,15;43;125;-;-;-;-;1;-;-;34,00 z≥
-;RDO-43/145;KLEJONKA OLCHOWA OB£OGOWANA OB£OG• OLCHOW•;-;2,15;43;145;-;-;-;-;1;-;-;39,00 z≥
-;RDS-43/125;KLEJONKA SOSNOWA OB£OGOWANA OB£OG• SOSNOW•;-;2,15;43;125;-;-;-;-;1;-;-;33,00 z≥
-;RDS-43/145;KLEJONKA SOSNOWA OB£OGOWANA OB£OG• SOSNOW•;-;2,15;43;145;-;-;-;-;1;-;-;38,00 z≥
-;RDD-68/135;KLEJONKA D BOWA OB£OGOWANA OB£OG• D BOW•;-;2,15;68;135;-;-;-;-;1;-;-;65,00 z≥
-;RDS-68/135;KLEJONKA SOSNOWA OB£OGOWANA OB£OG• SOSNOW•;-;2,15;68;135;-;-;-;-;1;-;-;55,00 z≥
-;RDJ-68/135;KLEJONKA JESIONOWA OB£OGOWANA OB£OG• JESIONOW•;-;2,15;68;135;-;-;-;-;1;-;-;63,00 z≥
-;RDO-68/135;KLEJONKA OLCHOWA OB£OGOWANA OB£OG• OLCHOW•;-;2,15;68;135;-;-;-;-;1;-;-;58,00 z≥
-;OD-4;OB£OGI D BOWE;-;2,15;4;-;-;-;-;1;-;-;-;65,00 z≥
-;OD-3;OB£OGI D BOWE;-;2,15;3;-;-;-;-;1;-;-;-;55,00 z≥
-;OJ-4;OB£OGI JESIONOWE;-;2,15;4;-;-;-;-;1;-;-;-;65,00 z≥
-;OJ-3;OB£OGI JESIONOWE;-;2,15;3;-;-;-;-;1;-;-;-;55,00 z≥
-;OS-4;OB£OGI SOSNOWE;-;2,15;4;-;-;-;-;1;-;-;-;45,00 z≥
-;OS-3;OB£OGI SOSNOWE;-;2,15;3;-;-;-;-;1;-;-;-;35,00 z≥
-;OL-4;OB£OGI OLCHOWE;-;2,15;4;-;-;-;-;1;-;-;-;55,00 z≥
-;OL-3;OB£OGI OLCHOWE;-;2,15;3;-;-;-;-;1;-;-;-;45,00 z≥
-;;;;;;;;;;;;;;
-AKCESORIA POD£OGOWE;MAT-100;MATA POD PARKIET;-;50;-;1;-;-;-;1;-;-;-;1 000,00 z≥
-;WB-280;GRUNT DO MASY - DO POD£OØA NIECH£ONNY;-;-;-;-;5;-;-;-;-;-;1;108,00 z≥
-;C-700;MASA NAPRAWCZA;-;-;-;-;-;25;-;-;-;1;-;118,00 z≥
-;LIC-710;MASA SAMOPOZIOMUJ•CA;-;-;-;-;-;25;-;-;-;1;-;270,00 z≥
-;PB-230/4,5;GRUNT POLIURETANOWY;-;-;-;-;4,5;-;-;-;-;-;1;162,00 z≥
-;PB-230/9;GRUNT POLIURETANOWY;-;-;-;-;9;-;-;-;-;-;1;300,00 z≥
-;SU/5;ROZCIE—CZALNIK DO GRUNTU POLIURETANOWEGO ;-;-;-;-;5;-;-;-;-;-;1;104,00 z≥
-;SU/10;ROZCIE—CZALNIK DO GRUNTU POLIURETANOWEGO ;-;-;-;-;10;-;-;-;-;-;1;185,00 z≥
-;PB-235/5;GRUNT POLIURETANOWY NISKOEMISYJN;-;-;-;-;5;-;-;-;-;-;1;500,00 z≥
-;PB-235/10;GRUNT POLIURETANOWY NISKOEMISYJN;-;-;-;-;10;-;-;-;-;-;1;162,00 z≥
-;PB-890/5;KLEJ PU 2-SK£ADNIKOWY;-;-;-;-;-;5;-;-;-;1;-;99,00 z≥
-;PB-890/10;KLEJ PU 2-SK£ADNIKOWY;-;-;-;-;-;10;-;-;-;1;-;186,00 z≥
-;HB-810;KLEJ ELASTYCZNY HYBRYDOWY;-;-;-;-;-;15;-;-;-;1;-;350,00 z≥
-;PB-350;KLEJ PU NAPRAWKOWY;-;-;-;-;-;0,8;-;-;-;1;-;50,00 z≥
-;FS-410/5;SZPACHLA ROZPUSZCZALNIKOWA;-;-;-;-;5;-;-;-;-;-;1;140,00 z≥
-;FS-410/10;SZPACHLA ROZPUSZCZALNIKOWA;-;-;-;-;10;-;-;-;-;-;1;259,00 z≥
-;S-460/5;LAKIER PODK£ADOWY SYNTETYCZNY;-;-;-;-;5;-;-;-;-;-;1;200,00 z≥
-;PW-460;LAKIER POLIURETANOWY WODNY 2K (P”£MAT);-;-;-;-;5,35;-;-;-;-;-;1;414,00 z≥
-;AB-441;LAKIER 2K CHEMOUTWARDZALNY (P”£MAT, PO£YSK);-;-;-;-;4,95;-;-;-;-;-;1;207,00 z≥
-;PM-100;CZYåCIK DO POD£”G LAKIEROWANYCH;-;-;-;-;0,75;-;-;-;-;-;1;25,00 z≥
-;PM-120;åRODEK PIEL GNACYJNY DO POD£”G;-;-;-;-;0,75;-;-;-;-;-;1;33,00 z≥
-;OL-610;OLEJ HS ;-;-;-;-;2,5;-;-;-;-;-;1;245,00 z≥
-;OL-610/R;ROZCIE—CZALNIK DO OLEJU OL-610;-;-;-;-;1;-;-;-;-;-;1;45,00 z≥
-;OL-610/2K;UTWARDZACZ DO OLEJU OL-610 - 2K;-;-;-;-;0,5;-;-;-;-;-;1;80,00 z≥
-;0L-611/1;OLEJ KOLORYZUJ•CY;-;-;-;-;1;-;-;-;-;-;1;135,00 z≥
-;OL-620/5;OLEJ DO POD£”G DREWNIANYCH;-;-;-;-;5;-;-;-;-;-;1;290,00 z≥
-;OL-650/5;OLEJOWOSK;-;-;-;-;5;-;-;-;-;-;1;490,00 z≥
-;OL-670/1;WOSK PIEL GNACYJNY;-;-;-;-;1;-;-;-;-;-;1;70,00 z≥
-;OL-680/1;MYD£O DO POD£”G ;-;-;-;-;1;-;-;-;-;-;1;50,00 z≥
-;OL-690/1;OLEJ PIEL GNACYJNY;-;-;-;-;1;-;-;-;-;-;1;70,00 z≥
+TARCICA SUCHA;TD-28/E;TARCICA DƒÑB;Extra;2,5-3,5;28;-;-;-;1;-;-;-;-;3 570,00 z≈Ç
+;TD-28/I;TARCICA DƒÑB;I;2,5-3,5;28;-;-;-;1;-;-;-;-;3 050,00 z≈Ç
+;TD-28/II;TARCICA DƒÑB;II;2,5-3,5;28;-;-;-;1;-;-;-;-;2 260,00 z≈Ç
+;TD-28/III;TARCICA DƒÑB;III;2,5-3,5;28;-;-;-;1;-;-;-;-;1 450,00 z≈Ç
+;TDD-28/E;TARCICA DƒÑB D≈ÅUGA;Extra;4,5;28;-;-;-;1;-;-;-;-;3 250,00 z≈Ç
+;TDD-28/I;TARCICA DƒÑB D≈ÅUGA;I;4,5;28;-;-;-;1;-;-;-;-;3 250,00 z≈Ç
+;TDD-28/II;TARCICA DƒÑB D≈ÅUGA;II;4,5;28;-;-;-;1;-;-;-;-;2 460,00 z≈Ç
+;TDD-28/III;TARCICA DƒÑB D≈ÅUGA;III;4,5;28;-;-;-;1;-;-;-;-;1 650,00 z≈Ç
+;TD-38/E;TARCICA DƒÑB;Extra;2,5-3,5;38;-;-;-;1;-;-;-;-;3 700,00 z≈Ç
+;TD-38/I;TARCICA DƒÑB;I;2,5-3,5;38;-;-;-;1;-;-;-;-;3 300,00 z≈Ç
+;TD-38/II;TARCICA DƒÑB;II;2,5-3,5;38;-;-;-;1;-;-;-;-;2 360,00 z≈Ç
+;TD-38/III;TARCICA DƒÑB;III;2,5-3,5;38;-;-;-;1;-;-;-;-;1 550,00 z≈Ç
+;TD-50/E;TARCICA DƒÑB;Extra;2,5-3,5;50;-;-;-;1;-;-;-;-;3 980,00 z≈Ç
+;TD-50/I;TARCICA DƒÑB;I;2,5-3,5;50;-;-;-;1;-;-;-;-;3 470,00 z≈Ç
+;TD-50/II;TARCICA DƒÑB;II;2,5-3,5;50;-;-;-;1;-;-;-;-;2 530,00 z≈Ç
+;TD-50/III;TARCICA DƒÑB;III;2,5-3,5;50;-;-;-;1;-;-;-;-;1 650,00 z≈Ç
+;TDD-50/E;TARCICA DƒÑB D≈ÅUGA;Extra;4,5;50;-;-;-;1;-;-;-;-;4 180,00 z≈Ç
+;TDD-50/I;TARCICA DƒÑB D≈ÅUGA;I;4,5;50;-;-;-;1;-;-;-;-;3 670,00 z≈Ç
+;TDD-50/II;TARCICA DƒÑB D≈ÅUGA;II;4,5;50;-;-;-;1;-;-;-;-;2 730,00 z≈Ç
+;TDD-50/III;TARCICA DƒÑB D≈ÅUGA;III;4,5;50;-;-;-;1;-;-;-;-;1 850,00 z≈Ç
+;TJ-28/E;TARCICA JESION;Extra;2,5-3,5;28;-;-;-;1;-;-;-;-;2 910,00 z≈Ç
+;TJ-28/I;TARCICA JESION;I;2,5-3,5;28;-;-;-;1;-;-;-;-;2 220,00 z≈Ç
+;TJ-28/II;TARCICA JESION;II;2,5-3,5;28;-;-;-;1;-;-;-;-;1 790,00 z≈Ç
+;TJ-28/III;TARCICA JESION;III;2,5-3,5;28;-;-;-;1;-;-;-;-;880,00 z≈Ç
+;TJD-28/E;TARCICA JESION D≈ÅUGA;Extra;4,5;28;-;-;-;1;-;-;-;-;3 110,00 z≈Ç
+;TJD-28/I;TARCICA JESION D≈ÅUGA;I;4,5;28;-;-;-;1;-;-;-;-;2 420,00 z≈Ç
+;TJD-28/II;TARCICA JESION D≈ÅUGA;II;4,5;28;-;-;-;1;-;-;-;-;1 990,00 z≈Ç
+;TJD-28/III;TARCICA JESION D≈ÅUGA;III;4,5;28;-;-;-;1;-;-;-;-;1 080,00 z≈Ç
+;TJ-38/E;TARCICA JESION;Extra;2,5-3,5;38;-;-;-;1;-;-;-;-;3 170,00 z≈Ç
+;TJ-38/I;TARCICA JESION;I;2,5-3,5;38;-;-;-;1;-;-;-;-;2 480,00 z≈Ç
+;TJ-38/II;TARCICA JESION;II;2,5-3,5;38;-;-;-;1;-;-;-;-;1 850,00 z≈Ç
+;TJ-38/III;TARCICA JESION;III;2,5-3,5;38;-;-;-;1;-;-;-;-;980,00 z≈Ç
+;TJ-50/E;TARCICA JESION;Extra;2,5-3,5;50;-;-;-;1;-;-;-;-;3 170,00 z≈Ç
+;TJ-50/I;TARCICA JESION;I;2,5-3,5;50;-;-;-;1;-;-;-;-;2 480,00 z≈Ç
+;TJ-50/II;TARCICA JESION;II;2,5-3,5;50;-;-;-;1;-;-;-;-;1 850,00 z≈Ç
+;TJ-50/III;TARCICA JESION;III;2,5-3,5;50;-;-;-;1;-;-;-;-;980,00 z≈Ç
+;TJD-50/E;TARCICA JESION D≈ÅUGA;Extra;4,5;50;-;-;-;1;-;-;-;-;3 370,00 z≈Ç
+;TJD-50/I;TARCICA JESION D≈ÅUGA;I;4,5;50;-;-;-;1;-;-;-;-;2 680,00 z≈Ç
+;TJD-50/II;TARCICA JESION D≈ÅUGA;II;4,5;50;-;-;-;1;-;-;-;-;2 050,00 z≈Ç
+;TJD-50/III;TARCICA JESION D≈ÅUGA;III;4,5;50;-;-;-;1;-;-;-;-;1 180,00 z≈Ç
+;TJ-65/E;TARCICA JESION;Extra;4,5;65;-;-;-;1;-;-;-;-;3 370,00 z≈Ç
+;TJ-65/I;TARCICA JESION;I;4,5;65;-;-;-;1;-;-;-;-;2 680,00 z≈Ç
+;TJ-65/II;TARCICA JESION;II;4,5;65;-;-;-;1;-;-;-;-;2 050,00 z≈Ç
+;TJ-65/III;TARCICA JESION;III;4,5;65;-;-;-;1;-;-;-;-;1 180,00 z≈Ç
+;TB-26/E;TARCICA BUK;Extra;2,5-3,5;26;-;-;-;1;-;-;-;-;1 800,00 z≈Ç
+;TB-26/I;TARCICA BUK;I;2,5-3,5;26;-;-;-;1;-;-;-;-;1 450,00 z≈Ç
+;TB-26/II;TARCICA BUK;II;2,5-3,5;26;-;-;-;1;-;-;-;-;1 250,00 z≈Ç
+;TB-26/III;TARCICA BUK;III;2,5-3,5;26;-;-;-;1;-;-;-;-;750,00 z≈Ç
+;TB-26/T;TARCICA BUK;Twar.;2,5-3,5;26;-;-;-;1;-;-;-;-;1 150,00 z≈Ç
+;TB-38/E;TARCICA BUK;Extra;2,5-3,5;38;-;-;-;1;-;-;-;-;1 980,00 z≈Ç
+;TB-38/I;TARCICA BUK;I;2,5-3,5;38;-;-;-;1;-;-;-;-;1 530,00 z≈Ç
+;TB-38/II;TARCICA BUK;II;2,5-3,5;38;-;-;-;1;-;-;-;-;1 330,00 z≈Ç
+;TB-38/III;TARCICA BUK;III;2,5-3,5;38;-;-;-;1;-;-;-;-;980,00 z≈Ç
+;TB-38/T;TARCICA BUK;Twar.;2,5-3,5;38;-;-;-;1;-;-;-;-;1 380,00 z≈Ç
+;TB-50/E;TARCICA BUK;Extra;2,5-3,5;50;-;-;-;1;-;-;-;-;1 980,00 z≈Ç
+;TB-50/I;TARCICA BUK;I;2,5-3,5;50;-;-;-;1;-;-;-;-;1 530,00 z≈Ç
+;TB-50/II;TARCICA BUK;II;2,5-3,5;50;-;-;-;1;-;-;-;-;1 330,00 z≈Ç
+;TB-50/III;TARCICA BUK;III;2,5-3,5;50;-;-;-;1;-;-;-;-;980,00 z≈Ç
+;TB-50/T;TARCICA BUK;Twar.;2,5-3,5;50;-;-;-;1;-;-;-;;1 380,00 z≈Ç
+;TBP-26/E;TARCICA BUK PARZONY;Extra;2,5-3,5;26;-;-;-;1;-;-;-;-;1 800,00 z≈Ç
+;TBP-26/I;TARCICA BUK PARZONY;I;2,5-3,5;26;-;-;-;1;-;-;-;-;1 600,00 z≈Ç
+;TBP-26/II;TARCICA BUK PARZONY;II;2,5-3,5;26;-;-;-;1;-;-;-;-;1 400,00 z≈Ç
+;TBP-26/III;TARCICA BUK PARZONY;III;2,5-3,5;26;-;-;-;1;-;-;-;-;900,00 z≈Ç
+;TBP-26/T;TARCICA BUK PARZONY;Twar.;2,5-3,5;26;-;-;-;1;-;-;-;-;1 300,00 z≈Ç
+;TBP-38/E;TARCICA BUK PARZONY;Extra;2,5-3,5;38;-;-;-;1;-;-;-;-;2 190,00 z≈Ç
+;TBP-38/I;TARCICA BUK PARZONY;I;2,5-3,5;38;-;-;-;1;-;-;-;-;1 680,00 z≈Ç
+;TBP-38/II;TARCICA BUK PARZONY;II;2,5-3,5;38;-;-;-;1;-;-;-;-;1 480,00 z≈Ç
+;TBP-38/III;TARCICA BUK PARZONY;III;2,5-3,5;38;-;-;-;1;-;-;-;-;980,00 z≈Ç
+;TBP-38/T;TARCICA BUK PARZONY;Twar.;2,5-3,5;38;-;-;-;1;-;-;-;-;1 380,00 z≈Ç
+;TBP-50/E;TARCICA BUK PARZONY;Extra;2,5-3,5;50;-;-;-;1;-;-;-;-;2 190,00 z≈Ç
+;TBP-50/I;TARCICA BUK PARZONY;I;2,5-3,5;50;-;-;-;1;-;-;-;-;1 680,00 z≈Ç
+;TBP-50/II;TARCICA BUK PARZONY;II;2,5-3,5;50;-;-;-;1;-;-;-;-;1 480,00 z≈Ç
+;TBP-50/III;TARCICA BUK PARZONY;III;2,5-3,5;50;-;-;-;1;-;-;-;-;980,00 z≈Ç
+;TBP-50/T;TARCICA BUK PARZONY;Twar.;2,5-3,5;50;-;-;-;1;-;-;-;-;1 380,00 z≈Ç
+;TBP-80/I;TARCICA BUK PARZONY;I;2,5-3,5;80;-;-;-;1;-;-;-;-;1 880,00 z≈Ç
+;TS-25/E;TARCICA SOSNA;Extra;3-5;25;-;-;-;1;-;-;-;-;1 680,00 z≈Ç
+;TS-25/I;TARCICA SOSNA;I;3-5;25;-;-;-;1;-;-;-;-;1 300,00 z≈Ç
+;TS-25/II;TARCICA SOSNA;II;3-5;25;-;-;-;1;-;-;-;-;890,00 z≈Ç
+;TS-25/III;TARCICA SOSNA;III;3-5;25;-;-;-;1;-;-;-;-;680,00 z≈Ç
+;TS-32/E;TARCICA SOSNA;Extra;3-5;32;-;-;-;1;-;-;-;-;1 780,00 z≈Ç
+;TS-32/I;TARCICA SOSNA;I;3-5;32;-;-;-;1;-;-;-;-;1 380,00 z≈Ç
+;TS-32/II;TARCICA SOSNA;II;3-5;32;-;-;-;1;-;-;-;-;940,00 z≈Ç
+;TS-32/III;TARCICA SOSNA;III;3-5;32;-;-;-;1;-;-;-;-;750,00 z≈Ç
+;TS-38/E;TARCICA SOSNA;Extra;3-4,3;38;-;-;-;1;-;-;-;-;1 780,00 z≈Ç
+;TS-38/I;TARCICA SOSNA;I;3-4,3;38;-;-;-;1;-;-;-;-;1 380,00 z≈Ç
+;TS-38/II;TARCICA SOSNA;II;3-4,3;38;-;-;-;1;-;-;-;-;940,00 z≈Ç
+;TS-38/III;TARCICA SOSNA;III;3-4,3;38;-;-;-;1;-;-;-;-;750,00 z≈Ç
+;TS-50/E;TARCICA SOSNA;Extra;4,3;50;-;-;-;1;-;-;-;-;1 780,00 z≈Ç
+;TS-50/I;TARCICA SOSNA;I;4,3;50;-;-;-;1;-;-;-;-;1 380,00 z≈Ç
+;TS-50/II;TARCICA SOSNA;II;4,3;50;-;-;-;1;-;-;-;-;940,00 z≈Ç
+;TS-50/III;TARCICA SOSNA;III;4,3;50;-;-;-;1;-;-;-;-;750,00 z≈Ç
+;TS-63/E;TARCICA SOSNA;Extra;4,3;63;-;-;-;1;-;-;-;-;1 780,00 z≈Ç
+;TS-63/I;TARCICA SOSNA;I;4,3;63;-;-;-;1;-;-;-;-;1 380,00 z≈Ç
+;TS-63/II;TARCICA SOSNA;II;4,3;63;-;-;-;1;-;-;-;-;940,00 z≈Ç
+;TS-63/III;TARCICA SOSNA;III;4,3;63;-;-;-;1;-;-;-;-;750,00 z≈Ç
+;TS-76/E;TARCICA SOSNA;Extra;4,3;76;-;-;-;1;-;-;-;-;1 780,00 z≈Ç
+;TS-76/I;TARCICA SOSNA;I;4,3;76;-;-;-;1;-;-;-;-;1 380,00 z≈Ç
+;TS-76/II;TARCICA SOSNA;II;4,3;76;-;-;-;1;-;-;-;-;940,00 z≈Ç
+;TS-76/III;TARCICA SOSNA;III;4,3;76;-;-;-;1;-;-;-;-;750,00 z≈Ç
+;TBR-28/E;TARCICA BRZOZA;Extra;2,5-3;28;-;-;-;1;-;-;-;-;1 620,00 z≈Ç
+;TBR-28/I;TARCICA BRZOZA;I;2,5-3;28;-;-;-;1;-;-;-;-;1 300,00 z≈Ç
+;TBR-28/II;TARCICA BRZOZA;II;2,5-3;28;-;-;-;1;-;-;-;-;880,00 z≈Ç
+;TBR-28/III;TARCICA BRZOZA;III;2,5-3;28;-;-;-;1;-;-;-;-;680,00 z≈Ç
+;TBR-38/E;TARCICA BRZOZA;Extra;2,5-3;38;-;-;-;1;-;-;-;-;1 720,00 z≈Ç
+;TBR-38/I;TARCICA BRZOZA;I;2,5-3;38;-;-;-;1;-;-;-;-;1 380,00 z≈Ç
+;TBR-38/II;TARCICA BRZOZA;II;2,5-3;38;-;-;-;1;-;-;-;-;900,00 z≈Ç
+;TBR-38/III;TARCICA BRZOZA;III;2,5-3;38;-;-;-;1;-;-;-;-;680,00 z≈Ç
+;TBR-50/E;TARCICA BRZOZA;Extra;2,5-3;50;-;-;-;1;-;-;-;-;1 720,00 z≈Ç
+;TBR-50/I;TARCICA BRZOZA;I;2,5-3;50;-;-;-;1;-;-;-;-;1 380,00 z≈Ç
+;TBR-50/II;TARCICA BRZOZA;II;2,5-3;50;-;-;-;1;-;-;-;-;900,00 z≈Ç
+;TBR-50/III;TARCICA BRZOZA;III;2,5-3;50;-;-;-;1;-;-;-;-;680,00 z≈Ç
+;TO-28/E;TARCICA OLCHA;Extra;2,5-3;28;-;-;-;1;-;-;-;-;1 680,00 z≈Ç
+;TO-28/I;TARCICA OLCHA;I;2,5-3;28;-;-;-;1;-;-;-;-;1 380,00 z≈Ç
+;TO-28/II;TARCICA OLCHA;II;2,5-3;28;-;-;-;1;-;-;-;-;990,00 z≈Ç
+;TO-28/III;TARCICA OLCHA;III;2,5-3;28;-;-;-;1;-;-;-;-;700,00 z≈Ç
+;TO-38/E;TARCICA OLCHA;Extra;2,5-3;38;-;-;-;1;-;-;-;-;1 780,00 z≈Ç
+;TO-38/I;TARCICA OLCHA;I;2,5-3;38;-;-;-;1;-;-;-;-;1 410,00 z≈Ç
+;TO-38/II;TARCICA OLCHA;II;2,5-3;38;-;-;-;1;-;-;-;-;990,00 z≈Ç
+;TO-38/III;TARCICA OLCHA;III;2,5-3;38;-;-;-;1;-;-;-;-;700,00 z≈Ç
+;TO-38/T;TARCICA OLCHA;Twar.;2,5-3;38;-;-;-;1;-;-;-;-;780,00 z≈Ç
+;TO-50/E;TARCICA OLCHA;Extra;2,5-3;50;-;-;-;1;-;-;-;-;1 780,00 z≈Ç
+;TO-50/I;TARCICA OLCHA;I;2,5-3;50;-;-;-;1;-;-;-;-;1 410,00 z≈Ç
+;TO-50/II;TARCICA OLCHA;II;2,5-3;50;-;-;-;1;-;-;-;-;990,00 z≈Ç
+;TO-50/III;TARCICA OLCHA;III;2,5-3;50;-;-;-;1;-;-;-;-;700,00 z≈Ç
+;TO-50/T;TARCICA OLCHA;Twar.;2,5-3;50;-;-;-;1;-;-;-;-;780,00 z≈Ç
+;TO-65/E;TARCICA OLCHA;Extra;2,5-3;65;-;-;-;1;-;-;-;-;1 780,00 z≈Ç
+;TO-65/I;TARCICA OLCHA;I;2,5-3;65;-;-;-;1;-;-;-;-;1 410,00 z≈Ç
+;TO-65/II;TARCICA OLCHA;II;2,5-3;65;-;-;-;1;-;-;-;-;990,00 z≈Ç
+;TO-65/III;TARCICA OLCHA;III;2,5-3;65;-;-;-;1;-;-;-;-;700,00 z≈Ç
+;TM-32/E;TARCICA MODRZEW;Extra;3-5;32;-;-;-;1;-;-;-;-;2 100,00 z≈Ç
+;TM-32/I;TARCICA MODRZEW;I;3-5;32;-;-;-;1;-;-;-;-;1 680,00 z≈Ç
+;TM-32/II;TARCICA MODRZEW;II;3-5;32;-;-;-;1;-;-;-;-;1 080,00 z≈Ç
+;TM-32/III;TARCICA MODRZEW;III;3-5;32;-;-;-;1;-;-;-;-;780,00 z≈Ç
+;TM-50/E;TARCICA MODRZEW;Extra;4;50;-;-;-;1;-;-;-;-;2 100,00 z≈Ç
+;TM-50/I;TARCICA MODRZEW;I;4;50;-;-;-;1;-;-;-;-;1 680,00 z≈Ç
+;TM-50/II;TARCICA MODRZEW;II;4;50;-;-;-;1;-;-;-;-;1 080,00 z≈Ç
+;TM-50/III;TARCICA MODRZEW;III;4;50;-;-;-;1;-;-;-;-;780,00 z≈Ç
+;TK-50/E;TARCICA KLON;Extra;2,5-3;50;-;-;-;1;-;-;-;-;3 390,00 z≈Ç
+;TK-50/I;TARCICA KLON;I;2,5-3;50;-;-;-;1;-;-;-;-;2 850,00 z≈Ç
+;TK-50/II;TARCICA KLON;II;2,5-3;50;-;-;-;1;-;-;-;-;1 980,00 z≈Ç
+;TK-50/III;TARCICA KLON;III;2,5-3;50;-;-;-;1;-;-;-;-;1 350,00 z≈Ç
+;TCZ-28/E;TARCICA CZERE≈öNIA;Extra;2,5-3;28;-;-;-;1;-;-;-;-;3 650,00 z≈Ç
+;TCZ-28/I;TARCICA CZERE≈öNIA;I;2,5-3;28;-;-;-;1;-;-;-;-;2 950,00 z≈Ç
+;TCZ-28/II;TARCICA CZERE≈öNIA;II;2,5-3;28;-;-;-;1;-;-;-;-;2 150,00 z≈Ç
+;TCZ-28/III;TARCICA CZERE≈öNIA;III;2,5-3;28;-;-;-;1;-;-;-;-;1 350,00 z≈Ç
+;TCZ-38/E;TARCICA CZERE≈öNIA;Extra;2,5-3;38;-;-;-;1;-;-;-;-;3 650,00 z≈Ç
+;TCZ-38/I;TARCICA CZERE≈öNIA;I;2,5-3;38;-;-;-;1;-;-;-;-;3 950,00 z≈Ç
+;TCZ-38/II;TARCICA CZERE≈öNIA;II;2,5-3;38;-;-;-;1;-;-;-;-;2 150,00 z≈Ç
+;TCZ-38/III;TARCICA CZERE≈öNIA;III;2,5-3;38;-;-;-;1;-;-;-;-;1 350,00 z≈Ç
+;TA-28/I;TARCICA AKACJA PARZONA;I;2-3,5;28;-;-;-;1;-;-;-;-;2 350,00 z≈Ç
+;TA-28/II;TARCICA AKACJA PARZONA;II;2-3,5;28;-;-;-;1;-;-;-;-;1 850,00 z≈Ç
+;TA-28/III;TARCICA AKACJA PARZONA;III;2-3,5;28;-;-;-;1;-;-;-;-;1 250,00 z≈Ç
+;TA-50/I;TARCICA AKACJA PARZONA;I;2,5-3;50;-;-;-;1;-;-;-;-;2 350,00 z≈Ç
+;TA-50/II;TARCICA AKACJA PARZONA;II;2,5-3;50;-;-;-;1;-;-;-;-;1 850,00 z≈Ç
+;TA-50/III;TARCICA AKACJA PARZONA;III;2,5-3;50;-;-;-;1;-;-;-;-;1 250,00 z≈Ç
+WIƒò≈πBA DACHOWA SOSNA;TSN-25;TARCICA NIEIMPREGNOWANA;-;2-4;25;-;-;-;1;-;-;-;-;550,00 z≈Ç
+;TSI-25;TARCICA IMPREGNOWANA;-;2-4;25;-;-;-;1;-;-;-;-;600,00 z≈Ç
+;≈ÅS;≈ÅATA;-;4;40;60;-;-;-;-;1;-;-;1,95 z≈Ç
+;≈ÅS;≈ÅATA;-;4;40;60;-;-;1;-;-;-;-;815,00 z≈Ç
+;KS;KONTR≈ÅATA;-;2-4;25;50;-;-;-;-;1;-;-;1,00 z≈Ç
+;KS;KONTR≈ÅATA;-;2-4;25;50;-;-;1;-;-;-;-;800,00 z≈Ç
+;KRSN;KRAWƒòDZIAKI NIEIMPREGNOWANE;-;0-13;-;-;-;-;1;-;-;-;-;780,00 z≈Ç
+;KRSI;KRAWƒòDZIAKI IMPREGNOWANE;-;0-13;-;-;-;-;1;-;-;-;-;800,00 z≈Ç
+;BS-17;BOAZERIA;-;2-3;17;90;-;-;-;1;-;-;-;29,50 z≈Ç
+;BS-22;BOAZERIA;-;3;22;110;-;-;-;1;-;-;-;23,00 z≈Ç
+DESKA POD≈ÅOGOWA;DPDS-145/1,2;DƒÑB;SELECT;0,4-1,2;22;145;-;-;-;1;-;-;-;210,00 z≈Ç
+;DPDS-145/1,8;DƒÑB;SELECT;1,2-1,8;22;145;-;-;-;1;-;-;-;246,00 z≈Ç
+;DPDS-145/2,2;DƒÑB;SELECT;1,8-2,2;22;145;-;-;-;1;-;-;-;296,00 z≈Ç
+;DPDN-145/1,2;DƒÑB;NATURAL;0,4-1,2;22;145;-;-;-;1;-;-;-;162,00 z≈Ç
+;DPDN-145/1,8;DƒÑB;NATURAL;1,2-1,8;22;145;-;-;-;1;-;-;-;196,00 z≈Ç
+;DPDN-145/2,2;DƒÑB;NATURAL;1,8-2,2;22;145;-;-;-;1;-;-;-;248,00 z≈Ç
+;DPDR-145/1,2;DƒÑB;RUSTICAL;0,4-1,2;22;145;-;-;-;1;-;-;-;118,00 z≈Ç
+;DPDR-145/1,8;DƒÑB;RUSTICAL;1,2-1,8;22;145;-;-;-;1;-;-;-;155,00 z≈Ç
+;DPDR-145/2,2;DƒÑB;RUSTICAL;1,8-2,2;22;145;-;-;-;1;-;-;-;176,00 z≈Ç
+;DPDN-180/1,2;DƒÑB;NATURAL;0,4-1,2;22;180;-;-;-;1;-;-;-;240,00 z≈Ç
+;DPDN-180/1,2;DƒÑB;RUSTICAL;0,4-1,2;22;180;-;-;-;1;-;-;-;160,00 z≈Ç
+;DPS-AB/3;SOSNA;AB;3;28;130;-;-;-;1;-;-;-;45,00 z≈Ç
+;DPS-AB/4;SOSNA;AB;4;28;130;-;-;-;1;-;-;-;55,00 z≈Ç
+;DPS-AB/4,5;SOSNA;AB;4,5;28;130;-;-;-;1;-;-;-;55,00 z≈Ç
+;DPS-AB/5;SOSNA;AB;5;28;130;-;-;-;1;-;-;-;60,00 z≈Ç
+;DPS-B/3;SOSNA;B;3;28;130;-;-;-;1;-;-;-;40,00 z≈Ç
+;DPS-B/4;SOSNA;B;4;28;130;-;-;-;1;-;-;-;45,00 z≈Ç
+;DPS-B/4,5;SOSNA;B;4,5;28;130;-;-;-;1;-;-;-;45,00 z≈Ç
+;DPS-B/5;SOSNA;B;5;28;130;-;-;-;1;-;-;-;50,00 z≈Ç
+;DPM-AB/3;MODRZEW;AB;3;28;130;-;-;-;1;-;-;-;70,00 z≈Ç
+;DPM-AB/4;MODRZEW;AB;4;28;130;-;-;-;1;-;-;-;75,00 z≈Ç
+;DPM-AB/4,5;MODRZEW;AB;4,5;28;130;-;-;-;1;-;-;-;75,00 z≈Ç
+;DPM-AB/5;MODRZEW;AB;5;28;130;-;-;-;1;-;-;-;85,00 z≈Ç
+;DPM-B/3;MODRZEW;B;3;28;130;-;-;-;1;-;-;-;50,00 z≈Ç
+;DPM-B/4;MODRZEW;B;4;28;130;-;-;-;1;-;-;-;55,00 z≈Ç
+;DPM-B/4,5;MODRZEW;B;4,5;28;130;-;-;-;1;-;-;-;55,00 z≈Ç
+;DPM-B/5;MODRZEW;B;5;28;130;-;-;-;1;-;-;-;65,00 z≈Ç
+;DPO-145/1,2;ORZECH;-;0,4-1,2;22;145;-;-;-;1;-;-;-;380,00 z≈Ç
+;DPCZ-145/1,2;CZERE≈öNIA;-;0,4-1,2;22;145;-;-;-;1;-;-;-;235,00 z≈Ç
+;DPB-AB/1,2;BUK PARZONY;AB;0,4-1,2;22;145;-;-;-;1;-;-;-;120,00 z≈Ç
+;DPB-B/1,2;BUK PARZONY;B;0,4-1,2;22;145;-;-;-;1;-;-;-;89,00 z≈Ç
+;DPK-N/1,2;KLON;NATURAL;0,4-1,2;22;145;-;-;-;1;-;-;-;162,00 z≈Ç
+;DPK-N/1,8;KLON;NATURAL;1,2-1,8;22;145;-;-;-;1;-;-;-;178,00 z≈Ç
+;DPK-N/2,2;KLON;NATURAL;1,8-2,2;22;145;-;-;-;1;-;-;-;215,00 z≈Ç
+;DPK-R/1,2;KLON;RUSTICAL;0,4-1,2;22;145;-;-;-;1;-;-;-;118,00 z≈Ç
+;DPK-R/1,8;KLON;RUSTICAL;1,2-1,8;22;145;-;-;-;1;-;-;-;144,00 z≈Ç
+;DPK-R/2,2;KLON;RUSTICAL;1,8-2,2;22;145;-;-;-;1;-;-;-;165,00 z≈Ç
+;DPBR-AB/1,2;BRZOZA;AB;0,4-1,2;22;145;-;-;-;1;-;-;-;75,00 z≈Ç
+;DPBR-AB/1,8;BRZOZA;AB;1,2-1,8;22;145;-;-;-;1;-;-;-;85,00 z≈Ç
+;DPBR-B/1,2;BRZOZA;B;0,4-1,2;22;145;-;-;-;1;-;-;-;52,00 z≈Ç
+;DPBR-B/1,8;BRZOZA;B;1,2-1,8;22;145;-;-;-;1;-;-;-;62,00 z≈Ç
+;DPDL;LONG DƒÑB;-;0-7,2;22;do 205;-;-;-;1;-;-;-;98,00 z≈Ç
+;DPJL;LONG JESION;-;0-7,2;22;do 205;-;-;-;1;-;-;-;93,00 z≈Ç
+;DPDP-180/2,2;POSTARZANA DƒòBOWA;-;0,4-2,2;22;180;-;-;-;1;-;-;-;380,00 z≈Ç
+;DPDP-145/180/2,2;POSTARZANA DƒòBOWA;-;0,4-2,2;22;145-180;-;-;-;1;-;-;-;330,00 z≈Ç
+;DPDP-145/2,2;POSTARZANA DƒòBOWA;-;0,4-2,2;22;145;-;-;-;1;-;-;-;320,00 z≈Ç
+;DTS-140/3;DESKA TARASOWA SOSNA;AB;3;28;140;-;-;-;1;-;-;-;45,00 z≈Ç
+;DTS-140/4,5;DESKA TARASOWA SOSNA;AB;4m-4,5m;28;140;-;-;-;1;-;-;-;55,00 z≈Ç
+;DTS-140/5;DESKA TARASOWA SOSNA;AB;5;28;140;-;-;-;1;-;-;-;60,00 z≈Ç
+;DTM-140/3;DESKA TARASOWA MODRZEW;AB;3;28;140;-;-;-;1;-;-;-;75,00 z≈Ç
+;DTM-140/4,5;DESKA TARASOWA MODRZEW;AB;4m-4,5m;28;140;-;-;-;1;-;-;-;80,00 z≈Ç
+;DTM-140/5;DESKA TARASOWA MODRZEW;AB;5;28;140;-;-;-;1;-;-;-;90,00 z≈Ç
+;LS-22;LEGAR 22;-;4,5;22;65;-;-;-;-;1;-;-;2,55 z≈Ç
+;LS-44;LEGAR 44;-;4,5;44;65;-;-;-;-;1;-;-;5,10 z≈Ç
+;LS-66;LEGAR 66;-;4,5;66;65;-;-;-;-;1;-;;7,64 z≈Ç
+;LS-88;LEGAR 88;-;4,5;88;65;-;-;-;-;1;-;-;10,18 z≈Ç
+;LS-110;LEGAR 110;-;4,5;110;65;-;-;-;-;1;-;-;12,73 z≈Ç
+;LS-132;LEGAR 132;-;4,5;132;65;-;-;-;-;1;-;-;15,27 z≈Ç
+;LPD-65;LISTWA PRZYPOD≈ÅOGOWA DƒÑB;-;1;22;65;-;-;-;-;1;-;-;12,00 z≈Ç
+;LPJ-65;LISTWA PRZYPOD≈ÅOGOWA JESION;-;1;22;65;-;-;-;-;1;-;-;12,00 z≈Ç
+;LPA-65;LISTWA PRZYPOD≈ÅOGOWA AKACJA;-;1;22;65;-;-;-;-;1;-;-;12,00 z≈Ç
+;LPS-65;LISTWA PRZYPOD≈ÅOGOWA SOSNA;-;1;22;65;-;-;-;-;1;-;-;7,00 z≈Ç
+;LPM-65;LISTWA PRZYPOD≈ÅOGOWA MODZREW;-;1;22;65;-;-;-;-;1;-;-;8,00 z≈Ç
+;LPO-65;LISTWA PRZYPOD≈ÅOGOWA ORZECH;-;1;22;65;-;-;-;-;1;-;-;20,00 z≈Ç
+;LPCZ-65;LISTWA PRZYPOD≈ÅOGOWA CZERE≈öNIA;-;1;22;65;-;-;-;-;1;-;-;14,00 z≈Ç
+;LPBP-65/AB;LISTWA PRZYPOD≈ÅOGOWA BUK PARZONY KL AB;-;1;22;65;-;-;-;-;1;-;-;12,00 z≈Ç
+;LPBP-65/B;LISTWA PRZYPOD≈ÅOGOWA BUK PARZONY KL B;-;1;22;65;-;-;-;-;1;-;-;9,00 z≈Ç
+;LPK-65;LISTWA PRZYPOD≈ÅOGOWA KLON;-;1;22;65;-;-;-;-;1;-;-;12,00 z≈Ç
+;LPBR-65;LISTWA PRZYPOD≈ÅOGOWA BRZOZA;-;1;22;65;-;-;-;-;1;-;-;7,00 z≈Ç
+;LPDP-65;LISTWA PRZYPOD≈ÅOGOWA POSTARZANY DƒÑB;-;1;22;65;-;-;-;-;1;-;-;26,00 z≈Ç
+ELEMENTY KLEJONE;EKDL-AA/1,5;ELEMENTY DƒòBOWE LITE NA D≈ÅUGO≈öƒÜ;AA;0-1,5;44;-;-;-;-;1;-;-;-;330,00 z≈Ç
+;EKDL-AB/1,5;ELEMENTY DƒòBOWE LITE NA D≈ÅUGO≈öƒÜ;AB;0-1,5;44;-;-;-;-;1;-;-;-;250,00 z≈Ç
+;EKDL-AA/3;ELEMENTY DƒòBOWE LITE NA D≈ÅUGO≈öƒÜ;AA;1,5-3;44;-;-;-;-;1;-;-;-;450,00 z≈Ç
+;EKDL-AB/3;ELEMENTY DƒòBOWE LITE NA D≈ÅUGO≈öƒÜ;AB;1,5-3;44;-;-;-;-;1;-;-;-;360,00 z≈Ç
+;EKDL-AA/4;ELEMENTY DƒòBOWE LITE NA D≈ÅUGO≈öƒÜ;AA;3-4;44;-;-;-;-;1;-;-;-;550,00 z≈Ç
+;EKDL-AB/4;ELEMENTY DƒòBOWE LITE NA D≈ÅUGO≈öƒÜ;AB;3-4;44;-;-;-;-;1;-;-;-;450,00 z≈Ç
+;EKDK-AA/4;ELEMENTY DƒòBOWE KLEJONE NA D≈ÅUGO≈öƒÜ;AA;0-4;44;-;-;-;-;1;-;-;-;330,00 z≈Ç
+;EKDK-AB/4;ELEMENTY DƒòBOWE KLEJONE NA D≈ÅUGO≈öƒÜ;AB;0-4;44;-;-;-;-;1;-;-;-;250,00 z≈Ç
+;EKJL-AA/1,5;ELEMENTY JESIONOWE LITE NA D≈ÅUGO≈öƒÜ;AA;0-1,5;44;-;-;-;-;1;-;-;-;330,00 z≈Ç
+;EKJL-AB/1,5;ELEMENTY JESIONOWE LITE NA D≈ÅUGO≈öƒÜ;AB;0-,15;44;-;-;-;-;1;-;-;-;250,00 z≈Ç
+;EKJL-AA/3;ELEMENTY JESIONOWE LITE NA D≈ÅUGO≈öƒÜ;AA;1,5-3;44;-;-;-;-;1;-;-;-;400,00 z≈Ç
+;EKJL-AB/3;ELEMENTY JESIONOWE LITE NA D≈ÅUGO≈öƒÜ;AB;1,5-3;44;-;-;-;-;1;-;-;-;360,00 z≈Ç
+;EKJL-AA/4;ELEMENTY JESIONOWE LITE NA D≈ÅUGO≈öƒÜ;AA;3-4;44;-;-;-;-;1;-;-;-;525,00 z≈Ç
+;EKJL-AB/4;ELEMENTY JESIONOWE LITE NA D≈ÅUGO≈öƒÜ;AB;3-4;44;-;-;-;-;1;-;-;-;400,00 z≈Ç
+;EKJK-AA/4;ELEMENTY JESIONOWE KLEJONE NA D≈ÅUGO≈öƒÜ;AA;0-4;44;-;-;-;-;1;-;-;-;330,00 z≈Ç
+;EKJK-AB/4;ELEMENTY JESIONOWE KLEJONE NA D≈ÅUGO≈öƒÜ;AB;0-4;44;-;-;-;-;1;-;-;-;250,00 z≈Ç
+;EKBL-AA/1,5;ELEMENTY BUKOWE LITE NA D≈ÅUGO≈öƒÜ;AA;0-1,5;44;-;-;-;-;1;-;-;-;330,00 z≈Ç
+;EKBL-AB/1,5;ELEMENTY BUKOWE LITE NA D≈ÅUGO≈öƒÜ;AB;0-,15;44;-;-;-;-;1;-;-;-;250,00 z≈Ç
+;EKBL-AA/3;ELEMENTY BUKOWE LITE NA D≈ÅUGO≈öƒÜ;AA;1,5-3;44;-;-;-;-;1;-;-;-;400,00 z≈Ç
+;EKBL-AB/3;ELEMENTY BUKOWE LITE NA D≈ÅUGO≈öƒÜ;AB;1,5-3;44;-;-;-;-;1;-;-;-;360,00 z≈Ç
+;EKBK-AA/4;ELEMENTY BUKOWE KLEJONE NA D≈ÅUGO≈öƒÜ;AA;0-4;44;-;-;-;-;1;-;-;-;330,00 z≈Ç
+;EKBK-AB/4;ELEMENTY BUKOWE KLEJONE NA D≈ÅUGO≈öƒÜ;AB;0-4;44;-;-;-;-;1;-;-;-;250,00 z≈Ç
+;EKSL-AA/1,5;ELEMENTY SOSNOWE LITE NA D≈ÅUGO≈öƒÜ;AA;0-1,5;44;-;-;-;-;1;-;-;-;180,00 z≈Ç
+;EKSL-AB/1,5;ELEMENTY SOSNOWE LITE NA D≈ÅUGO≈öƒÜ;AB;0-,15;44;-;-;-;-;1;-;-;-;150,00 z≈Ç
+;EKSL-AA/3;ELEMENTY SOSNOWE LITE NA D≈ÅUGO≈öƒÜ;AA;1,5-3;44;-;-;-;-;1;-;-;-;200,00 z≈Ç
+;EKSL-AB/3;ELEMENTY SOSNOWE LITE NA D≈ÅUGO≈öƒÜ;AB;1,5-3;44;-;-;-;-;1;-;-;-;170,00 z≈Ç
+;EKSL-AA/4;ELEMENTY SOSNOWE LITE NA D≈ÅUGO≈öƒÜ;AA;3-4;44;-;-;-;-;1;-;-;-;300,00 z≈Ç
+;EKSL-AB/4;ELEMENTY SOSNOWE LITE NA D≈ÅUGO≈öƒÜ;AB;3-4;44;-;-;-;-;1;-;-;-;200,00 z≈Ç
+;EKSK-AA/4;ELEMENTY SOSNOWE KLEJONE NA D≈ÅUGO≈öƒÜ;AA;0-4;44;-;-;-;-;1;-;-;-;180,00 z≈Ç
+;EKSK-AB/4;ELEMENTY SOSNOWE KLEJONE NA D≈ÅUGO≈öƒÜ;AB;0-4;44;-;-;-;-;1;-;-;-;150,00 z≈Ç
+;SZJ;SZLIFOWANIE JEDNOSTRONNE;-;-;-;-;-;-;-;1;-;-;-;20,00 z≈Ç
+;SZD;SZLIFOWANIE DWUSTRONNE;-;-;-;-;-;-;-;1;-;-;-;40,00 z≈Ç
+;F;FORMATYZOWANIE;-;-;-;-;-;-;-;-;-;-;-;10% WARTO≈öCI MATERIA≈ÅU
+;PMB;P≈ÅYTA MEBLOWA BUKOWA (ZAPYTAJ U SPRZEDAWCY);-;-;-;-;-;-;-;-;-;-;-;
+RAMIAK DRZWIOWY;RDD-43/125;KLEJONKA DƒòBOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ DƒòBOWƒÑ;-;2,15;43;125;-;-;-;-;1;-;-;38,00 z≈Ç
+;RDD-43/135;KLEJONKA DƒòBOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ DƒòBOWƒÑ;-;2,15;43;135;-;-;-;-;1;-;-;41,00 z≈Ç
+;RDD-43/145;KLEJONKA DƒòBOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ DƒòBOWƒÑ;-;2,15;43;145;-;-;-;-;1;-;-;44,00 z≈Ç
+;RDJ-43/125;KLEJONKA JESIONOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ JESIONOWƒÑ;-;2,15;43;125;-;-;-;-;1;-;-;35,00 z≈Ç
+;RDJ-43/135;KLEJONKA JESIONOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ JESIONOWƒÑ;-;2,15;43;135;-;-;-;-;1;-;-;38,00 z≈Ç
+;RDJ-43/145;KLEJONKA JESIONOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ JESIONOWƒÑ;-;2,15;43;145;-;-;-;-;1;-;-;41,00 z≈Ç
+;RDO-43/125;KLEJONKA OLCHOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ OLCHOWƒÑ;-;2,15;43;125;-;-;-;-;1;-;-;34,00 z≈Ç
+;RDO-43/145;KLEJONKA OLCHOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ OLCHOWƒÑ;-;2,15;43;145;-;-;-;-;1;-;-;39,00 z≈Ç
+;RDS-43/125;KLEJONKA SOSNOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ SOSNOWƒÑ;-;2,15;43;125;-;-;-;-;1;-;-;33,00 z≈Ç
+;RDS-43/145;KLEJONKA SOSNOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ SOSNOWƒÑ;-;2,15;43;145;-;-;-;-;1;-;-;38,00 z≈Ç
+;RDD-68/135;KLEJONKA DƒòBOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ DƒòBOWƒÑ;-;2,15;68;135;-;-;-;-;1;-;-;65,00 z≈Ç
+;RDS-68/135;KLEJONKA SOSNOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ SOSNOWƒÑ;-;2,15;68;135;-;-;-;-;1;-;-;55,00 z≈Ç
+;RDJ-68/135;KLEJONKA JESIONOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ JESIONOWƒÑ;-;2,15;68;135;-;-;-;-;1;-;-;63,00 z≈Ç
+;RDO-68/135;KLEJONKA OLCHOWA OB≈ÅOGOWANA OB≈ÅOGƒÑ OLCHOWƒÑ;-;2,15;68;135;-;-;-;-;1;-;-;58,00 z≈Ç
+;OD-4;OB≈ÅOGI DƒòBOWE;-;2,15;4;-;-;-;-;1;-;-;-;65,00 z≈Ç
+;OD-3;OB≈ÅOGI DƒòBOWE;-;2,15;3;-;-;-;-;1;-;-;-;55,00 z≈Ç
+;OJ-4;OB≈ÅOGI JESIONOWE;-;2,15;4;-;-;-;-;1;-;-;-;65,00 z≈Ç
+;OJ-3;OB≈ÅOGI JESIONOWE;-;2,15;3;-;-;-;-;1;-;-;-;55,00 z≈Ç
+;OS-4;OB≈ÅOGI SOSNOWE;-;2,15;4;-;-;-;-;1;-;-;-;45,00 z≈Ç
+;OS-3;OB≈ÅOGI SOSNOWE;-;2,15;3;-;-;-;-;1;-;-;-;35,00 z≈Ç
+;OL-4;OB≈ÅOGI OLCHOWE;-;2,15;4;-;-;-;-;1;-;-;-;55,00 z≈Ç
+;OL-3;OB≈ÅOGI OLCHOWE;-;2,15;3;-;-;-;-;1;-;-;-;45,00 z≈Ç
+AKCESORIA POD≈ÅOGOWE;MAT-100;MATA POD PARKIET;-;50;-;1;-;-;-;1;-;-;-;1 000,00 z≈Ç
+;WB-280;GRUNT DO MASY - DO POD≈ÅO≈ªA NIECH≈ÅONNY;-;-;-;-;5;-;-;-;-;-;1;108,00 z≈Ç
+;C-700;MASA NAPRAWCZA;-;-;-;-;-;25;-;-;-;1;-;118,00 z≈Ç
+;LIC-710;MASA SAMOPOZIOMUJƒÑCA;-;-;-;-;-;25;-;-;-;1;-;270,00 z≈Ç
+;PB-230/4,5;GRUNT POLIURETANOWY;-;-;-;-;4,5;-;-;-;-;-;1;162,00 z≈Ç
+;PB-230/9;GRUNT POLIURETANOWY;-;-;-;-;9;-;-;-;-;-;1;300,00 z≈Ç
+;SU/5;ROZCIE≈ÉCZALNIK DO GRUNTU POLIURETANOWEGO ;-;-;-;-;5;-;-;-;-;-;1;104,00 z≈Ç
+;SU/10;ROZCIE≈ÉCZALNIK DO GRUNTU POLIURETANOWEGO ;-;-;-;-;10;-;-;-;-;-;1;185,00 z≈Ç
+;PB-235/5;GRUNT POLIURETANOWY NISKOEMISYJN;-;-;-;-;5;-;-;-;-;-;1;500,00 z≈Ç
+;PB-235/10;GRUNT POLIURETANOWY NISKOEMISYJN;-;-;-;-;10;-;-;-;-;-;1;162,00 z≈Ç
+;PB-890/5;KLEJ PU 2-SK≈ÅADNIKOWY;-;-;-;-;-;5;-;-;-;1;-;99,00 z≈Ç
+;PB-890/10;KLEJ PU 2-SK≈ÅADNIKOWY;-;-;-;-;-;10;-;-;-;1;-;186,00 z≈Ç
+;HB-810;KLEJ ELASTYCZNY HYBRYDOWY;-;-;-;-;-;15;-;-;-;1;-;350,00 z≈Ç
+;PB-350;KLEJ PU NAPRAWKOWY;-;-;-;-;-;0,8;-;-;-;1;-;50,00 z≈Ç
+;FS-410/5;SZPACHLA ROZPUSZCZALNIKOWA;-;-;-;-;5;-;-;-;-;-;1;140,00 z≈Ç
+;FS-410/10;SZPACHLA ROZPUSZCZALNIKOWA;-;-;-;-;10;-;-;-;-;-;1;259,00 z≈Ç
+;S-460/5;LAKIER PODK≈ÅADOWY SYNTETYCZNY;-;-;-;-;5;-;-;-;-;-;1;200,00 z≈Ç
+;PW-460;LAKIER POLIURETANOWY WODNY 2K (P√ì≈ÅMAT);-;-;-;-;5,35;-;-;-;-;-;1;414,00 z≈Ç
+;AB-441;LAKIER 2K CHEMOUTWARDZALNY (P√ì≈ÅMAT, PO≈ÅYSK);-;-;-;-;4,95;-;-;-;-;-;1;207,00 z≈Ç
+;PM-100;CZY≈öCIK DO POD≈Å√ìG LAKIEROWANYCH;-;-;-;-;0,75;-;-;-;-;-;1;25,00 z≈Ç
+;PM-120;≈öRODEK PIELƒòGNACYJNY DO POD≈Å√ìG;-;-;-;-;0,75;-;-;-;-;-;1;33,00 z≈Ç
+;OL-610;OLEJ HS ;-;-;-;-;2,5;-;-;-;-;-;1;245,00 z≈Ç
+;OL-610/R;ROZCIE≈ÉCZALNIK DO OLEJU OL-610;-;-;-;-;1;-;-;-;-;-;1;45,00 z≈Ç
+;OL-610/2K;UTWARDZACZ DO OLEJU OL-610 - 2K;-;-;-;-;0,5;-;-;-;-;-;1;80,00 z≈Ç
+;0L-611/1;OLEJ KOLORYZUJƒÑCY;-;-;-;-;1;-;-;-;-;-;1;135,00 z≈Ç
+;OL-620/5;OLEJ DO POD≈Å√ìG DREWNIANYCH;-;-;-;-;5;-;-;-;-;-;1;290,00 z≈Ç
+;OL-650/5;OLEJOWOSK;-;-;-;-;5;-;-;-;-;-;1;490,00 z≈Ç
+;OL-670/1;WOSK PIELƒòGNACYJNY;-;-;-;-;1;-;-;-;-;-;1;70,00 z≈Ç
+;OL-680/1;MYD≈ÅO DO POD≈Å√ìG ;-;-;-;-;1;-;-;-;-;-;1;50,00 z≈Ç
+;OL-690/1;OLEJ PIELƒòGNACYJNY;-;-;-;-;1;-;-;-;-;-;1;70,00 z≈Ç

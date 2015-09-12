@@ -19,8 +19,9 @@ class ProductCommandFactory implements FactoryInterface
         $categoryService = $mainServiceLocator->get('CmsIr\Category\Service\CategoryService');
         $disctionaryTable = $mainServiceLocator->get('CmsIr\Dictionary\Model\DictionaryTable');
         $productTable = $mainServiceLocator->get('Product\Model\ProductTable');
+        $statusTable = $mainServiceLocator->get('CmsIr\System\Model\StatusTable');
 
-        $command = new ProductCommand($categoryService);
+        $command = new ProductCommand($categoryService, $disctionaryTable, $productTable, $statusTable);
         return $command;
     }
 }
