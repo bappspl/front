@@ -4,6 +4,7 @@ namespace Page\Controller;
 
 use CmsIr\Page\Model\Page;
 use CmsIr\Post\Model\Post;
+use Product\Model\Product;
 use Zend\Db\Sql\Predicate\IsNotNull;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Paginator\Adapter\ArrayAdapter;
@@ -303,6 +304,125 @@ class PageController extends AbstractActionController
         return $viewModel;
     }
 
+    public function offerAction()
+    {
+        $this->layout('layout/home');
+
+        $url = $this->params('url');
+        $productName = $this->params('name');
+        $catalogNumber = $this->params('catalog_number');
+
+        $lang = $this->getLangId($this->params()->fromRoute('lang'));
+
+        /* @var $product Product */
+        $product = $this->getProductService()->getProductTable()->getOneBy(array('catalog_number' => $catalogNumber, 'name' => $productName));
+        $productWithBlocksAndFiles = $this->getProductService()->findProductWithBlocks($product, $lang->getId());
+
+        $tags = $this->getTagService()->findAsAssocArrayForEntity($product->getId(), 'Product');
+        $product->setTags($tags);
+
+        $productsByName = $this->getProductService()->getProductTable()->getBy(array('name' => $product->getName()));
+
+        $classes = array();
+        $lengths = array();
+        $heights = array();
+        $widths = array();
+        $volumes = array();
+        $weights = array();
+        /* @var $oneProduct Product */
+        foreach($productsByName as $oneProduct)
+        {
+            if($oneProduct->getClassId())
+            {
+                $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getClassId()));
+                $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
+                $classes[] = array(
+                    'id' => $dictionary->getId(),
+                    'title' => $dictionaryBlocks->getTitle(),
+                    'content' => $dictionaryBlocks->getContent()
+                );
+            }
+
+            if($oneProduct->getLengthId())
+            {
+                $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getLengthId()));
+                $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
+                $lengths[] = array(
+                    'id' => $dictionary->getId(),
+                    'title' => $dictionaryBlocks->getTitle(),
+                    'content' => $dictionaryBlocks->getContent()
+                );
+            }
+
+            if($oneProduct->getHeightId())
+            {
+                $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getHeightId()));
+                $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
+                $heights[] = array(
+                    'id' => $dictionary->getId(),
+                    'title' => $dictionaryBlocks->getTitle(),
+                    'content' => $dictionaryBlocks->getContent()
+                );
+            }
+
+            if($oneProduct->getWidthId())
+            {
+                $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getWidthId()));
+                $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
+                $widths[] = array(
+                    'id' => $dictionary->getId(),
+                    'title' => $dictionaryBlocks->getTitle(),
+                    'content' => $dictionaryBlocks->getContent()
+                );
+            }
+
+            if($oneProduct->getVolumeId())
+            {
+                $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getVolumeId()));
+                $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
+                $volumes[] = array(
+                    'id' => $dictionary->getId(),
+                    'title' => $dictionaryBlocks->getTitle(),
+                    'content' => $dictionaryBlocks->getContent()
+                );
+            }
+
+            if($oneProduct->getWeightId())
+            {
+                $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getWeightId()));
+                $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
+                $weights[] = array(
+                    'id' => $dictionary->getId(),
+                    'title' => $dictionaryBlocks->getTitle(),
+                    'content' => $dictionaryBlocks->getContent()
+                );
+            }
+        }
+
+        $unitWithBlock = null;
+        if($product->getUnitId())
+        {
+            $unit = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $product->getUnitId()));
+            $unitWithBlock = $this->getDictionaryService()->getBlocksToEntityByLangId($unit, $lang->getId());
+        }
+
+        $viewParams = array();
+        $viewParams['lang'] = $lang->getUrlShortcut();
+        $viewParams['product'] = $productWithBlocksAndFiles;
+        $viewParams['classes'] = $classes;
+        $viewParams['lengths'] = $lengths;
+        $viewParams['heights'] = $heights;
+        $viewParams['widths'] = $widths;
+        $viewParams['volumes'] = $volumes;
+        $viewParams['weights'] = $weights;
+        $viewParams['weights'] = $weights;
+        $viewParams['unit'] = $unitWithBlock;
+        $viewModel = new ViewModel();
+        $viewModel->setVariables($viewParams);
+
+        return $viewModel;
+    }
+
     public function getSessionLangId()
     {
         $session = new Container();
@@ -407,5 +527,29 @@ class PageController extends AbstractActionController
     public function getCategoryService()
     {
         return $this->getServiceLocator()->get('CmsIr\Category\Service\CategoryService');
+    }
+
+    /**
+     * @return \Product\Service\ProductService
+     */
+    public function getProductService()
+    {
+        return $this->getServiceLocator()->get('Product\Service\ProductService');
+    }
+
+    /**
+     * @return \CmsIr\Tag\Service\TagService
+     */
+    public function getTagService()
+    {
+        return $this->getServiceLocator()->get('CmsIr\Tag\Service\TagService');
+    }
+
+    /**
+     * @return \CmsIr\Dictionary\Service\DictionaryService
+     */
+    public function getDictionaryService()
+    {
+        return $this->getServiceLocator()->get('CmsIr\Dictionary\Service\DictionaryService');
     }
 }

@@ -26,6 +26,12 @@ class Product extends Model
 
     // virtual
     protected $blocks;
+    protected $files;
+    protected $tags;
+
+    protected $productName;
+    protected $productDescription;
+    protected $categoryName;
 
     public function exchangeArray($data) 
     {
@@ -38,6 +44,7 @@ class Product extends Model
         $this->show_price = (!empty($data['show_price'])) ? $data['show_price'] : 0;
         $this->category_id = (!empty($data['category_id'])) ? $data['category_id'] : null;
         $this->blocks = (!empty($data['blocks'])) ? $data['blocks'] : null;
+        $this->files = (!empty($data['files'])) ? $data['files'] : null;
 
         // dictionary
         $this->class_id = (!empty($data['class_id'])) ? $data['class_id'] : null;
@@ -305,4 +312,83 @@ class Product extends Model
         $this->height_id = $height_id;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getFiles()
+    {
+        return $this->files;
+    }
+
+    /**
+     * @param mixed $files
+     */
+    public function setFiles($files)
+    {
+        $this->files = $files;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProductName()
+    {
+        return $this->productName;
+    }
+
+    /**
+     * @param mixed $productName
+     */
+    public function setProductName($productName)
+    {
+        $this->productName = $productName;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getProductDescription()
+    {
+        return $this->productDescription;
+    }
+
+    /**
+     * @param mixed $productDescription
+     */
+    public function setProductDescription($productDescription)
+    {
+        $this->productDescription = $productDescription;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTags()
+    {
+        return $this->tags;
+    }
+
+    /**
+     * @param mixed $tags
+     */
+    public function setTags($tags)
+    {
+        $this->tags = $tags;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoryName()
+    {
+        return $this->categoryName;
+    }
+
+    /**
+     * @param mixed $categoryName
+     */
+    public function setCategoryName($categoryName)
+    {
+        $this->categoryName = $categoryName;
+    }
 }

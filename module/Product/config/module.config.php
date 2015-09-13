@@ -26,7 +26,12 @@ return array(
         'display_exceptions' => true,
     ),
     'service_manager' => array(
-
+        'abstract_factories' => array(
+            'Zend\Form\FormAbstractServiceFactory',
+        ),
+        'factories' => array(
+            'Product\Service\ProductService' => 'Product\Service\Factory\ProductService',
+        ),
     ),
     'strategies' => array(
         'ViewJsonStrategy',
