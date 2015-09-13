@@ -9,6 +9,7 @@ class CreateProduct extends AbstractMigration
     {
         $this->table('product', array())
              ->addColumn('name', 'string')
+             ->addColumn('slug', 'string')
              ->addColumn('price', 'string', array('null'=>true))
              ->addColumn('catalog_number', 'string', array('null'=>true))
              ->addColumn('bestseller', 'string', array('null'=>true))

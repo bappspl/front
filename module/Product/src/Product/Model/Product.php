@@ -8,6 +8,7 @@ class Product extends Model
 {
     protected $id;
     protected $name;
+    protected $slug;
     protected $status_id;
     protected $price;
     protected $catalog_number;
@@ -40,6 +41,7 @@ class Product extends Model
     {
         $this->id     = (!empty($data['id'])) ? $data['id'] : null;
         $this->name = (!empty($data['name'])) ? $data['name'] : null;
+        $this->slug = (!empty($data['slug'])) ? $data['slug'] : null;
         $this->status_id = (!empty($data['status_id'])) ? $data['status_id'] : 2;
         $this->price = (!empty($data['price'])) ? $data['price'] : null;
         $this->catalog_number = (!empty($data['catalog_number'])) ? $data['catalog_number'] : null;
@@ -444,5 +446,21 @@ class Product extends Model
     public function setTags($tags)
     {
         $this->tags = $tags;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug)
+    {
+        $this->slug = $slug;
     }
 }

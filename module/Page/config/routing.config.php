@@ -93,7 +93,7 @@ return array(
                 'may_terminate' => true,
                 'type' => 'Segment',
                 'options' => array(
-                    'route' => '/:catalog_number/:name',
+                    'route' => '/:slug',
                     'defaults' => array(
                         'controller' => 'Page\Controller\Page',
                         'action' => 'offer',
