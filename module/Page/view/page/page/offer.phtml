@@ -1,0 +1,237 @@
+<?php /* @var $product \Product\Model\Product */ ?>
+<?php $files = $product->getFiles() ?>
+<?php $block = $product->getBlocks() ?>
+<?php
+    if(count($files) > 0)
+    {
+        $firstFile = reset($files);
+        $filename = 'files/product/'.$firstFile->getFilename();
+    } else
+    {
+        $filename = 'img/aktualnosci-bg.png';
+    }
+?>
+    <section class="page-section"
+             style="padding: 215px 0 140px 0; background: url(<?php echo $this->basePath($filename) ?>) no-repeat; background-size: 100% 100%;">
+        <div class="relative container align-left">
+
+            <div class="row">
+
+                <div class="col-md-8">
+                    <h1 class="hs-line-11 font-alt mb-20 mb-xs-0" style="color: white"><?php echo $product->getCatalogNumber(); ?></h1>
+
+                    <div class="hs-line-4 font-alt">
+                        <?php echo $product->getProductName(); ?>
+                    </div>
+                </div>
+
+                <div class="col-md-4 mt-30">
+                    <div class="mod-breadcrumbs font-alt align-right" style="color: white">
+                        <a href="<?php echo $this->url('home', array('lang' => $lang)) ?>" style="color: white"><?php echo $this->translate('Home'); ?></a>
+                        &nbsp;/&nbsp;
+                        <a href="<?php echo $this->url('offer-list', array('lang' => $lang)) ?>" style="color: white"><?php echo $this->translate('Oferta'); ?></a>
+                        &nbsp;/&nbsp;<?php echo $product->getProductName(); ?>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+<!-- Section -->
+<section class="page-section">
+    <div class="container relative">
+
+        <!-- Product Content -->
+        <div class="row mb-60 mb-xs-30">
+            <?php if(count($files) > 0): ?>
+                <?php $firstFile = reset($files); ?>
+                <!-- Product Images -->
+                <div class="col-md-4 mb-md-30">
+
+                    <div class="post-prev-img"  style="height: auto; width: auto;">
+                        <a href="<?php echo $this->basePath('files/product/'.$firstFile->getFilename()) ?>" class="lightbox-gallery-3 mfp-image"><img src="<?php echo $this->url('thumb', array('entity' => 'Product', 'size' => '370x472', 'filename' => $firstFile->getFilename()))?>" alt="" /></a>
+                        <?php if($product->getBestseller()): ?>
+                        <div class="intro-label">
+                            <span class="label label-danger bg-red"><?php echo $this->translate('Bestseller'); ?></span>
+                        </div>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="row">
+                        <?php foreach($files as $file): ?>
+                            <div class="col-xs-3 post-prev-img" style="height: inherit; width: inherit;">
+                                <a href="<?php echo $this->basePath('files/product/'.$file->getFilename()) ?>" class="lightbox-gallery-3 mfp-image"><img src="<?php echo $this->url('thumb', array('entity' => 'Product', 'size' => '68x86', 'filename' => $file->getFilename()))?>" alt="" /></a>
+                            </div>
+                        <?php endforeach; ?>
+                    </div>
+
+                </div>
+                <!-- End Product Images -->
+
+            <?php endif; ?>
+
+            <!-- Product Description -->
+            <div class="col-sm-8 col-md-5 mb-xs-40">
+
+                <h3 class="mt-0 dna-style" style="letter-spacing: 0.1em"><?php echo $product->getProductName(); ?></h3>
+
+                <?php if($product->getShowPrice()): ?>
+                    <hr class="mt-0 mb-20"/>
+                    <div class="row">
+                        <div class="col-xs-6 lead mt-0 mb-20">
+
+                            <strong><?php echo $product->getPrice(); ?> zł</strong>
+
+                        </div>
+                    </div>
+                    <hr class="mt-0 mb-20"/>
+                <?php endif; ?>
+
+                <?php if(!empty($classes)): ?>
+                    <div class="section-text mb-20">
+                        <select name="" id="" class="dna-form dna-select">
+                            <option value="0"><?php echo $this->translate('Klasa'); ?></option>
+                            <?php foreach($classes as $class): ?>
+                                <?php if($product->getClassId() === $class['id']): ?>
+                                    <option value="<?php echo $class['id']; ?>" selected="selected"><?php echo $class['title']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $class['id']; ?>"><?php echo $class['title']; ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                <?php endif; ?>
+
+                <?php if(!empty($lengths)): ?>
+                    <div class="section-text mb-20">
+                        <select name="" id="" class="dna-form dna-select">
+                            <option value="0"><?php echo $this->translate('Długość'); ?></option>
+                            <?php foreach($lengths as $length): ?>
+                                <?php if($product->getLengthId() === $length['id']): ?>
+                                    <option value="<?php echo $length['id']; ?>" selected="selected"><?php echo $length['title']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $length['id']; ?>"><?php echo $length['title']; ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                <?php endif; ?>
+
+                <?php if(!empty($heights)): ?>
+                    <div class="section-text mb-20">
+                        <select name="" id="" class="dna-form dna-select">
+                            <option value="0"><?php echo $this->translate('Wysokość'); ?></option>
+                            <?php foreach($heights as $height): ?>
+                                <?php if($product->getHeightId() === $height['id']): ?>
+                                    <option value="<?php echo $height['id']; ?>" selected="selected"><?php echo $height['title']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $height['id']; ?>"><?php echo $height['title']; ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                <?php endif; ?>
+
+                <?php if(!empty($widths)): ?>
+                    <div class="section-text mb-20">
+                        <select name="" id="" class="dna-form dna-select">
+                            <option value="0"><?php echo $this->translate('Szerokość'); ?></option>
+                            <?php foreach($widths as $width): ?>
+                                <?php if($product->getWidthId() === $width['id']): ?>
+                                    <option value="<?php echo $width['id']; ?>" selected="selected"><?php echo $width['title']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $width['id']; ?>"><?php echo $width['title']; ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                <?php endif; ?>
+
+                <?php if(!empty($volumes)): ?>
+                    <div class="section-text mb-20">
+                        <select name="" id="" class="dna-form dna-select">
+                            <option value="0"><?php echo $this->translate('Objętość'); ?></option>
+                            <?php foreach($volumes as $volume): ?>
+                                <?php if($product->getVolumeId() === $volume['id']): ?>
+                                    <option value="<?php echo $volume['id']; ?>" selected="selected"><?php echo $volume['title']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $volume['id']; ?>"><?php echo $volume['title']; ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                <?php endif; ?>
+
+                <?php if(!empty($weights)): ?>
+                    <div class="section-text mb-20">
+                        <select name="" id="" class="dna-form dna-select">
+                            <option value="0"><?php echo $this->translate('Waga'); ?></option>
+                            <?php foreach($weights as $weight): ?>
+                                <?php if($product->getWeightId() === $weight['id']): ?>
+                                    <option value="<?php echo $weight['id']; ?>" selected="selected"><?php echo $weight['title']; ?></option>
+                                <?php else: ?>
+                                    <option value="<?php echo $weight['id']; ?>"><?php echo $weight['title']; ?></option>
+                                <?php endif; ?>
+                            <?php endforeach; ?>
+                        </select>
+                    </div>
+                <?php endif; ?>
+
+                <?php if($unit): ?>
+                <div class="section-text mb-20 dna-style" style="text-transform: lowercase; letter-spacing: 0.1em;">
+                    <input type="number" class="dna-number"  />
+                    <?php echo $unit->getTitle(); ?>
+                </div>
+                <?php endif; ?>
+
+                <hr class="mt-0 mb-50"/>
+
+                <div class="section-text small dna-color no-under">
+                    <div><?php echo $this->translate('Numer katalogowy'); ?>: <strong><?php echo $product->getCatalogNumber(); ?></strong></div>
+                    <div><?php echo $this->translate('Kategoria'); ?>: <a href="#<?php echo $product->getCategoryId(); ?>" > <strong><?php echo $product->getCategoryName(); ?></strong></a></div>
+                    <?php if(count($product->getTags()) > 0): ?>
+                        <div><?php echo $this->translate('Tagi');?>:
+                            <strong>
+                                <?php
+                                    $countTags = count($product->getTags());
+                                    $tags = $product->getTags();
+                                    $i = 1;
+                                ?>
+                                <?php foreach($tags as $tag): ?>
+                                    <a href="#"><?php echo $tag; ?></a>
+                                    <?php if($i < $countTags) echo ', '; ?>
+                                    <?php $i++; ?>
+                                <?php endforeach; ?>
+
+                            </strong>
+                        </div>
+                    <?php endif; ?>
+                </div>
+
+            </div>
+            <!-- End Product Description -->
+
+            <!-- Features -->
+            <?php if(!empty($classes)): ?>
+                <div class="col-sm-4 col-md-3 mb-xs-40 dna-color">
+
+                    <strong><?php echo $this->translate('LEGENDA'); ?>:</strong><br/>
+                    <?php echo $product->getProductName(); ?>
+
+                    <?php foreach($classes as $class): ?>
+                        <div class="dna-style" style="margin-top: 10px;">
+                            <?php echo $class['title']; ?>
+                        </div>
+                        <p class="dna-color" style="text-transform: uppercase; font-size: 12px; margin-bottom: 20px; text-align: justify;">
+                            <?php echo $class['content']; ?>
+                        </p>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+            <!-- End Features -->
+
+        </div>
+    </div>
+</section>

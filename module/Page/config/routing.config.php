@@ -80,6 +80,7 @@ return array(
     ),
     'offer-list' => array(
         'type' => 'Segment',
+        'may_terminate' => true,
         'options' => array(
             'route'    => '/[:lang]/oferty',
             'defaults' => array(
@@ -87,5 +88,18 @@ return array(
                 'action'     => 'offerList',
             ),
         ),
+        'child_routes' => array(
+            'offer' => array(
+                'may_terminate' => true,
+                'type' => 'Segment',
+                'options' => array(
+                    'route' => '/:catalog_number/:name',
+                    'defaults' => array(
+                        'controller' => 'Page\Controller\Page',
+                        'action' => 'offer',
+                    ),
+                ),
+            ),
+        )
     ),
 );

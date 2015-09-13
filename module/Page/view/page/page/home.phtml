@@ -69,8 +69,8 @@
             </div>
 
             <div class="align-right" style="margin-right: 50px; margin-top: -40px">
-                <a href="<?php echo $this->url('view-page', array('lang' => $lang, 'url' => $history->getUrl())) ?>" class="section-more font-alt"><i class="fa fa-angle-down fa-2x"></i> Czytaj
-                    więcej</a>
+                <a href="<?php echo $this->url('view-page', array('lang' => $lang, 'url' => $history->getUrl())) ?>" class="section-more font-alt"><i class="fa fa-angle-down fa-2x"></i>
+                <?php echo $this->translate('Czytaj więcej'); ?></a>
             </div>
 
         </div>
@@ -103,8 +103,8 @@
                         <span class="section-title font-alt align-center mb-50 mb-sm-40"
                               style="position: absolute; right: 3%;">
 
-                            <a href="<?php echo $this->url('news-list', array('lang' => $lang)) ?>" class="section-more right" style="letter-spacing: 0.2em !important;">Zobacz
-                                wszystkie aktualności <i class="fa fa-angle-right"></i></a>
+                            <a href="<?php echo $this->url('news-list', array('lang' => $lang)) ?>" class="section-more right" style="letter-spacing: 0.2em !important;">
+                                <?php echo $this->translate('Zobacz wszystkie aktualności'); ?> <i class="fa fa-angle-right"></i></a>
 
                         </span>
 
@@ -151,7 +151,7 @@
                         </div>
 
                         <div class="post-prev-more">
-                            <a href="<?php echo $this->url('view-news', array('lang' => $lang, 'url' => $post->getUrl())) ?>" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i
+                            <a href="<?php echo $this->url('view-news', array('lang' => $lang, 'url' => $post->getUrl())) ?>" class="btn btn-mod btn-gray btn-round"><?php echo $this->translate('Zobacz więcej'); ?> <i
                                     class="fa fa-angle-right"></i></a>
                         </div>
 
@@ -179,7 +179,7 @@
         <div class="container relative">
 
             <h2 class="font-alt mb-sm-40 text-center">
-                Oferta
+                <?php echo $this->translate('Oferta'); ?>
             </h2>
 
             <!-- Nav tabs -->
@@ -285,7 +285,7 @@
                         <div class="col-md-8 col-md-offset-2 align-center">
 
                             <!-- Section Title -->
-                            <h2 class="small-title font-alt" style="color: white; opacity: .8;">Opinie klientów na nasz temat</h2>
+                            <h2 class="small-title font-alt" style="color: white; opacity: .8;"><?php echo $this->translate('Opinie klientów na nasz temat'); ?></h2>
                             <blockquote class="testimonial" style="color: white">
 
                                 <?php echo $opinion->getContent() ?>

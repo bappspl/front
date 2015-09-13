@@ -6,16 +6,16 @@
         <div class="row">
 
             <div class="col-md-8">
-                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0" style="color: white">Aktualności</h1>
+                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0" style="color: white"><?php echo $this->translate('Aktualności'); ?></h1>
 
                 <div class="hs-line-4 font-alt">
-                    Najnowsze ciekawostki i informacje z naszej branży
+                    <?php echo $this->translate('Najnowsze ciekawostki i informacje z naszej branży'); ?>
                 </div>
             </div>
 
             <div class="col-md-4 mt-30">
                 <div class="mod-breadcrumbs font-alt align-right" style="color: white">
-                    <a href="<?php echo $this->url('home', array('lang' => $lang)) ?>" style="color: white">Home</a>&nbsp;/&nbsp;<a href="#" style="color: white">Aktualności</a>
+                    <a href="<?php echo $this->url('home', array('lang' => $lang)) ?>" style="color: white"><?php echo $this->translate('Home'); ?></a>&nbsp;/&nbsp;<a href="#" style="color: white"><?php echo $this->translate('Aktualności'); ?></a>
                 </div>
 
             </div>
@@ -82,7 +82,7 @@
                         </div>
 
                         <div class="post-prev-more">
-                            <a href="<?php echo $this->url('view-news', array('lang' => $lang, 'url' => $post->getUrl())) ?>" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i
+                            <a href="<?php echo $this->url('view-news', array('lang' => $lang, 'url' => $post->getUrl())) ?>" class="btn btn-mod btn-gray btn-round"><?php echo $this->translate('Zobacz więcej'); ?> <i
                                     class="fa fa-angle-right"></i></a>
                         </div>
 
