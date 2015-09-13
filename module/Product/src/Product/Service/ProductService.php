@@ -14,9 +14,44 @@ class ProductService implements ServiceLocatorAwareInterface
 
     public function findAllActiveProductsForProductList($langId)
     {
-        $products = $this->getProductTable()->getBy(array('status_id' => 1));
+        $products = $this->getProductTable()->getBy(array('status_id' => 1), 'name ASC');
 
+        /* @var $product Product */
+        foreach($products as $product)
+        {
+            $blocks = $this->getBlockTable()->getBy(array('entity_type' => 'Product', 'entity_id' => $product->getId(), 'language_id' => $langId));
 
+            /* @var $block Block */
+            foreach($blocks as $block)
+            {
+                $fieldName = $block->getName();
+
+                switch ($fieldName)
+                {
+                    case 'product_name':
+                        $product->setProductName($block->getValue());
+                        break;
+                    case 'content':
+                        $product->setProductDescription($block->getValue());
+                        break;
+                }
+            }
+
+            $categoryId = $product->getCategoryId();
+
+            /* @var $category Category */
+            $category = $this->getCategoryTable()->getOneBy(array('id' => $categoryId));
+            $product->setCategory($category);
+
+            /* @var $categoryBlock Block */
+            $categoryBlock = $this->getBlockTable()->getOneBy(array('entity_type' => 'Category', 'entity_id' => $category->getId(), 'language_id' => $langId, 'name' => 'title'));
+            $product->setCategoryName($categoryBlock->getValue());
+
+            $files = $this->getFileTable()->getBy(array('entity_type' => 'Product', 'entity_id' => $product->getId()));
+            $product->setFiles($files);
+        }
+
+        return $products;
     }
 
     public function findProductWithBlocks($entity, $langId)

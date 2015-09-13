@@ -1,0 +1,15 @@
+<?php if ($this->pageCount): ?>
+
+    <div class="pagination">
+        <a <?php echo !isset($this->next) ? 'class="no-active"' : ''; ?> href="<?php echo $this->url('offer-list', array('page' => $this->previous, 'lang' => $lang)); ?>"><i class="fa fa-angle-left"></i></a>
+
+        <?php foreach ($this->pagesInRange as $page): ?>
+            <a <?php echo $page == $this->current ? 'class="active"' : ''; ?> href="<?php echo $this->url('offer-list', array('page' => $page, 'lang' => $lang)); ?>">
+                <?php echo $page; ?>
+            </a>
+        <?php endforeach; ?>
+
+        <a href="<?php echo $this->url('offer-list', array('page' => $this->next, 'lang' => $lang)); ?>" <?php echo!isset($this->next) ? 'class="no-active"' : ''; ?>><i class="fa fa-angle-right"></i></a>
+    </div>
+
+<?php endif; ?>

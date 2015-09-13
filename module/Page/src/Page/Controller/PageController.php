@@ -293,17 +293,22 @@ class PageController extends AbstractActionController
     {
         $this->layout('layout/home');
 
-        $url = $this->params('url');
+        $page = $this->params()->fromRoute('page') ? (int) $this->params()->fromRoute('page') : 1;
 
         $lang = $this->getLangId($this->params()->fromRoute('lang'));
 
         $categories = $this->getProductTable()->getCategoriesForAllProducts($lang->getId());
-        $products = $this->getProductTable()->getProductsForList($lang->getId());
-        var_dump($products);die;
+        $products = $this->getProductService()->findAllActiveProductsForProductList($lang->getId());
+
+        $paginator = new Paginator(new ArrayAdapter($products));
+        $paginator->setCurrentPageNumber($page)
+            ->setItemCountPerPage(9);
 
         $viewParams = array();
         $viewParams['lang'] = $lang->getUrlShortcut();
         $viewParams['categories'] = $categories;
+        $viewParams['products'] = $paginator;
+        $viewParams['page'] = $page;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
 

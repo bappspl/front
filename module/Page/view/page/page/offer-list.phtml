@@ -44,8 +44,8 @@
                         <form method="post" action="#" class="form">
                             <select class="input-md round">
                                 <option>Sortowanie</option>
-                                <option>Sort by price: low to high</option>
-                                <option>Sort by price: high to low</option>
+                                <option>Cena - malejąco</option>
+                                <option>Cena - rosnąco</option>
                             </select>
                         </form>
                     </div>
@@ -55,232 +55,53 @@
 
                 <div class="row multi-columns-row">
 
-                    <!-- Shop Item -->
-                    <div class="col-md-4 col-lg-4 mb-60 mb-xs-40">
+                    <?php /* @var $product \Product\Model\Product */ ?>
+                    <?php foreach($products as $product): ?>
+                        <?php $files = $product->getFiles() ?>
+                        <?php /* @var $file \CmsIr\File\Model\File */ ?>
+                        <?php $file = reset($files) ?>
 
-                        <div class="post-prev-img">
+                        <div class="col-md-4 col-lg-4 mb-60 mb-xs-40">
 
-                            <a href="shop-single.html"><img src="/images/shop/shop-prev-1.jpg" alt=""/></a>
+                            <div class="post-prev-img">
 
-                            <div class="intro-label">
-                                <span class="label label-danger bg-red">Sale</span>
+                                <a href="shop-single.html"><img src="<?php echo empty($file) ? $this->basePath('/images/shop/shop-prev-1.jpg') : $this->basePath('files/product/' . $file->getFilename()) ?>" alt=""/></a>
+
+
+                            </div>
+
+                            <div class="post-prev-title font-alt align-center">
+                                <a href="shop-single.html" class="dna-style"><?php echo $product->getProductName() ?></a>
+                            </div>
+
+                            <div class="post-prev-text align-center dna-style" style="font-size: 18px;">
+                                <strong><?php echo $product->getPrice() ?> zł</strong>
+                            </div>
+
+                            <div class="post-prev-more align-center">
+                                <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i
+                                        class="fa fa-angle-right"></i></a>
                             </div>
 
                         </div>
 
-                        <div class="post-prev-title font-alt align-center">
-                            <a href="shop-single.html" class="dna-style">G-Star Polo Applique Jersey</a>
-                        </div>
-
-                        <div class="post-prev-text align-center dna-style" style="font-size: 18px;">
-                            <strong>94.75</strong>
-                        </div>
-
-                        <div class="post-prev-more align-center">
-                            <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i
-                                    class="fa fa-angle-right"></i></a>
-                        </div>
-
-                    </div>
-                    <!-- End Shop Item -->
-
-                    <!-- Shop Item -->
-                    <div class="col-md-4 col-lg-4 mb-60 mb-xs-40">
-
-                        <div class="post-prev-img">
-                            <a href="shop-single.html"><img src="images/shop/shop-prev-2.jpg" alt=""/></a>
-                        </div>
-
-                        <div class="post-prev-title font-alt align-center">
-                            <a href="shop-single.html">Only & Sons Pique Polo Shirt</a>
-                        </div>
-
-                        <div class="post-prev-text align-center">
-                            <strong>$28.99</strong>
-                        </div>
-
-                        <div class="post-prev-more align-center">
-                            <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                        </div>
-
-                    </div>
-                    <!-- End Shop Item -->
-
-                    <!-- Shop Item -->
-                    <div class="col-md-4 col-lg-4 mb-60 mb-xs-40">
-
-                        <div class="post-prev-img">
-                            <a href="shop-single.html"><img src="images/shop/shop-prev-3.jpg" alt=""/></a>
-                        </div>
-
-                        <div class="post-prev-title font-alt align-center">
-                            <a href="shop-single.html">Longline Long Sleeve</a>
-                        </div>
-
-                        <div class="post-prev-text align-center">
-                            <strong>$39.99</strong>
-                        </div>
-
-                        <div class="post-prev-more align-center">
-                            <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                        </div>
-
-                    </div>
-                    <!-- End Shop Item -->
-
-                    <!-- Shop Item -->
-                    <div class="col-md-4 col-lg-4 mb-60 mb-xs-40">
-
-                        <div class="post-prev-img">
-                            <a href="shop-single.html"><img src="images/shop/shop-prev-4.jpg" alt=""/></a>
-                        </div>
-
-                        <div class="post-prev-title font-alt align-center">
-                            <a href="shop-single.html">Polo Shirt With Floral Sleeves</a>
-                        </div>
-
-                        <div class="post-prev-text align-center">
-                            <strong>$85.99</strong>
-                        </div>
-
-                        <div class="post-prev-more align-center">
-                            <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                        </div>
-
-                    </div>
-                    <!-- End Shop Item -->
-
-                    <!-- Shop Item -->
-                    <div class="col-md-4 col-lg-4 mb-60 mb-xs-40">
-
-                        <div class="post-prev-img">
-
-                            <a href="shop-single.html"><img src="images/shop/shop-prev-5.jpg" alt=""/></a>
-
-                            <div class="intro-label">
-                                <span class="label label-danger bg-red">Sale</span>
-                            </div>
-
-                        </div>
-
-                        <div class="post-prev-title font-alt align-center">
-                            <a href="shop-single.html">G-Star Polo Applique Jersey</a>
-                        </div>
-
-                        <div class="post-prev-text align-center">
-                            <del>$150.00</del>
-                            &nbsp;
-                            <strong>$94.75</strong>
-                        </div>
-
-                        <div class="post-prev-more align-center">
-                            <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                        </div>
-
-                    </div>
-                    <!-- End Shop Item -->
-
-                    <!-- Shop Item -->
-                    <div class="col-md-4 col-lg-4 mb-60 mb-xs-40">
-
-                        <div class="post-prev-img">
-                            <a href="shop-single.html"><img src="images/shop/shop-prev-6.jpg" alt=""/></a>
-                        </div>
-
-                        <div class="post-prev-title font-alt align-center">
-                            <a href="shop-single.html">Only & Sons Pique Polo Shirt</a>
-                        </div>
-
-                        <div class="post-prev-text align-center">
-                            <strong>$28.99</strong>
-                        </div>
-
-                        <div class="post-prev-more align-center">
-                            <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                        </div>
-
-                    </div>
-                    <!-- End Shop Item -->
-
-                    <!-- Shop Item -->
-                    <div class="col-md-4 col-lg-4 mb-60 mb-xs-40">
-
-                        <div class="post-prev-img">
-                            <a href="shop-single.html"><img src="images/shop/shop-prev-7.jpg" alt=""/></a>
-                        </div>
-
-                        <div class="post-prev-title font-alt align-center">
-                            <a href="shop-single.html">Longline Long Sleeve</a>
-                        </div>
-
-                        <div class="post-prev-text align-center">
-                            <strong>$39.99</strong>
-                        </div>
-
-                        <div class="post-prev-more align-center">
-                            <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                        </div>
-
-                    </div>
-                    <!-- End Shop Item -->
-
-                    <!-- Shop Item -->
-                    <div class="col-md-4 col-lg-4 mb-60 mb-xs-40">
-
-                        <div class="post-prev-img">
-                            <a href="shop-single.html"><img src="images/shop/shop-prev-8.jpg" alt=""/></a>
-                        </div>
-
-                        <div class="post-prev-title font-alt align-center">
-                            <a href="shop-single.html">Polo Shirt With Floral Sleeves</a>
-                        </div>
-
-                        <div class="post-prev-text align-center">
-                            <strong>$85.99</strong>
-                        </div>
-
-                        <div class="post-prev-more align-center">
-                            <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                        </div>
-
-                    </div>
-                    <!-- End Shop Item -->
-
-                    <!-- Shop Item -->
-                    <div class="col-md-4 col-lg-4 mb-60 mb-xs-40">
-
-                        <div class="post-prev-img">
-                            <a href="shop-single.html"><img src="images/shop/shop-prev-9.jpg" alt=""/></a>
-                        </div>
-
-                        <div class="post-prev-title font-alt align-center">
-                            <a href="shop-single.html">Only & Sons Pique Polo Shirt</a>
-                        </div>
-
-                        <div class="post-prev-text align-center">
-                            <strong>$28.99</strong>
-                        </div>
-
-                        <div class="post-prev-more align-center">
-                            <a href="#" class="btn btn-mod btn-gray btn-round"><i class="fa fa-shopping-cart"></i> Add to cart</a>
-                        </div>
-
-                    </div>
-                    <!-- End Shop Item -->
+                    <?php endforeach ?>
 
                 </div>
 
-                <!-- Pagination -->
-                <div class="pagination">
-                    <a href=""><i class="fa fa-angle-left"></i></a>
-                    <a href="" class="active">1</a>
-                    <a href="">2</a>
-                    <a href="">3</a>
-                    <a class="no-active">...</a>
-                    <a href="">9</a>
-                    <a href=""><i class="fa fa-angle-right"></i></a>
-                </div>
-                <!-- End Pagination -->
+                <?php
+                // add at the end of the file after the table
+                echo $this->paginationControl(
+                // the paginator object
+                    $products,
+                    // the scrolling style
+                    'sliding',
+                    // the partial to use to render the control
+                    'partial/pagination-offers',
+                    // the route to link to when a user clicks a control link
+                    array('lang' => $lang)
+                );
+                ?>
 
             </div>
             <!-- End Content -->

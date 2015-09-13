@@ -82,7 +82,7 @@ return array(
         'type' => 'Segment',
         'may_terminate' => true,
         'options' => array(
-            'route'    => '/[:lang]/oferty',
+            'route'    => '/[:lang]/oferty[/page/:page]',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'offerList',
