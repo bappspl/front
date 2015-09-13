@@ -189,24 +189,24 @@
                 <?php foreach($categories as $k => $category): ?>
 
                     <?php
-                        switch ($category->getTitle())
+                        switch ($category->getName())
                         {
-                            case 'Tarcica sucha':
+                            case 'TARCICA SUCHA':
                                 $img = '<img src="images/tarcica.png" alt="tarcica"/>';
                                 break;
-                            case 'Deska podłogowa':
+                            case 'DESKA PODŁOGOWA':
                                 $img = '<img src="images/deska.png" alt="tarcica"/>';
                                 break;
-                            case 'Więźba dachowa':
+                            case 'WIĘŹBA DACHOWA SOSNA':
                                 $img = '<img src="images/wiezba.png" alt="tarcica"/>';
                                 break;
-                            case 'Elementy klejone':
+                            case 'ELEMENTY KLEJONE':
                                 $img = '<img src="images/klejone.png" alt="tarcica"/>';
                                 break;
-                            case 'Ramiak drzwiowy':
+                            case 'RAMIAK DRZWIOWY':
                                 $img = '<img src="images/ramiak.png" alt="tarcica"/>';
                                 break;
-                            case 'Akcesoria':
+                            case 'AKCESORIA PODŁOGOWE':
                                 $img = '<img src="images/akcesoria.png" alt="tarcica"/>';
                                 break;
                             default:
@@ -215,7 +215,7 @@
                     ?>
 
                     <li <?php echo $k == 0 ? 'class="active"' : '' ?>>
-                        <a href="#<?php echo $category->getName() ?>" data-toggle="tab">
+                        <a href="#<?php echo $category->getId() ?>" data-toggle="tab">
 
                             <div class="alt-tabs-icon">
                                 <?php echo $img ?>
@@ -235,7 +235,7 @@
 
             <?php foreach($categories as $k => $category): ?>
 
-                <div class="tab-pane fade in <?php echo $k == 0 ? 'active' : '' ?>" id="<?php echo $category->getName() ?>">
+                <div class="tab-pane fade in <?php echo $k == 0 ? 'active' : '' ?>" id="<?php echo $category->getId() ?>">
 
                     <div class="section-text">
                         <div class="row">
@@ -256,7 +256,7 @@
                     </div>
 
                     <div class="align-right" style="margin-right: 50px; margin-top: -40px">
-                        <a href="pages-services-1.html" class="section-more font-alt"><i class="fa fa-angle-down fa-2x"></i> Zobacz asortyment</a>
+                        <a href="<?php echo $this->url('offer-list', array('lang' => $lang)) ?>" class="section-more font-alt"><i class="fa fa-angle-down fa-2x"></i> Zobacz asortyment</a>
                     </div>
 
                 </div>
@@ -308,3 +308,80 @@
     <!-- End Testimonials Section -->
 
 <?php endif ?>
+
+<!-- Shop Section -->
+<section class="page-section">
+    <div class="container relative">
+
+        <h2 class="font-alt align-center mb-70 mb-sm-40">
+            Bestsellery w ofercie
+
+            <span class="section-title font-alt align-center mb-70 mb-sm-40"
+                  style="position: absolute; right: 3%;">
+
+                <a href="#" class="section-more right" style="letter-spacing: 0.2em !important;">Zobacz
+                    wszystkie <i class="fa fa-angle-right"></i></a>
+
+            </span>
+
+        </h2>
+
+        <div class="row multi-columns-row">
+
+            <!-- Shop Item -->
+            <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
+                <div class="post-prev-img">
+                    <a href="shop-single.html"><img src="images/shop/shop-prev-1.jpg" alt=""/></a>
+                </div>
+                <div class="post-prev-title font-alt align-center">
+                    <a href="shop-single.html">G-Star Polo Applique Jersey</a>
+                </div>
+                <div class="post-prev-more align-center">
+                    <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <!-- End Shop Item -->
+
+            <!-- Shop Item -->
+            <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
+                <div class="post-prev-img">
+                    <a href="shop-single.html"><img src="images/shop/shop-prev-1.jpg" alt=""/></a>
+                </div>
+                <div class="post-prev-title font-alt align-center">
+                    <a href="shop-single.html">G-Star Polo Applique Jersey</a>
+                </div>
+                <div class="post-prev-more align-center">
+                    <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <!-- End Shop Item --> <!-- Shop Item -->
+            <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
+                <div class="post-prev-img">
+                    <a href="shop-single.html"><img src="images/shop/shop-prev-1.jpg" alt=""/></a>
+                </div>
+                <div class="post-prev-title font-alt align-center">
+                    <a href="shop-single.html">G-Star Polo Applique Jersey</a>
+                </div>
+                <div class="post-prev-more align-center">
+                    <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <!-- End Shop Item --> <!-- Shop Item -->
+            <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
+                <div class="post-prev-img">
+                    <a href="shop-single.html"><img src="images/shop/shop-prev-1.jpg" alt=""/></a>
+                </div>
+                <div class="post-prev-title font-alt align-center">
+                    <a href="shop-single.html">G-Star Polo Applique Jersey</a>
+                </div>
+                <div class="post-prev-more align-center">
+                    <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i class="fa fa-angle-right"></i></a>
+                </div>
+            </div>
+            <!-- End Shop Item -->
+
+        </div>
+
+    </div>
+</section>
+<!-- End Shop Section -->

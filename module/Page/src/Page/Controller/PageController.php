@@ -44,9 +44,12 @@ class PageController extends AbstractActionController
         if($lang->getId() == 1)
         {
             $url = 'historia';
-        } else
+        } elseif ($lang->getId() == 2)
         {
             $url = 'history';
+        } elseif ($lang->getId() == 3)
+        {
+            $url = 'geschichte';
         }
 
         $history = $this->getPageService()->findOneByUrlAndLangIdWithBlocks($url, $lang->getId());
@@ -293,10 +296,13 @@ class PageController extends AbstractActionController
 
         $lang = $this->getLangId($this->params()->fromRoute('lang'));
 
-
+        $categories = $this->getProductTable()->getCategoriesForAllProducts($lang->getId());
+        $products = $this->getProductTable()->getProductsForList($lang->getId());
+        var_dump($products);die;
 
         $viewParams = array();
         $viewParams['lang'] = $lang->getUrlShortcut();
+        $viewParams['categories'] = $categories;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
 
@@ -407,5 +413,13 @@ class PageController extends AbstractActionController
     public function getCategoryService()
     {
         return $this->getServiceLocator()->get('CmsIr\Category\Service\CategoryService');
+    }
+
+    /**
+     * @return \Product\Model\ProductTable
+     */
+    public function getProductTable()
+    {
+        return $this->getServiceLocator()->get('Product\Model\ProductTable');
     }
 }

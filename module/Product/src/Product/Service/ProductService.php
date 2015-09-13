@@ -11,6 +11,13 @@ class ProductService implements ServiceLocatorAwareInterface
 {
     protected $serviceLocator;
 
+    public function findAllActiveProductsForProductList($langId)
+    {
+        $products = $this->getProductTable()->getBy(array('status_id' => 1));
+
+
+    }
+
     /**
      * @return \CmsIr\System\Model\LanguageTable
      */
