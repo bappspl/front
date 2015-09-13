@@ -71,6 +71,7 @@ class ProductTable extends ModelTable implements ServiceLocatorAwareInterface
     {
         $data = array(
             'name' => $product->getName(),
+            'slug' => $product->getSlug(),
             'status_id' => $product->getStatusId(),
             'price' => $product->getPrice(),
             'catalog_number' => $product->getCatalogNumber(),

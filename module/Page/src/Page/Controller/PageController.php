@@ -309,13 +309,12 @@ class PageController extends AbstractActionController
         $this->layout('layout/home');
 
         $url = $this->params('url');
-        $productName = $this->params('name');
-        $catalogNumber = $this->params('catalog_number');
+        $productSlug = $this->params('slug');
 
         $lang = $this->getLangId($this->params()->fromRoute('lang'));
 
         /* @var $product Product */
-        $product = $this->getProductService()->getProductTable()->getOneBy(array('catalog_number' => $catalogNumber, 'name' => $productName));
+        $product = $this->getProductService()->getProductTable()->getOneBy(array('slug' => $productSlug));
         $productWithBlocksAndFiles = $this->getProductService()->findProductWithBlocks($product, $lang->getId());
 
         $tags = $this->getTagService()->findAsAssocArrayForEntity($product->getId(), 'Product');
@@ -336,7 +335,7 @@ class PageController extends AbstractActionController
             {
                 $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getClassId()));
                 $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
-                $classes[] = array(
+                $classes[$dictionary->getId()] = array(
                     'id' => $dictionary->getId(),
                     'title' => $dictionaryBlocks->getTitle(),
                     'content' => $dictionaryBlocks->getContent()
@@ -347,7 +346,7 @@ class PageController extends AbstractActionController
             {
                 $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getLengthId()));
                 $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
-                $lengths[] = array(
+                $lengths[$dictionary->getId()] = array(
                     'id' => $dictionary->getId(),
                     'title' => $dictionaryBlocks->getTitle(),
                     'content' => $dictionaryBlocks->getContent()
@@ -358,7 +357,7 @@ class PageController extends AbstractActionController
             {
                 $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getHeightId()));
                 $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
-                $heights[] = array(
+                $heights[$dictionary->getId()] = array(
                     'id' => $dictionary->getId(),
                     'title' => $dictionaryBlocks->getTitle(),
                     'content' => $dictionaryBlocks->getContent()
@@ -369,7 +368,7 @@ class PageController extends AbstractActionController
             {
                 $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getWidthId()));
                 $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
-                $widths[] = array(
+                $widths[$dictionary->getId()] = array(
                     'id' => $dictionary->getId(),
                     'title' => $dictionaryBlocks->getTitle(),
                     'content' => $dictionaryBlocks->getContent()
@@ -380,7 +379,7 @@ class PageController extends AbstractActionController
             {
                 $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getVolumeId()));
                 $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
-                $volumes[] = array(
+                $volumes[$dictionary->getId()] = array(
                     'id' => $dictionary->getId(),
                     'title' => $dictionaryBlocks->getTitle(),
                     'content' => $dictionaryBlocks->getContent()
@@ -391,7 +390,7 @@ class PageController extends AbstractActionController
             {
                 $dictionary = $this->getDictionaryService()->getDictionaryTable()->getOneBy(array('id' => $oneProduct->getWeightId()));
                 $dictionaryBlocks = $this->getDictionaryService()->getBlocksToEntityByLangId($dictionary, $lang->getId());
-                $weights[] = array(
+                $weights[$dictionary->getId()] = array(
                     'id' => $dictionary->getId(),
                     'title' => $dictionaryBlocks->getTitle(),
                     'content' => $dictionaryBlocks->getContent()

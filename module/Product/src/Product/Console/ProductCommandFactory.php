@@ -20,8 +20,9 @@ class ProductCommandFactory implements FactoryInterface
         $disctionaryTable = $mainServiceLocator->get('CmsIr\Dictionary\Model\DictionaryTable');
         $productTable = $mainServiceLocator->get('Product\Model\ProductTable');
         $statusTable = $mainServiceLocator->get('CmsIr\System\Model\StatusTable');
+        $blockTable = $mainServiceLocator->get('CmsIr\System\Model\BlockTable');
 
-        $command = new ProductCommand($categoryService, $disctionaryTable, $productTable, $statusTable);
+        $command = new ProductCommand($categoryService, $disctionaryTable, $productTable, $statusTable, $blockTable);
         return $command;
     }
 }

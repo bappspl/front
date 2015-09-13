@@ -6,11 +6,14 @@ use CmsIr\Category\Model\Category;
 use CmsIr\Category\Service\CategoryService;
 use CmsIr\Dictionary\Model\Dictionary;
 use CmsIr\Dictionary\Model\DictionaryTable;
+use CmsIr\System\Model\Block;
+use CmsIr\System\Model\BlockTable;
 use CmsIr\System\Model\StatusTable;
 use Product\Model\Product;
 use Product\Model\ProductTable;
 use Zend\Console\Prompt;
 use Zend\Mvc\Controller\AbstractActionController;
+use CmsIr\System\Util\Inflector;
 
 
 class ProductCommand extends AbstractActionController
@@ -35,13 +38,18 @@ class ProductCommand extends AbstractActionController
      * @var StatusTable
      */
     protected $statusTable;
+    /**
+     * @var StatusTable
+     */
+    protected $blockTable;
 
-    public function __construct(CategoryService $categoryService, DictionaryTable $dictionaryTable, ProductTable $productTable, StatusTable $statusTable)
+    public function __construct(CategoryService $categoryService, DictionaryTable $dictionaryTable, ProductTable $productTable, StatusTable $statusTable, BlockTable $blockTable)
     {
         $this->categoryService = $categoryService;
         $this->dictionaryTable = $dictionaryTable;
         $this->productTable = $productTable;
         $this->statusTable = $statusTable;
+        $this->blockTable = $blockTable;
     }
 
     protected function writeLine($message)
@@ -208,6 +216,7 @@ class ProductCommand extends AbstractActionController
                 }
 
                 $newProduct->setName($name);
+                $newProduct->setSlug(Inflector::slugify($catalogNumber.'-'.$name));
                 $newProduct->setPrice($price);
                 $newProduct->setCatalogNumber($catalogNumber);
                 $newProduct->setCategoryId($categoryId);
@@ -219,7 +228,8 @@ class ProductCommand extends AbstractActionController
                 $newProduct->setWeightId($weightId);
                 $newProduct->setUnitId($unitId);
 
-                $this->productTable->save($newProduct);
+                $produktId = $this->productTable->save($newProduct);
+                $this->saveBlockForEntity($produktId, 'Product', $newProduct);
                 $this->writeLine(sprintf(' - Utworzono produkt - '));
             }
         }
@@ -227,6 +237,41 @@ class ProductCommand extends AbstractActionController
         $date = new \DateTime();
 
         $this->writeLine(sprintf('Koniec %s', $date->format('Y-m-d H:i:s') . PHP_EOL));
+    }
+
+    protected function saveBlockForEntity($entityId, $entityType, $entity)
+    {
+        $entities = array(
+            'Product' => array('product_name', 'description'),
+            'Category' => array('title', 'content'),
+            'Dictionary' => array('title', 'content')
+        );
+        $block = $this->blockTable->getOneBy(array('entity_id' => $entityId, 'entity_type' => $entityType));
+        if(!$block)
+        {
+            $this->writeLine(sprintf('Brak blokow dla: '.$entityType.', o nazwie: '.$entity->getName()));
+
+            $fields = $entities[$entityType];
+
+            for($i=1;$i<4;$i++)
+            {
+
+                foreach($fields as $field)
+                {
+                    $newBlock = new Block();
+                    $newBlock->setEntityId($entityId);
+                    $newBlock->setEntityType($entityType);
+                    $newBlock->setLanguageId($i);
+                    $newBlock->setName($field);
+                    $newBlock->setValue($entity->getName());
+
+                    $this->blockTable->save($newBlock);
+                    $this->writeLine(sprintf('Utworzono blok dla: '.$entityType.', o nazwie: '.$entity->getName().', lang Id: '.$i));
+                }
+
+            }
+
+        }
     }
 
     protected function checkProductAlreadyExists($categoryId, $name,  $catalogNumber)
@@ -251,6 +296,7 @@ class ProductCommand extends AbstractActionController
         {
             $categoryId = $categoryEntity->getId();
             $this->writeLine(sprintf('Istnieje -> zwracam id -> '. $categoryId));
+            $this->saveBlockForEntity($categoryId, 'Category', $categoryEntity);
         } else // nie istnieje kategoria - tworzymy
         {
             $newCategory = new Category();
@@ -258,6 +304,7 @@ class ProductCommand extends AbstractActionController
             $newCategory->setFilename(null);
             $categoryId = $this->categoryService->getCategoryTable()->save($newCategory);
             $this->writeLine(sprintf('Nie istnieje -> tworze nowa -> zwracam id -> '. $categoryId));
+            $this->saveBlockForEntity($categoryId, 'Category', $newCategory);
         }
 
         return $categoryId;
@@ -274,6 +321,7 @@ class ProductCommand extends AbstractActionController
         {
             $dictionaryId = $dictionaryEntity->getId();
             $this->writeLine(sprintf('Istnieje -> zwracam id -> '. $dictionaryId));
+            $this->saveBlockForEntity($dictionaryId, 'Dictionary', $dictionaryEntity);
         } else // nie istnieje slownik - tworzymy
         {
             $newDictionary = new Dictionary();
@@ -281,6 +329,7 @@ class ProductCommand extends AbstractActionController
             $newDictionary->setCategory($category);
             $dictionaryId = $this->dictionaryTable->save($newDictionary);
             $this->writeLine(sprintf('Nie istnieje -> tworze nowy -> zwracam id -> '. $dictionaryId));
+            $this->saveBlockForEntity($dictionaryId, 'Dictionary', $newDictionary);
         }
 
         return $dictionaryId;
@@ -297,6 +346,7 @@ class ProductCommand extends AbstractActionController
         {
             $classId = $dictionaryEntity->getId();
             $this->writeLine(sprintf('Istnieje -> zwracam id -> '. $classId));
+            $this->saveBlockForEntity($classId, 'Dictionary', $dictionaryEntity);
         } else // nie istnieje slownik - tworzymy
         {
             $newDictionary = new Dictionary();
@@ -305,6 +355,7 @@ class ProductCommand extends AbstractActionController
             $newDictionary->setCategoryId($categoryId);
             $classId = $this->dictionaryTable->save($newDictionary);
             $this->writeLine(sprintf('Nie istnieje -> tworze nowy -> zwracam id -> '. $classId));
+            $this->saveBlockForEntity($classId, 'Dictionary', $newDictionary);
         }
 
         return $classId;
