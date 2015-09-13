@@ -452,22 +452,6 @@ class Product extends Model
     /**
      * @return mixed
      */
-    public function getCategoryName()
-    {
-        return $this->categoryName;
-    }
-
-    /**
-     * @param mixed $categoryName
-     */
-    public function setCategoryName($categoryName)
-    {
-        $this->categoryName = $categoryName;
-    }
-
-    /**
-     * @return mixed
-     */
     public function getSlug()
     {
         return $this->slug;
