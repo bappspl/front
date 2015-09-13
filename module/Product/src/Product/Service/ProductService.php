@@ -12,6 +12,13 @@ class ProductService implements ServiceLocatorAwareInterface
 {
     protected $serviceLocator;
 
+    public function findAllActiveProductsForProductList($langId)
+    {
+        $products = $this->getProductTable()->getBy(array('status_id' => 1));
+
+
+    }
+
     public function findProductWithBlocks($entity, $langId)
     {
         /* @var $entity Product */

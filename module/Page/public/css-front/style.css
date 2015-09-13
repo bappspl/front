@@ -3675,8 +3675,8 @@ a.logo:hover{
 .post-prev-img{
     margin-bottom: 23px;
     position: relative;
-    height: 195px;
-    width: 360px;
+    /*height: 195px;*/
+    /*width: 360px;*/
 }
 .post-prev-img a{
     -webkit-transition: all 0.2s cubic-bezier(0.300, 0.100, 0.580, 1.000);  

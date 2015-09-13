@@ -27,6 +27,10 @@ class Product extends Model
 
     // virtual
     protected $blocks;
+    protected $category;
+    protected $category_name;
+    protected $title;
+    protected $content;
     protected $files;
     protected $tags;
 
@@ -46,6 +50,8 @@ class Product extends Model
         $this->show_price = (!empty($data['show_price'])) ? $data['show_price'] : 0;
         $this->category_id = (!empty($data['category_id'])) ? $data['category_id'] : null;
         $this->blocks = (!empty($data['blocks'])) ? $data['blocks'] : null;
+        $this->category = (!empty($data['category'])) ? $data['category'] : null;
+        $this->category_name = (!empty($data['category_name'])) ? $data['category_name'] : null;
         $this->files = (!empty($data['files'])) ? $data['files'] : null;
 
         // dictionary
@@ -56,6 +62,8 @@ class Product extends Model
         $this->volume_id = (!empty($data['volume_id'])) ? $data['volume_id'] : null;
         $this->weight_id = (!empty($data['weight_id'])) ? $data['weight_id'] : null;
         $this->unit_id = (!empty($data['unit_id'])) ? $data['unit_id'] : null;
+        $this->title = (!empty($data['title'])) ? $data['title'] : null;
+        $this->content = (!empty($data['content'])) ? $data['content'] : null;
     }
 
     /**
@@ -314,6 +322,69 @@ class Product extends Model
         $this->height_id = $height_id;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategoryName()
+    {
+        return $this->category_name;
+    }
+
+    /**
+     * @param mixed $category_name
+     */
+    public function setCategoryName($category_name)
+    {
+        $this->category_name = $category_name;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param mixed $title
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getContent()
+    {
+        return $this->content;
+    }
+
+    /**
+     * @param mixed $content
+     */
+    public function setContent($content)
+    {
+        $this->content = $content;
+    }
     /**
      * @return mixed
      */

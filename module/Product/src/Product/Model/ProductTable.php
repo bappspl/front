@@ -3,6 +3,7 @@ namespace Product\Model;
 
 use CmsIr\System\Model\ModelTable;
 use Zend\Db\ResultSet\ResultSet;
+use Zend\Db\Sql\Expression;
 use Zend\Db\TableGateway\TableGateway;
 use Zend\Db\Sql\Select;
 use Zend\Db\Sql\Predicate;
@@ -20,6 +21,37 @@ class ProductTable extends ModelTable implements ServiceLocatorAwareInterface
     public function __construct(TableGateway $tableGateway)
     {
         $this->tableGateway = $tableGateway;
+    }
+
+    public function getCategoriesForAllProducts($langId)
+    {
+        $select = $this->tableGateway->getSql()->select();
+        $select->columns(array(
+            'id',
+            'category_id' => new Expression('COUNT(category_id)'),
+        ));
+        $select->join('cms_category', 'cms_category.id = product.category_id', array('category' => 'name'), 'inner');
+        $select->join('cms_block', new Expression("cms_block.entity_id = cms_category.id AND cms_block.entity_type = 'Category'"), array('category_name' => 'value'), 'inner');
+        $select->group('category_id');
+        $select->where(array(
+            'cms_block.language_id' => $langId,
+            'cms_block.name' => 'title',
+        ));
+
+        $resultSet = $this->tableGateway->selectWith($select);
+
+        $result = array();
+
+        foreach($resultSet as $entity)
+        {
+            $result[$entity->getId()] = array(
+                'category' => $entity->getCategory(),
+                'counter' => $entity->getCategoryId(),
+                'category_name' => $entity->getCategoryName()
+            );
+        }
+
+        return $result;
     }
 
     public function deleteProduct($ids)
