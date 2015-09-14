@@ -12,7 +12,7 @@
     }
 ?>
     <section class="page-section"
-             style="padding: 215px 0 140px 0; background: url(<?php echo $this->basePath($filename) ?>) no-repeat; background-size: 100% 100%;">
+             style="padding: 215px 0 140px 0; background: url(<?php echo $this->basePath('images/oferta-bg.png') ?>) no-repeat; background-size: 100% 100%;">
         <div class="relative container align-left">
 
             <div class="row">
@@ -51,7 +51,7 @@
                 <div class="col-md-4 mb-md-30">
 
                     <div class="post-prev-img"  style="height: auto; width: auto;">
-                        <a href="<?php echo $this->basePath('files/product/'.$firstFile->getFilename()) ?>" class="lightbox-gallery-3 mfp-image"><img src="<?php echo $this->url('thumb', array('entity' => 'Product', 'size' => '370x472', 'filename' => $firstFile->getFilename()))?>" alt="" /></a>
+                        <a href="<?php echo $this->basePath('files/product/'.$firstFile->getFilename()) ?>" class="lightbox-gallery-3 mfp-image"><img src="<?php echo $this->url('thumb', array('entity' => 'product', 'size' => '370x472', 'filename' => $firstFile->getFilename()))?>" alt="" /></a>
                         <?php if($product->getBestseller()): ?>
                         <div class="intro-label">
                             <span class="label label-danger bg-red"><?php echo $this->translate('Bestseller'); ?></span>
@@ -62,7 +62,7 @@
                     <div class="row">
                         <?php foreach($files as $file): ?>
                             <div class="col-xs-3 post-prev-img" style="height: inherit; width: inherit;">
-                                <a href="<?php echo $this->basePath('files/product/'.$file->getFilename()) ?>" class="lightbox-gallery-3 mfp-image"><img src="<?php echo $this->url('thumb', array('entity' => 'Product', 'size' => '68x86', 'filename' => $file->getFilename()))?>" alt="" /></a>
+                                <a href="<?php echo $this->basePath('files/product/'.$file->getFilename()) ?>" class="lightbox-gallery-3 mfp-image"><img src="<?php echo $this->url('thumb', array('entity' => 'product', 'size' => '68x86', 'filename' => $file->getFilename()))?>" alt="" /></a>
                             </div>
                         <?php endforeach; ?>
                     </div>
@@ -233,5 +233,174 @@
             <!-- End Features -->
 
         </div>
+
+
+
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs tpl-tabs animate dna-style">
+            <li class="active">
+                <a href="#one" data-toggle="tab" class="dna-style dna-tab" style="font-size: 13px; letter-spacing: 0.2em">OBLICZ CENĘ twojej podłogi (KONFIGURATOR)</a>
+            </li>
+            <li>
+                <a href="#two" data-toggle="tab" class="dna-style dna-tab" style="font-size: 13px; letter-spacing: 0.2em">PARAMETRY</a>
+            </li>
+            <li>
+                <a href="#three" data-toggle="tab" class="dna-style dna-tab" style="font-size: 13px; letter-spacing: 0.2em">OPIS</a>
+            </li>
+        </ul>
+        <!-- End Nav tabs -->
+
+        <!-- Tab panes -->
+        <div class="tab-content tpl-tabs-cont">
+            <div class="tab-pane fade in active" id="one">
+
+                <table class="table table-bordered  konfigurator">
+                    <tr>
+                        <th>
+                            Elementy dodatkowe
+                        </th>
+                        <th>
+                            Parametry
+                        </th>
+                        <th>
+                            Opis
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Faza
+                        </td>
+                        <td>
+                            <input type="checkbox" class="dna-checkbox" id="wzdluzona"/><label for="wzdluzona">faza wzdłużona</label><br/>
+                            <input type="checkbox" class="dna-checkbox" id="bez-fazy"/><label for="bez-fazy">bez fazy wzdłużnej</label><br/>
+                            <input type="checkbox" class="dna-checkbox" id="czterostronna"/><label for="czterostronna">faza czterostronna</label>
+                        </td>
+                        <td width="300">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur delectus dicta dignissimos, enim eos id illo ipsum maiores maxime molestiae nisi officiis possimus quas quidem repudiandae soluta tempora velit.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Szczotkowanie
+                        </td>
+                        <td>
+                            <input type="checkbox" class="dna-checkbox" id="szczotkowanie"/><label for="szczotkowanie">tak / nie</label>
+                        </td>
+                        <td width="300">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur delectus dicta dignissimos, enim eos id illo ipsum maiores maxime molestiae nisi officiis possimus quas quidem repudiandae soluta tempora velit.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Sposón montażu
+                        </td>
+                        <td>
+                            <select name="" id="" class="dna-form dna-select">
+                                <option value="0">legar</option>
+                            </select>
+                        </td>
+                        <td width="300">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur delectus dicta dignissimos, enim eos id illo ipsum maiores maxime molestiae nisi officiis possimus quas quidem repudiandae soluta tempora velit.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Listwa przypodłogowa
+                        </td>
+                        <td style="text-transform: lowercase; font-weight: bold" align="">
+                            <input type="text" class="dna-number dna-placeholder" placeholder="wpisz ilość w mb"   style="font-size: 14px !important; letter-spacing: 0.1em; color: #1d100f; "/>
+                            <span style="margin-top: 10px">metrów bieżących</span>
+                        </td>
+                        <td width="300">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur delectus dicta dignissimos, enim eos id illo ipsum maiores maxime molestiae nisi officiis possimus quas quidem repudiandae soluta tempora velit.
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Wykończenie
+                        </td>
+                        <td>
+                            <select name="" id="" class="dna-form dna-select">
+                                <option value="0">olej</option>
+                            </select>
+                        </td>
+                        <td width="300">
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda consectetur delectus dicta dignissimos, enim eos id illo ipsum maiores maxime molestiae nisi officiis possimus quas quidem repudiandae soluta tempora velit.
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="tab-pane fade" id="two">
+
+                <table class="table table-bordered table-striped konfigurator">
+                    <tr>
+                        <th>
+                            Parameter
+                        </th>
+                        <th>
+                            Value
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            Size
+                        </td>
+                        <td>
+                            Small, Medium & Large
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Color
+                        </td>
+                        <td>
+                            Black & White
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Waist
+                        </td>
+                        <td>
+                            25cm
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Length
+                        </td>
+                        <td>
+                            50cm
+                        </td>
+                    </tr>
+                </table>
+
+            </div>
+            <div class="tab-pane fade" id="three">
+
+                <div class="mb-60 mb-xs-30 dna-style" style="font-weight: normal">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci blanditiis cum delectus dignissimos ea natus neque quasi reprehenderit. Ab id nemo nobis officiis quas similique sit ullam vel voluptatibus voluptatum!
+                </div>
+
+
+
+            </div>
+        </div>
+        <!-- End Tab panes -->
+
+
     </div>
 </section>
+
+

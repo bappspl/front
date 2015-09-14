@@ -65,13 +65,13 @@
 
                             <div class="post-prev-img">
 
-                                <a href="shop-single.html"><img src="<?php echo empty($file) ? $this->basePath('/images/shop/shop-prev-1.jpg') : $this->basePath('files/product/' . $file->getFilename()) ?>" alt=""/></a>
+                                <a href="<?php echo $this->url('offer', array('lang' => $lang, 'slug' => $product->getSlug())) ?>"><img src="<?php echo empty($file) ? $this->basePath('/images/shop/shop-prev-1.jpg') : $this->basePath('files/product/' . $file->getFilename()) ?>" alt=""/></a>
 
 
                             </div>
 
                             <div class="post-prev-title font-alt align-center">
-                                <a href="shop-single.html" class="dna-style"><?php echo $product->getProductName() ?></a>
+                                <a href="<?php echo $this->url('offer', array('lang' => $lang, 'slug' => $product->getSlug())) ?>" class="dna-style"><?php echo $product->getProductName() ?></a>
                             </div>
 
                             <div class="post-prev-text align-center dna-style" style="font-size: 18px;">
@@ -79,7 +79,7 @@
                             </div>
 
                             <div class="post-prev-more align-center">
-                                <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i
+                                <a href="<?php echo $this->url('offer', array('lang' => $lang, 'slug' => $product->getSlug())) ?>" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i
                                         class="fa fa-angle-right"></i></a>
                             </div>
 
