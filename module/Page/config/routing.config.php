@@ -82,24 +82,22 @@ return array(
         'type' => 'Segment',
         'may_terminate' => true,
         'options' => array(
-            'route'    => '/[:lang]/oferty',
+            'route'    => '/[:lang]/oferty[/page/:page]',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'offerList',
             ),
         ),
-        'child_routes' => array(
-            'offer' => array(
-                'may_terminate' => true,
-                'type' => 'Segment',
-                'options' => array(
-                    'route' => '/:slug',
-                    'defaults' => array(
-                        'controller' => 'Page\Controller\Page',
-                        'action' => 'offer',
-                    ),
-                ),
+    ),
+    'offer' => array(
+        'may_terminate' => true,
+        'type' => 'Segment',
+        'options' => array(
+            'route' => '/[:lang]/oferta/:slug',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action' => 'offer',
             ),
-        )
+        ),
     ),
 );

@@ -15,7 +15,8 @@ return array(
             'layout/home' => __DIR__ . '/../view/layout/home.phtml',
             'partial/layout/header' => __DIR__ . '/../view/partial/layout/header.phtml',
             'partial/layout/footer' => __DIR__ . '/../view/partial/layout/footer.phtml',
-            'partial/pagination' => __DIR__ . '/../view/partial/pagination.phtml'
+            'partial/pagination' => __DIR__ . '/../view/partial/pagination.phtml',
+            'partial/pagination-offers' => __DIR__ . '/../view/partial/pagination-offers.phtml'
         ),
         'template_path_stack' => array(
             'page_home_site' => __DIR__ . '/../view'

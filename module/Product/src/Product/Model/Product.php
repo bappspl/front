@@ -34,9 +34,8 @@ class Product extends Model
     protected $files;
     protected $tags;
 
-    protected $productName;
-    protected $productDescription;
-    protected $categoryName;
+    protected $product_name;
+    protected $product_description;
 
     public function exchangeArray($data) 
     {
@@ -406,7 +405,7 @@ class Product extends Model
      */
     public function getProductName()
     {
-        return $this->productName;
+        return $this->product_name;
     }
 
     /**
@@ -414,7 +413,7 @@ class Product extends Model
      */
     public function setProductName($productName)
     {
-        $this->productName = $productName;
+        $this->product_name = $productName;
     }
 
     /**
@@ -422,7 +421,7 @@ class Product extends Model
      */
     public function getProductDescription()
     {
-        return $this->productDescription;
+        return $this->product_description;
     }
 
     /**
@@ -430,7 +429,7 @@ class Product extends Model
      */
     public function setProductDescription($productDescription)
     {
-        $this->productDescription = $productDescription;
+        $this->product_description = $productDescription;
     }
 
     /**
@@ -464,6 +463,4 @@ class Product extends Model
     {
         $this->slug = $slug;
     }
-
-
 }
