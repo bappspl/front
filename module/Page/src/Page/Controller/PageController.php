@@ -35,12 +35,12 @@ class PageController extends AbstractActionController
         $home = 'home';
         $this->layout()->setVariable('home', $home);
 
-        $slider = $this->getSliderService()->findOneBySlug('slider-glowny');
+        $lang = $this->getLangId($this->params()->fromRoute('lang'));
+
+        $slider = $this->getSliderService()->findOneBySlug('slider-glowny', $lang->getId());
         $items = $slider->getItems();
 
         $this->layout()->setVariable('items', $items);
-
-        $lang = $this->getLangId($this->params()->fromRoute('lang'));
 
         if($lang->getId() == 1)
         {
