@@ -60,14 +60,24 @@ class ProductCommand extends AbstractActionController
     public function parseCsvAction()
     {
         $row = 1;
-        $naglowki = array('category', 'catalog_number', 'name', 'class', 'length', 'height', 'width', 'volume', 'weight', 'unit_m3', 'unit_m2', 'unit_mb', 'unit_kg', 'unit_l', 'price');
+        $naglowki = array(
+            'category_pl',
+            'category_de',
+            'category_en',
+            'catalog_number',
+            'name_pl',
+            'name_de',
+            'name_en',
+            'class', 'length', 'height', 'width', 'volume', 'weight', 'unit_m3', 'unit_m2', 'unit_mb', 'unit_kg', 'unit_l', 'price');
 
-        if (($handle = fopen("./public/produkty.csv", "r")) !== FALSE)
+        if (($handle = fopen("./public/produkty_new.csv", "r")) !== FALSE)
         {
             $this->writeLine(sprintf('Parsowanie pliku..'));
 
             $produkty = array();
-            $kategoria = '';
+            $kategoriaPL = '';
+            $kategoriaDE = '';
+            $kategoriaEN = '';
             while (($data = fgetcsv($handle, 1000, ";")) !== FALSE)
             {
                 $num = count($data);
@@ -76,13 +86,17 @@ class ProductCommand extends AbstractActionController
 
                 if(strlen($data[0]) > 0)
                 {
-                    $kategoria = $data[0];
+                    $kategoriaPL = $data[0];
+                    $kategoriaDE = $data[1];
+                    $kategoriaEN = $data[2];
                 }
 
                 $obj = array();
-                $obj[$naglowki[0]] = $kategoria;
+                $obj[$naglowki[0]] = $kategoriaPL;
+                $obj[$naglowki[1]] = $kategoriaDE;
+                $obj[$naglowki[2]] = $kategoriaEN;
 
-                for ($c = 1; $c < $num; $c++)
+                for ($c = 3; $c < $num; $c++)
                 {
                     $wartosc = $data[$c];
                     if (strpos($naglowki[$c], 'unit') !== false && $wartosc !== '-')
@@ -113,9 +127,13 @@ class ProductCommand extends AbstractActionController
 
             foreach($produkty as $produkt)
             {
-                $category = $produkt['category'];
+                $categoryPL = $produkt['category_pl'];
+                $categoryEN = $produkt['category_en'];
+                $categoryDE = $produkt['category_de'];
                 $catalogNumber = $produkt['catalog_number'];
-                $name = $produkt['name'];
+                $namePL = $produkt['name_pl'];
+                $nameDE = $produkt['name_de'];
+                $nameEN = $produkt['name_en'];
                 $class = $produkt['class'];
                 $length = $produkt['length'];
                 $height = $produkt['height'];
@@ -139,7 +157,7 @@ class ProductCommand extends AbstractActionController
                     $price = str_replace(' ', '', $price);
                 }
 
-                $categoryId = $this->getCategoryIdByCategoryName($category);
+                $categoryId = $this->getCategoryIdByCategoryName($categoryPL, $categoryDE, $categoryEN);
 
                 if($class)
                 {
@@ -200,7 +218,7 @@ class ProductCommand extends AbstractActionController
                 $this->writeLine(sprintf(' - Zapis produktu - '));
 
                 /* @var $newProduct \Product\Model\Product */
-                $newProduct = $this->checkProductAlreadyExists($categoryId, $name,  $catalogNumber);
+                $newProduct = $this->checkProductAlreadyExists($categoryId, $namePL,  $catalogNumber);
                 if(!$newProduct)
                 {
                     $this->writeLine(sprintf('Produkt nie istnieje - tworzenie'));
@@ -215,8 +233,8 @@ class ProductCommand extends AbstractActionController
                     $this->writeLine(sprintf('Produkt istnieje - aktualizacja'));
                 }
 
-                $newProduct->setName($name);
-                $newProduct->setSlug(Inflector::slugify($catalogNumber.'-'.$name));
+                $newProduct->setName($namePL);
+                $newProduct->setSlug(Inflector::slugify($catalogNumber.'-'.$namePL));
                 $newProduct->setPrice($price);
                 $newProduct->setCatalogNumber($catalogNumber);
                 $newProduct->setCategoryId($categoryId);
@@ -229,7 +247,7 @@ class ProductCommand extends AbstractActionController
                 $newProduct->setUnitId($unitId);
 
                 $produktId = $this->productTable->save($newProduct);
-                $this->saveBlockForEntity($produktId, 'Product', $newProduct);
+                $this->saveBlockForEntity($produktId, 'Product', $newProduct, $nameDE, $nameEN);
                 $this->writeLine(sprintf(' - Utworzono produkt - '));
             }
         }
@@ -239,7 +257,7 @@ class ProductCommand extends AbstractActionController
         $this->writeLine(sprintf('Koniec %s', $date->format('Y-m-d H:i:s') . PHP_EOL));
     }
 
-    protected function saveBlockForEntity($entityId, $entityType, $entity)
+    protected function saveBlockForEntity($entityId, $entityType, $entity, $de = null, $en = null)
     {
         $entities = array(
             'Product' => array('product_name', 'description'),
@@ -263,13 +281,34 @@ class ProductCommand extends AbstractActionController
                     $newBlock->setEntityType($entityType);
                     $newBlock->setLanguageId($i);
                     $newBlock->setName($field);
-                    $newBlock->setValue($entity->getName());
+
+                    if($de && $en)
+                    {
+                        switch($i)
+                        {
+                            case 1:
+                                $newBlock->setValue($entity->getName());
+                            break;
+                            case 2:
+                                $newBlock->setValue($en);
+                            break;
+                            case 3:
+                                $newBlock->setValue($de);
+                            break;
+                        }
+                    } else
+                    {
+                        $newBlock->setValue($entity->getName());
+                    }
+
 
                     $this->blockTable->save($newBlock);
                     $this->writeLine(sprintf('Utworzono blok dla: '.$entityType.', o nazwie: '.$entity->getName().', lang Id: '.$i));
                 }
 
             }
+
+
 
         }
     }
@@ -285,26 +324,26 @@ class ProductCommand extends AbstractActionController
         return $product;
     }
 
-    protected function getCategoryIdByCategoryName($category)
+    protected function getCategoryIdByCategoryName($categoryPL, $categoryDE, $categoryEN)
     {
-        $this->writeLine(sprintf('Sprawdzam, czy istnieje kategoria:' . $category));
+        $this->writeLine(sprintf('Sprawdzam, czy istnieje kategoria:' . $categoryPL));
         /* @var $categoryEntity \CmsIr\Category\Model\Category */
-        $categoryEntity = $this->categoryService->getCategoryTable()->getOneBy(array('name' => $category));
+        $categoryEntity = $this->categoryService->getCategoryTable()->getOneBy(array('name' => $categoryPL));
 
         //istnieje kategoria - bierzemy id
         if($categoryEntity)
         {
             $categoryId = $categoryEntity->getId();
             $this->writeLine(sprintf('Istnieje -> zwracam id -> '. $categoryId));
-            $this->saveBlockForEntity($categoryId, 'Category', $categoryEntity);
+            $this->saveBlockForEntity($categoryId, 'Category', $categoryEntity, $categoryDE, $categoryEN);
         } else // nie istnieje kategoria - tworzymy
         {
             $newCategory = new Category();
-            $newCategory->setName($category);
+            $newCategory->setName($categoryPL);
             $newCategory->setFilename(null);
             $categoryId = $this->categoryService->getCategoryTable()->save($newCategory);
             $this->writeLine(sprintf('Nie istnieje -> tworze nowa -> zwracam id -> '. $categoryId));
-            $this->saveBlockForEntity($categoryId, 'Category', $newCategory);
+            $this->saveBlockForEntity($categoryId, 'Category', $newCategory, $categoryDE, $categoryEN);
         }
 
         return $categoryId;

@@ -867,3 +867,55 @@ Stack trace:
 #15 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(313): Zend\EventManager\EventManager->trigger('dispatch', Object(Zend\Mvc\MvcEvent), Object(Closure))
 #16 D:\xampp\htdocs\web-ir\tartak\public\index.php(17): Zend\Mvc\Application->run()
 #17 {main}
+2015-09-13T21:23:42+02:00 CRIT (2): exception 'Zend\View\Exception\RuntimeException' with message 'Zend\View\Renderer\PhpRenderer::render: Unable to render template "cms-ir/system/create-thumb"; resolver could not resolve to a file' in D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\Renderer\PhpRenderer.php:498
+Stack trace:
+#0 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#1 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(233): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#2 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(198): Zend\View\View->renderChildren(Object(Zend\View\Model\ViewModel))
+#3 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\View\Http\DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#4 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#5 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#6 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#7 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#8 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#9 D:\xampp\htdocs\web-ir\tartak\public\index.php(17): Zend\Mvc\Application->run()
+#10 {main}
+2015-09-13T21:23:43+02:00 CRIT (2): exception 'Zend\View\Exception\RuntimeException' with message 'Zend\View\Renderer\PhpRenderer::render: Unable to render template "cms-ir/system/create-thumb"; resolver could not resolve to a file' in D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\Renderer\PhpRenderer.php:498
+Stack trace:
+#0 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#1 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(233): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#2 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(198): Zend\View\View->renderChildren(Object(Zend\View\Model\ViewModel))
+#3 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\View\Http\DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#4 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#5 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#6 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#7 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#8 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#9 D:\xampp\htdocs\web-ir\tartak\public\index.php(17): Zend\Mvc\Application->run()
+#10 {main}
+2015-09-13T21:23:45+02:00 CRIT (2): exception 'Zend\View\Exception\RuntimeException' with message 'Zend\View\Renderer\PhpRenderer::render: Unable to render template "cms-ir/system/create-thumb"; resolver could not resolve to a file' in D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\Renderer\PhpRenderer.php:498
+Stack trace:
+#0 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#1 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(233): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#2 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(198): Zend\View\View->renderChildren(Object(Zend\View\Model\ViewModel))
+#3 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\View\Http\DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#4 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#5 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#6 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#7 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#8 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#9 D:\xampp\htdocs\web-ir\tartak\public\index.php(17): Zend\Mvc\Application->run()
+#10 {main}
+2015-09-13T21:23:47+02:00 CRIT (2): exception 'Zend\View\Exception\RuntimeException' with message 'Zend\View\Renderer\PhpRenderer::render: Unable to render template "cms-ir/system/create-thumb"; resolver could not resolve to a file' in D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\Renderer\PhpRenderer.php:498
+Stack trace:
+#0 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#1 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(233): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#2 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\View\View.php(198): Zend\View\View->renderChildren(Object(Zend\View\Model\ViewModel))
+#3 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\View\Http\DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#4 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#5 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#6 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\EventManager\EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#7 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#8 D:\xampp\htdocs\web-ir\tartak\vendor\zendframework\zendframework\library\Zend\Mvc\Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#9 D:\xampp\htdocs\web-ir\tartak\public\index.php(17): Zend\Mvc\Application->run()
+#10 {main}
