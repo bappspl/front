@@ -6,6 +6,8 @@ use CmsIr\Page\Model\Page;
 use CmsIr\Post\Model\Post;
 use Product\Model\Product;
 use Zend\Db\Sql\Predicate\IsNotNull;
+use Zend\Db\Sql\Predicate\Operator;
+use Zend\Db\Sql\Predicate\Predicate;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\Paginator\Adapter\ArrayAdapter;
 use Zend\Paginator\Adapter\DbSelect;
@@ -78,17 +80,25 @@ class PageController extends AbstractActionController
 
         $lang = $this->getLangId($this->params()->fromRoute('lang'));
 
-        $page = $this->getPageService()->findOneByUrlAndLangIdWithBlocks($url, $lang->getId());
+        $viewParams = array();
+        $viewModel = new ViewModel();
 
-        if(empty($page))
-        {
-            $this->getResponse()->setStatusCode(404);
+        if($url != 'contact') {
+
+            $page = $this->getPageService()->findOneByUrlAndLangIdWithBlocks($url, $lang->getId());
+
+            if(empty($page))
+            {
+                $this->getResponse()->setStatusCode(404);
+            }
+
+            $viewParams['page'] = $page;
+        } else {
+            $viewModel->setTemplate('contact');
+            $this->layout()->setVariable('contact', true);
         }
 
-        $viewParams = array();
-        $viewParams['page'] = $page;
         $viewParams['lang'] = $lang->getUrlShortcut();
-        $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
 
         return $viewModel;
@@ -294,11 +304,37 @@ class PageController extends AbstractActionController
         $this->layout('layout/home');
 
         $page = $this->params()->fromRoute('page') ? (int) $this->params()->fromRoute('page') : 1;
+        $category = $this->params()->fromRoute('category');
+        $from = $this->params()->fromRoute('from');
+        $to = $this->params()->fromRoute('to');
+
+        $sort = $this->params()->fromQuery('price');
+
+        $predicates = array();
+
+        $predicates[] = new \Zend\Db\Sql\Predicate\Operator('status_id', '=', 1);
+
+        if($category) {
+            $predicates[] = new \Zend\Db\Sql\Predicate\Operator('category_id', '=', $category);
+        }
+
+        if($from) {
+            $predicates[] = new \Zend\Db\Sql\Predicate\Operator('price', '>', $from);
+        }
+
+        if($to) {
+            $predicates[] = new \Zend\Db\Sql\Predicate\Operator('price', '<', $to);
+        }
+
+        $where = new \Zend\Db\Sql\Predicate\PredicateSet(
+            $predicates,
+            \Zend\Db\Sql\Predicate\PredicateSet::OP_AND
+        );
 
         $lang = $this->getLangId($this->params()->fromRoute('lang'));
 
         $categories = $this->getProductTable()->getCategoriesForAllProducts($lang->getId());
-        $products = $this->getProductService()->findAllActiveProductsForProductList($lang->getId());
+        $products = $this->getProductService()->findAllActiveProductsForProductList($lang->getId(), $where, $sort);
 
         $paginator = new Paginator(new ArrayAdapter($products));
         $paginator->setCurrentPageNumber($page)
@@ -309,6 +345,8 @@ class PageController extends AbstractActionController
         $viewParams['categories'] = $categories;
         $viewParams['products'] = $paginator;
         $viewParams['page'] = $page;
+        $viewParams['from'] = isset($from) ? $from : null;
+        $viewParams['to'] = isset($to) ? $to : null;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
 
@@ -339,6 +377,7 @@ class PageController extends AbstractActionController
         $widths = array();
         $volumes = array();
         $weights = array();
+
         /* @var $oneProduct Product */
         foreach($productsByName as $oneProduct)
         {

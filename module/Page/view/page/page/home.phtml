@@ -15,11 +15,11 @@
                     <div class="col-md-4 mb-xs-30 wow fadeInUp">
                         <div class="team-item">
 
-                            <?php $files = reset($history->getFiles()) ?>
+                            <?php $pageFile = $history->getFilenameMain() ?>
 
-                            <?php if(isset($files)): ?>
+                            <?php if(isset($pageFile)): ?>
 
-                                <img src="<?php echo $this->basePath('files/page/' . $files->getFilename()) ?>" alt="historia"/>
+                                <img src="<?php echo $this->url('thumb', array('entity' => 'page', 'size' => '360x389', 'filename' => $pageFile))?>" alt="historia"/>
 
                             <?php endif ?>
 
@@ -104,7 +104,7 @@
                               style="position: absolute; right: 3%;">
 
                             <a href="<?php echo $this->url('news-list', array('lang' => $lang)) ?>" class="section-more right" style="letter-spacing: 0.2em !important;">
-                                <?php echo $this->translate('Zobacz wszystkie aktualności'); ?> <i class="fa fa-angle-right"></i></a>
+                                <?php echo $this->translate('Zobacz wszystkie'); ?> <i class="fa fa-angle-right"></i></a>
 
                         </span>
 
@@ -114,7 +114,7 @@
 
                 <?php /* @var $post \CmsIr\Post\Model\Post */ ?>
                 <?php foreach($posts as $post): ?>
-                    <?php $files = $post->getFiles() ?>
+                    <?php $postFile = $post->getFilenameMain() ?>
 
                     <!-- Post Item -->
                     <div class="col-sm-6 col-md-4 col-lg-4 mb-60 mb-xs-40">
@@ -122,16 +122,13 @@
                         <div class="post-prev-img">
                             <a href="<?php echo $this->url('view-news', array('lang' => $lang, 'url' => $post->getUrl())) ?>">
 
-                                <?php if(empty($files)): ?>
+                                <?php if(empty($postFile)): ?>
 
                                     <img src="images/blog/post-prev-1.jpg" alt=""/>
 
                                 <?php else: ?>
 
-                                    <?php /* @var $file \CmsIr\File\Model\File */ ?>
-                                    <?php $file = reset($files) ?>
-
-                                    <img src="<?php echo $this->basePath('files/post/' . $file->getFilename()) ?>" alt=""/>
+                                    <img src="<?php echo $this->url('thumb', array('entity' => 'post', 'size' => '360x202', 'filename' => $postFile))?>" alt="news"/>
 
                                 <?php endif ?>
 
@@ -143,7 +140,9 @@
                         </div>
 
                         <div class="post-prev-info font-alt">
-                            <?php echo $post->getAuthor() ?> | <?php echo $post->getDate() ?>
+                            <?php $date = $post->getDate() ?>
+                            <?php $date = explode(' ', $date) ?>
+                            <?php echo $post->getAuthor() ?> | <?php echo $date[0] . ' ' . $this->translate($date['1']) ?>
                         </div>
 
                         <div class="post-prev-text">
@@ -187,38 +186,23 @@
 
                 <?php /* @var $category \CmsIr\Category\Model\Category */ ?>
                 <?php foreach($categories as $k => $category): ?>
-
-                    <?php
-                        switch ($category->getName())
-                        {
-                            case 'TARCICA SUCHA':
-                                $img = '<img src="images/tarcica.png" alt="tarcica"/>';
-                                break;
-                            case 'DESKA PODŁOGOWA':
-                                $img = '<img src="images/deska.png" alt="tarcica"/>';
-                                break;
-                            case 'WIĘŹBA DACHOWA SOSNA':
-                                $img = '<img src="images/wiezba.png" alt="tarcica"/>';
-                                break;
-                            case 'ELEMENTY KLEJONE':
-                                $img = '<img src="images/klejone.png" alt="tarcica"/>';
-                                break;
-                            case 'RAMIAK DRZWIOWY':
-                                $img = '<img src="images/ramiak.png" alt="tarcica"/>';
-                                break;
-                            case 'AKCESORIA PODŁOGOWE':
-                                $img = '<img src="images/akcesoria.png" alt="tarcica"/>';
-                                break;
-                            default:
-                                $img = '<img src="images/tarcica.png" alt="tarcica"/>';
-                        }
-                    ?>
+                    <?php $file = $category->getFilenameMain() ?>
 
                     <li <?php echo $k == 0 ? 'class="active"' : '' ?>>
                         <a href="#<?php echo $category->getId() ?>" data-toggle="tab">
 
                             <div class="alt-tabs-icon">
-                                <?php echo $img ?>
+
+                                <?php if(!empty($file)): ?>
+
+                                    <img src="<?php echo $this->basePath('files/category/' . $file) ?>" alt="tarcica"/>
+
+                                <?php else: ?>
+
+                                    <img src="images/tarcica.png" alt="tarcica"/>
+
+                                <?php endif ?>
+
                             </div>
 
                             <?php echo $category->getTitle() ?>
@@ -240,10 +224,12 @@
                     <div class="section-text">
                         <div class="row">
                             <div class="col-md-4 mb-md-40 mb-xs-30">
+                                <?php $categoryFiles = $category->getFiles() ?>
+                                <?php $categoryFile = reset($categoryFiles) ?>
 
-                                <?php if(!empty($category->getFilename())): ?>
+                                <?php if(!empty($category->getFilenameMain())): ?>
 
-                                    <img src="<?php echo $this->basePath('files/category/' . $category->getFilename()) ?>" alt="deski"/>
+                                    <img src="<?php echo $this->basePath('files/category/' . $categoryFile->getFilename()) ?>" alt="deski"/>
 
                                 <?php endif ?>
                             </div>
@@ -256,7 +242,7 @@
                     </div>
 
                     <div class="align-right" style="margin-right: 50px; margin-top: -40px">
-                        <a href="<?php echo $this->url('offer-list', array('lang' => $lang)) ?>" class="section-more font-alt"><i class="fa fa-angle-down fa-2x"></i> Zobacz asortyment</a>
+                        <a href="<?php echo $this->url('offer-list', array('lang' => $lang)) ?>" class="section-more font-alt"><i class="fa fa-angle-down fa-2x"></i> <?php echo $this->translate('Zobacz asortyment') ?></a>
                     </div>
 
                 </div>
@@ -273,7 +259,7 @@
 
 <?php if(!empty($opinions)): ?>
 
-    <section class="page-section bg-gray fullwidth-slider1 bg-scroll parallax-2" data-background="images/slider-tlo.png" style="padding: 125px 0">
+    <section class="page-section fullwidth-slider" data-background="images/7.jpg" style="padding: 125px 0">
 
         <?php /* @var $opinion \CmsIr\Post\Model\Post */ ?>
         <?php foreach($opinions as $opinion): ?>
@@ -308,80 +294,3 @@
     <!-- End Testimonials Section -->
 
 <?php endif ?>
-
-<!-- Shop Section -->
-<section class="page-section">
-    <div class="container relative">
-
-        <h2 class="font-alt align-center mb-70 mb-sm-40">
-            Bestsellery w ofercie
-
-            <span class="section-title font-alt align-center mb-70 mb-sm-40"
-                  style="position: absolute; right: 3%;">
-
-                <a href="#" class="section-more right" style="letter-spacing: 0.2em !important;">Zobacz
-                    wszystkie <i class="fa fa-angle-right"></i></a>
-
-            </span>
-
-        </h2>
-
-        <div class="row multi-columns-row">
-
-            <!-- Shop Item -->
-            <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
-                <div class="post-prev-img">
-                    <a href="shop-single.html"><img src="images/shop/shop-prev-1.jpg" alt=""/></a>
-                </div>
-                <div class="post-prev-title font-alt align-center">
-                    <a href="shop-single.html">G-Star Polo Applique Jersey</a>
-                </div>
-                <div class="post-prev-more align-center">
-                    <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i class="fa fa-angle-right"></i></a>
-                </div>
-            </div>
-            <!-- End Shop Item -->
-
-            <!-- Shop Item -->
-            <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
-                <div class="post-prev-img">
-                    <a href="shop-single.html"><img src="images/shop/shop-prev-1.jpg" alt=""/></a>
-                </div>
-                <div class="post-prev-title font-alt align-center">
-                    <a href="shop-single.html">G-Star Polo Applique Jersey</a>
-                </div>
-                <div class="post-prev-more align-center">
-                    <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i class="fa fa-angle-right"></i></a>
-                </div>
-            </div>
-            <!-- End Shop Item --> <!-- Shop Item -->
-            <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
-                <div class="post-prev-img">
-                    <a href="shop-single.html"><img src="images/shop/shop-prev-1.jpg" alt=""/></a>
-                </div>
-                <div class="post-prev-title font-alt align-center">
-                    <a href="shop-single.html">G-Star Polo Applique Jersey</a>
-                </div>
-                <div class="post-prev-more align-center">
-                    <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i class="fa fa-angle-right"></i></a>
-                </div>
-            </div>
-            <!-- End Shop Item --> <!-- Shop Item -->
-            <div class="col-md-3 col-lg-3 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
-                <div class="post-prev-img">
-                    <a href="shop-single.html"><img src="images/shop/shop-prev-1.jpg" alt=""/></a>
-                </div>
-                <div class="post-prev-title font-alt align-center">
-                    <a href="shop-single.html">G-Star Polo Applique Jersey</a>
-                </div>
-                <div class="post-prev-more align-center">
-                    <a href="#" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i class="fa fa-angle-right"></i></a>
-                </div>
-            </div>
-            <!-- End Shop Item -->
-
-        </div>
-
-    </div>
-</section>
-<!-- End Shop Section -->

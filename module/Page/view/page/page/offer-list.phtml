@@ -1,21 +1,21 @@
 <!-- Head Section -->
 <section class="page-section"
-         style="padding: 215px 0 140px 0; background: url(<?php echo $this->basePath('images/oferta-bg.png') ?>) no-repeat; background-size: 100% 100%;">
+         style="padding: 215px 0 140px 0;" data-background="<?php echo $this->basePath('images/oferta-bg.png') ?>">
     <div class="relative container align-left">
 
         <div class="row">
 
             <div class="col-md-8">
-                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0" style="color: white">Oferty</h1>
+                <h1 class="hs-line-11 font-alt mb-20 mb-xs-0" style="color: white"><?php echo $this->translate('Oferta') ?></h1>
 
                 <div class="hs-line-4 font-alt">
-                    W trosce o najwyższą klasę naszych produktów.
+                    <?php echo $this->translate('W trosce o najwyższą klasę naszych produktów') ?>
                 </div>
             </div>
 
             <div class="col-md-4 mt-30">
                 <div class="mod-breadcrumbs font-alt align-right" style="color: white">
-                    <a href="<?php echo $this->url('home', array('lang' => $lang)) ?>" style="color: white">Home</a>&nbsp;/&nbsp;<a href="#" style="color: white">Oferta</a>
+                    <a href="<?php echo $this->url('home', array('lang' => $lang)) ?>" style="color: white">Home</a>&nbsp;/&nbsp;<a href="#" style="color: white"><?php echo $this->translate('Oferta') ?></a>
                 </div>
 
             </div>
@@ -37,15 +37,15 @@
                 <div class="clearfix mb-40">
 
                     <div class="left section-text mt-10 dna-style">
-                        Wyświetlono 1–12 z 23 wyników
+                        <?php echo $this->translate('Wyświetlono') ?> <?php echo $products->getCurrentPageNumber() * 9 - 9 > 0 ? $products->getCurrentPageNumber() * 9 - 9 : 1 ?>–<?php echo $products->getCurrentPageNumber() * 9 ?> <?php echo $this->translate('z') ?> <?php echo $products->getAdapter()->count() ?> <?php echo $this->translate('wyników') ?>
                     </div>
 
                     <div class="right">
                         <form method="post" action="#" class="form">
-                            <select class="input-md round">
-                                <option>Sortowanie</option>
-                                <option>Cena - malejąco</option>
-                                <option>Cena - rosnąco</option>
+                            <select class="input-md round" id="sorting">
+                                <option><?php echo $this->translate('Sortowanie') ?></option>
+                                <option value="desc"><?php echo $this->translate('Cena - malejąco') ?></option>
+                                <option value="asc"><?php echo $this->translate('Cena - rosnąco') ?></option>
                             </select>
                         </form>
                     </div>
@@ -57,16 +57,14 @@
 
                     <?php /* @var $product \Product\Model\Product */ ?>
                     <?php foreach($products as $product): ?>
-                        <?php $files = $product->getFiles() ?>
+                        <?php $file = $product->getFilenameMain() ?>
                         <?php /* @var $file \CmsIr\File\Model\File */ ?>
-                        <?php $file = reset($files) ?>
 
                         <div class="col-md-4 col-lg-4 mb-60 mb-xs-40">
 
                             <div class="post-prev-img">
 
-                                <a href="<?php echo $this->url('offer', array('lang' => $lang, 'slug' => $product->getSlug())) ?>"><img src="<?php echo empty($file) ? $this->basePath('/images/shop/shop-prev-1.jpg') : $this->basePath('files/product/' . $file->getFilename()) ?>" alt=""/></a>
-
+                                <a href="<?php echo $this->url('offer', array('lang' => $lang, 'slug' => $product->getSlug())) ?>"><img src="<?php echo empty($file) ? $this->basePath('/images/shop/shop-prev-1.jpg') : $this->url('thumb', array('entity' => 'product', 'size' => '370x472', 'filename' => $file)) ?>" alt=""/></a>
 
                             </div>
 
@@ -75,11 +73,11 @@
                             </div>
 
                             <div class="post-prev-text align-center dna-style" style="font-size: 18px;">
-                                <strong><?php echo $product->getPrice() ?> zł</strong>
+                                <strong><?php echo $product->getPrice() ?> <span style="text-transform: lowercase">zł</span></strong>
                             </div>
 
                             <div class="post-prev-more align-center">
-                                <a href="<?php echo $this->url('offer', array('lang' => $lang, 'slug' => $product->getSlug())) ?>" class="btn btn-mod btn-gray btn-round">Zobacz więcej <i
+                                <a href="<?php echo $this->url('offer', array('lang' => $lang, 'slug' => $product->getSlug())) ?>" class="btn btn-mod btn-gray btn-round"><?php echo $this->translate('Zobacz więcej') ?> <i
                                         class="fa fa-angle-right"></i></a>
                             </div>
 
@@ -112,24 +110,24 @@
                 <!-- Widget -->
                 <div class="widget">
 
-                    <h5 class="widget-title font-alt dna-style">Filtruj</h5>
+                    <h5 class="widget-title font-alt dna-style"><?php echo $this->translate('Filtruj') ?></h5>
 
                     <div class="widget-body">
                         <form method="post" action="#" class="form">
 
                             <div class="row mb-20">
                                 <div class="col-xs-6">
-                                    <input type="text" name="price-from" id="price-from" class="input-md round form-control dna-input"
-                                           placeholder="cena w zł OD" maxlength="100">
+                                    <input type="text" name="from" id="price-from" class="input-md round form-control dna-input"
+                                           placeholder="<?php echo $this->translate('Cena w zł OD') ?>" maxlength="100" value="<?php echo $from ?>">
                                 </div>
 
                                 <div class="col-xs-6">
-                                    <input type="text" name="price-to" id="price-to" class="input-md round form-control dna-input"
-                                           placeholder="cena w zł DO" maxlength="100">
+                                    <input type="text" name="to" id="price-to" class="input-md round form-control dna-input"
+                                           placeholder="<?php echo $this->translate('Cena w zł DO') ?>" maxlength="100" value="<?php echo $to ?>">
                                 </div>
                             </div>
 
-                            <button class="btn btn-mod btn-medium btn-full btn-round dna-button">Filtruj</button>
+                            <button class="btn btn-mod btn-medium btn-full btn-round dna-button" id="filter"><?php echo $this->translate('Filtruj') ?></button>
 
                         </form>
                     </div>
@@ -140,15 +138,15 @@
                 <!-- Widget -->
                 <div class="widget">
 
-                    <h5 class="widget-title font-alt dna-style">Kategorie</h5>
+                    <h5 class="widget-title font-alt dna-style"><?php echo $this->translate('Kategorie') ?></h5>
 
                     <div class="widget-body">
                         <ul class="clearlist widget-menu">
 
                             <?php foreach($categories as $category): ?>
 
-                                <li>
-                                    <a href="#" title="" class="dna-style"><?php echo $category['category_name'] ?></a>
+                                <li data-id="<?php echo $category['category_id'] ?>">
+                                    <a href="<?php echo $this->url('offer-list', array('lang' => $lang, 'category' => $category['category_id'])) ?>" title="" class="dna-style"><?php echo $category['category_name'] ?></a>
                                     <small>
                                         - <?php echo $category['counter'] ?>
                                     </small>
@@ -163,32 +161,32 @@
                 <!-- End Widget -->
 
                 <!-- Widget -->
-                <div class="widget">
-
-                    <h5 class="widget-title font-alt dna-style">Bestsellery</h5>
-
-                    <div class="widget-body">
-                        <ul class="clearlist widget-posts">
-
-                            <!-- Preview item -->
-                            <li class="clearfix">
-                                <a href=""><img src="images/shop/previews/shop-prev-1.jpg" alt="" class="widget-posts-img"/></a>
-
-                                <div class="widget-posts-descr">
-                                    <a href="#" title="" class="dna-style">Polo Shirt With Argyle Print</a>
-
-                                    <div style="font-size: 16px" class="dna-style">
-                                        25.99
-                                    </div>
-                                </div>
-                            </li>
-                            <!-- End Preview item -->
-
-
-                        </ul>
-                    </div>
-
-                </div>
+<!--                <div class="widget">-->
+<!---->
+<!--                    <h5 class="widget-title font-alt dna-style">--><?php //echo $this->translate('Bestsellery') ?><!--</h5>-->
+<!---->
+<!--                    <div class="widget-body">-->
+<!--                        <ul class="clearlist widget-posts">-->
+<!---->
+<!--                            <!-- Preview item -->
+<!--                            <li class="clearfix">-->
+<!--                                <a href=""><img src="images/shop/previews/shop-prev-1.jpg" alt="" class="widget-posts-img"/></a>-->
+<!---->
+<!--                                <div class="widget-posts-descr">-->
+<!--                                    <a href="#" title="" class="dna-style">Polo Shirt With Argyle Print</a>-->
+<!---->
+<!--                                    <div style="font-size: 16px" class="dna-style">-->
+<!--                                        25.99-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                            <!-- End Preview item -->
+<!---->
+<!---->
+<!--                        </ul>-->
+<!--                    </div>-->
+<!---->
+<!--                </div>-->
                 <!-- End Widget -->
 
 
@@ -199,3 +197,60 @@
     </div>
 </section>
 <!-- End Section -->
+
+<script>
+
+    $(function() {
+
+        var host = window.location.hostname;
+        var path = window.location.pathname;
+        var pathname = window.location.pathname.split("/");
+
+        var category = pathname.indexOf('category');
+        var categoryId = pathname[category + 1];
+
+        if(categoryId) {
+            $('li[data-id="' + categoryId +'"]').children().css('text-decoration', 'underline');
+        }
+
+        $('#filter').click(function(e) {
+            e.preventDefault();
+
+            var fromPath = path.indexOf('from');
+
+            if(fromPath > 0) {
+                path = path.substr(0, fromPath - 1);
+            }
+
+            var from = $('input[name="from"]').val();
+            var to = $('input[name="to"]').val();
+            var send = 0;
+
+            if(from) {
+                path += '/from/' + from;
+                send = 1;
+            }
+
+            if(to) {
+                path += '/to/' + to;
+                send = 1;
+            }
+
+            if(send == 1) {
+                window.location.href = 'http://' + host + path;
+            }
+        });
+
+        $('#sorting').change(function(e) {
+            e.preventDefault();
+
+            var value = $(this).val();
+
+            if(value) {
+                window.location.href = 'http://' + host + path + '?price=' + value;
+            }
+        });
+
+    });
+
+</script>

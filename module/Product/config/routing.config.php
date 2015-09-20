@@ -118,6 +118,32 @@ return array(
                     ),
                 ),
             ),
+            'upload-main' => array(
+                'type'    => 'Segment',
+                'options' => array(
+                    'route'    => '/upload-main',
+                    'defaults' => array(
+                        'module' => 'CmsIr\Page',
+                        'controller' => 'Product\Controller\Product',
+                        'action'     => 'uploadFilesMain',
+                    ),
+                    'constraints' => array(
+                    ),
+                ),
+            ),
+            'delete-photo-main' => array(
+                'type'    => 'Segment',
+                'options' => array(
+                    'route'    => '/delete-photo-main',
+                    'defaults' => array(
+                        'module' => 'CmsIr\Page',
+                        'controller' => 'Product\Controller\Product',
+                        'action'     => 'deletePhotoMain',
+                    ),
+                    'constraints' => array(
+                    ),
+                ),
+            ),
         ),
     ),
 );

@@ -16,6 +16,7 @@ class CmsCreatePost extends AbstractMigration
              ->addColumn('date', 'datetime', array('null'=>true))
              ->addColumn('author_id', 'integer', array('null'=>true))
              ->addColumn('filename_main', 'string', array('null'=>true))
+             ->addColumn('filename_background', 'string', array('null'=>true))
              ->addColumn('extra', 'text', array('null'=>true))
              ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
              ->addForeignKey('author_id', 'cms_users', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))

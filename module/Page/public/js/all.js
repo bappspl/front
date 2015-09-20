@@ -654,9 +654,21 @@ function initPageSliders(){
             stopOnHover: true,
             items: 6,
             itemsDesktop: [1199, 4],
-            itemsTabletSmall: [768, 3],
+            itemsTabletSmall: [768, 4],
             itemsMobile: [480, 2],
             pagination: false,
+            navigation: false,
+            navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
+        });
+
+        // Item carousel
+        $(".best").owlCarousel({
+            //autoPlay: 2500,
+            stopOnHover: true,
+            items: 4,
+            itemsDesktop: [1199, 3],
+            itemsTabletSmall: [768, 3],
+            itemsMobile: [480, 1],
             navigation: false,
             navigationText: ["<i class='fa fa-angle-left'></i>", "<i class='fa fa-angle-right'></i>"]
         });

@@ -12,9 +12,15 @@ class ProductService implements ServiceLocatorAwareInterface
 {
     protected $serviceLocator;
 
-    public function findAllActiveProductsForProductList($langId)
+    public function findAllActiveProductsForProductList($langId, $where, $sort)
     {
-        $products = $this->getProductTable()->getBy(array('status_id' => 1), 'name ASC');
+        if($sort) {
+            $sort = 'price ' . $sort;
+        } else {
+            $sort = 'name ASC';
+        }
+
+        $products = $this->getProductTable()->getBy($where, $sort);
 
         /* @var $product Product */
         foreach($products as $product)
@@ -84,6 +90,36 @@ class ProductService implements ServiceLocatorAwareInterface
         $entity->setFiles($files);
 
         return $entity;
+    }
+
+    public function findAllBestsellers($langId)
+    {
+        /* @var $entity Product */
+        $products = $this->getProductTable()->getBy(array('status_id' => 1, 'bestseller' => 1), 'name ASC');
+
+        /* @var $product Product */
+        foreach($products as $product)
+        {
+            $blocks = $this->getBlockTable()->getBy(array('entity_type' => 'Product', 'entity_id' => $product->getId(), 'language_id' => $langId));
+
+            /* @var $block Block */
+            foreach($blocks as $block)
+            {
+                $fieldName = $block->getName();
+
+                switch ($fieldName)
+                {
+                    case 'product_name':
+                        $product->setProductName($block->getValue());
+                        break;
+                    case 'content':
+                        $product->setProductDescription($block->getValue());
+                        break;
+                }
+            }
+        }
+
+        return $products;
     }
 
     /**

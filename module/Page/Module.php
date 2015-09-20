@@ -31,6 +31,8 @@ class Module
 
         $menu = $this->getMenuService($sm)->getMenuByMachineName('main-menu');
 
+        $bestsellers = $this->getProductService($sm)->findAllBestsellers($langId);
+
         $viewModel = $e->getViewModel();
         $viewModel->menu = $menu;
         $viewModel->langId = $langId;
@@ -38,9 +40,10 @@ class Module
         $session = new Container();
         $session->id = $langId;
 
-        $viewModel = $e->getViewModel();
         $viewModel->langUp = strtoupper($lang);
         $viewModel->lang = $lang;
+
+        $viewModel->bestsellers = $bestsellers;
     }
 
     public function getConfig()
@@ -81,5 +84,13 @@ class Module
     public function getLanguageTable($sm)
     {
         return $sm->get('CmsIr\System\Model\LanguageTable');
+    }
+
+    /**
+     * @return \Product\Service\ProductService
+     */
+    public function getProductService($sm)
+    {
+        return $sm->get('Product\Service\ProductService');
     }
 }

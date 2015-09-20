@@ -15,6 +15,7 @@ class Product extends Model
     protected $bestseller;
     protected $show_price;
     protected $category_id;
+    protected $filename_main;
 
     // dictionary
     protected $class_id;
@@ -52,6 +53,7 @@ class Product extends Model
         $this->category = (!empty($data['category'])) ? $data['category'] : null;
         $this->category_name = (!empty($data['category_name'])) ? $data['category_name'] : null;
         $this->files = (!empty($data['files'])) ? $data['files'] : null;
+        $this->filename_main = (!empty($data['filename_main'])) ? $data['filename_main'] : null;
 
         // dictionary
         $this->class_id = (!empty($data['class_id'])) ? $data['class_id'] : null;
@@ -462,5 +464,21 @@ class Product extends Model
     public function setSlug($slug)
     {
         $this->slug = $slug;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFilenameMain()
+    {
+        return $this->filename_main;
+    }
+
+    /**
+     * @param mixed $filename_main
+     */
+    public function setFilenameMain($filename_main)
+    {
+        $this->filename_main = $filename_main;
     }
 }

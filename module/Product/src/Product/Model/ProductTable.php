@@ -1,6 +1,7 @@
 <?php
 namespace Product\Model;
 
+use CmsIr\Category\Model\Category;
 use CmsIr\System\Model\ModelTable;
 use Zend\Db\ResultSet\ResultSet;
 use Zend\Db\Sql\Expression;
@@ -28,14 +29,15 @@ class ProductTable extends ModelTable implements ServiceLocatorAwareInterface
         $select = $this->tableGateway->getSql()->select();
         $select->columns(array(
             'id',
-            'category_id' => new Expression('COUNT(category_id)'),
+            'content' => new Expression('COUNT(category_id)')
         ));
-        $select->join('cms_category', 'cms_category.id = product.category_id', array('category' => 'name'), 'inner');
+        $select->join('cms_category', 'cms_category.id = product.category_id', array('category' => 'name', 'category_id' => 'id'), 'inner');
         $select->join('cms_block', new Expression("cms_block.entity_id = cms_category.id AND cms_block.entity_type = 'Category'"), array('category_name' => 'value'), 'inner');
         $select->group('category_id');
         $select->where(array(
             'cms_block.language_id' => $langId,
             'cms_block.name' => 'title',
+            'status_id' => 1,
         ));
 
         $resultSet = $this->tableGateway->selectWith($select);
@@ -45,9 +47,11 @@ class ProductTable extends ModelTable implements ServiceLocatorAwareInterface
         foreach($resultSet as $entity)
         {
             $result[$entity->getId()] = array(
+                'id' => $entity->getCategory(),
                 'category' => $entity->getCategory(),
-                'counter' => $entity->getCategoryId(),
-                'category_name' => $entity->getCategoryName()
+                'counter' => $entity->getContent(),
+                'category_name' => $entity->getCategoryName(),
+                'category_id' => $entity->getCategoryId()
             );
         }
 
@@ -78,6 +82,10 @@ class ProductTable extends ModelTable implements ServiceLocatorAwareInterface
                 if($column == 'getStatus')
                 {
                     $tmp[] = $this->getLabelToDisplay($row->getStatusId());
+                } elseif($column == 'getCategory') {
+                    $tmp[] = $this->getCategoryLabelToDisplay($row->getCategoryId());
+                } elseif($column == 'getBestseller') {
+                    $tmp[] = $this->getBestsellerLabelToDisplay($row->getBestseller());
                 } else
                 {
                     $tmp[] = $row->$column();
@@ -99,6 +107,26 @@ class ProductTable extends ModelTable implements ServiceLocatorAwareInterface
         return $template;
     }
 
+    public function getCategoryLabelToDisplay ($labelValue)
+    {
+        /* @var $category Category */
+        $category = $this->getCategoryTable()->getOneBy(array('id' => $labelValue));
+
+        $template = $category->getName();
+        return $template;
+    }
+
+    public function getBestsellerLabelToDisplay ($labelValue)
+    {
+        $template = '';
+
+        if($labelValue == 1) {
+            $template = '<i class="fa fa-star"></i>';
+        }
+
+        return $template;
+    }
+
     public function save(Product $product)
     {
         $data = array(
@@ -110,6 +138,7 @@ class ProductTable extends ModelTable implements ServiceLocatorAwareInterface
             'bestseller' => $product->getBestseller(),
             'show_price' => $product->getShowPrice(),
             'category_id' => $product->getCategoryId(),
+            'filename_main' => $product->getFilenameMain(),
 
             'class_id' => $product->getClassId(),
             'length_id' => $product->getLengthId(),
@@ -172,5 +201,13 @@ class ProductTable extends ModelTable implements ServiceLocatorAwareInterface
     public function getStatusTable()
     {
         return $this->getServiceLocator()->get('CmsIr\System\Model\StatusTable');
+    }
+
+    /**
+     * @return \CmsIr\Category\Model\CategoryTable
+     */
+    public function getCategoryTable()
+    {
+        return $this->getServiceLocator()->get('CmsIr\Category\Model\CategoryTable');
     }
 }

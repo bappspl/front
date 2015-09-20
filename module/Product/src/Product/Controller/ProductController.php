@@ -3,6 +3,7 @@ namespace Product\Controller;
 
 use CmsIr\Category\Model\Category;
 use CmsIr\File\Model\File;
+use CmsIr\System\Util\Inflector;
 use Product\Form\ProductForm;
 use Product\Form\ProductFormFilter;
 use Product\Model\Product;
@@ -22,7 +23,7 @@ class ProductController extends AbstractActionController
         if ($request->isPost()) {
 
             $data = $this->getRequest()->getPost();
-            $columns = array('id', 'name', 'statusId', 'status', 'id');
+            $columns = array('id', 'name', 'catalogNumber', 'categoryId', 'category', 'bestseller', 'statusId', 'status', 'id');
 
             $listData = $this->getProductTable()->getDatatables($columns,$data);
 
@@ -60,6 +61,9 @@ class ProductController extends AbstractActionController
                 $product = new Product();
                 $product->exchangeArray($form->getData());
 
+                $slug = Inflector::slugify($product->getName());
+                $product->setSlug($slug);
+
                 $id = $this->getProductTable()->save($product);
 
                 $scannedDirectory = array_diff(scandir($this->uploadDir), array('..', '.'));
@@ -83,7 +87,9 @@ class ProductController extends AbstractActionController
 
                 $this->getBlockService()->saveBlocks($id, 'Product', $request->getPost()->toArray(), 'product_name');
 
-                $this->getTagService()->saveTags($request->getPost()->toArray()['tag_id'], $id, 'Product');
+                if(!empty($request->getPost()->toArray()['tag_id'])) {
+                    $this->getTagService()->saveTags($request->getPost()->toArray()['tag_id'], $id, 'Product');
+                }
 
                 $this->flashMessenger()->addMessage('Produkt został dodany poprawnie.');
 
@@ -133,6 +139,9 @@ class ProductController extends AbstractActionController
 
             if ($form->isValid())
             {
+                $slug = Inflector::slugify($product->getName());
+                $product->setSlug($slug);
+
                 $id = $this->getProductTable()->save($product);
 
                 $scannedDirectory = array_diff(scandir($this->uploadDir), array('..', '.'));
@@ -292,7 +301,56 @@ class ProductController extends AbstractActionController
         return $this->response;
     }
 
+    public function uploadFilesMainAction ()
+    {
+        if (!empty($_FILES))
+        {
+            $tempFile   = $_FILES['Filedata']['tmp_name'];
+            $targetFile = $_FILES['Filedata']['name'];
+
+            $file = explode('.', $targetFile);
+            $fileName = $file[0];
+            $fileExt = $file[1];
+
+            $uniqidFilename = $fileName.'-'.uniqid();
+            $targetFile = $uniqidFilename.'.'.$fileExt;
+
+            if(move_uploaded_file($tempFile,$this->destinationUploadDir.$targetFile))
+            {
+                echo $targetFile;
+            } else
+            {
+                echo 0;
+            }
+        }
+        return $this->response;
+    }
+
     public function deletePhotoAction()
+    {
+        $request = $this->getRequest();
+        if ($request->isPost()) {
+            $id = $request->getPost('id');
+            $name = $request->getPost('name');
+            $filePath = $request->getPost('filePath');
+
+            if(!empty($id))
+            {
+                $this->getFileTable()->deleteFile($id);
+                unlink('./public'.$filePath);
+
+            } else
+            {
+                unlink('./public'.$filePath);
+            }
+        }
+
+        $jsonObject = Json::encode($params['status'] = 'success', true);
+        echo $jsonObject;
+        return $this->response;
+    }
+
+    public function deletePhotoMainAction()
     {
         $request = $this->getRequest();
         if ($request->isPost()) {

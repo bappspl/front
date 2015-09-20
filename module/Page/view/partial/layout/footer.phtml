@@ -1,40 +1,107 @@
 
 
-<!-- Newsletter Section -->
-<section class="small-section bg-gray-lighter" style="background: url(<?php echo $this->basePath('images/newsletter-tlo.png') ?>) no-repeat; background-size: 100% 100%;">
-    <div class="container relative">
+<?php if(!isset($contact)): ?>
 
-        <form class="form align-center" id="mailchimp">
-            <div class="row">
-                <div class="col-md-8 col-md-offset-2">
+    <?php if(!empty($bestsellers)): ?>
 
-                    <div class="newsletter-label font-alt" style="color: white; opacity: .9">
-                        <?php echo $this->translate('Zapisz się do naszego newslettera'); ?>
+        <!-- Shop Section -->
+        <section class="page-section">
+            <div class="container relative">
+
+                <h2 class="font-alt align-center mb-70 mb-sm-40">
+                    <?php echo $this->translate('Bestsellery w ofercie') ?>
+
+                    <span class="section-title font-alt align-center mb-70 mb-sm-40"
+                          style="position: absolute; right: 3%;">
+
+<!--                    <a href="#" class="section-more right" style="letter-spacing: 0.2em !important;">Zobacz-->
+<!--                        wszystkie <i class="fa fa-angle-right"></i></a>-->
+
+                </span>
+
+                </h2>
+
+                <div class="row multi-columns-row">
+
+                    <div class="best owl-carousel">
+
+                        <?php /* @var $best \Product\Model\Product */ ?>
+                        <?php foreach($bestsellers as $best): ?>
+                            <?php $bestFile = $best->getFilenameMain() ?>
+
+                            <!-- Shop Item -->
+                            <div class="col-md-12 col-lg-12 mb-60 mb-xs-40 wow fadeIn" data-wow-delay="0.1s" data-wow-duration="2s">
+                                <div class="post-prev-img">
+
+                                    <?php if(isset($bestFile)): ?>
+
+                                        <a href="<?php echo $this->url('offer', array('lang' => $lang, 'slug' => $best->getSlug())) ?>"><img src="<?php echo $this->url('thumb', array('entity' => 'product', 'size' => '262x336', 'filename' => $bestFile))?>" alt=""/></a>
+
+                                    <?php else: ?>
+
+                                        <a href="<?php echo $this->url('offer', array('lang' => $lang, 'slug' => $best->getSlug())) ?>"><img src="images/shop/shop-prev-1.jpg" alt=""/></a>
+
+                                    <?php endif ?>
+
+                                </div>
+                                <div class="post-prev-title font-alt align-center">
+                                    <a href="<?php echo $this->url('offer', array('lang' => $lang, 'slug' => $best->getSlug())) ?>"><?php echo $best->getProductName() ?></a>
+                                </div>
+                                <div class="post-prev-more align-center">
+                                    <a href="<?php echo $this->url('offer', array('lang' => $lang, 'slug' => $best->getSlug())) ?>" class="btn btn-mod btn-gray btn-round"><?php echo $this->translate('Zobacz więcej') ?> <i class="fa fa-angle-right"></i></a>
+                                </div>
+                            </div>
+                            <!-- End Shop Item -->
+
+                        <?php endforeach ?>
+
                     </div>
-
-                    <div class="mb-20">
-                        <input placeholder="<?php echo $this->translate('Wpisz adres email'); ?>"
-                               class="newsletter-field form-control input-md round mb-xs-10" type="email"
-                               pattern=".{5,100}" required/>
-
-                        <button id="newsletter-submit" type="submit" class="btn btn-mod btn-medium btn-round mb-xs-10 subs">
-                            <?php echo $this->translate('Subskrybuj');?>
-                        </button>
-                    </div>
-
-                    <div class="newsletter-label font-alt" style="color: white; opacity: .9; font-size: 13px">
-                        <?php echo $this->translate('Nigdy nie wysyłamy spamu'); ?>
-                    </div>
-
-                    <div id="subscribe-result"></div>
 
                 </div>
-            </div>
-        </form>
 
-    </div>
-</section>
-<!-- End Newsletter Section -->
+            </div>
+        </section>
+        <!-- End Shop Section -->
+
+    <?php endif ?>
+
+
+    <!-- Newsletter Section -->
+    <section class="small-section bg-gray-lighter parallax-11" data-background="<?php echo $this->basePath('images/8.jpg') ?>">
+        <div class="container relative">
+
+            <form class="form align-center" id="mailchimp">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+
+                        <div class="newsletter-label font-alt" style="color: white; opacity: .9">
+                            <?php echo $this->translate('Zapisz się do naszego newslettera'); ?>
+                        </div>
+
+                        <div class="mb-20">
+                            <input placeholder="<?php echo $this->translate('Wpisz adres email'); ?>"
+                                   class="newsletter-field form-control input-md round mb-xs-10" type="email"
+                                   pattern=".{5,100}" required/>
+
+                            <button id="newsletter-submit" type="submit" class="btn btn-mod btn-medium btn-round mb-xs-10 subs">
+                                <?php echo $this->translate('Subskrybuj');?>
+                            </button>
+                        </div>
+
+                        <div class="newsletter-label font-alt" style="color: white; opacity: .9; font-size: 13px">
+                            <?php echo $this->translate('Nigdy nie wysyłamy spamu'); ?>
+                        </div>
+
+                        <div id="subscribe-result"></div>
+
+                    </div>
+                </div>
+            </form>
+
+        </div>
+    </section>
+    <!-- End Newsletter Section -->
+<?php endif ?>
 
 <!-- Contact Section -->
 <section class="page-section" id="contact">
@@ -145,12 +212,26 @@
 
 <!-- Google Map -->
 <div class="google-map">
-    <div data-address="Belt Parkway, Queens, NY, United States" id="map-canvas"></div>
+    <div data-address="Szkolna 23, 64-005 Racot" id="map-canvas"></div>
+
+    <div class="map-section">
+
+        <div class="map-toggle">
+            <div class="mt-icon">
+                <i class="fa fa-map-marker"></i>
+            </div>
+            <div class="mt-text font-alt">
+                <div class="mt-open"><?php echo $this->translate('Otwórz mapę') ?><i class="fa fa-angle-down"></i></div>
+                <div class="mt-close"><?php echo $this->translate('Schowaj mapę') ?> <i class="fa fa-angle-up"></i></div>
+            </div>
+        </div>
+
+    </div>
 </div>
 <!-- End Google Map -->
 
 <!-- Call Action Section -->
-<section class="small-section bg-dark">
+<section class="small-section bg-dark" style="z-index: 2;">
     <div class="container relative">
 
         <div class="align-center">
@@ -167,7 +248,7 @@
         <div class="row">
             <div class="col-sm-12">
                 COPYRIGHT © 2015 TARTAK MICHALSKI.. WSZELKIE PRAWA ZASTRZEŻONE <br/>
-                DESIGNED BY <a href="">DNA STUDIO</a>
+                DESIGNED BY <a href="http://dnastudio.pl/">DNA STUDIO</a>
             </div>
         </div>
 

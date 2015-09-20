@@ -16,7 +16,8 @@ return array(
             'partial/layout/header' => __DIR__ . '/../view/partial/layout/header.phtml',
             'partial/layout/footer' => __DIR__ . '/../view/partial/layout/footer.phtml',
             'partial/pagination' => __DIR__ . '/../view/partial/pagination.phtml',
-            'partial/pagination-offers' => __DIR__ . '/../view/partial/pagination-offers.phtml'
+            'partial/pagination-offers' => __DIR__ . '/../view/partial/pagination-offers.phtml',
+            'contact' => __DIR__ . '/../view/page/page/contact.phtml'
         ),
         'template_path_stack' => array(
             'page_home_site' => __DIR__ . '/../view'

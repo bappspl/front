@@ -30,9 +30,10 @@ $(function () {
                     "className": "dt-body-center",
                     "sortable": false
                 },
-                { "orderData": 2, "targets": [ 3 ] },
+                { "orderData": 3, "targets": [ 4 ] },
+                { "orderData": 6, "targets": [ 7 ] },
                 {
-                    "targets": [ 4 ],
+                    "targets": [ 8 ],
                     "render": function (data, type, row) {   // o, v contains the object and value for the column
                         if ( type === 'display' ) {
                             return  '<a href="product/edit/'+data+'" class="btn btn-primary" data-toggle="tooltip" title="Edycja"><i class="fa fa-pencil"></i></a> ' +
@@ -48,9 +49,13 @@ $(function () {
                     "targets": [ -1 ]
                 },
                 {
-                    "targets": [ 2 ],
+                    "targets": [ 3, 6 ],
                     "visible": false,
                     "className": "never"
+                },
+                {
+                    "className": "text-center",
+                    "targets": [ 5 ]
                 }
 
             ],

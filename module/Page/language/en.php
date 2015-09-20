@@ -1,5 +1,8 @@
 <?php
 return array(
+    "Cena - malejąco" => "Price - descending",
+    "Cena - rosnąco" => "Price - ascending",
+    "Sortowanie" => "Sorting",
     "Home"=>"Home",
     "Aktualności"=>"Current events",
     "O nas"=>"About us",
@@ -21,6 +24,7 @@ return array(
     "Zobacz asortyment"=>"See the range",
     "Opinie klientów na nasz temat"=>"Customers' opinions about us",
     "Bestsellery w ofercie"=>"Hits in the offer",
+    "Bestsellery"=>"Hits",
     "Zapisz się do naszego newslettera"=>"Subscribe our newsletter",
     "Wpisz adres email"=>"Put email address",
     "Subskrybuj"=>"Subscribe our newsletter",
@@ -38,9 +42,12 @@ return array(
     "Masz do nas pytania? Zadzwoń lub napisz"=>"Any questions? Give us a phone call or write to us",
     "Poznaj naszą historię oraz informację o firmie"=>"Get to know our history and the information about our company",
     "Wyświetlono 1-12 wyników"=>"Shown 1-12 results",
+    "wyników"=>"results",
+    "z"=>"from",
+    "Wyświetlono"=>"Shown",
     "Filtruj"=>"Filter",
     "Cena w zł OD"=>"Price in PLN from",
-    "Cena w zał DO"=>"Price in PLN up to",
+    "Cena w zł DO"=>"Price in PLN up to",
     "Kategorie"=>"Categories",
     "Klasa"=>"Class",
     "Długość"=>"Length",
@@ -91,4 +98,6 @@ return array(
     "jesion"=>"ash",
     "sosna"=>"pine",
     "modrzew"=>"larch",
+    "Otwórz mapę" => 'Open the map',
+    "Schowaj mapę" => 'Close the map'
 );

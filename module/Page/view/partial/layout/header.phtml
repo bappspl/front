@@ -33,10 +33,10 @@
                                 <div class="home-text">
 
 <!--                                    <img src="--><?php //echo $this->basePath('images/mystery.png') ?><!--" alt="mystery"/>-->
-                                    <h1 style="font-size: 110px; text-transform: uppercase"><?php echo $item->getTitle() . ' ' . $item->getSubtitle()?></h1>
+                                    <h1 class="mystery" ><?php echo $item->getTitle() . ' ' . $item->getSubtitle()?></h1>
 
                                     <div class="local-scroll" style="margin-bottom: -150px; margin-top: 150px">
-                                        <img src="<?php echo $this->basePath('images/logo.png') ?>" alt="logo" class="img-responsive center-block"/>
+                                        <img style="max-width: 400px;" src="<?php echo $this->basePath('images/logo_tartak_bialy.svg') ?>" alt="logo" class="img-responsive center-block"/>
                                     </div>
 
 
@@ -70,7 +70,7 @@
             <!-- Logo ( * your text or image into link tag *) -->
             <div class="nav-logo-wrap local-scroll">
                 <a href="<?php echo $this->url('home') ?>" class="logo">
-                    <img src="<?php echo $this->basePath('images/tartak_logo_2.svg') ?>" alt="logo" class="logo-menu" style="width: 450px;"/>
+                    <img src="<?php echo $this->basePath('images/tartak_logo_2.svg') ?>" alt="logo" class="logo-menu" />
                 </a>
             </div>
             <div class="mobile-nav">
