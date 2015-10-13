@@ -8,15 +8,13 @@ class CmsCreatePage extends AbstractMigration
     public function up()
     {
         $this->table('cms_page', array())
-             ->addColumn('name', 'string')
-             ->addColumn('subtitle', 'string', array('null'=>true))
-             ->addColumn('slug', 'string')
-             ->addColumn('url', 'string')
-             ->addColumn('status_id', 'integer')
-             ->addColumn('content', 'text', array('null'=>true))
-             ->addColumn('filename_main', 'string', array('null'=>true))
-             ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
-             ->save();
+            ->addColumn('name', 'string')
+            ->addColumn('slug', 'string')
+            ->addColumn('status_id', 'integer')
+            ->addColumn('filename_main', 'string', array('null'=>true))
+            ->addColumn('filename_background', 'string', array('null'=>true))
+            ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+            ->save();
 
         $this->createDirectory(array('files/page', 'temp_files/page'));
     }

@@ -1,0 +1,38 @@
+2015-10-13T20:20:02+02:00 CRIT (2): exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Route with name "category" not found' in /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/Router/Http/TreeRouteStack.php:317
+Stack trace:
+#0 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Navigation/Page/Mvc.php(260): Zend\Mvc\Router\Http\TreeRouteStack->assemble(Array, Array)
+#1 /media/wtk/Reszta/htdocs/demo/vendor/cms-ir/cms-ir/src/CmsIr/Dashboard/view/partial/dashboard-sidebar-nav.phtml(73): Zend\Navigation\Page\Mvc->getHref()
+#2 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/media/wtk/Resz...')
+#3 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Helper/Partial.php(61): Zend\View\Renderer\PhpRenderer->render('partial/sidebar...', Array)
+#4 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Helper/Navigation/Menu.php(433): Zend\View\Helper\Partial->__invoke('partial/sidebar...', Array)
+#5 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Helper/Navigation/Menu.php(107): Zend\View\Helper\Navigation\Menu->renderPartial(NULL, 'partial/sidebar...')
+#6 /media/wtk/Reszta/htdocs/demo/vendor/cms-ir/cms-ir/src/CmsIr/Dashboard/view/layout/dashboard.phtml(47): Zend\View\Helper\Navigation\Menu->render()
+#7 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/media/wtk/Resz...')
+#8 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#9 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/View/Http/DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#10 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#11 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#13 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#14 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#15 /media/wtk/Reszta/htdocs/demo/public/index.php(17): Zend\Mvc\Application->run()
+#16 {main}
+2015-10-13T20:20:32+02:00 CRIT (2): exception 'Zend\Mvc\Router\Exception\RuntimeException' with message 'Route with name "product" not found' in /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/Router/Http/TreeRouteStack.php:317
+Stack trace:
+#0 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Navigation/Page/Mvc.php(260): Zend\Mvc\Router\Http\TreeRouteStack->assemble(Array, Array)
+#1 /media/wtk/Reszta/htdocs/demo/vendor/cms-ir/cms-ir/src/CmsIr/Dashboard/view/partial/dashboard-sidebar-nav.phtml(73): Zend\Navigation\Page\Mvc->getHref()
+#2 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/media/wtk/Resz...')
+#3 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Helper/Partial.php(61): Zend\View\Renderer\PhpRenderer->render('partial/sidebar...', Array)
+#4 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Helper/Navigation/Menu.php(433): Zend\View\Helper\Partial->__invoke('partial/sidebar...', Array)
+#5 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Helper/Navigation/Menu.php(107): Zend\View\Helper\Navigation\Menu->renderPartial(NULL, 'partial/sidebar...')
+#6 /media/wtk/Reszta/htdocs/demo/vendor/cms-ir/cms-ir/src/CmsIr/Dashboard/view/layout/dashboard.phtml(47): Zend\View\Helper\Navigation\Menu->render()
+#7 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/media/wtk/Resz...')
+#8 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#9 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/View/Http/DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#10 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#11 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#12 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#13 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#14 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#15 /media/wtk/Reszta/htdocs/demo/public/index.php(17): Zend\Mvc\Application->run()
+#16 {main}

@@ -8,20 +8,18 @@ class CmsCreateSlider extends AbstractMigration
     public function up()
     {
         $this->table('cms_slider', array())
-             ->addColumn('name', 'string')
-             ->addColumn('slug', 'string')
-             ->addColumn('status_id', 'integer')
-             ->save();
+            ->addColumn('name', 'string')
+            ->addColumn('slug', 'string')
+            ->addColumn('status_id', 'integer')
+            ->save();
 
         $this->table('cms_slider_item', array())
             ->addColumn('slider_id', 'integer')
             ->addColumn('name', 'string')
-            ->addColumn('title', 'string', array('null' => true))
-            ->addColumn('description', 'string', array('null' => true))
+            ->addColumn('slug', 'string')
             ->addColumn('filename', 'string', array('null' => true))
             ->addColumn('status_id', 'integer')
             ->addColumn('position', 'integer')
-            ->addColumn('url', 'string')
             ->addForeignKey('slider_id', 'cms_slider', 'id')
             ->save();
 

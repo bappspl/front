@@ -8,11 +8,14 @@ class CmsCreateDictionary extends AbstractMigration
     public function up()
     {
         $this->table('cms_dictionary', array())
-             ->addColumn('name', 'string')
-             ->addColumn('category', 'string')
-             ->addColumn('website_id', 'integer', array('null'=>true))
-             ->addColumn('filename', 'text', array('null'=>true))
-             ->save();
+            ->addColumn('name', 'string')
+            ->addColumn('slug', 'string')
+            ->addColumn('category', 'string')
+            ->addColumn('website_id', 'integer', array('null'=>true))
+            ->addColumn('filename', 'text', array('null'=>true))
+            ->addColumn('category_id', 'integer', array('null'=>true))
+            ->addColumn('type', 'string', array('null'=>true))
+            ->save();
 
         $this->createDirectory(array('files/dictionary'));
     }

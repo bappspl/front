@@ -2,7 +2,7 @@
 return array(
     'db' => array(
         'driver'         => 'Pdo',
-        'dsn'            => 'mysql:dbname=grodzka;host=localhost',
+        'dsn'            => 'mysql:dbname=demo;host=localhost',
         'driver_options' => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
@@ -14,7 +14,7 @@ return array(
          ),
      ),
      'static_salt' => 'aFGQ475SDsdfsaf2342',
-     'app_name' => 'cms-master',
-     'logger_mail' => true,
+     'app_name' => 'cms-demo',
+     'logger_mail' => false,
      'piwik' => 'http://piwik.web-ir.pl'
 );
