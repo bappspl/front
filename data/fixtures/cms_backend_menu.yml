@@ -383,3 +383,63 @@ usuwanie-tagu:
 #  visible_in_primary: false
 #  parent_id: wpisy
 #  params: "'category' => 'opinion'"
+baner:
+  name: baner
+  label: Banery
+  route: banner-main
+  class: fa fa-sticky-note
+  access: 2
+nowy-baner:
+  name: nowy-baner
+  label: Dodaj nowy
+  route: banner/create
+  visible_in_primary: true
+  parent_id: baner
+lista-banerów:
+  name: lista-banerow
+  label: Lista banerów
+  route: banner
+  visible_in_primary: true
+  parent_id: baner
+edycja-banerow:
+  name: edycja-banerow
+  label: Edycja banerów
+  route: banner/edit
+  visible_in_primary: false
+  parent_id: baner
+usuwanie-banera:
+  name: usuwanie-banera
+  label: Usuwanie banera
+  route: banner/delete
+  visible_in_primary: false
+  parent_id: baner
+miejsce:
+  name: miejsce
+  label: Miejsca
+  route: place-main
+  class: fa fa-map-marker
+  access: 2
+nowe-miejsce:
+  name: nowe-miejsce
+  label: Dodaj nowy
+  route: place/create
+  visible_in_primary: true
+  parent_id: miejsce
+lista-miejsc:
+  name: lista-miejsc
+  label: Lista miejsc
+  route: place
+  visible_in_primary: true
+  parent_id: miejsce
+edycja-miejsca:
+  name: edycja-miejsca
+  label: Edycja miejsca
+  route: place/edit
+  visible_in_primary: false
+  parent_id: miejsce
+usuwanie-miejsca:
+  name: usuwanie-miejsca
+  label: Usuwanie miejsca
+  route: place/delete
+  visible_in_primary: false
+  parent_id: miejsce

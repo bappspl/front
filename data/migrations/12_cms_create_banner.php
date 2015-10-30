@@ -12,7 +12,8 @@ class CmsCreateBanner extends AbstractMigration
             ->addColumn('name', 'string')
             ->addColumn('slug', 'string')
             ->addColumn('url', 'string')
-            ->addColumn('filename', 'text')
+            ->addColumn('target', 'string', array('null' => true))
+            ->addColumn('filename', 'text', array('null' => true))
             ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
             ->save();
 
@@ -21,8 +22,7 @@ class CmsCreateBanner extends AbstractMigration
 
     public function createDirectory($dirs)
     {
-        foreach($dirs as $dir)
-        {
+        foreach($dirs as $dir) {
             $explodedDirs = explode('/', $dir);
             $parentDir = $explodedDirs[0];
 

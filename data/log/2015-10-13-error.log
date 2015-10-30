@@ -36,3 +36,23 @@ Stack trace:
 #14 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
 #15 /media/wtk/Reszta/htdocs/demo/public/index.php(17): Zend\Mvc\Application->run()
 #16 {main}
+2015-10-13T20:48:00+02:00 CRIT (2): exception 'Zend\ServiceManager\Exception\ServiceNotFoundException' with message 'Zend\ServiceManager\ServiceManager::get was unable to fetch or create an instance for CmsIr\System\Model\LanguageTable' in /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/ServiceManager/ServiceManager.php:550
+Stack trace:
+#0 /media/wtk/Reszta/htdocs/demo/vendor/cms-ir/cms-ir/src/CmsIr/System/src/System/View/Helper/Language.php(26): Zend\ServiceManager\ServiceManager->get('CmsIr\System\Mo...')
+#1 /media/wtk/Reszta/htdocs/demo/vendor/cms-ir/cms-ir/src/CmsIr/System/src/System/View/Helper/Language.php(14): CmsIr\System\View\Helper\Language->getLanguageTable()
+#2 [internal function]: CmsIr\System\View\Helper\Language->__invoke('partial/languag...')
+#3 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(399): call_user_func_array(Object(CmsIr\System\View\Helper\Language), Array)
+#4 /media/wtk/Reszta/htdocs/demo/vendor/cms-ir/cms-ir/src/CmsIr/Page/view/cms-ir/page/create.phtml(30): Zend\View\Renderer\PhpRenderer->__call('languageHelper', Array)
+#5 /media/wtk/Reszta/htdocs/demo/vendor/cms-ir/cms-ir/src/CmsIr/Page/view/cms-ir/page/create.phtml(30): Zend\View\Renderer\PhpRenderer->languageHelper('partial/languag...')
+#6 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/Renderer/PhpRenderer.php(506): include('/media/wtk/Resz...')
+#7 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/View.php(205): Zend\View\Renderer\PhpRenderer->render(Object(Zend\View\Model\ViewModel))
+#8 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/View.php(233): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#9 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/View/View.php(198): Zend\View\View->renderChildren(Object(Zend\View\Model\ViewModel))
+#10 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/View/Http/DefaultRenderingStrategy.php(103): Zend\View\View->render(Object(Zend\View\Model\ViewModel))
+#11 [internal function]: Zend\Mvc\View\Http\DefaultRenderingStrategy->render(Object(Zend\Mvc\MvcEvent))
+#12 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(468): call_user_func(Array, Object(Zend\Mvc\MvcEvent))
+#13 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/EventManager/EventManager.php(207): Zend\EventManager\EventManager->triggerListeners('render', Object(Zend\Mvc\MvcEvent), Array)
+#14 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(352): Zend\EventManager\EventManager->trigger('render', Object(Zend\Mvc\MvcEvent))
+#15 /media/wtk/Reszta/htdocs/demo/vendor/zendframework/zendframework/library/Zend/Mvc/Application.php(327): Zend\Mvc\Application->completeRequest(Object(Zend\Mvc\MvcEvent))
+#16 /media/wtk/Reszta/htdocs/demo/public/index.php(17): Zend\Mvc\Application->run()
+#17 {main}

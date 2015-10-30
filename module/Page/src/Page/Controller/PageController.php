@@ -37,7 +37,7 @@ class PageController extends AbstractActionController
         $slug = $this->params('slug');
 
         $page = $this->getPageService()->findOneBySlug($slug);
-        if(empty($page)){
+        if(empty($page)) {
             $this->getResponse()->setStatusCode(404);
         }
 
@@ -131,8 +131,7 @@ class PageController extends AbstractActionController
         $activeStatusId = $activeStatus->getId();
 
         $events = $this->getPostTable()->getBy(array('status_id' => $activeStatusId, 'category' => 'event'));
-        foreach($events as $event)
-        {
+        foreach($events as $event) {
             $eventFiles = $this->getPostFileTable()->getOneBy(array('post_id' => $event->getId()));
             $event->setFiles($eventFiles);
         }
@@ -146,8 +145,7 @@ class PageController extends AbstractActionController
         $confirmedStatus = $this->getStatusTable()->getOneBy(array('slug' => 'confirmed'));
         $confirmedStatusId = $confirmedStatus->getId();
 
-        if($subscriber == false)
-        {
+        if($subscriber == false) {
             $viewParams['message'] = 'Nie istnieje taki użytkownik';
             $viewModel->setVariables($viewParams);
             return $viewModel;
@@ -155,13 +153,9 @@ class PageController extends AbstractActionController
 
         $subscriberStatus = $subscriber->getStatusId();
 
-        if($subscriberStatus == $confirmedStatusId)
-        {
+        if($subscriberStatus == $confirmedStatusId) {
             $viewParams['message'] = 'Użytkownik już potwierdził subskrypcję';
-        }
-
-        else
-        {
+        } else {
             $viewParams['message'] = 'Subskrypcja została potwierdzona';
             $subscriberGroups = $subscriber->getGroups();
             $groups = unserialize($subscriberGroups);
@@ -178,7 +172,6 @@ class PageController extends AbstractActionController
     public function contactFormAction()
     {
         $request = $this->getRequest();
-
 
         if ($request->isPost()) {
             $name = $request->getPost('name');
@@ -264,22 +257,6 @@ class PageController extends AbstractActionController
     public function getPostTable()
     {
         return $this->getServiceLocator()->get('CmsIr\Post\Model\PostTable');
-    }
-
-    /**
-     * @return \CmsIr\Post\Model\PostFileTable
-     */
-    public function getPostFileTable()
-    {
-        return $this->getServiceLocator()->get('CmsIr\Post\Model\PostFileTable');
-    }
-
-    /**
-     * @return \CmsIr\Users\Service\UsersService
-     */
-    public function getUsersService()
-    {
-        return $this->getServiceLocator()->get('CmsIr\Users\Service\UsersService');
     }
 
     /**
