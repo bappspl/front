@@ -24,7 +24,19 @@ class PageController extends AbstractActionController
 {
     public function homeAction()
     {
+        $langId = $this->getLangId($this->params()->fromRoute('lang'));
+        $langUrlShortcut = $this->getLangUrlShortcut($this->params()->fromRoute('lang'));
+
+        $slider = $this->getSliderService()->findOneBySlug('slider-glowny', $langId);
+        $items = $slider->getItems();
+
+        $this->layout()->setVariable('items', $items);
+
+        $posts = $this->getPostService()->findLastPostsByLangIdWithBlocks($langId, 'news', 'j F', 3);
+
         $viewParams = array();
+        $viewParams['lang'] = $langUrlShortcut;
+        $viewParams['posts'] = $posts;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
         return $viewModel;
@@ -32,11 +44,10 @@ class PageController extends AbstractActionController
 
     public function viewPageAction()
     {
-        $this->layout('layout/home');
-
         $slug = $this->params('slug');
 
         $page = $this->getPageService()->findOneBySlug($slug);
+
         if(empty($page)) {
             $this->getResponse()->setStatusCode(404);
         }
@@ -211,6 +222,27 @@ class PageController extends AbstractActionController
 
         return array();
     }
+
+    public function getLangId($lang)
+    {
+        if(isset($lang)) {
+            $langId = $this->getLanguageTable()->getOneBy(array('url_shortcut' => $lang));
+            return $langId->getId();
+        } else {
+            return 1;
+        }
+    }
+
+    public function getLangUrlShortcut($lang)
+    {
+        if(isset($lang)) {
+            $langId = $this->getLanguageTable()->getOneBy(array('url_shortcut' => $lang));
+            return $langId->getUrlShortcut();
+        } else {
+            return 1;
+        }
+    }
+
     /**
      * @return \CmsIr\Menu\Service\MenuService
      */
@@ -273,5 +305,21 @@ class PageController extends AbstractActionController
     public function getPlaceTable()
     {
         return $this->getServiceLocator()->get('CmsIr\Place\Model\PlaceTable');
+    }
+
+    /**
+     * @return \CmsIr\System\Model\LanguageTable
+     */
+    public function getLanguageTable()
+    {
+        return $this->getServiceLocator()->get('CmsIr\System\Model\LanguageTable');
+    }
+
+    /**
+     * @return \CmsIr\Post\Service\PostService
+     */
+    public function getPostService()
+    {
+        return $this->getServiceLocator()->get('CmsIr\Post\Service\PostService');
     }
 }

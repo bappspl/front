@@ -14,8 +14,27 @@ class Module
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
 
+        $em = $e->getApplication()->getEventManager();
+        $em->attach(\Zend\Mvc\MvcEvent::EVENT_DISPATCH, array($this, 'onDispatch'));
+    }
+
+    public function onDispatch(MvcEvent $e)
+    {
         $sm = $e->getApplication()->getServiceManager();
+        $routeMatch = $e->getRouteMatch();
+
+        //lang
+        $lang = $this->getLanguageService($sm)->setLanguage($routeMatch->getParams());
+
+        $langId = $this->getLanguageTable($sm)->getOneBy(array('url_shortcut' => $lang))->getId();
+
         $menu = $this->getMenuService($sm)->getMenuByMachineName('main-menu');
+
+        $viewModel = $e->getViewModel();
+        $viewModel->menu = $menu;
+        $viewModel->langId = $langId;
+        $viewModel->langUp = strtoupper($lang);
+        $viewModel->lang = $lang;
     }
 
     public function getConfig()
@@ -40,5 +59,21 @@ class Module
     public function getMenuService($sm)
     {
         return $sm->get('CmsIr\Menu\Service\MenuService');
+    }
+
+    /**
+     * @return \CmsIr\System\Service\LanguageService
+     */
+    public function getLanguageService($sm)
+    {
+        return $sm->get('CmsIr\System\Service\LanguageService');
+    }
+
+    /**
+     * @return \CmsIr\System\Model\LanguageTable
+     */
+    public function getLanguageTable($sm)
+    {
+        return $sm->get('CmsIr\System\Model\LanguageTable');
     }
 }

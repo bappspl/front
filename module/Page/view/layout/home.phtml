@@ -3,17 +3,29 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <?php echo $this->headTitle($this->translate("front")) ?>
+    <?php echo $this->headTitle($this->translate("Demo")) ?>
 
     <?php echo $this->headMeta()
         ->appendName('viewport', 'width=device-width, initial-scale=1.0')
         ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
     ?>
 
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="<?php echo $this->basePath() ?>images-front/favicon.png">
+    <link rel="apple-touch-icon" href="<?php echo $this->basePath() ?>images-front/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="<?php echo $this->basePath() ?>images-front/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="<?php echo $this->basePath() ?>images-front/apple-touch-icon-114x114.png">
+
     <!-- Le styles -->
     <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
         // MAIN CSS (REQUIRED ALL PAGE)
-        ->appendStylesheet($this->basePath() . '/css/test.css')
+        ->appendStylesheet($this->basePath() . '/css-front/bootstrap.min.css')
+        ->appendStylesheet($this->basePath() . '/css-front/style.css')
+        ->appendStylesheet($this->basePath() . '/css-front/style-responsive.css')
+        ->appendStylesheet($this->basePath() . '/css-front/animate.min.css')
+        ->appendStylesheet($this->basePath() . '/css-front/vertical-rhythm.min.css')
+        ->appendStylesheet($this->basePath() . '/css-front/owl.carousel.css')
+        ->appendStylesheet($this->basePath() . '/css-front/magnific-popup.css')
     ?>
     <!-- Scripts -->
 
@@ -23,21 +35,48 @@
     <![endif]-->
 
     <?php echo $this->headScript()
-        ->appendFile($this->basePath() . '/js/test.js', 'text/javascript')
+//        ->appendFile($this->basePath() . '/js/test.js', 'text/javascript')
     ?>
 
 </head>
-<body>
+<body class="appear-animate">
 
-    <?php echo $this->partial('partial/layout/header'); ?>
+    <div class="page" id="top">
 
-    <?php echo $content; ?>
+        <?php echo $this->partial('partial/layout/header'); ?>
 
-    <?php echo $this->partial('partial/layout/footer'); ?>
+        <?php echo $content; ?>
+
+        <?php echo $this->partial('partial/layout/footer'); ?>
+
+    </div>
 
     <?php echo $this->inlineScript()
-        ->appendFile($this->basePath() . '/js/bootstrap-front.min.js')
+        ->appendFile($this->basePath() . '/js-front/jquery-1.11.2.min.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.easing.1.3.js')
+        ->appendFile($this->basePath() . '/js-front/bootstrap.min.js')
+        ->appendFile($this->basePath() . '/js-front/SmoothScroll.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.scrollTo.min.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.localScroll.min.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.viewport.mini.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.countTo.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.appear.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.sticky.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.parallax-1.1.3.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.fitvids.js')
+        ->appendFile($this->basePath() . '/js-front/owl.carousel.min.js')
+        ->appendFile($this->basePath() . '/js-front/isotope.pkgd.min.js')
+        ->appendFile($this->basePath() . '/js-front/imagesloaded.pkgd.min.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.magnific-popup.min.js')
+        ->appendFile('http://maps.google.com/maps/api/js?sensor=false&amp;language=en"')
+        ->appendFile($this->basePath() . '/js-front/gmap3.min.js')
+        ->appendFile($this->basePath() . '/js-front/wow.min.js')
+        ->appendFile($this->basePath() . '/js-front/masonry.pkgd.min.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.simple-text-rotator.min.js')
+        ->appendFile($this->basePath() . '/js-front/all.js')
+        ->appendFile($this->basePath() . '/js-front/jquery.ajaxchimp.min.js')
     ?>
 
+    <!--[if lt IE 10]><script type="text/javascript" src="js-front/placeholder.js"></script><![endif]-->
 </body>
 </html>

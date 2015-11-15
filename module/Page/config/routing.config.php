@@ -2,29 +2,33 @@
 
 return array(
     'home' => array(
-        'type' => 'Zend\Mvc\Router\Http\Literal',
+        'type' => 'Zend\Mvc\Router\Http\Segment',
         'options' => array(
-            'route'    => '/',
+            'route'    => '/[:lang]',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'home',
+                'lang'       => 'pl'
             ),
         ),
     ),
     'view-page' => array(
         'type' => 'Zend\Mvc\Router\Http\Segment',
         'options' => array(
-            'route'    => '/strona/:slug',
+            'route'    => '[/:lang]/strona/:url',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'viewPage',
+            ),
+            'constraints' => array(
+                'url' => '[a-zA-Z0-9_-]+'
             ),
         ),
     ),
     'news-list' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/aktualnosci',
+            'route'    => '[/:lang]/aktualnosci',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'newsList',
@@ -34,13 +38,13 @@ return array(
     'view-news' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/aktualnosci/:slug',
+            'route'    => '[/:lang]/aktualnosci/:url',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'viewNews',
             ),
             'constraints' => array(
-                'slug' => '[a-zA-Z0-9_-]+'
+                'url' => '[a-zA-Z0-9_-]+'
             ),
         ),
     ),
