@@ -1,0 +1,14 @@
+<div class="jumbotron white-bg jumbotron-sm">
+
+    <p class="text-center">Czy na pewno chcesz usunąć piosnkę: <b><?php echo $slider->getName() ?></b>?</p>
+
+
+    <form action="" method="post">
+        <input type="hidden" name="id" value="<?php echo (int) $slider->getId() ?>" />
+        <p class="text-center">
+            <input type="submit" name="del" value="Anuluj" class="btn btn-default" />
+            <input type="submit" name="del" value="Tak" class="btn btn-primary" />
+        </p>
+    </form>
+
+</div>

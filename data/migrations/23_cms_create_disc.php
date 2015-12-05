@@ -2,22 +2,43 @@
 use Phinx\Migration\AbstractMigration;
 use Phinx\Db\Adapter\MysqlAdapter;
 
-class CmsCreateGallery extends AbstractMigration
+class CmsCreateDisc extends AbstractMigration
 {
 
     public function up()
     {
-        $this->table('cms_gallery', array())
-            ->addColumn('status_id', 'integer')
+        $this->table('disc', array())
             ->addColumn('name', 'string')
             ->addColumn('slug', 'string')
-            ->addColumn('url', 'string')
+            ->addColumn('title', 'string', array('null'=>true))
+            ->addColumn('content_first', 'text', array('null'=>true))
+            ->addColumn('content_second', 'text', array('null'=>true))
+            ->addColumn('filename_main', 'text', array('null'=>true))
+            ->addColumn('year', 'string', array('null'=>true))
+            ->addColumn('album', 'string', array('null'=>true))
+            ->addColumn('facebook', 'string', array('null'=>true))
+            ->addColumn('position', 'integer', array('null'=>true))
+            ->addColumn('status_id', 'integer')
+            ->addColumn('category_id', 'integer', array('null' => true))
             ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
             ->save();
 
-        $this->createDirectory(array('files/gallery'));
+        $this->table('record', array())
+            ->addColumn('name', 'string')
+            ->addColumn('slug', 'string')
+            ->addColumn('title', 'string', array('null'=>true))
+            ->addColumn('content', 'text', array('null'=>true))
+            ->addColumn('listen', 'text', array('null'=>true))
+            ->addColumn('buy', 'text', array('null'=>true))
+            ->addColumn('status_id', 'integer')
+            ->addColumn('disc_id', 'integer')
+            ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+            ->addForeignKey('disc_id', 'disc', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+            ->save();
 
-        $this->insertYamlValues('cms_gallery');
+        $this->createDirectory(array('files/disc', 'temp_files/disc'));
+
+//        $this->insertYamlValues('cms_gallery');
     }
 
     public function insertYamlValues($tableName)
@@ -65,6 +86,7 @@ class CmsCreateGallery extends AbstractMigration
 
     public function down()
     {
-        $this->dropTable('cms_gallery');
+        $this->dropTable('disc');
+        $this->dropTable('record');
     }
 }

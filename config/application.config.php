@@ -22,7 +22,12 @@ return array(
         'CmsIr\Place',
         'CmsIr\Meta',
         'CmsIr\Category',
-        'CmsIr\Tag'
+        'CmsIr\Tag',
+        'CmsIr\Video',
+
+        'Performance',
+        'Team',
+        'Disc'
     ),
     'module_listener_options' => array(
         'module_paths' => array(

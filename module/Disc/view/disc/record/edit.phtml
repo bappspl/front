@@ -1,0 +1,46 @@
+<?php
+$form = $this->form;
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="the-box">
+
+                        <h4 class="small-title">Dane podstawowe</h4>
+
+                        <?php echo $this->customFormHelper($form->get('name')) ?>
+
+                        <div class="form-group">
+                            <label><?php echo $this->formLabel($form->get('status_id')); ?></label>
+                            <?php echo $this->formSelect($form->get('status_id')); ?>
+                        </div>
+
+                        <?php echo $this->customFormHelper($form->get('title')) ?>
+                        <?php echo $this->customFormHelper($form->get('listen')) ?>
+                        <?php echo $this->customFormHelper($form->get('buy')) ?>
+                        <?php echo $this->customFormHelper($form->get('content')) ?>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="the-box">
+                <div class="input-group col-sm-12 text-right">
+                    <a class="btn btn-default" href="<?php echo $this->url('disc/records', array('disc_id' => $discId)); ?>">Anuluj</a> &nbsp
+                    <?php echo $this->formInput($form->get('submit')); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/summernote.min.css'); ?>
+
+<?php $this->headScript()->appendFile($this->basePath().'/js/summernote.min.js'); ?>

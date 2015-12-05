@@ -1,0 +1,65 @@
+<?php
+$form = $this->form;
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="the-box">
+
+                    <h4 class="small-title">Dane podstawowe</h4>
+
+                    <?php echo $this->customFormHelper($form->get('name')) ?>
+                    <?php echo $this->customFormHelper($form->get('url')) ?>
+                    <?php echo $this->customFormHelper($form->get('date')) ?>
+
+                    <div class="form-group">
+                        <label><?php echo $this->formLabel($form->get('status_id')); ?></label>
+                        <?php echo $this->formSelect($form->get('status_id')); ?>
+                    </div>
+
+
+                    <div class="form-group" style="margin-left: 20px">
+                        <div class="radio">
+                            <input type="radio" value="0" class="i-grey-square" name="enter" <?php echo $form->get('enter')->getValue() == 0 ? 'checked': '' ?> >
+                            Wejście wolne
+                        </div>
+
+                        <div class="radio">
+                            <input type="radio" value="1" class="i-grey-square" name="enter" <?php echo $form->get('enter')->getValue() == 1 ? 'checked': '' ?> >
+                            Bilet
+                        </div>
+                    </div>
+
+                    <?php echo $this->customFormHelper($form->get('content')) ?>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="the-box">
+            <div class="input-group col-sm-12 text-right">
+                <a class="btn btn-default" href="<?php echo $this->url('performance'); ?>">Anuluj</a> &nbsp
+                <?php echo $this->formInput($form->get('submit')); ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/summernote.min.css'); ?>
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/bootstrap-datetimepicker.min.css'); ?>
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/performance.css'); ?>
+
+<?php $this->headScript()->appendFile($this->basePath().'/js/summernote.min.js'); ?>
+
+<?php $this->headScript()->appendFile($this->basePath().'/js/performance-form.js'); ?>
+<?php $this->headScript()->appendFile($this->basePath().'/js/moment.js'); ?>
+<?php $this->headScript()->appendFile($this->basePath().'/js/bootstrap-datetimepicker.js'); ?>

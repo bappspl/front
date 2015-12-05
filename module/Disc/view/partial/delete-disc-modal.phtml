@@ -1,0 +1,27 @@
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-hidden="false">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Usuwanie płyty</h4>
+            </div>
+            <form action="" method="post">
+
+                <div class="modal-body">
+                    <input type="hidden" name="id" value="" />
+                    <p>
+                        Czy na pewno chcesz usunąć płytę: <b></b>?
+                    </p>
+                </div>
+                <div class="modal-footer">
+                    <img src="<?php echo $this->basePath() ?>/img/ajax-loader.gif" alt="spinner" class="pull-left spinner" />
+                    <input type="submit" name="del" value="Anuluj" class="btn btn-default" data-dismiss="modal"/>
+                    <input type="submit" name="del" value="Tak" class="btn btn-primary" />
+                </div><!-- /.modal-footer -->
+
+            </form>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-doalog -->
+</div><!-- /#deleteModal -->

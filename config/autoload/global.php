@@ -2,7 +2,7 @@
 return array(
     'db' => array(
         'driver'         => 'Pdo',
-        'dsn'            => 'mysql:dbname=demo;host=localhost',
+        'dsn'            => 'mysql:dbname=lombard;host=localhost',
         'driver_options' => array(
             PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES \'UTF8\''
         ),
@@ -14,7 +14,8 @@ return array(
          ),
      ),
      'static_salt' => 'aFGQ475SDsdfsaf2342',
-     'app_name' => 'cms-demo',
+     'app_name' => 'lombard',
      'logger_mail' => false,
-     'piwik' => 'http://piwik.web-ir.pl'
+     'piwik' => 'http://piwik.web-ir.pl',
+     'languages' => array('pl')
 );

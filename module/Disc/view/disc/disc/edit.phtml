@@ -1,0 +1,80 @@
+<?php
+$form = $this->form;
+$form->prepare();
+echo $this->form()->openTag($form);
+?>
+
+<?php echo $this->customFormHelper($form->get('filename_main')); ?>
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="the-box">
+
+                        <h4 class="small-title">Dane podstawowe</h4>
+
+                        <?php echo $this->customFormHelper($form->get('name')) ?>
+
+                        <div class="form-group">
+                            <label><?php echo $this->formLabel($form->get('status_id')); ?></label>
+                            <?php echo $this->formSelect($form->get('status_id')); ?>
+                        </div>
+
+                        <div class="form-group">
+                            <label><?php echo $this->formLabel($form->get('category_id')); ?></label>
+                            <?php echo $this->formSelect($form->get('category_id')); ?>
+                        </div>
+
+                        <?php echo $this->customFormHelper($form->get('title')) ?>
+                        <?php echo $this->customFormHelper($form->get('year')) ?>
+                        <?php echo $this->customFormHelper($form->get('album')) ?>
+                        <?php echo $this->customFormHelper($form->get('facebook')) ?>
+                        <?php echo $this->customFormHelper($form->get('content_first')) ?>
+                        <?php echo $this->customFormHelper($form->get('content_second')) ?>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="the-box">
+                        <h4 class="small-title">Zdjęcie główne</h4>
+
+                        <div class="form-group">
+                            <?php echo $this->customFormHelper($form->get('upload_main')); ?>
+                            <a href="javascript:$('#upload-main').uploadifive('upload')" class="btn btn-facebook">Rozpocznij upload</a>
+                            <!--    <a href="javascript:$('#upload').uploadifive('clearQueue')" class="btn btn-warning">Anuluj wszystkie</a>-->
+                            <div id="queue-main"></div>
+                            <div class="files-main"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="the-box">
+                <div class="input-group col-sm-12 text-right">
+                    <a class="btn btn-default" href="<?php echo $this->url('disc'); ?>">Anuluj</a> &nbsp
+                    <?php echo $this->formInput($form->get('submit')); ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/summernote.min.css'); ?>
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/uploadifive.css'); ?>
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/disc.css'); ?>
+
+<?php $this->headScript()->appendFile($this->basePath().'/js/summernote.min.js'); ?>
+
+<?php $this->headScript()->appendFile($this->basePath().'/js/jquery.uploadifive.min.js'); ?>
+<?php $this->headScript()->appendFile($this->basePath().'/js/disc-form.js'); ?>

@@ -9,6 +9,8 @@ class CmsCreateCategory extends AbstractMigration
     {
         $this->table('cms_category', array())
              ->addColumn('name', 'string')
+             ->addColumn('slug', 'string')
+             ->addColumn('type', 'string', array('null' => true))
              ->addColumn('filename_main', 'text', array('null'=>true))
              ->save();
 
@@ -17,24 +19,21 @@ class CmsCreateCategory extends AbstractMigration
 
     public function createDirectory($dirs)
     {
-        foreach($dirs as $dir)
-        {
+        foreach($dirs as $dir) {
             $explodedDirs = explode('/', $dir);
             $parentDir = $explodedDirs[0];
 
-            if(!is_dir('./public/'.$parentDir))
-            {
+            if(!is_dir('./public/'.$parentDir)) {
                 mkdir('./public/'.$parentDir);
             }
 
-            if(!is_dir('./public/'.$dir))
-            {
+            if(!is_dir('./public/'.$dir)) {
                 mkdir('./public/'.$dir);
             }
 
             $files = glob('./public/'.$dir.'/*');
-            foreach($files as $file)
-            {
+
+            foreach($files as $file) {
                 if(is_file($file)) unlink($file);
             }
         }
