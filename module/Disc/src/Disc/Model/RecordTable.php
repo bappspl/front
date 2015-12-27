@@ -118,9 +118,17 @@ class RecordTable extends ModelTable implements ServiceLocatorAwareInterface
             'status_id'  => $record->getStatusId(),
             'title'  => $record->getTitle(),
             'content'  => $record->getContent(),
-            'listen'  => $record->getListen(),
-            'buy'  => $record->getBuy(),
             'disc_id'  => $record->getDiscId(),
+
+            'listen_spotify'  => $record->getListenSpotify(),
+            'listen_deezer'  => $record->getListenDeezer(),
+
+            'buy_itunes'  => $record->getBuyItunes(),
+            'buy_google'  => $record->getBuyGoogle(),
+            'buy_playthemusic'  => $record->getBuyPlaythemusic(),
+            'buy_muzodajnia'  => $record->getBuyMuzodajnia(),
+
+            'allegro'  => $record->getAllegro(),
         );
 
         $id = (int) $record->getId();

@@ -57,6 +57,18 @@ class TeamForm extends Form
         ));
 
         $this->add(array(
+            'name' => 'function',
+            'attributes' => array(
+                'id' => 'function',
+                'type'  => 'text',
+                'placeholder' => 'Wprowadź funkcję w zespole'
+            ),
+            'options' => array(
+                'label' => 'Funkcja w zespole',
+            ),
+        ));
+
+        $this->add(array(
             'name' => 'facebook',
             'attributes' => array(
                 'id' => 'facebook',
@@ -65,6 +77,19 @@ class TeamForm extends Form
             ),
             'options' => array(
                 'label' => 'Facebook',
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'short_content',
+            'attributes' => array(
+                'id' => 'short_content',
+                'type'  => 'textarea',
+                'placeholder' => 'Wprowadź krótki opis',
+                'class' => 'summernote-lg',
+            ),
+            'options' => array(
+                'label' => 'Krótki opis',
             ),
         ));
 

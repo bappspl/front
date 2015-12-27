@@ -321,42 +321,42 @@ edycja-piosenek:
   route: disc/records/edit
   visible_in_primary: false
   parent_id: disc
-#uzytkownicy:
-#  name: uzytkownicy
-#  label: Użytkownicy
-#  route: users-main
-#  class: fa fa-users
-#  access: 4
-#tworzenie-uzytkownika:
-#  name: tworzenie-specjalisty
-#  label: Dodaj nowy
-#  route: users/create
-#  visible_in_primary: true
-#  parent_id: uzytkownicy
-#lista-uzytkownikow:
-#  name: lista-uzytkownikow
-#  label: Lista użytkowników
-#  route: users
-#  visible_in_primary: true
-#  parent_id: uzytkownicy
-#edycja-uzytkownikow:
-#  name: edycja-uzytkownikow
-#  label: Edycja użytkownika
-#  route: users/edit
-#  visible_in_primary: false
-#  parent_id: uzytkownicy
-#podglad-uzytkownikwa:
-#  name: podglad-uzytkownikowa
-#  label: Podgląd użytkwnika
-#  route: users/preview
-#  visible_in_primary: false
-#  parent_id: uzytkownicy
-#usuwanie-uzytkownikowa:
-#  name: usuwanie-uzytkownikowa
-#  label: Usuwanie użytkownika
-#  route: users/delete
-#  visible_in_primary: false
-#  parent_id: uzytkownicy
+uzytkownicy:
+  name: uzytkownicy
+  label: Użytkownicy
+  route: users-main
+  class: fa fa-users
+  access: 2
+tworzenie-uzytkownika:
+  name: tworzenie-specjalisty
+  label: Dodaj nowy
+  route: users/create
+  visible_in_primary: true
+  parent_id: uzytkownicy
+lista-uzytkownikow:
+  name: lista-uzytkownikow
+  label: Lista użytkowników
+  route: users
+  visible_in_primary: true
+  parent_id: uzytkownicy
+edycja-uzytkownikow:
+  name: edycja-uzytkownikow
+  label: Edycja użytkownika
+  route: users/edit
+  visible_in_primary: false
+  parent_id: uzytkownicy
+podglad-uzytkownikwa:
+  name: podglad-uzytkownikowa
+  label: Podgląd użytkwnika
+  route: users/preview
+  visible_in_primary: false
+  parent_id: uzytkownicy
+usuwanie-uzytkownikowa:
+  name: usuwanie-uzytkownikowa
+  label: Usuwanie użytkownika
+  route: users/delete
+  visible_in_primary: false
+  parent_id: uzytkownicy
 zmiana-hasla:
   name: zmiana-hasla
   label: Zmiana hasła
@@ -656,7 +656,7 @@ usuwanie-miejsca:
   parent_id: miejsce
 konfiguracja-maila:
     name: konfiguracja-maila
-    label: Ustawienia E-mail
+    label: Ustawienia
     route: mail-config
     class: fa fa-cog
     access: 4

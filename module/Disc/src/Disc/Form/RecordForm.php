@@ -58,28 +58,88 @@ class RecordForm extends Form
         ));
 
         $this->add(array(
-            'name' => 'listen',
+            'name' => 'listen_spotify',
             'attributes' => array(
-                'id' => 'listen',
+                'id' => 'listen_spotify',
                 'type'  => 'text',
-                'placeholder' => 'Posłuchaj'
+                'placeholder' => 'Posłuchaj - spotify'
             ),
             'options' => array(
-                'label' => 'Posłuchaj',
+                'label' => 'Posłuchaj - spotify',
             ),
         ));
 
         $this->add(array(
-            'name' => 'buy',
+            'name' => 'listen_deezer',
             'attributes' => array(
-                'id' => 'buy',
+                'id' => 'listen_deezer',
                 'type'  => 'text',
-                'placeholder' => 'Kup'
+                'placeholder' => 'Posłuchaj - deezer'
             ),
             'options' => array(
-                'label' => 'Kup',
+                'label' => 'Posłuchaj - deezer',
             ),
         ));
+
+        $this->add(array(
+            'name' => 'buy_itunes',
+            'attributes' => array(
+                'id' => 'buy_itunes',
+                'type'  => 'text',
+                'placeholder' => 'Kup - itunes'
+            ),
+            'options' => array(
+                'label' => 'Kup - itunes',
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'buy_google',
+            'attributes' => array(
+                'id' => 'buy_goole',
+                'type'  => 'text',
+                'placeholder' => 'Kup - googleplay'
+            ),
+            'options' => array(
+                'label' => 'Kup - googleplay',
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'buy_playthemusic',
+            'attributes' => array(
+                'id' => 'buy_playthemusic',
+                'type'  => 'text',
+                'placeholder' => 'Kup - playthemusic'
+            ),
+            'options' => array(
+                'label' => 'Kup - playthemusic',
+            ),
+        ));
+
+        $this->add(array(
+            'name' => 'buy_muzodajnia',
+            'attributes' => array(
+                'id' => 'buy_muzodajnia',
+                'type'  => 'text',
+                'placeholder' => 'Kup - muzodajnia'
+            ),
+            'options' => array(
+                'label' => 'Kup - muzodajnia',
+            ),
+        ));
+
+//        $this->add(array(
+//            'name' => 'allegro',
+//            'attributes' => array(
+//                'id' => 'allegro',
+//                'type'  => 'text',
+//                'placeholder' => 'Allegro'
+//            ),
+//            'options' => array(
+//                'label' => 'Allegro',
+//            ),
+//        ));
 
         $this->add(array(
             'name' => 'content',

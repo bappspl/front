@@ -14,7 +14,7 @@ return array(
     'view-page' => array(
         'type' => 'Zend\Mvc\Router\Http\Segment',
         'options' => array(
-            'route'    => '/strona/:slug',
+            'route'    => '/strona/:url',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'viewPage',
@@ -34,13 +34,13 @@ return array(
     'view-news' => array(
         'type' => 'Segment',
         'options' => array(
-            'route'    => '/aktualnosci/:slug',
+            'route'    => '/aktualnosci/:url',
             'defaults' => array(
                 'controller' => 'Page\Controller\Page',
                 'action'     => 'viewNews',
             ),
             'constraints' => array(
-                'slug' => '[a-zA-Z0-9_-]+'
+                'url' => '[a-zA-Z0-9_-]+'
             ),
         ),
     ),
@@ -74,6 +74,85 @@ return array(
             ),
             'constraints' => array(
                 'code' => '[a-zA-Z0-9_-]+'
+            ),
+        ),
+    ),
+    'view-performance' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/koncerty',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'performance',
+            )
+        ),
+    ),
+    'performance-form' => array(
+        'type' => 'Zend\Mvc\Router\Http\Literal',
+        'options' => array(
+            'route'    => '/performance-form',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'performanceForm',
+            ),
+        ),
+    ),
+    'view-gallery' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/galeria',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'gallery',
+            )
+        ),
+    ),
+    'disc-list' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/dyskografia',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'disc',
+            )
+        ),
+    ),
+    'view-disc' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/dyskografia/:id',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'viewDisc',
+            ),
+            'constraints' => array(
+                'id' => '[0-9_-]+'
+            ),
+        ),
+    ),
+    'view-person' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/zespol/:id',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'viewPerson',
+            ),
+            'constraints' => array(
+                'id' => '[0-9_-]+'
+            ),
+        ),
+    ),
+    'view-one-gallery' => array(
+        'type' => 'Segment',
+        'options' => array(
+            'route'    => '/galeria/:id',
+            'defaults' => array(
+                'controller' => 'Page\Controller\Page',
+                'action'     => 'viewOneGallery',
+            ),
+            'constraints' => array(
+                'id' => '[0-9_-]+'
             ),
         ),
     ),

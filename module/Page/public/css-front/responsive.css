@@ -1,0 +1,1062 @@
+/* Tablet Layout: 1024px.  */
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+.container {
+  width: 905px;
+}
+
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                        # HOMEPAGE ONE #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+
+/****************************\
+            ABOUT US
+\****************************/
+.az-team-wrapper .az-team-member .az-team-img-wrapper {
+  height: 220px;
+}
+
+/****************************\
+          SPLIT SCTION
+\****************************/
+.az-split-section-wrapper .az-custom-image-wrapper {
+  height: 300px;
+}
+
+.az-split-section-wrapper .az-custom-section-text-wrapper {
+  height: auto;
+}
+
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                          # BLOG MASONRY #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+
+/* 5 Column */
+.az-blog-wrapper.az-5col-post .az-blog-post{
+    width: calc(100% / 4);
+    padding: 0 20px;
+    float: left;
+    overflow: hidden;
+}
+
+.az-blog-wrapper .az-blog-post.az-quote-post .az-quote-post-title-wrapper h3.az-post-title, 
+.az-blog-wrapper .az-blog-post.az-link-post .az-quote-post-title-wrapper h3.az-post-title, 
+.az-blog-wrapper .az-blog-post.az-quote-post .az-quote-post-title-wrapper h3.az-post-title a, 
+.az-blog-wrapper .az-blog-post.az-link-post .az-quote-post-title-wrapper h3.az-post-title a {
+  font-size: 14px;
+  letter-spacing: 6px;
+}
+
+
+
+
+}
+
+
+/* Tablet Layout: 768px. */
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+.container {
+    width: 645px;
+}
+
+header.az-fixed-header .az-main-menu .navbar-nav {
+    padding-right: 25px;
+}
+
+header.az-fixed-header .az-main-menu .navbar-nav li {
+  padding: 0 10px;
+}
+
+/*
+FOOTER WIDGET
+*/
+footer.az-footer{
+    padding: 100px 40px 50px;
+}
+
+footer.az-footer .az-footer-widget{
+    width: 50%;
+    /*min-height: 310px;*/
+    float: left;
+    overflow: hidden;
+    padding: 0 20px;
+    margin-bottom: 50px;
+}
+
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                        # HOMEPAGE ONE #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+
+.az-about-section .az-about-contents .az-about-text p{
+    padding: 0 80px;
+}
+
+/****************************\
+            ABOUT US
+\****************************/
+.az-team-wrapper .az-team-member .az-team-img-wrapper{
+    width: 100%;
+    height: 150px;
+}
+
+
+/****************************\
+            WORKS
+\****************************/
+.az-filter-link-wrapper a.az-portfolio-page-link{
+    float: left;
+    margin-top: 20px;
+}
+
+.az-work-item{
+    height: 200px;
+}
+
+.az-height-dbl{
+    height: 400px;
+}
+
+/****************************\
+        CLIENT SECTION
+\****************************/
+.az-client-section-wrapper .az-row .az-clients-logo{
+    padding: 30px;
+}
+
+/****************************\
+      TESTIMONIAL SECTION
+\****************************/
+.az-testimonial-carousal .az-testimonial-slides{
+    padding: 0 80px;
+}
+
+
+.az-contact-form-wrapper form .az-input-wrapper {
+  float: none;
+  margin-right: 0;
+  width: 100%;
+}
+
+.az-contact-form-wrapper form .az-textarea-wrapper {
+  clear: both;
+}
+
+.az-contact-form-wrapper form textarea {
+  width: 100%;
+}
+
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                        # ABOUT US PAGE #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+.az-breadcumb {
+  right: 20px;
+}
+
+/*****************************************\
+            CLIENT CAROUSAL
+\*****************************************/
+.az-clients-carousal {
+  padding: 0 40px;
+}
+
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                        # PORTFOLIO SINGLE #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+/**********************
+PORTFOLIO DETAILS TOP
+**********************/
+.az-portfolio-single-section .az-portfolio-details .az-portfolio-details-top .az-portfolio-img-half{
+    width: 50%;
+    padding-right: 15px;
+    overflow: hidden;
+    float: left;
+}
+
+.az-portfolio-single-section .az-portfolio-details .az-portfolio-details-top .az-portfolio-details-text{
+    width: 50%;
+    padding-left: 15px;
+    padding-right: 0px;
+    overflow: hidden;
+    float: left;
+}
+
+/* TITLE */
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-title-meta h1 {
+  letter-spacing: 5px;
+}
+
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-title-meta a.az-portfolio-catagory{
+    letter-spacing: 5px;
+}
+
+/* HALF IMAGES */
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-sub-img .az-sub-img:nth-child(1){
+    padding-right: 10px;
+}
+
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-sub-img .az-sub-img:nth-child(2){
+    padding-left: 10px;
+}
+
+/**********************
+PORTFOLIO DETAILS BOTTOM
+**********************/
+/*
+BOTTOM TEXT
+ */
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-text-top{
+    overflow: hidden;
+    padding: 0 15px;
+}
+
+/*
+IMAGE MIDDLE
+*/
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-img-middle{
+    width: auto;
+    padding: 0 100px;
+    overflow: hidden;
+    margin: 80px 0;
+}
+
+/*
+TEXT BOTTOM
+*/
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-text-bottom{
+    text-align: center;
+    overflow: hidden;
+    padding: 0 15px;
+}
+
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-text-bottom h3 {
+  letter-spacing: 5px;
+}
+
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-title-meta h1 {
+  letter-spacing: 5px;
+}
+
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-title-meta a.az-portfolio-catagory{
+    letter-spacing: 5px;
+}
+
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                          # BLOG MASONRY #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+/* 4 Column */
+.az-blog-wrapper.az-4col-post .az-blog-post{
+    width: calc(100% / 3);
+    padding: 0 15px;
+    float: left;
+    overflow: hidden;
+}
+
+/* 5 Column */
+.az-blog-wrapper.az-5col-post .az-blog-post{
+    width: calc(100% / 3);
+    padding: 0 15px;
+    float: left;
+    overflow: hidden;
+}
+
+.az-blog-wrapper .az-blog-post.az-quote-post .az-quote-post-title-wrapper h3.az-post-title,
+.az-blog-wrapper .az-blog-post.az-link-post .az-quote-post-title-wrapper h3.az-post-title,
+.az-blog-wrapper .az-blog-post.az-quote-post .az-quote-post-title-wrapper h3.az-post-title a,
+.az-blog-wrapper .az-blog-post.az-link-post .az-quote-post-title-wrapper h3.az-post-title a {
+  font-size: 14px;
+  letter-spacing: 6px;
+}
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                          # BLOG SINGLE #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+
+.az-blog-single-section .az-blog-single-details .az-blog-page-feat-img {
+  height: auto;
+}
+
+.az-blog-single-section .az-blog-single-details .az-blog-page-feat-img img {
+  position: relative;
+}
+
+.az-blog-single-section .az-blog-single-details .az-blog-post-meta .az-share-btn {
+  margin-bottom: 15px;
+}
+
+.az-blog-single-section .az-blog-single-details .az-blog-post-meta span.az-blog-post-comment-num {
+  clear: left;
+  color: #a3a3a3;
+  display: block;
+  float: none;
+  font-family: "Roboto Condensed",sans-serif;
+  font-size: 13px;
+  letter-spacing: 6px;
+  line-height: 1.5;
+  overflow: hidden;
+}
+
+
+.az-blog-single-section .az-blog-single-details .az-blog-post-author .az-about-author {
+  display: inline-block;
+  float: left;
+  width: 67%;
+}
+
+.az-comment .az-comment-text {
+  float: left;
+  width: 80%;
+}
+
+.az-comment-reply .az-comment-text {
+  width: 75%;
+}
+
+
+
+
+
+
+}
+
+
+
+/* Mobile Layout: 320px. */
+
+@media only screen and (max-width: 767px) {
+/************************************
+FIXED FRAME (BORDER/MENU/S.ICON ETC)
+************************************/
+.az-mainborder-top,
+.az-mainborder-bottom{
+    height: 60px;
+}
+
+.az-mainborder-left,
+.az-mainborder-right{
+    width: 30px;
+}
+
+/* PAGE PADDING */
+.az-main-page-contents{
+    padding: 60px 30px;
+}
+
+/* SOCIAL ICON */
+.az-fixed-social-icon {
+  bottom: 130px;
+  left: 7px;
+}
+
+#scrollUp {
+  bottom: 200px;
+  color: #1b1b1b;
+  display: block !important;
+  font-family: "Open Sans",sans-serif;
+  font-size: 8px;
+  right: 1px;
+}
+
+.az-copyright-text{
+    width: 100%;
+    padding: 0 30px;
+    position: fixed;
+    bottom: 20px;
+    z-index: 10001;
+}
+
+header.az-fixed-header {
+  position: fixed;
+  top: 0;
+  width: calc(100% - 60px);
+  z-index: 10000;
+}
+
+
+
+.az-icontext-style-2{
+    margin-bottom: 50px;
+}
+
+.az-icontext-style-2:last-child{
+	margin-bottom: 0;
+}
+
+.az-icontext-style-1{
+    margin-bottom: 50px;
+}
+
+.az-icontext-style-1:last-child{
+	margin-bottom: 0;
+}
+
+/*****************************************\
+        		MENU
+\*****************************************/
+.navbar-toggle {
+  margin-right: 0px;
+  margin-top: 0;
+}
+
+.navbar-toggle .icon-bar {
+  background-color: #1b1b1b;
+}
+
+header.az-fixed-header .az-main-menu .navbar-nav {
+  float: none;
+  margin-right: -15px;
+  padding: 10px 0;
+}
+
+.navbar-collapse {
+  box-shadow: 0 0px 0 rgba(255, 255, 255, 0) inset;
+  background-color: #fff;
+  margin-top: 8px;
+}
+
+header.az-fixed-header .az-main-menu .navbar-nav li {
+  padding: 7px 15px;
+}
+
+header.az-fixed-header .az-main-menu .navbar-header {
+    text-align: center;
+}
+
+header.az-fixed-header .az-main-menu .navbar-header .navbar-toggle{
+  float: left;
+}
+
+header.az-fixed-header .az-main-menu .navbar-header .navbar-brand {
+    height: 40px;
+    padding: 0;
+    display: inline-block;
+    *display: inline;
+    *zoom: 1;
+    float: none;
+    margin-left: -50%;
+    -webkit-transform: translateX(50%);
+       -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+         -o-transform: translateX(50%);
+            transform: translateX(50%);
+}
+
+/*
+SIDE MENU
+*/
+.az-side-menu-overlay {
+    left: 30px;
+    right: 30px;
+    width: calc(100% - 60px);
+}
+
+.az-side-menu-button {
+    top: -5px;
+}
+
+.az-side-menu-wrap {
+  width: 90%;
+}
+
+.az-side-menu {
+    background-color: transparent;
+    width: 100%;
+    height: calc(100% - 120px);
+    padding: 100px 50px 60px 20px;
+    position: relative;
+    z-index: 1;
+    top: 60px;
+}
+
+.az-side-menu-widget-wrap .az-side-menu-social-icon {
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+    -ms-transform: translateX(0);
+    -o-transform: translateX(0);
+    transform: translateX(0);
+    text-align: center;
+    right: 30px;
+}
+
+.az-side-menu-close-button {
+    top: 80px;
+    right: 55px;
+}
+
+/**********************
+FOOTER
+**********************/
+footer.az-footer{
+    overflow: hidden;
+    padding: 80px 30px;
+}
+
+
+footer.az-footer .az-footer-widget{
+    width: 100%;
+    float: none;
+    margin-bottom: 50px;
+    padding: 0;
+}
+
+footer.az-footer .az-footer-widget:last-child{
+	margin-bottom: 0;
+}
+
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                        # HOMEPAGE #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+.az-hero-image .az-main-slides h1 {
+  color: white;
+  font-family: "Roboto Condensed",sans-serif;
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 6px;
+  margin: 0;
+  text-align: center;
+  width: 100%;
+}
+
+.az-hero-image .az-main-slides p {
+  color: white;
+  font-family: "Open Sans",sans-serif;
+  font-size: 13px;
+  margin: 0;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  width: 100%;
+}
+
+/****************************\
+            ABOUT US
+\****************************/
+.az-about-section .az-about-contents .az-about-text p{
+    padding: 0 15px;
+}
+
+.az-team-member{
+	margin-bottom: 50px;
+}
+
+.az-team-member:last-child{
+	margin-bottom: 0px;
+}
+
+.az-team-wrapper .az-team-member .az-team-img-wrapper {
+  height: 200px;
+}
+
+/****************************\
+        SPLIT SECTION
+\****************************/
+
+/*
+IMAGE
+*/
+.az-split-section-wrapper .az-custom-image-wrapper{
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: 170px;
+    float: none;
+}
+
+
+/*
+TEXT
+*/
+.az-split-section-wrapper .az-custom-section-text-wrapper{
+    position: relative;
+    width: 100%;
+    height: auto;
+    padding: 30px;
+    float: none;
+}
+
+/****************************\
+        COUNTER SECTION
+\****************************/
+.az-counter-section-wrapper .az-counter-wrapper .az-counter-items{
+    margin-bottom: 50px;
+}
+
+.az-counter-section-wrapper .az-counter-wrapper .az-counter-items:last-child{
+	margin-bottom: 0;
+}
+
+/****************************\
+            WORKS
+\****************************/
+.az-filter-link-wrapper .az-portfolio-filter-btn-group-wrapper{
+    display: block;
+    float: none;
+}
+
+.az-filter-link-wrapper .az-portfolio-filter-btn-group-wrapper .az-portfolio-filter-btn-group {
+	margin-bottom: 30px;
+}
+
+.az-filter-link-wrapper .az-portfolio-filter-btn-group-wrapper .az-portfolio-filter-btn-group a{
+	margin-bottom: 10px;
+    display: block;
+    float: none;
+}
+
+.az-filter-link-wrapper .az-portfolio-filter-btn-group-wrapper .az-portfolio-filter-btn-group a:last-child{
+	margin-bottom: 0;
+}
+
+/*
+PORTFOLIO PAGE LINK
+*/
+.az-filter-link-wrapper a.az-portfolio-page-link{
+    float: none;
+    display: block;
+}
+
+/* WORK ITEMS */
+.az-work-item{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.az-height-dbl{
+    height: auto;
+}
+
+/****************************\
+        CLIENT SECTION
+\****************************/
+.az-client-section-wrapper .az-row .az-clients-logo{
+    float: none;
+    width: 100%;
+    padding: 30px 30px;
+    height: 113px;
+}
+
+/****************************\
+      TESTIMONIAL SECTION
+\****************************/
+.az-testimonial-carousal .az-testimonial-slides{
+    text-align: center;
+    padding: 0 15px;
+}
+
+.az-testimonial-carousal .az-testimonial-slides span{
+    font-size: 14px;
+    letter-spacing: 5px;
+}
+
+
+/****************************\
+        BLOG SECTION
+\****************************/
+.az-blog-wrapper.az-3col-post .az-blog-post{
+    width: 100%;
+    padding: 0 15px;
+    float: none;
+    margin-bottom: 50px;
+}
+
+.az-blog-wrapper.az-3col-post .az-blog-post:last-child{
+	margin-bottom: 0;
+}
+
+
+/****************************\
+      CONTACT US SECTION
+\****************************/
+/*
+CONTACT FORM
+*/
+.az-contact-form-wrapper{
+    margin-bottom: 50px;
+}
+
+.az-contact-form-wrapper form .az-input-wrapper{
+    width: 100%;
+    float: none;
+    padding-top: 6px;
+    margin-right: 0px;
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.az-contact-form-wrapper form .az-textarea-wrapper{
+    padding-top: 6px;
+    margin-bottom: 30px;
+    float: none;
+    clear: both;
+}
+
+.az-contact-form-wrapper form textarea{
+    width: 100%;
+}
+
+/*
+CONTACT ADDRESS
+*/
+.az-contact-address-wrapper{
+    overflow: hidden;
+    padding-left: 15px;
+}
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                        # ABOUT US PAGE #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+.az-breadcumb {
+  right: 20px;
+}
+
+.az-page-title-section h1 {
+  letter-spacing: 6px;
+}
+
+/*****************************************\
+                ABOUT US TEXT
+\*****************************************/
+.az-aboutus-details-section .az-aboutus-contents .az-aboutus-text{
+  margin-bottom: 50px;
+}
+
+/*****************************************\
+            SERVICES & TESTIMONIAL
+\*****************************************/
+.az-aboutus-page .az-testimonial-carousal {
+  padding-top: 100px;
+}
+
+/*****************************************\
+            CLIENT CAROUSAL
+\*****************************************/
+.az-clients-carousal {
+  padding: 0 15px;
+}
+
+
+
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                        # PORTFOLIO #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+.az-portfolio-masonry-section .az-filter-link-wrapper .az-portfolio-filter-btn-group-wrapper {
+  padding: 0 15px;
+  display: block;
+}
+
+.az-filter-link-wrapper .az-portfolio-filter-btn-group-wrapper .az-portfolio-filter-btn-group a{
+    margin-bottom: 10px;
+    display: block;
+    float: none;
+    text-align: left;
+}
+
+.az-filter-link-wrapper .az-portfolio-filter-btn-group-wrapper .az-portfolio-filter-btn-group a:last-child{
+  margin-bottom: 0;
+}
+
+
+
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                        # PORTFOLIO SINGLE #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+.az-portfolio-single-section .az-portfolio-details .az-portfolio-details-top .az-portfolio-img-half{
+    width: 100%;
+    padding-right: 0px;
+    float: none;
+}
+
+/**********************
+PORTFOLIO DETAILS TOP
+**********************/
+.az-portfolio-single-section .az-portfolio-details .az-portfolio-details-top .az-portfolio-details-text{
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-top: 20px;
+    overflow: hidden;
+    float: none;
+}
+
+/* CLIENT NAME & DATE*/
+
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-date-client span.az-portfolio-date{
+    float: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-date-client span.az-client-name{
+    float: none;
+    display: block;
+    
+}
+
+/* TITLE */
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-title-meta h1 {
+  letter-spacing: 5px;
+}
+
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-title-meta a.az-portfolio-catagory{
+    letter-spacing: 5px;
+}
+
+/* HALF IMAGES */
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-sub-img .az-sub-img{
+    width: 100%;
+    overflow: hidden;
+    float: none;
+}
+
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-sub-img .az-sub-img:nth-child(1){
+    padding-right: 0;
+    margin-bottom: 10px;
+}
+
+.az-portfolio-details-top .az-portfolio-details-text .az-portfolio-sub-img .az-sub-img:nth-child(2){
+    padding-left: 0;
+}
+
+/**********************
+PORTFOLIO DETAILS BOTTOM
+**********************/
+/*
+BOTTOM TEXT
+ */
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-text-top{
+    padding: 0 15px;
+}
+
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-text-top .az-portfolio-text-half{
+    width: 100%;
+    float: none;
+    overflow: hidden;
+}
+
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-text-top .az-portfolio-text-half:nth-child(1){
+    padding-right: 0px;
+    margin-bottom: 50px
+}
+
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-text-top .az-portfolio-text-half:nth-child(2){
+    padding-left: 0px;
+}
+
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-text-top .az-portfolio-text-half h3{
+    letter-spacing: 5px;
+}
+
+/*
+IMAGE MIDDLE
+*/
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-img-middle{
+    width: auto;
+    padding: 0 15px;
+    margin: 50px 0;
+}
+
+/*
+TEXT BOTTOM
+*/
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-text-bottom{
+    padding: 0 15px;
+}
+
+.az-portfolio-details .az-portfolio-details-bottom .az-portfolio-text-bottom h3{
+    letter-spacing: 5px;
+}
+
+
+a.az-previous-project-nav, a.az-next-project-nav {
+  color: #1b1b1b;
+  font-family: "Roboto Condensed",sans-serif;
+  font-size: 13px;
+  letter-spacing: 0;
+  padding: 0 30px;
+  position: fixed;
+  z-index: 99999;
+}
+
+a.az-previous-project-nav {
+  left: -71px;
+  top: 140px;
+  transform: rotate(-90deg);
+}
+
+a.az-next-project-nav {
+  right: -60px;
+  top: 140px;
+  transform: rotate(90deg);
+}
+
+.az-portfolio-single-page .az-fixed-social-icon {
+  bottom: 40px;
+  left: 7px;
+}
+
+.az-portfolio-single-page #scrollUp {
+  bottom: 100px;
+  color: #1b1b1b;
+  display: block !important;
+  font-family: "Open Sans",sans-serif;
+  font-size: 8px;
+  right: 1px;
+}
+
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                          # BLOG MASONRY #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+.az-blog-masonry-section {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+
+/* 4 Column */
+.az-blog-wrapper.az-4col-post .az-blog-post{
+    width: 100%;
+    padding: 0 15px;
+    float: none;
+}
+
+/* 5 Column */
+.az-blog-wrapper.az-5col-post .az-blog-post{
+    width: 100%;
+    padding: 0 15px;
+    float: none;
+}
+
+
+/* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x *\
+                          # BLOG SINGLE #
+\* x * x * x * x * x * x * x * x * x * x * x * x * x * x * x */
+.az-blog-single-section .az-blog-single-content {
+  overflow: hidden;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.az-blog-single-section .az-blog-single-details .az-blog-page-feat-img {
+  height: auto;
+}
+
+.az-blog-single-section .az-blog-single-details .az-blog-page-feat-img img {
+  position: relative;
+}
+
+.az-blog-single-section .az-blog-single-details .az-blog-page-details-text img.az-blog-page-smallimg {
+  display: block;
+  height: auto;
+  overflow: hidden;
+  width: 100%;
+}
+
+
+.az-blog-single-section .az-blog-single-details .az-blog-page-details-text .az-blockquote {
+  margin-bottom: 50px;
+  margin-top: 20px;
+  padding: 0 40px;
+  position: relative;
+}
+
+.az-blog-single-section .az-blog-single-details .az-blog-page-details-text .az-blockquote::before,
+.az-blog-single-section .az-blog-single-details .az-blog-page-details-text .az-blockquote::after {
+  color: #eeeeee;
+  font-family: "FontAwesome";
+  font-size: 28px;
+  line-height: 1;
+  position: absolute;
+  top: 0;
+}
+
+.az-blog-single-section .az-blog-single-details .az-blog-page-details-text .az-blockquote p {
+  color: #1b1b1b;
+  display: block;
+  font-family: "Roboto",sans-serif;
+  font-size: 14px;
+  letter-spacing: 6px;
+  margin-bottom: 15px;
+  text-transform: uppercase;
+}
+
+
+.az-blog-single-section .az-blog-single-details .az-blog-post-meta .az-share-btn {
+  display: block;
+  float: none;
+  margin-bottom: 10px;
+  margin-right: 0;
+}
+
+.az-blog-single-section .az-blog-single-details .az-blog-post-meta .az-blog-post-tags {
+  display: block;
+  float: none;
+  height: auto;
+  line-height: 1.5;
+  margin-right: 0px;
+  padding-left: 35px;
+  position: relative;
+}
+
+.az-blog-single-section .az-blog-single-details .az-blog-post-meta span.az-blog-post-comment-num {
+  color: #a3a3a3;
+  float: none;
+  font-family: "Roboto Condensed",sans-serif;
+  font-size: 13px;
+  letter-spacing: 6px;
+  line-height: 40px;
+}
+
+.az-blog-single-section .az-blog-single-details .az-blog-post-author .az-about-author {
+  display: inline-block;
+  float: left;
+  width: 100%;
+}
+
+.az-comment img {
+  float: none;
+  margin-right: 20px;
+  width: 80px;
+}
+
+.az-comment .az-comment-text {
+  float: none;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.az-comment-reply {
+  padding-left: 30px;
+}
+
+
+}
+
+
+
+
+/* Wide Mobile Layout: 480px. */
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+/* SOCIAL ICON */
+.az-fixed-social-icon {
+  bottom: 60px;
+  left: 7px;
+}
+
+#scrollUp {
+  bottom: 110px;
+}
+
+}

@@ -1,0 +1,129 @@
+<!-- * * * * * * * * * * * * * * * * * *
+                PAGE TITLE
+* * * * * * * * * * * * * * * * * * * -->
+<section class="az-page-title-section">
+    <div class="container">
+        <div class="row">
+            <h1>Dyskografia</h1>
+
+            <h3>muzyczny dziennik</h3>
+        </div>
+    </div>
+    <div class="az-breadcumb">
+        <a href="<?php echo $this->url('home') ?>">HOME</a>
+        <span>DYSKOGRAFIA</span>
+    </div>
+</section>
+<!-- PAGE TITLE END -->
+
+<!-- * * * * * * * * * * * * * * * * * *
+                GALERIA
+* * * * * * * * * * * * * * * * * * * -->
+<section class="az-portfolio-masonry-section az-section">
+    <div class="container">
+        <div class="row">
+            <!-- WORKS -->
+            <div class="az-works-wrapper">
+                <!-- FILTER -->
+                <div class="az-filter-link-wrapper">
+                    <!-- Filter Button Start -->
+                    <div id="az-portfolio-filter" class="az-portfolio-filter-btn-group-wrapper">
+                        <div class="az-portfolio-filter-btn-group">
+                            <a href="#" data-filter="*">Wszystkie</a>
+
+                            <?php if(!empty($categories)): ?>
+
+                                <?php /* @var $category \CmsIr\Category\Model\Category */ ?>
+                                <?php foreach($categories as $category): ?>
+
+                                    <a href="#" data-filter=".<?php echo \CmsIr\System\Util\Inflector::slugify($category->getName()) ?>"><?php echo $category->getName() ?></a>
+
+                                <?php endforeach ?>
+
+                            <?php endif ?>
+
+                        </div>
+                    </div>
+                    <!-- Filter Button End -->
+                </div>
+                <!-- FILTER END -->
+
+                <!-- ALL WORK ITEMS -->
+                <div class="az-works grid effect-6" id="grid">
+
+                    <?php if(!empty($discs)): ?>
+
+                        <?php /* @var $disc \Disc\Model\Disc */ ?>
+                        <?php foreach($discs as $disc): ?>
+
+                            <?php $file = $disc->getFilenameMain() ?>
+
+                            <?php if(!empty($file)): ?>
+
+                                <div class="az-work-item <?php echo \CmsIr\System\Util\Inflector::slugify($disc->getCategory()->getName()) ?>">
+                                    <a href="<?php echo $this->url('view-disc', array('id' => $disc->getId())) ?>" class="new-portfolio">
+                                        <div class="az-work-item-inner-wrap">
+                                            <img src="<?php echo $this->basepath('files/disc/' . $disc->getFilenameMain()) ?>" alt="Portfolio Item">
+
+                                            <div class="az-work-item-hover">
+
+                                                <h3>
+                                                    <?php echo $disc->getTitle() ?>
+                                                </h3>
+
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+
+                            <?php endif ?>
+
+                        <?php endforeach ?>
+
+                    <?php endif ?>
+
+<!--                    --><?php //if(!empty($paginator)): ?>
+<!---->
+<!--                        --><?php ///* @var $disc \Disc\Model\Disc */ ?>
+<!--                        --><?php //foreach($paginator as $disc): ?>
+<!---->
+<!--                            --><?php //$file = $disc->getFilenameMain() ?>
+<!---->
+<!--                            --><?php //if(!empty($file)): ?>
+<!---->
+<!--                                <div class="az-work-item --><?php //echo \CmsIr\System\Util\Inflector::slugify($disc->getCategory()->getName()) ?><!--">-->
+<!--                                    <a href="--><?php //echo $this->url('view-disc', array('id' => $disc->getId())) ?><!--" class="new-portfolio">-->
+<!--                                        <div class="az-work-item-inner-wrap">-->
+<!--                                            <img src="--><?php //echo $this->basepath('files/disc/' . $disc->getFilenameMain()) ?><!--" alt="Portfolio Item">-->
+<!---->
+<!--                                            <div class="az-work-item-hover">-->
+<!---->
+<!--                                                <h3>-->
+<!--                                                    --><?php //echo $disc->getTitle() ?>
+<!--                                                </h3>-->
+<!---->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </a>-->
+<!--                                </div>-->
+<!---->
+<!--                            --><?php //endif ?>
+<!---->
+<!--                        --><?php //endforeach ?>
+<!---->
+<!--                    --><?php //endif ?>
+
+                </div>
+                <!-- ALL WORK ITEMS END -->
+
+                <!-- NEXT PAGE LINK -->
+<!--                <div id="az-portfolio-next-page-nav">-->
+<!--                    <a href="--><?php //echo $this->url('disc-list', array(), array('query' => array('page' => 2))) ?><!-- "></a>-->
+<!--                </div>-->
+                <!-- NEXT PAGE LINK END -->
+            </div>
+            <!-- WORKS END -->
+        </div>
+    </div>
+</section>
+<!-- ABOUT US END -->

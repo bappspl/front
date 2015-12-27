@@ -1,0 +1,216 @@
+<!-- * * * * * * * * * * * * * * * * * *
+                PORTFOLIO SINGLE
+    * * * * * * * * * * * * * * * * * * * -->
+
+<?php /* @var $disc \Disc\Model\Disc */ ?>
+
+<section class="az-portfolio-single-section">
+    <div class="container-fluid">
+        <div class="row">
+            <!-- PORTFOLIO DETAILS -->
+            <div class="az-portfolio-details">
+                <!-- TOP SECTION -->
+                <div class="az-portfolio-details-top">
+                    <div class="az-portfolio-img-half">
+
+                        <?php if(!empty($disc->getFilenameMain())): ?>
+
+                            <img src="<?php echo $this->basePath('files/disc/' . $disc->getFilenameMain()) ?>" alt="Zdjęcie płyty">
+
+                        <?php endif ?>
+
+                    </div>
+
+                    <div class="az-portfolio-details-text">
+                        <div class="az-portfolio-date-client">
+                            <span class="az-portfolio-date">ROK WYDANIA PŁYTY: <?php echo $disc->getYear() ?></span>
+                        </div>
+
+                        <div class="az-portfolio-title-meta">
+                            <h1><?php echo $disc->getTitle() ?></h1>
+<!--                            <a href="#" class="az-portfolio-catagory">ALBUM</a>-->
+                        </div>
+
+                        <div class="az-portfolio-half-text">
+                            <?php echo $disc->getContentFirst() ?>
+
+                            <div class="az-portfolio-share">
+                                <span>PODZIEL SIĘ:</span>
+
+                                <ul>
+                                    <li>
+                                        <a target="_blank" onclick="return !window.open(this.href, 'Facebook', 'width=640,height=300')" href="http://www.facebook.com/sharer/sharer.php?u=<?php echo $disc->getFacebook() ?>">
+                                            <i class="fa fa-facebook"></i>
+                                        </a>
+                                    </li>
+<!--                                    <li>-->
+<!--                                        <a href="#">-->
+<!--                                            <i class="fa fa-twitter"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">-->
+<!--                                            <i class="fa fa-google-plus"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+<!--                                    <li>-->
+<!--                                        <a href="#">-->
+<!--                                            <i class="fa fa-linkedin"></i>-->
+<!--                                        </a>-->
+<!--                                    </li>-->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- TOP SECTION END -->
+
+                <!-- BOTTOM PART -->
+                <div class="az-portfolio-details-bottom">
+                    <div class="az-portfolio-text-top">
+
+
+                    <?php if(!empty($disc->getRecords())): ?>
+
+                        <?php /* @var $record \Disc\Model\Record */ ?>
+                        <?php foreach($disc->getRecords() as $record): ?>
+
+                            <div class="az-portfolio-text-half">
+                                <h3><?php echo $record->getTitle() ?></h3>
+
+                                <p style="color: #7d7d7d !important;"><?php echo $record->getContent() ?></p>
+
+<!--                                <ul>-->
+<!---->
+<!--                                    --><?php //if($record->getAllegro()): ?>
+<!---->
+<!--                                    <li style="display: inline-block">-->
+<!--                                        <a href="--><?php //echo $record->getAllegro() ?><!--" class="az-portfolio-share"> <i class="allegro"></i></a>-->
+<!--                                    </li>-->
+<!---->
+<!--                                    --><?php //endif ?>
+<!--                                </ul>-->
+
+                                <br/>
+
+                                <?php if($record->getBuyMuzodajnia() ||
+                                $record->getBuyPlaythemusic() ||
+                                $record->getBuyGoogle() ||
+                                $record->getBuyItunes()): ?>
+
+                                    <p>KUP</p>
+
+                                <?php endif ?>
+
+                                <ul>
+
+                                    <?php if($record->getBuyMuzodajnia()): ?>
+
+                                        <li style="display: inline-block">
+                                            <a href="<?php echo $record->getBuyMuzodajnia() ?>" class="az-portfolio-share"> <i class="muzodajnia"></i></a>
+                                        </li>
+
+                                    <?php endif ?>
+
+                                    <?php if($record->getBuyPlaythemusic()): ?>
+
+                                        <li style="display: inline-block">
+                                            <a href="<?php echo $record->getBuyPlaythemusic() ?>" class="az-portfolio-share"><i class="playthemusic"></i></a>
+                                        </li>
+
+                                    <?php endif ?>
+
+                                    <?php if($record->getBuyGoogle()): ?>
+
+                                        <li style="display: inline-block">
+                                            <a href="<?php echo $record->getBuyGoogle() ?>" class="az-portfolio-share"><i class="googleplay"></i></a>
+                                        </li>
+
+                                    <?php endif ?>
+
+                                    <?php if($record->getBuyItunes()): ?>
+
+                                        <li style="display: inline-block">
+                                            <a href="<?php echo $record->getBuyItunes() ?>" class="az-portfolio-share"><i class="itunes"></i></a>
+                                        </li>
+
+                                    <?php endif ?>
+
+                                </ul>
+
+                                <br>
+
+                                <?php if($record->getListenDeezer() || $record->getListenSpotify() ): ?>
+
+                                    <p>POSŁUCHAJ</p>
+
+                                <?php endif ?>
+                                <ul>
+
+                                    <?php if($record->getListenDeezer()): ?>
+
+                                        <li style="display: inline-block">
+                                            <a href="<?php echo $record->getListenDeezer() ?>" class="az-portfolio-share"> <i class="deezer"></i></a>
+                                        </li>
+
+                                    <?php endif ?>
+
+                                    <?php if($record->getListenSpotify()): ?>
+
+                                        <li style="display: inline-block">
+                                            <a href="<?php echo $record->getListenSpotify() ?>" class="az-portfolio-share"> <i class="spotify"></i></a>
+                                        </li>
+
+                                    <?php endif ?>
+
+                                </ul>
+                            </div>
+
+                        <?php endforeach ?>
+
+                    <?php endif ?>
+
+                    </div>
+                    <!-- PORTFOLIO DETAILS END -->
+                </div>
+
+                <div class="az-portfolio-details-bottom">
+                    <div class="az-portfolio-text-top">
+
+
+                        <!-- TEXT TOP END -->
+                        <br>
+                        <!-- TEXT BOTTOM -->
+                        <div class="az-portfolio-text-bottom">
+                            <h3>Płyta</h3>
+
+                            <p><?php echo $disc->getContentSecond() ?></p>
+
+                        </div>
+                        <!-- TEXT BOTTOM END -->
+                    <!-- BOTTOM PART END -->
+
+
+                    </div>
+                    <!-- PORTFOLIO DETAILS END -->
+                </div>
+
+            </div>
+        </div>
+</section>
+<!-- BLOG SINGLE END -->
+
+<!-- PORTFOLIO PAGE NAV -->
+<?php if(!empty($prev)): ?>
+
+    <a href="<?php echo $this->url('view-disc', array('id' => $prev->getId())) ?>" class="az-previous-project-nav">POPRZEDNIA PŁYTA</a>
+
+<?php endif ?>
+
+<?php if(!empty($next)): ?>
+
+    <a href="<?php echo $this->url('view-disc', array('id' => $next->getId())) ?>" class="az-next-project-nav">NASTĘPNA PŁYTA</a>
+
+<?php endif ?>
+
+<!-- PORTFOLIO PAGE NAV END -->

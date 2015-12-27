@@ -3,31 +3,93 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <?php echo $this->headTitle($this->translate("front")) ?>
+    <?php echo $this->headTitle($this->translate("LOMBARD | oficjalna strona zespołu")) ?>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png">
+
+    <link rel="apple-touch-icon" href="/favicon/apple-touch-icon.png">
 
     <?php echo $this->headMeta()
         ->appendName('viewport', 'width=device-width, initial-scale=1.0')
         ->appendHttpEquiv('X-UA-Compatible', 'IE=edge')
     ?>
 
+    <!-- GOOGLE FONT -->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:700,600,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,700,400' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:500,700,400' rel='stylesheet' type='text/css'>
+
     <!-- Le styles -->
-    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img/favicon.ico'))
+    <?php echo $this->headLink(array('rel' => 'shortcut icon', 'type' => 'image/vnd.microsoft.icon', 'href' => $this->basePath() . '/img//favicon.ico'))
         // MAIN CSS (REQUIRED ALL PAGE)
-        ->appendStylesheet($this->basePath() . '/css/test.css')
+        ->appendStylesheet($this->basePath() . '/css-front/html_bolierplate.css')
+        ->appendStylesheet($this->basePath() . '/css-front/normalize.css')
+        ->appendStylesheet($this->basePath() . '/css-front/bootstrap.min.css')
+        ->appendStylesheet($this->basePath() . '/css-front/bootstrap-theme.min.css')
+        ->appendStylesheet($this->basePath() . '/css-front/font-awesome.min.css')
+        ->appendStylesheet($this->basePath() . '/css-front/et-line-font.css')
+        ->appendStylesheet($this->basePath() . '/css-front/pe-icon-7-stroke.css')
+        ->appendStylesheet($this->basePath() . '/css-front/themify-icons.css')
+        ->appendStylesheet($this->basePath() . '/css-front/animate.css')
+        ->appendStylesheet($this->basePath() . '/css-front/slider-pro.css')
+        ->appendStylesheet($this->basePath() . '/css-front/owl.carousel.min.css')
+        ->appendStylesheet($this->basePath() . '/css-front/owl.theme.default.min.css')
+        ->appendStylesheet($this->basePath() . '/css-front/magnific-popup.css')
+        ->appendStylesheet($this->basePath() . '/css-front/main.css')
+        ->appendStylesheet($this->basePath() . '/css-front/responsive.css')
     ?>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+
     <!-- Scripts -->
+
+    <!-- MODERNIZR -->
+    <script src="/js-front/vendor/modernizr-2.8.3.min.js"></script>
 
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
 
-    <?php echo $this->headScript()
-        ->appendFile($this->basePath() . '/js/test.js', 'text/javascript')
-    ?>
+    <!--[if lt IE 9]>
+    <script src="/js-front/vendor/html5shiv.min.js"></script>
+    <script src="/js-front/vendor/respond.min.js"></script>
+    <script type="text/javascript" src="/js-front/vendor/selectivizr-min.js"></script>
+    <script src="/js-front/vendor/nwmatcher.js"></script>
+    <script src="/js-front/vendor/IE9.js"></script>
+    <![endif]-->
 
 </head>
-<body>
+<body class="az-homepage-one">
+    <!-- PRELOADER -->
+    <div id="loader-wrapper">
+        <div id="loader">
+            <img src="/images-front/logo-lombard.svg" alt="Lombard" width="400px" class="animated fadeIn">
+            <span>Ładowanie</span>
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
+    <!-- PRELOADER END -->
+
+    <!-- BORDERS -->
+    <div class="az-mainborder-top"></div>
+    <div class="az-mainborder-left"></div>
+    <div class="az-mainborder-right"></div>
+    <div class="az-mainborder-bottom"></div>
+    <!-- BORDERS END -->
 
     <?php echo $this->partial('partial/layout/header'); ?>
 
@@ -36,8 +98,14 @@
     <?php echo $this->partial('partial/layout/footer'); ?>
 
     <?php echo $this->inlineScript()
-        ->appendFile($this->basePath() . '/js/bootstrap-front.min.js')
+        ->appendFile($this->basePath() . '/js-front/vendor/jquery-1.11.3.min.js')
+        ->appendFile($this->basePath() . '/js-front/vendor/ui.js')
+        ->appendFile($this->basePath() . '/js-front/vendor/datepicker-pl.js')
+        ->appendFile($this->basePath() . '/js-front/plugins.js')
+        ->appendFile($this->basePath() . '/js-front/custom.js')
     ?>
+    <!-- GOOGLE MAP -->
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
 
 </body>
 </html>

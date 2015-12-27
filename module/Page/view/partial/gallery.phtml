@@ -1,0 +1,31 @@
+<?php /* @var $gallery \CmsIr\File\Model\Gallery */ ?>
+<?php foreach($paginator as $gallery): ?>
+
+    <?php $files = $gallery->getFiles() ?>
+
+    <?php if(!empty($files)): ?>
+
+        <?php /* @var $file CmsIr\File\Model\File */ ?>
+        <?php foreach($files as $file): ?>
+
+            <div class="az-work-item <?php echo $gallery->getCategory()->getName() ?>">
+                <div class="az-work-item-inner-wrap">
+
+                    <img src="<?php echo $this->basepath('files/gallery/' . $file->getFilename()) ?>" alt="Portfolio Item">
+
+                    <div class="az-work-item-hover">
+                        <a href="<?php echo $this->basepath('files/gallery/' . $file->getFilename()) ?>" class="az-lightbox"></a>
+
+                        <h3>
+                            <?php echo $gallery->getName() ?>
+                        </h3>
+                        <!--<a href="#" class="az-work-category">Photography</a>-->
+                    </div>
+                </div>
+            </div>
+
+        <?php endforeach ?>
+
+    <?php endif ?>
+
+<?php endforeach ?>

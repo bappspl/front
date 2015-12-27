@@ -13,8 +13,9 @@ class Team extends Model
     protected $status_id;
     protected $facebook;
     protected $content;
+    protected $short_content;
     protected $filename_main;
-
+    protected $function;
 
     public function exchangeArray($data) 
     {
@@ -26,6 +27,8 @@ class Team extends Model
         $this->content = (!empty($data['content'])) ? $data['content'] : null;
         $this->first_name = (isset($data['first_name'])) ? $data['first_name'] : null;
         $this->filename_main = (!empty($data['filename_main'])) ? $data['filename_main'] : null;
+        $this->function = (!empty($data['function'])) ? $data['function'] : null;
+        $this->short_content = (!empty($data['short_content'])) ? $data['short_content'] : null;
     }
 
     /**
@@ -154,5 +157,37 @@ class Team extends Model
     public function setFilenameMain($filename_main)
     {
         $this->filename_main = $filename_main;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getFunction()
+    {
+        return $this->function;
+    }
+
+    /**
+     * @param mixed $function
+     */
+    public function setFunction($function)
+    {
+        $this->function = $function;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getShortContent()
+    {
+        return $this->short_content;
+    }
+
+    /**
+     * @param mixed $short_content
+     */
+    public function setShortContent($short_content)
+    {
+        $this->short_content = $short_content;
     }
 }

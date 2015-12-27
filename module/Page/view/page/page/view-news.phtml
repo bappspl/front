@@ -1,0 +1,111 @@
+<!-- * * * * * * * * * * * * * * * * * *
+                  PAGE TITLE
+  * * * * * * * * * * * * * * * * * * * -->
+
+<?php $background = $post->getFilenameBackground() ?>
+
+
+<section class="az-page-title-section" <?php echo !empty($background) ? 'style="background-image : url(' . $this->basepath("files/post/" . $background) . '); background-repeat: no-repeat;
+    background-size: 100% 100%; "' : '' ?>>
+    <div class="container">
+        <div class="row">
+            <h1>AKTUALNOŚCI</h1>
+
+            <h3>Z ŻYCIA ZESPOŁU</h3>
+        </div>
+    </div>
+    <div class="az-breadcumb">
+        <a href="<?php echo $this->url('home') ?>">HOME</a>
+        <a href="<?php echo $this->url('news-list') ?>"> / AKTUALNOŚCI</a>
+        <span>LOMBARD</span>
+    </div>
+</section>
+<!-- PAGE TITLE END -->
+
+<?php /* @var $post \CmsIr\Post\Model\Post */ ?>
+<!-- * * * * * * * * * * * * * * * * * *
+                BLOG SINGLE
+* * * * * * * * * * * * * * * * * * * -->
+<section class="az-blog-single-section az-section">
+    <div class="container">
+        <div class="row">
+            <!-- SINGLE CONTENT -->
+            <div class="az-blog-single-content">
+                <!-- POST TITLE -->
+                <div class="az-blog-page-title-meta">
+                    <h1><?php echo $post->getTitle() ?></h1>
+
+                    <?php
+                        $nmeng = array('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December');
+                        $nmtur = array('Styczeń', 'Luty', 'Marzec','Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień');
+                    ?>
+
+                    <?php $date = str_ireplace($nmeng, $nmtur, $post->getDate()); ?>
+
+                    <span class="az-post-date"><?php echo $date ?></span>
+
+                    <p class="az-post-meta">autor: <a href="#" class="az-post-author"><?php echo $post->getAuthor() ?></a>
+<!--                        , kategoria:-->
+<!--                        <a href="#" class="az-post-category">-->
+<!---->
+<!--                            --><?php //if(!empty($post->getTags())): ?>
+<!---->
+<!--                                --><?php ///* @var $tag \CmsIr\Tag\Model\Tag */ ?>
+<!--                                --><?php //foreach($post->getTags() as $tag): ?>
+<!---->
+<!--                                    --><?php //echo $tag .  ' ' ?>
+<!---->
+<!--                                --><?php //endforeach ?>
+<!---->
+<!--                            --><?php //endif ?>
+<!---->
+<!--                        </a>-->
+                    </p>
+                </div>
+                <!-- POST TITLE END -->
+
+                <div class="az-blog-single-details">
+                    <!-- POST IMAGE -->
+                    <?php if(!empty($post->getFilenameMain())): ?>
+
+                        <div class="az-blog-page-feat-img">
+                            <img src="<?php echo $this->url('thumb', array('entity' => 'post', 'size' => '900x600', 'filename' => $post->getFilenameMain())) ?>" alt="Blog Image">
+                        </div>
+
+                    <?php else: ?>
+
+                        <div class="az-blog-page-feat-img">
+                            <img src="/images-front/image-normal.jpg" alt="Blog Single Image">
+                        </div>
+
+                    <?php endif ?>
+                    <!-- POST IMAGE END -->
+
+                    <!-- POST TEXT -->
+                    <div class="az-blog-page-details-text">
+                        <?php echo $post->getContent() ?>
+
+                        <?php if(!empty($post->getFiles())): ?>
+                            <?php $files = $post->getFiles() ?>
+
+                                <?php /* @var $file CmsIr\File\Model\File */ ?>
+                                <?php foreach ($files as $file): ?>
+
+                                    <div class="az-team-member col-md-4 col-sm-3 col-xs-1" style="margin-bottom: 20px">
+                                        <div class="az-team-img-wrapper">
+                                            <a href="<?php echo $this->basePath('files/post/' . $file->getFilename()) ?>" class="lightbox">
+                                                <img src="<?php echo $this->basePath('files/post/' . $file->getFilename()) ?>" alt="Płyta">
+                                            </a>
+                                        </div>
+                                    </div>
+
+                                <?php endforeach ?>
+                        <?php endif ?>
+
+                    </div>
+                </div>
+                <!-- ABOUT US END -->
+            </div>
+        </div>
+    </div>
+</section>

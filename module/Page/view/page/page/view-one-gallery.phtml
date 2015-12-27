@@ -1,0 +1,63 @@
+<?php /* @var $gallery \CmsIr\File\Model\Gallery */ ?>
+
+<!-- * * * * * * * * * * * * * * * * * *
+                            PAGE TITLE
+            * * * * * * * * * * * * * * * * * * * -->
+<section class="az-page-title-section">
+    <div class="container">
+        <div class="row">
+            <h1>Galeria</h1>
+            <h3><?php echo $gallery->getTitle() ?></h3>
+        </div>
+    </div>
+    <div class="az-breadcumb">
+        <a href="<?php echo $this->url('home') ?>">HOME</a> /
+        <a href="<?php echo $this->url('view-gallery') ?>">GALERIA</a>
+        <span><?php echo $gallery->getTitle() ?></span>
+    </div>
+</section>
+<!-- PAGE TITLE END -->
+
+
+<!-- * * * * * * * * * * * * * * * * * *
+                BLOG POST
+* * * * * * * * * * * * * * * * * * * -->
+<section class="az-blog-masonry-section az-section">
+    <!-- BLOG POST  -->
+    <div class="az-blog-wrapper az-3col-post">
+
+        <?php if(!empty($gallery)): ?>
+
+            <?php /* @var $file \CmsIr\File\Model\File */ ?>
+            <?php foreach($gallery->getFiles() as $file): ?>
+
+                <!-- POST -->
+                <div class="az-blog-post">
+
+                    <div class="az-blog-img-wrapper">
+<!--                        <img src="--><?php //echo $this->url('thumb', array('entity' => 'gallery', 'size' => '295x221', 'filename' => $post->getFilenameMain())) ?><!--" alt="Blog Image">-->
+
+
+                        <a href="<?php echo $this->basepath('files/gallery/' . $file->getFilename()) ?>" class="az-lightbox">
+                            <img src="<?php echo $this->basePath('files/gallery/' . $file->getFilename()) ?>" alt="Blog Image">
+                        </a>
+                    </div>
+
+                </div>
+                <!-- POST END -->
+
+            <?php endforeach ?>
+
+        <?php endif ?>
+
+
+        <!-- NEXT PAGE LINK -->
+<!--        <div id="az-blog-next-page-nav">-->
+<!--            <a href="--><?php //echo $this->url('news-list', array(), array('query' => array('page' => 2))) ?><!-- "></a>-->
+<!--        </div>-->
+        <!-- NEXT PAGE LINK END -->
+
+    </div>
+    <!-- BLOG POST END -->
+</section>
+<!-- ABOUT US END -->

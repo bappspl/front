@@ -37,5 +37,10 @@ class TeamFormFilter extends InputFilter
             'name'       => 'first_name',
             'required' => false,
         ));
+
+        $this->add(array(
+            'name'       => 'function',
+            'required' => false,
+        ));
 	}
 }

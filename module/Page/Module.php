@@ -16,6 +16,9 @@ class Module
 
         $sm = $e->getApplication()->getServiceManager();
         $menu = $this->getMenuService($sm)->getMenuByMachineName('main-menu');
+
+        $view = $e->getViewModel();
+        $view->menu = $menu;
     }
 
     public function getConfig()

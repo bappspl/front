@@ -50,15 +50,15 @@ class Module
         return array(
             'factories' => array(
                 'Performance\Model\PerformanceTable' =>  function($sm) {
-                        $tableGateway = $sm->get('PerformanceTableGateway');
-                        $table = new PerformanceTable($tableGateway);
-                        return $table;
-                    },
+                    $tableGateway = $sm->get('PerformanceTableGateway');
+                    $table = new PerformanceTable($tableGateway);
+                    return $table;
+                },
                 'PerformanceTableGateway' => function ($sm) {
-                        $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
-                        $resultSetPrototype = new ResultSet();
-                        $resultSetPrototype->setArrayObjectPrototype(new Performance());
-                        return new TableGateway('performance', $dbAdapter, null, $resultSetPrototype);
+                    $dbAdapter = $sm->get('Zend\Db\Adapter\Adapter');
+                    $resultSetPrototype = new ResultSet();
+                    $resultSetPrototype->setArrayObjectPrototype(new Performance());
+                    return new TableGateway('performance', $dbAdapter, null, $resultSetPrototype);
                 },
             ),
         );

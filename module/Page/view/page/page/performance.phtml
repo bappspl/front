@@ -1,0 +1,132 @@
+<!-- * * * * * * * * * * * * * * * * * *
+                  PAGE TITLE
+  * * * * * * * * * * * * * * * * * * * -->
+<section class="az-page-title-section">
+    <div class="container">
+        <div class="row">
+            <h1>Koncerty</h1>
+
+            <h3>muzyczny dziennik</h3>
+        </div>
+    </div>
+    <div class="az-breadcumb">
+        <a href="index.html">HOME</a>
+        <span>Koncerty</span>
+    </div>
+</section>
+<!-- PAGE TITLE END -->
+
+<div class="row" style="margin-top: 20px;">
+    <div class="col-sm-12">
+        <div class="center-block">
+            <a href="#" class="zamow-koncert">Zamów koncert</a>
+        </div>
+    </div>
+</div>
+
+<div id="hidden-content">
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-12">
+            <div id="datepicker" class="datepicker ll-skin-lugo"></div>
+        </div>
+    </div>
+    <div class="row" style="margin-top: 20px;">
+        <div class="col-sm-12">
+            <form class="form-inline" id="koncert-form">
+                <div class="row">
+                    <div class="col-sm-8">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="imie-nazwisko" placeholder="IMIĘ I NAZWISKO">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="miejscowosc" placeholder="MIEJSCOWOŚĆ (w której odbyć ma się koncert)">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 17px;">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="nr-telefonu" placeholder="NR TELEFONU">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" id="kod-pocztowy" placeholder="KOD POCZTOWY (miejscowość, w której odbyć ma się koncert)">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <textarea name="dodatkowe-zalozenia" id="dodatkowe-zalozenia" class="form-control" cols="30" rows="5" placeholder="Dodatkowe założenia"></textarea>
+                    </div>
+                </div>
+                <div class="row" style="margin-top: 15px;">
+                    <div class="col-sm-4">
+                        <input type="text" class="form-control" id="email" placeholder="ADRES E-MAIL">
+                    </div>
+                    <div class="col-sm-4">
+
+                    </div>
+                    <div class="col-sm-4 text-center" id="form-info">
+                        Wszystkie zamówienia potwierdzimy, dlatego pamiętaj o wypełnieniu wszystkich pól formularza.
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-4 col-sm-offset-8 text-center">
+                        <a href="#" id="zamowienie">wyślij wstępne zamówienie</a>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- * * * * * * * * * * * * * * * * * *
+                        BLOG POST
+        * * * * * * * * * * * * * * * * * * * -->
+<section class="az-blog-masonry-section az-section" style="margin-left: 10%; margin-right: 10%;">
+    <!-- BLOG POST  -->
+    <div class="az-blog-wrapper az-3col-post">
+
+        <?php if(!empty($paginator)): ?>
+
+            <?php /* @var $performance \Performance\Model\Performance */ ?>
+            <?php foreach($paginator as $performance): ?>
+
+                <div class="az-blog-post">
+
+                    <div class="az-blog-post-title-wrapper">
+                        <span class="az-post-date"><?php echo $performance->getDate() ?></span>
+                    </div>
+
+                    <div class="az-blog-post-excerpt" style="text-align: justify">
+
+                      <?php echo $performance->getContent() ?>
+                    </div>
+
+                    <div class="center-block">
+                        <?php if($performance->getEnter() == 0): ?>
+
+                            <a href="#" class="kup-bilet">Wejście <br> wolne</a>
+
+                        <?php else: ?>
+
+                            <a href="<?php echo $performance->getUrl() ?>" class="kup-bilet">Kup <br> bilet</a>
+
+                        <?php endif ?>
+
+                    </div>
+                </div>
+
+            <?php endforeach ?>
+
+        <?php endif ?>
+
+        <div id="az-blog-next-page-nav">
+            <a href="<?php echo $this->url('view-performance', array(), array('query' => array('page' => 2))) ?> "></a>
+        </div>
+
+    </div>
+    <!-- BLOG POST END -->
+</section>
+<!-- ABOUT US END -->
+
+<script>
+    var dates = <?php echo json_encode($dates) ?>;
+</script>

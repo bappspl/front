@@ -1,0 +1,295 @@
+<section class="az-hero-image">
+    <div class="slider-pro az-hero-slider" id="az-hero-slider">
+        <div class="sp-slides">
+
+            <?php if(!empty($items)): ?>
+
+                <?php /* @var $item \CmsIr\Slider\Model\SliderItem */ ?>
+                <?php foreach($items as $item): ?>
+
+                    <div class="sp-slide az-main-slides">
+                        <div class="az-dark-color-overlay"></div>
+
+                        <?php if(!empty($item->getFilename())): ?>
+
+                            <img class="sp-image az-hero-image-grayscale" src="<?php echo $this->basePath('files/slider/' . $item->getFilename()) ?>" alt="Slider 2"/>
+
+                        <?php endif ?>
+
+                        <h1 class="sp-layer az-slider-text-big"
+                            data-position="center" data-vertical="510" data-show-transition="left" data-hide-transition="up"
+                            data-show-delay="2000" data-hide-delay="200"><?php echo $item->getTitle() ?></h1>
+
+                        <p class="sp-layer"
+                           data-position="center" data-vertical="610" data-show-delay="2500" data-hide-delay="200"
+                           data-show-transition="down" data-hide-transition="center"><?php echo $item->getSubtitle() ?></p>
+
+                        <div class="sp-layer" data-position="center" data-vertical="720" data-horizontal="0"
+                             data-show-transition="center" data-hide-transition="center" data-show-delay="3200"
+                             data-hide-delay="200">
+                            <a href="<?php echo $item->getAnchor() ?>" class="az-btn az-btn-outline az-light-btn scroll-to-div"><?php echo $item->getButton() ?></a>
+                        </div>
+                    </div>
+
+                <?php endforeach ?>
+
+            <?php endif ?>
+
+        </div>
+    </div>
+</section>
+
+<!-- * * * * * * * * * * * * * * * * * *
+            BLOG SECTION
+* * * * * * * * * * * * * * * * * * * -->
+<section class="az-blog-section-wrapper az-section" id="aktualnosci">
+    <div class="container">
+        <div class="row">
+            <div class="az-blog-section">
+                <!-- SECTION HEADER -->
+                <div class="az-section-headers">
+                    <h1>NAJNOWSZE AKTUALNOŚCI</h1>
+
+                    <h3>z życia zespołu</h3>
+                </div>
+                <!-- SECTION HEADER END -->
+
+                <!-- BLOG POST  -->
+                <div class="az-blog-wrapper az-3col-post">
+
+                    <?php if(!empty($posts)): ?>
+
+                        <?php /* @var $post \CmsIr\Post\Model\Post */ ?>
+                        <?php foreach($posts as $post): ?>
+
+                            <!-- POST -->
+                            <div class="az-blog-post">
+
+                                <?php if(!empty($post->getFilenameMain())): ?>
+
+                                    <div class="az-blog-img-wrapper">
+                                        <img src="<?php echo $this->url('thumb', array('entity' => 'post', 'size' => '350x262', 'filename' => $post->getFilenameMain()))  ?>" alt="News">
+                                    </div>
+
+                                <?php endif ?>
+
+                                <div class="az-blog-post-title-wrapper">
+                                    <span class="az-post-date"><?php echo $post->getDate() ?></span>
+
+                                    <!--                                    todo link-->
+                                    <h3 class="az-post-title"><a href="<?php echo $this->url('view-news', array('url' => $post->getUrl())) ?>"><?php echo $post->getTitle() ?></a></h3>
+
+                                    <p class="az-post-meta">autor <a href="#" class="az-post-author"><?php echo $post->getAuthor() ?></a> <br>
+<!--                                        kategoria-->
+<!---->
+<!--                                        --><?php //$tags = $post->getTags() ?>
+<!---->
+<!--                                        --><?php //if(!empty($tags)): ?>
+<!---->
+<!--                                            --><?php //foreach($tags as $tag): ?>
+<!---->
+<!--                                                <a href="#" class="az-post-category">-->
+<!--                                                    --><?php //echo $tag ?>
+<!--                                                </a>-->
+<!---->
+<!--                                            --><?php //endforeach ?>
+<!---->
+<!--                                        --><?php //endif ?>
+
+                                    </p>
+                                </div>
+
+                                <div class="az-blog-post-excerpt">
+                                    <?php echo $post->getShortContent() ?>
+
+                                    <!--                                    todo link-->
+
+                                    <a href="<?php echo $this->url('view-news', array('url' => $post->getUrl())) ?>" class="az-read-more">zobacz więcej</a>
+                                </div>
+                            </div>
+                            <!-- POST END -->
+
+                        <?php endforeach ?>
+
+                    <?php endif ?>
+
+                </div>
+                <!-- BLOG POST END -->
+            </div>
+        </div>
+    </div>
+</section>
+<!-- BLOG SECTION END -->
+
+<!-- * * * * * * * * * * * * * * * * * *
+                    ABOUT US
+    * * * * * * * * * * * * * * * * * * * -->
+<section class="az-about-section az-section">
+    <div class="container">
+        <div class="row">
+
+            <!-- SECTION HEADER -->
+            <div class="az-section-headers">
+                <h1>POZNAJMY SIĘ BIIŻEJ</h1>
+
+                <h3>zobacz kim jesteśmy</h3>
+            </div>
+            <!-- SECTION HEADER END -->
+
+            <div class="az-about-contents">
+
+                <!-- ABOUT TEXT -->
+                <div class="az-about-text">
+                    <p>Zespół Lombard powstał w 1981r. Od ponad 30 lat liderem zespołu jest Grzegorz Stróżniak,
+                        kompozytor wszystkich największych przebojów i większości utworów zespołu, wokalista i
+                        klawiszowiec. Od 1999 r. towarzyszy mu Marta Cugier - wokalistka, autorka tekstów, a od 2006
+                        roku: Daniel GOLA Patalas - gitara, Michał GUMA Kwapisz - bas, Mirek Kamiński -
+                        perkusja.<br>
+
+                </div>
+                <!-- ABOUT TEXT END -->
+
+                <div class="az-team-wrapper">
+                    <!-- TEAM MEMBER -->
+
+                    <?php if(!empty($team)): ?>
+
+                        <?php $team = array_chunk($team, 3); ?>
+
+                        <div class="row">
+
+                            <?php /* @var $t \Team\Model\Team */ ?>
+                            <?php foreach($team[0] as $t): ?>
+
+                                <div class="az-team-member col-md-4 col-sm-4 col-xs-12">
+                                    <!-- MEMBER IAMGE -->
+                                    <div class="az-team-img-wrapper">
+
+                                        <?php if(!empty($t->getFilenameMain())): ?>
+
+                                            <img src="<?php echo $this->url('thumb', array('entity' => 'team', 'size' => '360x280', 'filename' => $t->getFilenameMain())) ?>" alt="foto">
+
+                                        <?php endif ?>
+
+                                        <div class="az-team-member-name-social-wrap">
+                                            <div class="az-team-member-name-social">
+                                                <h3 class="az-team-member-name"><?php echo $t->getFunction() ?></h3>
+
+                                                <?php if($t->getFacebook()): ?>
+
+                                                    <ul class="az-team-social-icons">
+                                                        <li>
+                                                            <a href="<?php echo $t->getFacebook() ?>"><i class="fa fa-facebook"></i></a>
+                                                        </li>
+                                                    </ul>
+
+                                                <?php endif ?>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- MEMBER IAMGE END-->
+
+                                    <!-- MEMBER DETAILS -->
+                                    <div class="az-team-member-details">
+                                        <h3 class="az-team-member-desg"><?php echo $t->getFirstName() ?></h3>
+
+                                        <?php echo $t->getShortContent() ?>
+
+
+                                        <a href="<?php echo $this->url('view-person', array('id' => $t->getId())) ?>" class="az-read-more">zobacz więcej</a>
+                                    </div>
+                                    <!-- MEMBER DETAILS END -->
+                                </div>
+
+                            <?php endforeach ?>
+
+                        </div>
+
+                        <div class="row">
+
+                            <?php $i = 0 ?>
+                            <?php /* @var $t \Team\Model\Team */ ?>
+                            <?php foreach($team[1] as $t): ?>
+
+                                <div class="az-team-member col-md-4 col-sm-4 col-xs-12 <?php echo $i == 0 ? 'col-md-offset-2 col-sm-offset-2' : '' ?>">
+                                    <!-- MEMBER IAMGE -->
+                                    <div class="az-team-img-wrapper">
+
+                                        <?php if(!empty($t->getFilenameMain())): ?>
+
+                                            <img src="<?php echo $this->url('thumb', array('entity' => 'team', 'size' => '360x280', 'filename' => $t->getFilenameMain())) ?>" alt="foto">
+
+                                        <?php endif ?>
+
+                                        <div class="az-team-member-name-social-wrap">
+                                            <div class="az-team-member-name-social">
+                                                <h3 class="az-team-member-name"><?php echo $t->getFunction() ?></h3>
+                                                <?php if($t->getFacebook()): ?>
+
+                                                    <ul class="az-team-social-icons">
+                                                        <li>
+                                                            <a href="<?php echo $t->getFacebook() ?>"><i class="fa fa-facebook"></i></a>
+                                                        </li>
+                                                    </ul>
+
+                                                <?php endif ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- MEMBER IAMGE END-->
+
+                                    <!-- MEMBER DETAILS -->
+                                    <div class="az-team-member-details">
+                                        <h3 class="az-team-member-desg"><?php echo $t->getFirstName() ?></h3>
+
+                                        <?php echo $t->getShortContent() ?>
+
+
+                                        <a href="<?php echo $this->url('view-person', array('id' => $t->getId())) ?>" class="az-read-more">zobacz więcej</a>
+                                    </div>
+                                    <!-- MEMBER DETAILS END -->
+                                </div>
+
+                                <?php $i++ ?>
+
+                            <?php endforeach ?>
+
+                        </div>
+
+                        <?php endif ?>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+<!-- ABOUT US END -->
+
+<?php /* @var $video \CmsIr\Video\Model\Video */ ?>
+<?php if(!empty($video)): ?>
+
+<!-- * * * * * * * * * * * * * * * * * *
+               FILM YOUTUBE
+   * * * * * * * * * * * * * * * * * * * -->
+    <section class="az-split-section-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="az-custom-image-wrapper">
+                    <div id="player" data-url="<?php echo $video->getUrl() ?>"></div>
+                </div>
+                <div class="az-custom-section-text-wrapper">
+                    <div class="az-custom-section-text">
+                        <h3><?php echo $video->getTitle() ?></h3>
+
+                        <?php echo $video->getDescription() ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<?php endif ?>
+
+

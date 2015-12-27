@@ -20,6 +20,10 @@ class Disc extends Model
     protected $category_id;
     protected $status_id;
 
+    //vurtual
+    protected $category;
+    protected $records;
+
     public function exchangeArray($data) 
     {
         $this->id     = (!empty($data['id'])) ? $data['id'] : null;
@@ -35,6 +39,8 @@ class Disc extends Model
         $this->position = isset($data['position']) ? $data['position'] : null;
         $this->category_id = (!empty($data['category_id'])) ? $data['category_id'] : null;
         $this->status_id = (!empty($data['status_id'])) ? $data['status_id'] : 2;
+        $this->category = (!empty($data['category'])) ? $data['category'] : null;
+        $this->records = (!empty($data['records'])) ? $data['records'] : null;
     }
 
     /**
@@ -243,5 +249,37 @@ class Disc extends Model
     public function setStatusId($status_id)
     {
         $this->status_id = $status_id;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCategory()
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param mixed $category
+     */
+    public function setCategory($category)
+    {
+        $this->category = $category;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRecords()
+    {
+        return $this->records;
+    }
+
+    /**
+     * @param mixed $records
+     */
+    public function setRecords($records)
+    {
+        $this->records = $records;
     }
 }

@@ -1,0 +1,90 @@
+<!-- * * * * * * * * * * * * * * * * * *
+                            PAGE TITLE
+            * * * * * * * * * * * * * * * * * * * -->
+<section class="az-page-title-section">
+    <div class="container">
+        <div class="row">
+            <h1>AKTUALNOŚCI</h1>
+            <h3>Z ŻYCIA ZESPOŁU</h3>
+        </div>
+    </div>
+    <div class="az-breadcumb">
+        <a href="<?php echo $this->url('home') ?>">HOME</a>
+        <span>Aktualności</span>
+    </div>
+</section>
+<!-- PAGE TITLE END -->
+
+
+<!-- * * * * * * * * * * * * * * * * * *
+                BLOG POST
+* * * * * * * * * * * * * * * * * * * -->
+<section class="az-blog-masonry-section az-section">
+    <!-- BLOG POST  -->
+    <div class="az-blog-wrapper az-3col-post">
+
+        <?php if(!empty($paginator)): ?>
+
+            <?php /* @var $post \CmsIr\Post\Model\Post */ ?>
+            <?php foreach($paginator as $post): ?>
+
+                <!-- POST -->
+                <div class="az-blog-post">
+
+                    <?php if(!empty($post->getFilenameMain())): ?>
+
+                        <div class="az-blog-img-wrapper">
+                            <img src="<?php echo $this->url('thumb', array('entity' => 'post', 'size' => '500x300', 'filename' => $post->getFilenameMain())) ?>" alt="Blog Image">
+                        </div>
+
+                    <?php else: ?>
+
+                        <div class="az-blog-img-wrapper">
+                            <img src="images-front/image-normal.jpg" alt="Blog Image">
+                        </div>
+
+                    <?php endif ?>
+
+                    <div class="az-blog-post-title-wrapper">
+                        <span class="az-post-date"><?php echo $post->getDate() ?></span>
+                        <h3 class="az-post-title"> <a href="<?php echo $this->url('view-news', array('url' => $post->getUrl())) ?>"><?php echo $post->getTitle() ?></a></h3>
+                        <p class="az-post-meta">autor <a href="#" class="az-post-author"><?php echo $post->getAuthor() ?></a> <br>
+<!--                            kategoria <a href="#" class="az-post-category">-->
+<!---->
+<!--                                --><?php //if(!empty($post->getTags())): ?>
+<!---->
+<!--                                    --><?php ///* @var $tag \CmsIr\Tag\Model\Tag */ ?>
+<!--                                    --><?php //foreach($post->getTags() as $tag): ?>
+<!---->
+<!--                                        --><?php //echo $tag .  ' ' ?>
+<!---->
+<!--                                    --><?php //endforeach ?>
+<!---->
+<!--                                --><?php //endif ?>
+<!---->
+<!--                            </a>-->
+                        </p>
+                    </div>
+
+                    <div class="az-blog-post-excerpt">
+                        <?php echo $post->getShortContent() ?> <br>
+                        <a href="<?php echo $this->url('view-news', array('url' => $post->getUrl())) ?>" class="az-read-more">zobacz więcej</a>
+                    </div>
+                </div>
+                <!-- POST END -->
+
+            <?php endforeach ?>
+
+        <?php endif ?>
+
+
+        <!-- NEXT PAGE LINK -->
+        <div id="az-blog-next-page-nav">
+            <a href="<?php echo $this->url('news-list', array(), array('query' => array('page' => 2))) ?> "></a>
+        </div>
+        <!-- NEXT PAGE LINK END -->
+
+    </div>
+    <!-- BLOG POST END -->
+</section>
+<!-- ABOUT US END -->

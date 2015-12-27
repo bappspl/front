@@ -20,8 +20,17 @@ echo $this->form()->openTag($form);
                         </div>
 
                         <?php echo $this->customFormHelper($form->get('title')) ?>
-                        <?php echo $this->customFormHelper($form->get('listen')) ?>
-                        <?php echo $this->customFormHelper($form->get('buy')) ?>
+
+                        <?php echo $this->customFormHelper($form->get('listen_spotify')) ?>
+                        <?php echo $this->customFormHelper($form->get('listen_deezer')) ?>
+
+                        <?php echo $this->customFormHelper($form->get('buy_itunes')) ?>
+                        <?php echo $this->customFormHelper($form->get('buy_google')) ?>
+                        <?php echo $this->customFormHelper($form->get('buy_playthemusic')) ?>
+                        <?php echo $this->customFormHelper($form->get('buy_muzodajnia')) ?>
+
+<!--                        --><?php //echo $this->customFormHelper($form->get('allegro')) ?>
+
                         <?php echo $this->customFormHelper($form->get('content')) ?>
 
                     </div>

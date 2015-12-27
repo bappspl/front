@@ -1,0 +1,35 @@
+<input type="hidden" value="<?php echo $lat ?>" id="lat">
+<input type="hidden" value="<?php echo $lng ?>" id="lng">
+
+<section class="az-page-title-section" <?php echo !empty($background) ? 'style="background-image : url(' . $this->basepath("files/page/" . $background) . ') "' : '' ?>>
+	<div class="container">
+		<div class="row">
+			<h1><?php echo $page->getTitle() ?></h1>
+
+			<!--<h3>Z ŻYCIA ZESPOŁU</h3>-->
+		</div>
+	</div>
+	<div class="az-breadcumb">
+		<a href="<?php echo $this->url('home') ?>">HOME</a>
+		<span><?php echo $page->getTitle() ?></span>
+	</div>
+</section>
+
+
+<!-- * * * * * * * * * * * * * * * * * *
+                CONTACT SECTION
+* * * * * * * * * * * * * * * * * * * -->
+<section class="az-contact-us-section az-section">
+	<!-- MAIN CONTENT -->
+	<div class="container">
+		<div class="row">
+
+			<!-- MAP -->
+			<div class="az-google-map">
+				<div id="az-map"></div>
+			</div>
+			<!-- MAP END-->
+
+		</div>
+	</div>
+</section>

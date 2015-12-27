@@ -1,0 +1,30 @@
+<?php if(!empty($paginator)): ?>
+
+    <?php /* @var $disc \Disc\Model\Disc */ ?>
+    <?php foreach($paginator as $disc): ?>
+
+        <?php $file = $disc->getFilenameMain() ?>
+
+        <?php if(!empty($file)): ?>
+
+            <div class="az-work-item <?php echo \CmsIr\System\Util\Inflector::slugify($disc->getCategory()->getName()) ?>">
+                <a href="<?php echo $this->url('view-disc', array('id' => $disc->getId())) ?>" class="new-portfolio">
+                    <div class="az-work-item-inner-wrap">
+                        <img src="<?php echo $this->basepath('files/disc/' . $disc->getFilenameMain()) ?>" alt="Portfolio Item">
+
+                        <div class="az-work-item-hover">
+
+                            <h3>
+                                <?php echo $disc->getTitle() ?>
+                            </h3>
+
+                        </div>
+                    </div>
+                </a>
+            </div>
+
+        <?php endif ?>
+
+    <?php endforeach ?>
+
+<?php endif ?>

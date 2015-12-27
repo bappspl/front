@@ -1,0 +1,29 @@
+<?php /* @var $performance \Performance\Model\Performance */ ?>
+<?php foreach($paginator as $performance): ?>
+
+    <div class="az-blog-post">
+
+        <div class="az-blog-post-title-wrapper">
+            <span class="az-post-date"><?php echo $performance->getId() ?></span>
+        </div>
+
+        <div class="az-blog-post-excerpt" style="text-align: justify">
+
+            <?php echo $performance->getContent() ?>
+        </div>
+
+        <div class="center-block">
+            <?php if($performance->getEnter() == 0): ?>
+
+                <a href="#" class="kup-bilet">Wejście <br> wolne</a>
+
+            <?php else: ?>
+
+                <a href="#" class="kup-bilet">Kup <br> bilet</a>
+
+            <?php endif ?>
+
+        </div>
+    </div>
+
+<?php endforeach ?>

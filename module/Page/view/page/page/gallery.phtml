@@ -1,0 +1,97 @@
+<!-- * * * * * * * * * * * * * * * * * *
+                    PAGE TITLE
+    * * * * * * * * * * * * * * * * * * * -->
+<section class="az-page-title-section">
+    <div class="container">
+        <div class="row">
+            <h1>GALERIA</h1>
+
+            <h3>z dziennika zespołu</h3>
+        </div>
+    </div>
+    <div class="az-breadcumb">
+        <a href="<?php echo $this->url('home') ?>">HOME</a>
+        <span>GALERIA</span>
+    </div>
+</section>
+<!-- PAGE TITLE END -->
+
+
+<!-- * * * * * * * * * * * * * * * * * *
+                GALERIA
+* * * * * * * * * * * * * * * * * * * -->
+<section class="az-portfolio-masonry-section az-section">
+    <div class="container">
+        <div class="row">
+            <!-- WORKS -->
+            <div class="az-works-wrapper">
+                <!-- FILTER -->
+                <div class="az-filter-link-wrapper">
+                    <!-- Filter Button Start -->
+                    <div id="az-portfolio-filter" class="az-portfolio-filter-btn-group-wrapper">
+                        <div class="az-portfolio-filter-btn-group">
+                            <a href="#" data-filter="*">Wszystkie</a>
+
+                            <?php if(!empty($categories)): ?>
+
+                                <?php /* @var $category \CmsIr\Category\Model\Category */ ?>
+                                <?php foreach($categories as $category): ?>
+
+                                    <a href="#" data-filter=".<?php echo $category->getName() ?>"><?php echo $category->getName() ?></a>
+
+                                <?php endforeach ?>
+
+                            <?php endif ?>
+
+                        </div>
+                    </div>
+                    <!-- Filter Button End -->
+                </div>
+                <!-- FILTER END -->
+
+                <!-- ALL WORK ITEMS -->
+                <div class="az-works grid effect-6" id="grid">
+
+                    <?php if(!empty($paginator)): ?>
+
+                        <?php /* @var $gallery \CmsIr\File\Model\Gallery */ ?>
+                        <?php foreach($paginator as $gallery): ?>
+
+                            <?php $file = $gallery->getFilenameMain() ?>
+
+                            <?php if(!empty($file)): ?>
+
+                                <div class="az-work-item <?php echo $gallery->getCategory()->getName() ?>">
+                                    <div class="az-work-item-inner-wrap">
+
+                                        <img src="<?php echo $this->basepath('files/gallery/' . $file) ?>" alt="Portfolio Item">
+
+                                        <div class="az-work-item-hover">
+                                            <h3>
+                                                <a href="<?php echo $this->url('view-one-gallery', array('id' => $gallery->getId())) ?>"><?php echo $gallery->getName() ?></a>
+                                            </h3>
+<!--                                            <a href="#" class="az-work-category">--><?php //echo $gallery->getTitle() ?><!--</a>-->
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <?php endif ?>
+
+                        <?php endforeach ?>
+
+                    <?php endif ?>
+
+                </div>
+                <!-- ALL WORK ITEMS END -->
+
+                <!-- NEXT PAGE LINK -->
+                <div id="az-portfolio-next-page-nav">
+                    <a href="<?php echo $this->url('view-gallery', array(), array('query' => array('page' => 2))) ?> "></a>
+                </div>
+                <!-- NEXT PAGE LINK END -->
+            </div>
+            <!-- WORKS END -->
+        </div>
+    </div>
+</section>
+<!-- ABOUT US END -->

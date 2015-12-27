@@ -1,0 +1,89 @@
+<?php /* @var $page \CmsIr\Page\Model\Page */ ?>
+
+<!-- * * * * * * * * * * * * * * * * * *
+                    PAGE TITLE
+    * * * * * * * * * * * * * * * * * * * -->
+<?php $background = $page->getFilenameBackground() ?>
+
+<section class="az-page-title-section" <?php echo !empty($background) ? 'style="background-image : url(' . $this->basepath("files/page/" . $background) . '); background-repeat: no-repeat;
+    background-size: 100% 100%; "' : '' ?>>
+    <div class="container">
+	<div class="row">
+	    <h1><?php echo $page->getTitle() ?></h1>
+
+	    <!--<h3>Z ŻYCIA ZESPOŁU</h3>-->
+	</div>
+    </div>
+    <div class="az-breadcumb">
+	<a href="<?php echo $this->url('home') ?>">HOME</a>
+	<span><?php echo $page->getTitle() ?></span>
+    </div>
+</section>
+<!-- PAGE TITLE END -->
+
+<?php $parts = $page->getParts() ?>
+<?php if(!empty($parts)): ?>
+
+    <?php /* @var $part CmsIr\Page\Model\PagePart */ ?>
+    <?php foreach($parts as $part): ?>
+
+	<?php $partBackground = $part->getFilenameMain() ?>
+
+	<section class="az-counter-section-wrapper az-section az-parallax" data-stellar-background-ratio="0.5" <?php echo !empty($partBackground) ? 'style="background-image : url(' . $this->basepath("files/page-part/" . $partBackground) . ') "' : '' ?>>
+	    <div class="az-dark-color-overlay"></div>
+
+	    <div class="container">
+		<div class="row">
+
+		    <div class="az-counter-wrapper">
+			<div class="az-counter-items col-md-12 text-center">
+			    <h3 style="font-size: 35px;"><?php echo $part->getTitle() ?></h3>
+			</div>
+		    </div>
+
+		</div>
+	    </div>
+	</section>
+
+	<div class="az-blog-page-details-text" style="margin: 20px; text-align: justify;">
+
+	    <?php echo $part->getContent() ?>
+
+	</div>
+
+	<?php if(!empty($part->getFiles())): ?>
+	    <?php $files = $part->getFiles() ?>
+	    <?php $chunk = array_chunk($files, 3) ?>
+
+	    <section class="az-blog-single-section az-section">
+		<div class="container">
+
+		    <?php foreach ($chunk as $c): ?>
+
+			<div class="row" style="margin-bottom: 20px">
+
+			    <?php /* @var $file CmsIr\File\Model\File */ ?>
+			    <?php foreach ($c as $file): ?>
+
+				<div class="az-team-member col-md-4 col-sm-3 col-xs-12">
+				    <div class="az-team-img-wrapper">
+					<a href="<?php echo $this->basePath('files/page-part/' . $file->getFilename()) ?>" class="lightbox">
+					    <img src="<?php echo $this->basePath('files/page-part/' . $file->getFilename()) ?>" alt="Płyta">
+					</a>
+				    </div>
+				</div>
+
+			    <?php endforeach ?>
+
+			</div>
+
+		    <?php endforeach ?>
+
+		</div>
+	    </section>
+
+	<?php endif ?>
+
+    <?php endforeach ?>
+
+<?php endif ?>

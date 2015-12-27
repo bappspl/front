@@ -6,7 +6,7 @@ $(function () {
     if ($('#datatable-record').length > 0){
         selectedIds = [];
         var table = $('#datatable-record').DataTable({
-            "dom": '<"top"fl>t<"bottom"ip>r',
+            "dom": '<"top"f>t<"bottom">r',
             "lengthMenu": [[10, 25, 50, 100], ["10 pozycji", "25 pozycji", "50 pozycji", "100 pozycji"]],
             "language": {
                 "url": "/datatables/pl_PL.json"

@@ -74,6 +74,8 @@ class TeamTable extends ModelTable implements ServiceLocatorAwareInterface
             'content'  => $team->getContent(),
             'first_name'  => $team->getFirstName(),
             'filename_main'  => $team->getFilenameMain(),
+            'function'  => $team->getFunction(),
+            'short_content'  => $team->getShortContent(),
         );
 
         $id = (int) $team->getId();
