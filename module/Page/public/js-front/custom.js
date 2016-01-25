@@ -51,7 +51,7 @@ jQuery(".nav a").on("click", function () {
 	    arrows: true,
 	    waitForLayers: true,
 	    buttons: false,
-	    autoplay: true,
+	    autoplay: false,
 	    autoplayDelay: 6000,
 	    autoScaleLayers: false,
 	    slideAnimationDuration: 1500
@@ -147,7 +147,9 @@ $(function(){
 		  },
 		  masonry: {
 		    // use outer width of grid-sizer for columnWidth
-		    columnWidth: '.az-work-item'
+		    columnWidth: '.az-work-item',
+
+			  gutterWidth: 20
 		  }
 		});
 
@@ -256,6 +258,16 @@ $('.az-lightbox, .lightbox').magnificPopup({
 	}
 });
 
+$('.popup-youtube, .popup-vimeo, .popup-gmaps').magnificPopup({
+	disableOn: 700,
+	type: 'iframe',
+	mainClass: 'mfp-fade',
+	removalDelay: 160,
+	preloader: false,
+
+	fixedContentPos: false
+});
+
 
 
 /* ==================================================================
@@ -291,7 +303,9 @@ var $blogContainer = $('.az-blog-masonry-section .az-blog-wrapper');
 	    $blogContainer.isotope({
 	        itemSelector : '.az-blog-post',
 	        masonry: {
-			    columnWidth: '.az-blog-post'
+			    columnWidth: '.az-blog-post',
+				itemSelector : '.box',
+				percentPosition: true
 			  }
 	    });
 	});

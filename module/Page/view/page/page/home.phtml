@@ -17,14 +17,14 @@
                         <?php endif ?>
 
                         <h1 class="sp-layer az-slider-text-big"
-                            data-position="center" data-vertical="510" data-show-transition="left" data-hide-transition="up"
+                            data-position="center" data-vertical="20%" data-show-transition="left" data-hide-transition="up"
                             data-show-delay="2000" data-hide-delay="200"><?php echo $item->getTitle() ?></h1>
 
                         <p class="sp-layer"
-                           data-position="center" data-vertical="610" data-show-delay="2500" data-hide-delay="200"
+                           data-position="center" data-vertical="50%" data-show-delay="2500" data-hide-delay="200"
                            data-show-transition="down" data-hide-transition="center"><?php echo $item->getSubtitle() ?></p>
 
-                        <div class="sp-layer" data-position="center" data-vertical="720" data-horizontal="0"
+                        <div class="sp-layer dna-button" data-position="center" data-vertical="72%" data-horizontal="0"
                              data-show-transition="center" data-hide-transition="center" data-show-delay="3200"
                              data-hide-delay="200">
                             <a href="<?php echo $item->getAnchor() ?>" class="az-btn az-btn-outline az-light-btn scroll-to-div"><?php echo $item->getButton() ?></a>
@@ -120,6 +120,82 @@
     </div>
 </section>
 <!-- BLOG SECTION END -->
+
+
+<?php /* @var $video \CmsIr\Video\Model\Video */ ?>
+<?php if(!empty($video)): ?>
+
+    <!-- * * * * * * * * * * * * * * * * * *
+                   FILM YOUTUBE
+       * * * * * * * * * * * * * * * * * * * -->
+    <section class="az-split-section-wrapper">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="az-custom-image-wrapper">
+                    <div id="player" data-url="<?php echo $video->getUrl() ?>"></div>
+                </div>
+                <div class="az-custom-section-text-wrapper">
+                    <div class="az-custom-section-text">
+                        <h3><?php echo $video->getTitle() ?></h3>
+
+                        <?php echo $video->getDescription() ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<?php endif ?>
+
+<?php if(!empty($videos)): ?>
+
+    <?php $videos = array_chunk($videos, 3); ?>
+
+    <section class="az-service-section-wrapper az-section">
+        <div class="container">
+            <div class="row">
+                <div class="az-service-section">
+                    <!-- SECTION HEADER -->
+                    <div class="az-section-headers">
+                        <h1>VIDEO</h1>
+                        <h3>KLASYKA POLSKIEGO ROCKA W NAJLEPSZYM WYDANIU, ZNANE HITY, PREMIEROWE UTWORY, MUZYKA Z PRZEKAZEM</h3>
+                    </div>
+                    <!-- SECTION HEADER END -->
+
+                    <!-- ROW 1 -->
+
+
+                    <?php foreach($videos as $video): ?>
+
+                        <div class="az-service-row">
+
+                            <?php /* @var $v \CmsIr\Video\Model\Video */ ?>
+                            <?php foreach($video as $v): ?>
+
+                                <?php $url = str_replace('watch?v=', 'embed/', $v->getUrl()) ?>
+
+                                <div class="col-md-4 col-sm-4 col-xs-12 az-icontext-style-2">
+                                    <iframe width="420" height="200" src="<?php echo $url ?>" frameborder="0" allowfullscreen></iframe>
+                                    <a href="<?php echo $v->getUrl() ?>" class="popup-youtube" style="position: absolute; top: 0; left: 0; width: 100%; height: 85%;"></a>
+                                    <div class="az-icontext-text">
+                                        <h3 style="font-family: 'Roboto', sans-serif; font-size: 16px; font-weight: 700; color: #FFFFFF; margin-top: 0;margin-bottom: 20px;"><?php echo $v->getTitle() ?></h3>
+                                    </div>
+                                </div>
+
+                            <?php endforeach ?>
+
+                        </div>
+
+                    <?php endforeach ?>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+<?php endif ?>
+
 
 <!-- * * * * * * * * * * * * * * * * * *
                     ABOUT US
@@ -266,30 +342,3 @@
     </div>
 </section>
 <!-- ABOUT US END -->
-
-<?php /* @var $video \CmsIr\Video\Model\Video */ ?>
-<?php if(!empty($video)): ?>
-
-<!-- * * * * * * * * * * * * * * * * * *
-               FILM YOUTUBE
-   * * * * * * * * * * * * * * * * * * * -->
-    <section class="az-split-section-wrapper">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="az-custom-image-wrapper">
-                    <div id="player" data-url="<?php echo $video->getUrl() ?>"></div>
-                </div>
-                <div class="az-custom-section-text-wrapper">
-                    <div class="az-custom-section-text">
-                        <h3><?php echo $video->getTitle() ?></h3>
-
-                        <?php echo $video->getDescription() ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-<?php endif ?>
-
-

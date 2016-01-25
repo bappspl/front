@@ -12,6 +12,7 @@ class CmsCreateVideo extends AbstractMigration
             ->addColumn('slug', 'string')
             ->addColumn('url', 'string', array('null' => true))
             ->addColumn('status_id', 'integer')
+            ->addColumn('position', 'integer', array('null' => true))
             ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
             ->save();
     }

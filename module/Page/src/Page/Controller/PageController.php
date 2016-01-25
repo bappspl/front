@@ -38,13 +38,17 @@ class PageController extends AbstractActionController
         $items = $slider->getItems();
 
         $team = $this->getTeamTable()->getBy(array('status_id' => 1));
-        $video = $this->getVideoService()->findOneByLangIdWithBlocks($this->langId);
+        $videos = $this->getVideoService()->findOneByLangIdWithBlocks($this->langId);
         $posts = $this->getPostService()->findLastPostsByLangIdWithBlocks(1, 'news', 'Y-m-d', 3);
+
+        $video = reset($videos);
+        unset($videos[0]);
 
         $viewParams = array();
         $viewParams['items'] = $items;
         $viewParams['team'] = $team;
         $viewParams['video'] = $video;
+        $viewParams['videos'] = $videos;
         $viewParams['posts'] = $posts;
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
@@ -60,13 +64,15 @@ class PageController extends AbstractActionController
 	    /* @var $page Page */
         $page = $this->getPageService()->findOneByUrlAndLangIdWithBlocks($url, 1);
 
-        if(empty($page)) {
+        if(!isset($page)) {
             $this->getResponse()->setStatusCode(404);
         }
 
         $viewParams = array();
 	    $viewParams['page'] = $page;
         $viewModel = new ViewModel();
+
+//        var_dump($page);die;
 
         if($page->getType() == 1) {
             $viewModel->setTemplate('page/page/view-page-parts.phtml');
