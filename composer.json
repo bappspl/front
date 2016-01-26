@@ -16,7 +16,7 @@
     "zendframework/zendframework": "2.5.*",
     "robmorgan/phinx": "*",
     "rwoverdijk/assetmanager": "*",
-    "cms-ir/cms-ir": "1.0.0",
+    "cms-ir/cms-ir": "dev-master",
     "symfony/yaml": "2.4.*",
     "dannytrue/phpthumb": "dev-master"
   }

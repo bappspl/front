@@ -16,5 +16,6 @@ return array(
      'static_salt' => 'aFGQ475SDsdfsaf2342',
      'app_name' => 'Refactor',
      'logger_mail' => false,
+     'logger_show' => true,
      'piwik' => 'http://piwik.web-ir.pl'
 );

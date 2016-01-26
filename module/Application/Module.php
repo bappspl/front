@@ -19,6 +19,16 @@ class Module
         $eventManager        = $e->getApplication()->getEventManager();
         $moduleRouteListener = new ModuleRouteListener();
         $moduleRouteListener->attach($eventManager);
+
+        $application   = $e->getApplication();
+        $sm = $application->getServiceManager();
+
+        $config = $sm->get('Config');
+
+        $showErrors = $config['logger_show'];
+
+        $view = $e->getViewModel();
+        $view->setVariable('test', $showErrors);
     }
 
     public function getConfig()
