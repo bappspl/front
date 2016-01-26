@@ -53,6 +53,24 @@ usuwanie-stron:
   route: page/delete
   visible_in_primary: false
   parent_id: strony
+lista-rozbudowana:
+  name: lista-rozbudowana
+  label: Lista sekcji
+  route: page/part
+  visible_in_primary: false
+  parent_id: strony
+nowy-rozbudowana:
+  name: nowy-rozbudowana
+  label: Tworzenie nowej sekcji
+  route: page/part/create
+  visible_in_primary: false
+  parent_id: strony
+edycja-rozbudowana:
+  name: edycja-rozbudowana
+  label: Edycja sekcji
+  route: page/part/edit
+  visible_in_primary: false
+  parent_id: strony
 wpisy:
   name: wpisy
   label: Wpisy
@@ -135,12 +153,72 @@ edycja-elementu:
   route: slider/items/edit
   visible_in_primary: false
   parent_id: slider
+galeria:
+  name: galeria
+  label: Galeria
+  route: gallery-main
+  class: fa fa-file-image-o
+  access: 2
+nowy-galeria:
+  name: nowy-galeria
+  label: Dodaj nową
+  route: gallery/create
+  visible_in_primary: true
+  parent_id: galeria
+lista-galeria:
+  name: lista-galeria
+  label: Lista galerii
+  route: gallery
+  visible_in_primary: true
+  parent_id: galeria
+edycja-galeria:
+  name: edycja-galeria
+  label: Edycja galerii
+  route: gallery/edit
+  visible_in_primary: false
+  parent_id: galeria
+usuwanie-galeria:
+  name: usuwanie-galeria
+  label: Usuwanie galerii
+  route: gallery/delete
+  visible_in_primary: false
+  parent_id: galeria
+video:
+  name: video
+  label: Video
+  route: video-main
+  class: fa fa-youtube
+  access: 2
+nowy-video:
+  name: nowy-video
+  label: Dodaj nowe
+  route: video/create
+  visible_in_primary: true
+  parent_id: video
+lista-video:
+  name: lista-video
+  label: Lista video
+  route: video
+  visible_in_primary: true
+  parent_id: video
+edycja-video:
+  name: edycja-video
+  label: Edycja video
+  route: video/edit
+  visible_in_primary: false
+  parent_id: video
+usuwanie-video:
+  name: usuwanie-video
+  label: Usuwanie video
+  route: video/delete
+  visible_in_primary: false
+  parent_id: video
 uzytkownicy:
   name: uzytkownicy
   label: Użytkownicy
   route: users-main
   class: fa fa-users
-  access: 4
+  access: 2
 tworzenie-uzytkownika:
   name: tworzenie-specjalisty
   label: Dodaj nowy
@@ -298,33 +376,30 @@ nowa-kategoria:
   name: nowa-kategoria
   label: Dodaj nową
   route: category/create
-  visible_in_primary: true
+  visible_in_primary: false
   parent_id: kategorie
+  params: "'type' => 'gallery'"
 lista-kategorii:
   name: lista-kategorii
-  label: Lista kategorii
+  label: Galeria
   route: category
   visible_in_primary: true
   parent_id: kategorie
+  params: "'type' => 'gallery'"
 edycja-kategorii:
   name: edycja-kategorii
   label: Edycja kategorii
   route: category/edit
   visible_in_primary: false
   parent_id: kategorie
+  params: "'type' => 'gallery'"
 usuwanie-kategorii:
   name: usuwanie-kategorii
   label: Usuwanie kategorii
   route: category/delete
   visible_in_primary: false
   parent_id: kategorie
-konfiguracja-maila:
-  name: konfiguracja-maila
-  label: Ustawienia E-mail
-  route: mail-config
-  class: fa fa-cog
-  access: 4
-  visible_in_primary: true
+  params: "'type' => 'gallery'"
 tag:
   name: tagi
   label: Tagi
@@ -443,3 +518,10 @@ usuwanie-miejsca:
   route: place/delete
   visible_in_primary: false
   parent_id: miejsce
+konfiguracja-maila:
+    name: konfiguracja-maila
+    label: Ustawienia
+    route: mail-config
+    class: fa fa-cog
+    access: 4
+    visible_in_primary: true

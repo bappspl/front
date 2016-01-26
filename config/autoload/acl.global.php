@@ -16,7 +16,7 @@ return array(
                     'all'	=> 'guest',
                 ),
 
-                // CMS
+                    // CMS
                 'CmsIr\Authentication\Controller\Index' => array(
                     'all'	=> 'guest',
                 ),
@@ -24,53 +24,56 @@ return array(
                     'all'	=> 'user',
                 ),
                 'CmsIr\Menu\Controller\Menu' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\Users\Controller\Users' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\Slider\Controller\Slider' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\Newsletter\Controller\Newsletter' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\Newsletter\Controller\Subscriber' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\Page\Controller\Page' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\Post\Controller\Post' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\System\Controller\System' => array(
                     'createThumb'	=> 'guest',
                     'saveEditorImages'	=> 'guest',
-                    'settings'	=> 'superadmin',
-                    'mailConfig'	=> 'superadmin',
+                    'settings'	=> 'admin',
+                    'mailConfig'	=> 'admin',
                 ),
                 'CmsIr\File\Controller\Gallery' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\Banner\Controller\Banner' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\Place\Controller\Place' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\Dictionary\Controller\Dictionary' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\File\Controller\File' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\Category\Controller\Category' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
                 'CmsIr\Tag\Controller\Tag' => array(
-                    'all'	=> 'superadmin',
+                    'all'	=> 'admin',
                 ),
+                'CmsIr\Video\Controller\Video' => array(
+                    'all'	=> 'admin',
+                )
             )
         )
     )

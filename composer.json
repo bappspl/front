@@ -13,10 +13,10 @@
   "homepage": "http://framework.zend.com/",
   "require": {
     "php": ">=5.3.3",
-    "zendframework/zendframework": "2.3.*",
+    "zendframework/zendframework": "2.5.*",
     "robmorgan/phinx": "*",
     "rwoverdijk/assetmanager": "*",
-    "cms-ir/cms-ir": "dev-master",
+    "cms-ir/cms-ir": "1.0.0",
     "symfony/yaml": "2.4.*",
     "dannytrue/phpthumb": "dev-master"
   }

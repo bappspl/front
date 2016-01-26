@@ -10,13 +10,29 @@ class CmsCreatePage extends AbstractMigration
         $this->table('cms_page', array())
             ->addColumn('name', 'string')
             ->addColumn('slug', 'string')
+            ->addColumn('type', 'integer', array('null'=>true))
             ->addColumn('status_id', 'integer')
             ->addColumn('filename_main', 'string', array('null'=>true))
             ->addColumn('filename_background', 'string', array('null'=>true))
+            ->addColumn('position', 'integer', array('null'=>true))
             ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
             ->save();
 
-        $this->createDirectory(array('files/page', 'temp_files/page'));
+        $this->table('cms_page_part', array())
+            ->addColumn('name', 'string')
+            ->addColumn('slug', 'string')
+            ->addColumn('position', 'integer', array('null'=>true))
+            ->addColumn('page_id', 'integer')
+            ->addColumn('filename_main', 'string', array('null'=>true))
+            ->addForeignKey('page_id', 'cms_page', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+            ->save();
+
+        $this->createDirectory(array(
+            'files/page',
+            'temp_files/page',
+            'files/page-part',
+            'temp_files/page-part'
+        ));
     }
 
     public function createDirectory($dirs)
@@ -47,5 +63,6 @@ class CmsCreatePage extends AbstractMigration
     public function down()
     {
         $this->dropTable('cms_page');
+        $this->dropTable('cms_page_part');
     }
 }
