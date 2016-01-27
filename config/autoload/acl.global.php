@@ -49,6 +49,7 @@ return array(
                     'saveEditorImages'	=> 'guest',
                     'settings'	=> 'admin',
                     'mailConfig'	=> 'admin',
+                    'sendTestEmail'	=> 'user',
                 ),
                 'CmsIr\File\Controller\Gallery' => array(
                     'all'	=> 'admin',
