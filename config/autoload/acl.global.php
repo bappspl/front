@@ -49,7 +49,7 @@ return array(
                     'saveEditorImages'	=> 'guest',
                     'settings'	=> 'admin',
                     'mailConfig'	=> 'admin',
-                    'sendTestEmail'	=> 'user',
+                    'sendTestEmail'	=> 'admin',
                 ),
                 'CmsIr\File\Controller\Gallery' => array(
                     'all'	=> 'admin',
@@ -74,7 +74,10 @@ return array(
                 ),
                 'CmsIr\Video\Controller\Video' => array(
                     'all'	=> 'admin',
-                )
+                ),
+                'CmsIr\System\Console\FakeDataCommand' => array(
+                    'all'	=> 'guest'
+                ),
             )
         )
     )
