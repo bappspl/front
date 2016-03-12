@@ -10,10 +10,10 @@ class CmsCreateGallery extends AbstractMigration
         $this->table('cms_gallery', array())
             ->addColumn('name', 'string')
             ->addColumn('slug', 'string')
-            ->addColumn('url', 'string')
             ->addColumn('filename_main', 'text', array('null'=>true))
             ->addColumn('status_id', 'integer')
             ->addColumn('category_id', 'integer', array('null' => true))
+            ->addColumn('position', 'integer', array('null'=>true))
             ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
             ->save();
 

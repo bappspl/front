@@ -4,6 +4,7 @@ namespace Page\Controller;
 
 use CmsIr\Page\Model\Page;
 use CmsIr\Post\Model\Post;
+use Page\Mail;
 use Zend\Db\Sql\Predicate\IsNotNull;
 use Zend\Mvc\Controller\AbstractActionController;
 use Zend\View\Model\ViewModel;

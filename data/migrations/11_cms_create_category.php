@@ -12,6 +12,7 @@ class CmsCreateCategory extends AbstractMigration
              ->addColumn('slug', 'string')
              ->addColumn('type', 'string', array('null' => true))
              ->addColumn('filename_main', 'text', array('null'=>true))
+             ->addColumn('position', 'integer', array('null'=>true))
              ->save();
 
         $this->createDirectory(array('files/category', 'temp_files/category'));

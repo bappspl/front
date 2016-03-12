@@ -9,6 +9,7 @@ class CmsCreateTag extends AbstractMigration
     {
         $this->table('cms_tag', array())
              ->addColumn('name', 'string')
+             ->addColumn('position', 'integer', array('null'=>true))
              ->save();
 
         $this->table('cms_tag_entity', array())

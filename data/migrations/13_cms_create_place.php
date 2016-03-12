@@ -16,6 +16,7 @@ class CmsCreatePlace extends AbstractMigration
             ->addColumn('city', 'string', array('null' => true))
             ->addColumn('street', 'string', array('null' => true))
             ->addColumn('street_number', 'string', array('null' => true))
+            ->addColumn('position', 'integer', array('null'=>true))
             ->save();
     }
 

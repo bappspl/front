@@ -15,6 +15,7 @@ class CmsCreateDictionary extends AbstractMigration
             ->addColumn('filename', 'text', array('null'=>true))
             ->addColumn('category_id', 'integer', array('null'=>true))
             ->addColumn('type', 'string', array('null'=>true))
+            ->addColumn('position', 'integer', array('null'=>true))
             ->save();
 
         $this->createDirectory(array('files/dictionary'));
