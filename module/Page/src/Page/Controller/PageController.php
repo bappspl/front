@@ -25,6 +25,7 @@ class PageController extends AbstractActionController
 {
     public function homeAction()
     {
+        
         $viewParams = array();
         $viewModel = new ViewModel();
         $viewModel->setVariables($viewParams);
