@@ -11,7 +11,7 @@ class CmsCreatePage extends AbstractMigration
             ->addColumn('name', 'string')
             ->addColumn('slug', 'string')
             ->addColumn('type', 'integer', array('null'=>true))
-            ->addColumn('entity_type_id', 'integer')
+//            ->addColumn('entity_type', 'string')
             ->addColumn('status_id', 'integer')
             ->addColumn('filename_main', 'string', array('null'=>true))
             ->addColumn('filename_background', 'string', array('null'=>true))
@@ -21,23 +21,23 @@ class CmsCreatePage extends AbstractMigration
             ->addColumn('date_editing', 'datetime', array('null'=>true))
             ->addColumn('date_removing', 'datetime', array('null'=>true))
             ->addForeignKey('status_id', 'cms_status', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
-            ->addForeignKey('entity_type_id', 'cms_entity_type', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+//            ->addForeignKey('entity_type_id', 'cms_entity_type', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
             ->save();
 
-        $this->table('cms_page_part', array())
-            ->addColumn('name', 'string')
-            ->addColumn('slug', 'string')
-            ->addColumn('position', 'integer', array('null'=>true))
-            ->addColumn('page_id', 'integer')
-            ->addColumn('entity_type_id', 'integer')
-            ->addColumn('filename_main', 'string', array('null'=>true))
-            ->addColumn('removed', 'boolean', array('null'=>true))
-            ->addColumn('date_creating', 'datetime', array('null'=>true))
-            ->addColumn('date_editing', 'datetime', array('null'=>true))
-            ->addColumn('date_removing', 'datetime', array('null'=>true))
-            ->addForeignKey('page_id', 'cms_page', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
-            ->addForeignKey('entity_type_id', 'cms_entity_type', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
-            ->save();
+//        $this->table('cms_page_part', array())
+//            ->addColumn('name', 'string')
+//            ->addColumn('slug', 'string')
+//            ->addColumn('position', 'integer', array('null'=>true))
+//            ->addColumn('page_id', 'integer')
+//            ->addColumn('entity_type_id', 'integer')
+//            ->addColumn('filename_main', 'string', array('null'=>true))
+//            ->addColumn('removed', 'boolean', array('null'=>true))
+//            ->addColumn('date_creating', 'datetime', array('null'=>true))
+//            ->addColumn('date_editing', 'datetime', array('null'=>true))
+//            ->addColumn('date_removing', 'datetime', array('null'=>true))
+//            ->addForeignKey('page_id', 'cms_page', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+//            ->addForeignKey('entity_type_id', 'cms_entity_type', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+//            ->save();
 
         $this->createDirectory(array(
             'files/page',

@@ -53,24 +53,24 @@ usuwanie-stron:
   route: page/delete
   visible_in_primary: false
   parent_id: strony
-lista-rozbudowana:
-  name: lista-rozbudowana
-  label: Lista sekcji
-  route: page/part
-  visible_in_primary: false
-  parent_id: strony
-nowy-rozbudowana:
-  name: nowy-rozbudowana
-  label: Tworzenie nowej sekcji
-  route: page/part/create
-  visible_in_primary: false
-  parent_id: strony
-edycja-rozbudowana:
-  name: edycja-rozbudowana
-  label: Edycja sekcji
-  route: page/part/edit
-  visible_in_primary: false
-  parent_id: strony
+#lista-rozbudowana:
+#  name: lista-rozbudowana
+#  label: Lista sekcji
+#  route: page/part
+#  visible_in_primary: false
+#  parent_id: strony
+#nowy-rozbudowana:
+#  name: nowy-rozbudowana
+#  label: Tworzenie nowej sekcji
+#  route: page/part/create
+#  visible_in_primary: false
+#  parent_id: strony
+#edycja-rozbudowana:
+#  name: edycja-rozbudowana
+#  label: Edycja sekcji
+#  route: page/part/edit
+#  visible_in_primary: false
+#  parent_id: strony
 wpisy:
   name: wpisy
   label: Wpisy
@@ -105,114 +105,114 @@ podglad-newsa:
   visible_in_primary: false
   parent_id: wpisy
   params: "'category' => 'news'"
-slider:
-  name: slider
-  label: Slider
-  route: slider-main
-  class: fa fa-picture-o
-  access: 2
-tworzenie-slidera:
-  name: tworzenie-slidera
-  label: Tworzenie slidera
-  route: slider/create
-  visible_in_primary: false
-  parent_id: slider
-lista-slidera:
-  name: lista-slidera
-  label: Lista sliderów
-  route: slider
-  visible_in_primary: true
-  parent_id: slider
-edycja-slidera:
-  name: edycja-slidera
-  label: Edycja slidera
-  route: slider/edit
-  visible_in_primary: false
-  parent_id: slider
-usuwanie-slidera:
-  name: usuwanie-slidera
-  label: Usuwanie slidera
-  route: slider/delete
-  visible_in_primary: false
-  parent_id: slider
-lista-elementow:
-  name: lista-elementow
-  label: Lista elementów
-  route: slider/items
-  visible_in_primary: false
-  parent_id: slider
-nowy-element:
-  name: nowy-element
-  label: Tworzenie nowego elementu
-  route: slider/items/create
-  visible_in_primary: false
-  parent_id: slider
-edycja-elementu:
-  name: edycja-elementu
-  label: Edycja elemtu
-  route: slider/items/edit
-  visible_in_primary: false
-  parent_id: slider
-galeria:
-  name: galeria
-  label: Galeria
-  route: gallery-main
-  class: fa fa-file-image-o
-  access: 2
-nowy-galeria:
-  name: nowy-galeria
-  label: Dodaj nową
-  route: gallery/create
-  visible_in_primary: true
-  parent_id: galeria
-lista-galeria:
-  name: lista-galeria
-  label: Lista galerii
-  route: gallery
-  visible_in_primary: true
-  parent_id: galeria
-edycja-galeria:
-  name: edycja-galeria
-  label: Edycja galerii
-  route: gallery/edit
-  visible_in_primary: false
-  parent_id: galeria
-usuwanie-galeria:
-  name: usuwanie-galeria
-  label: Usuwanie galerii
-  route: gallery/delete
-  visible_in_primary: false
-  parent_id: galeria
-video:
-  name: video
-  label: Video
-  route: video-main
-  class: fa fa-youtube
-  access: 2
-nowy-video:
-  name: nowy-video
-  label: Dodaj nowe
-  route: video/create
-  visible_in_primary: true
-  parent_id: video
-lista-video:
-  name: lista-video
-  label: Lista video
-  route: video
-  visible_in_primary: true
-  parent_id: video
-edycja-video:
-  name: edycja-video
-  label: Edycja video
-  route: video/edit
-  visible_in_primary: false
-  parent_id: video
-usuwanie-video:
-  name: usuwanie-video
-  label: Usuwanie video
-  route: video/delete
-  visible_in_primary: false
-  parent_id: video
+#slider:
+#  name: slider
+#  label: Slider
+#  route: slider-main
+#  class: fa fa-picture-o
+#  access: 2
+#tworzenie-slidera:
+#  name: tworzenie-slidera
+#  label: Tworzenie slidera
+#  route: slider/create
+#  visible_in_primary: false
+#  parent_id: slider
+#lista-slidera:
+#  name: lista-slidera
+#  label: Lista sliderów
+#  route: slider
+#  visible_in_primary: true
+#  parent_id: slider
+#edycja-slidera:
+#  name: edycja-slidera
+#  label: Edycja slidera
+#  route: slider/edit
+#  visible_in_primary: false
+#  parent_id: slider
+#usuwanie-slidera:
+#  name: usuwanie-slidera
+#  label: Usuwanie slidera
+#  route: slider/delete
+#  visible_in_primary: false
+#  parent_id: slider
+#lista-elementow:
+#  name: lista-elementow
+#  label: Lista elementów
+#  route: slider/items
+#  visible_in_primary: false
+#  parent_id: slider
+#nowy-element:
+#  name: nowy-element
+#  label: Tworzenie nowego elementu
+#  route: slider/items/create
+#  visible_in_primary: false
+#  parent_id: slider
+#edycja-elementu:
+#  name: edycja-elementu
+#  label: Edycja elemtu
+#  route: slider/items/edit
+#  visible_in_primary: false
+#  parent_id: slider
+#galeria:
+#  name: galeria
+#  label: Galeria
+#  route: gallery-main
+#  class: fa fa-file-image-o
+#  access: 2
+#nowy-galeria:
+#  name: nowy-galeria
+#  label: Dodaj nową
+#  route: gallery/create
+#  visible_in_primary: true
+#  parent_id: galeria
+#lista-galeria:
+#  name: lista-galeria
+#  label: Lista galerii
+#  route: gallery
+#  visible_in_primary: true
+#  parent_id: galeria
+#edycja-galeria:
+#  name: edycja-galeria
+#  label: Edycja galerii
+#  route: gallery/edit
+#  visible_in_primary: false
+#  parent_id: galeria
+#usuwanie-galeria:
+#  name: usuwanie-galeria
+#  label: Usuwanie galerii
+#  route: gallery/delete
+#  visible_in_primary: false
+#  parent_id: galeria
+#video:
+#  name: video
+#  label: Video
+#  route: video-main
+#  class: fa fa-youtube
+#  access: 2
+#nowy-video:
+#  name: nowy-video
+#  label: Dodaj nowe
+#  route: video/create
+#  visible_in_primary: true
+#  parent_id: video
+#lista-video:
+#  name: lista-video
+#  label: Lista video
+#  route: video
+#  visible_in_primary: true
+#  parent_id: video
+#edycja-video:
+#  name: edycja-video
+#  label: Edycja video
+#  route: video/edit
+#  visible_in_primary: false
+#  parent_id: video
+#usuwanie-video:
+#  name: usuwanie-video
+#  label: Usuwanie video
+#  route: video/delete
+#  visible_in_primary: false
+#  parent_id: video
 uzytkownicy:
   name: uzytkownicy
   label: Użytkownicy
@@ -237,12 +237,12 @@ edycja-uzytkownikow:
   route: users/edit
   visible_in_primary: false
   parent_id: uzytkownicy
-podglad-uzytkownikwa:
-  name: podglad-uzytkownikowa
-  label: Podgląd użytkwnika
-  route: users/preview
-  visible_in_primary: false
-  parent_id: uzytkownicy
+#podglad-uzytkownikwa:
+#  name: podglad-uzytkownikowa
+#  label: Podgląd użytkwnika
+#  route: users/preview
+#  visible_in_primary: false
+#  parent_id: uzytkownicy
 usuwanie-uzytkownikowa:
   name: usuwanie-uzytkownikowa
   label: Usuwanie użytkownika
@@ -255,181 +255,181 @@ zmiana-hasla:
   route: users/change-password
   visible_in_primary: false
   parent_id: uzytkownicy
-newsletter:
-  name: newsletter
-  label: Newsletter
-  route: newsletter-main
-  class: fa fa-envelope-o
-  access: 4
-lista-newsletter:
-  name: lista-newsletter
-  label: Wiadomości
-  route: newsletter
-  visible_in_primary: true
-  parent_id: newsletter
-tworzenie-wiadomosci:
-  name: tworzenie-wiadomosci
-  label: Tworzenie wiadomości
-  route: newsletter/create
-  visible_in_primary: false
-  parent_id: newsletter
-edycja-wiadomosci:
-  name: edycja-wiadomosci
-  label: Edycja wiadomości
-  route: newsletter/edit
-  visible_in_primary: false
-  parent_id: newsletter
-podglad-wiadomosci:
-  name: podglad-wiadomosci
-  label: Podgląd wiadomości
-  route: newsletter/preview
-  visible_in_primary: false
-  parent_id: newsletter
-subskrybenci:
-  name: subskrybenci
-  label: Subskrybenci
-  route: newsletter/subscriber-list
-  visible_in_primary: true
-  parent_id: newsletter
-tworzenie-subskrybenta:
-  name: tworzenie-subskrybenta
-  label: Tworzenie subskrybenta
-  route: newsletter/subscriber-list/create
-  visible_in_primary: false
-  parent_id: newsletter
-edycja-subskrybenta:
-  name: edycja-subskrybenta
-  label: Edycja subskrybenta
-  route: newsletter/subscriber-list/edit
-  visible_in_primary: false
-  parent_id: newsletter
-podglad-subskrybenta:
-  name: podglad-subskrybenta
-  label: Podgląd subskrybenta
-  route: newsletter/subscriber-list/preview
-  visible_in_primary: false
-  parent_id: newsletter
-grupy-subskrybentow:
-  name: grupy-subskrybentow
-  label: Grupy subskrybentów
-  route: newsletter/subscriber-group
-  visible_in_primary: true
-  parent_id: newsletter
-tworzenie-grupy:
-  name: tworzenie-grupy
-  label: Tworzenie grupy
-  route: newsletter/subscriber-group/create
-  visible_in_primary: false
-  parent_id: newsletter
-edycja-grupy:
-  name: edycja-grupy
-  label: Edycja grupy
-  route: newsletter/subscriber-group/edit
-  visible_in_primary: false
-  parent_id: newsletter
-podglad-grupy:
-  name: podglad-grupy
-  label: Podgląd grupy
-  route: newsletter/subscriber-group/preview
-  visible_in_primary: false
-  parent_id: newsletter
-ustawienia:
-  name: ustawienia
-  label: Ustawienia
-  route: newsletter/settings
-  visible_in_primary: true
-  parent_id: newsletter
-slowniki:
-  name: slowniki
-  label: Słowniki
-  route: dictionary-main
-  class: fa fa-book
-  access: 2
-klasa-lista:
-  name: klasa-lista
-  label: Klasa
-  route: dictionary
-  visible_in_primary: true
-  parent_id: slowniki
-  params: "'category' => 'class'"
-klasa-tworzenie:
-  name: klasa-tworzenie
-  label: Tworzenie klasy
-  route: dictionary/create
-  visible_in_primary: false
-  parent_id: slowniki
-  params: "'category' => 'class'"
-klasa-edycja:
-  name: klasa-edycja
-  label: Edycja klasy
-  route: dictionary/edit
-  visible_in_primary: false
-  parent_id: slowniki
-  params: "'category' => 'class'"
-kategorie:
-  name: kategorie
-  label: Kategorie
-  route: category-main
-  class: fa fa-cubes
-  access: 2
-nowa-kategoria:
-  name: nowa-kategoria
-  label: Dodaj nową
-  route: category/create
-  visible_in_primary: false
-  parent_id: kategorie
-  params: "'type' => 'gallery'"
-lista-kategorii:
-  name: lista-kategorii
-  label: Galeria
-  route: category
-  visible_in_primary: true
-  parent_id: kategorie
-  params: "'type' => 'gallery'"
-edycja-kategorii:
-  name: edycja-kategorii
-  label: Edycja kategorii
-  route: category/edit
-  visible_in_primary: false
-  parent_id: kategorie
-  params: "'type' => 'gallery'"
-usuwanie-kategorii:
-  name: usuwanie-kategorii
-  label: Usuwanie kategorii
-  route: category/delete
-  visible_in_primary: false
-  parent_id: kategorie
-  params: "'type' => 'gallery'"
-tag:
-  name: tagi
-  label: Tagi
-  route: tag-main
-  class: fa fa-tags
-  access: 2
-nowy-tag:
-  name: nowy-tag
-  label: Dodaj nowy
-  route: tag/create
-  visible_in_primary: true
-  parent_id: tag
-lista-tagow:
-  name: lista-produkotw
-  label: Lista tagów
-  route: tag
-  visible_in_primary: true
-  parent_id: tag
-edycja-tagow:
-  name: edycja-tagow
-  label: Edycja tagu
-  route: tag/edit
-  visible_in_primary: false
-  parent_id: tag
-usuwanie-tagu:
-  name: usuwanie-tagu
-  label: Usuwanie tagu
-  route: tag/delete
-  visible_in_primary: false
-  parent_id: tag
+#newsletter:
+#  name: newsletter
+#  label: Newsletter
+#  route: newsletter-main
+#  class: fa fa-envelope-o
+#  access: 4
+#lista-newsletter:
+#  name: lista-newsletter
+#  label: Wiadomości
+#  route: newsletter
+#  visible_in_primary: true
+#  parent_id: newsletter
+#tworzenie-wiadomosci:
+#  name: tworzenie-wiadomosci
+#  label: Tworzenie wiadomości
+#  route: newsletter/create
+#  visible_in_primary: false
+#  parent_id: newsletter
+#edycja-wiadomosci:
+#  name: edycja-wiadomosci
+#  label: Edycja wiadomości
+#  route: newsletter/edit
+#  visible_in_primary: false
+#  parent_id: newsletter
+#podglad-wiadomosci:
+#  name: podglad-wiadomosci
+#  label: Podgląd wiadomości
+#  route: newsletter/preview
+#  visible_in_primary: false
+#  parent_id: newsletter
+#subskrybenci:
+#  name: subskrybenci
+#  label: Subskrybenci
+#  route: newsletter/subscriber-list
+#  visible_in_primary: true
+#  parent_id: newsletter
+#tworzenie-subskrybenta:
+#  name: tworzenie-subskrybenta
+#  label: Tworzenie subskrybenta
+#  route: newsletter/subscriber-list/create
+#  visible_in_primary: false
+#  parent_id: newsletter
+#edycja-subskrybenta:
+#  name: edycja-subskrybenta
+#  label: Edycja subskrybenta
+#  route: newsletter/subscriber-list/edit
+#  visible_in_primary: false
+#  parent_id: newsletter
+#podglad-subskrybenta:
+#  name: podglad-subskrybenta
+#  label: Podgląd subskrybenta
+#  route: newsletter/subscriber-list/preview
+#  visible_in_primary: false
+#  parent_id: newsletter
+#grupy-subskrybentow:
+#  name: grupy-subskrybentow
+#  label: Grupy subskrybentów
+#  route: newsletter/subscriber-group
+#  visible_in_primary: true
+#  parent_id: newsletter
+#tworzenie-grupy:
+#  name: tworzenie-grupy
+#  label: Tworzenie grupy
+#  route: newsletter/subscriber-group/create
+#  visible_in_primary: false
+#  parent_id: newsletter
+#edycja-grupy:
+#  name: edycja-grupy
+#  label: Edycja grupy
+#  route: newsletter/subscriber-group/edit
+#  visible_in_primary: false
+#  parent_id: newsletter
+#podglad-grupy:
+#  name: podglad-grupy
+#  label: Podgląd grupy
+#  route: newsletter/subscriber-group/preview
+#  visible_in_primary: false
+#  parent_id: newsletter
+#ustawienia:
+#  name: ustawienia
+#  label: Ustawienia
+#  route: newsletter/settings
+#  visible_in_primary: true
+#  parent_id: newsletter
+#slowniki:
+#  name: slowniki
+#  label: Słowniki
+#  route: dictionary-main
+#  class: fa fa-book
+#  access: 2
+#klasa-lista:
+#  name: klasa-lista
+#  label: Klasa
+#  route: dictionary
+#  visible_in_primary: true
+#  parent_id: slowniki
+#  params: "'category' => 'class'"
+#klasa-tworzenie:
+#  name: klasa-tworzenie
+#  label: Tworzenie klasy
+#  route: dictionary/create
+#  visible_in_primary: false
+#  parent_id: slowniki
+#  params: "'category' => 'class'"
+#klasa-edycja:
+#  name: klasa-edycja
+#  label: Edycja klasy
+#  route: dictionary/edit
+#  visible_in_primary: false
+#  parent_id: slowniki
+#  params: "'category' => 'class'"
+#kategorie:
+#  name: kategorie
+#  label: Kategorie
+#  route: category-main
+#  class: fa fa-cubes
+#  access: 2
+#nowa-kategoria:
+#  name: nowa-kategoria
+#  label: Dodaj nową
+#  route: category/create
+#  visible_in_primary: false
+#  parent_id: kategorie
+#  params: "'type' => 'gallery'"
+#lista-kategorii:
+#  name: lista-kategorii
+#  label: Galeria
+#  route: category
+#  visible_in_primary: true
+#  parent_id: kategorie
+#  params: "'type' => 'gallery'"
+#edycja-kategorii:
+#  name: edycja-kategorii
+#  label: Edycja kategorii
+#  route: category/edit
+#  visible_in_primary: false
+#  parent_id: kategorie
+#  params: "'type' => 'gallery'"
+#usuwanie-kategorii:
+#  name: usuwanie-kategorii
+#  label: Usuwanie kategorii
+#  route: category/delete
+#  visible_in_primary: false
+#  parent_id: kategorie
+#  params: "'type' => 'gallery'"
+#tag:
+#  name: tagi
+#  label: Tagi
+#  route: tag-main
+#  class: fa fa-tags
+#  access: 2
+#nowy-tag:
+#  name: nowy-tag
+#  label: Dodaj nowy
+#  route: tag/create
+#  visible_in_primary: true
+#  parent_id: tag
+#lista-tagow:
+#  name: lista-produkotw
+#  label: Lista tagów
+#  route: tag
+#  visible_in_primary: true
+#  parent_id: tag
+#edycja-tagow:
+#  name: edycja-tagow
+#  label: Edycja tagu
+#  route: tag/edit
+#  visible_in_primary: false
+#  parent_id: tag
+#usuwanie-tagu:
+#  name: usuwanie-tagu
+#  label: Usuwanie tagu
+#  route: tag/delete
+#  visible_in_primary: false
+#  parent_id: tag
 #lista-opinii:
 #  name: lista-opinii
 #  label: Lista opinii
@@ -458,66 +458,66 @@ usuwanie-tagu:
 #  visible_in_primary: false
 #  parent_id: wpisy
 #  params: "'category' => 'opinion'"
-baner:
-  name: baner
-  label: Banery
-  route: banner-main
-  class: fa fa-sticky-note
-  access: 2
-nowy-baner:
-  name: nowy-baner
-  label: Dodaj nowy
-  route: banner/create
-  visible_in_primary: true
-  parent_id: baner
-lista-banerów:
-  name: lista-banerow
-  label: Lista banerów
-  route: banner
-  visible_in_primary: true
-  parent_id: baner
-edycja-banerow:
-  name: edycja-banerow
-  label: Edycja banerów
-  route: banner/edit
-  visible_in_primary: false
-  parent_id: baner
-usuwanie-banera:
-  name: usuwanie-banera
-  label: Usuwanie banera
-  route: banner/delete
-  visible_in_primary: false
-  parent_id: baner
-miejsce:
-  name: miejsce
-  label: Miejsca
-  route: place-main
-  class: fa fa-map-marker
-  access: 2
-nowe-miejsce:
-  name: nowe-miejsce
-  label: Dodaj nowy
-  route: place/create
-  visible_in_primary: true
-  parent_id: miejsce
-lista-miejsc:
-  name: lista-miejsc
-  label: Lista miejsc
-  route: place
-  visible_in_primary: true
-  parent_id: miejsce
-edycja-miejsca:
-  name: edycja-miejsca
-  label: Edycja miejsca
-  route: place/edit
-  visible_in_primary: false
-  parent_id: miejsce
-usuwanie-miejsca:
-  name: usuwanie-miejsca
-  label: Usuwanie miejsca
-  route: place/delete
-  visible_in_primary: false
-  parent_id: miejsce
+#baner:
+#  name: baner
+#  label: Banery
+#  route: banner-main
+#  class: fa fa-sticky-note
+#  access: 2
+#nowy-baner:
+#  name: nowy-baner
+#  label: Dodaj nowy
+#  route: banner/create
+#  visible_in_primary: true
+#  parent_id: baner
+#lista-banerów:
+#  name: lista-banerow
+#  label: Lista banerów
+#  route: banner
+#  visible_in_primary: true
+#  parent_id: baner
+#edycja-banerow:
+#  name: edycja-banerow
+#  label: Edycja banerów
+#  route: banner/edit
+#  visible_in_primary: false
+#  parent_id: baner
+#usuwanie-banera:
+#  name: usuwanie-banera
+#  label: Usuwanie banera
+#  route: banner/delete
+#  visible_in_primary: false
+#  parent_id: baner
+#miejsce:
+#  name: miejsce
+#  label: Miejsca
+#  route: place-main
+#  class: fa fa-map-marker
+#  access: 2
+#nowe-miejsce:
+#  name: nowe-miejsce
+#  label: Dodaj nowy
+#  route: place/create
+#  visible_in_primary: true
+#  parent_id: miejsce
+#lista-miejsc:
+#  name: lista-miejsc
+#  label: Lista miejsc
+#  route: place
+#  visible_in_primary: true
+#  parent_id: miejsce
+#edycja-miejsca:
+#  name: edycja-miejsca
+#  label: Edycja miejsca
+#  route: place/edit
+#  visible_in_primary: false
+#  parent_id: miejsce
+#usuwanie-miejsca:
+#  name: usuwanie-miejsca
+#  label: Usuwanie miejsca
+#  route: place/delete
+#  visible_in_primary: false
+#  parent_id: miejsce
 konfiguracja-maila:
     name: konfiguracja-maila
     label: Ustawienia

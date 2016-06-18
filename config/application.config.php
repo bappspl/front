@@ -1,8 +1,6 @@
 <?php
 return array(
     'modules' => array(
-//        'DoctrineModule',
-//        'DoctrineORMModule',
 
         'Application',
         'Page',
@@ -15,18 +13,9 @@ return array(
         'CmsIr\Dashboard',
         'CmsIr\Menu',
         'CmsIr\Users',
-        'CmsIr\Slider',
-        'CmsIr\Newsletter',
         'CmsIr\Page',
         'CmsIr\Post',
-        'CmsIr\Dictionary',
         'CmsIr\File',
-        'CmsIr\Banner',
-        'CmsIr\Place',
-        'CmsIr\Meta',
-        'CmsIr\Category',
-        'CmsIr\Tag',
-        'CmsIr\Video',
     ),
     'module_listener_options' => array(
         'module_paths' => array(

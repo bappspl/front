@@ -10,12 +10,12 @@ class CmsCreateBlock extends AbstractMigration
         $this->table('cms_block', array())
 
             ->addColumn('entity_id', 'integer')
-            ->addColumn('entity_type_id', 'integer')
+            ->addColumn('entity_type', 'string')
             ->addColumn('language_id', 'integer')
             ->addColumn('name', 'string')
             ->addColumn('value', 'text')
             ->addForeignKey('language_id', 'cms_language', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
-            ->addForeignKey('entity_type_id', 'cms_entity_type', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
+//            ->addForeignKey('entity_type_id', 'cms_entity_type', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
             ->save();
     }
 

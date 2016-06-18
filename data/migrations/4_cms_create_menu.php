@@ -22,7 +22,7 @@ class CmsCreateMenu extends AbstractMigration
             ->addColumn('is_visible', 'integer')
             ->addColumn('provider_type', 'string')
             ->addColumn('settings', 'text', array('null'=>true))
-            ->addColumn('position', 'integer')
+            ->addColumn('position', 'integer', array('null'=>true))
             ->addForeignKey('tree_id', 'cms_menu_tree', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
             ->addForeignKey('parent_id', 'cms_menu_node', 'id', array('delete' => 'CASCADE', 'update' => 'NO_ACTION'))
             ->save();
@@ -33,7 +33,7 @@ class CmsCreateMenu extends AbstractMigration
             ->addColumn('node_id', 'integer')
             ->addColumn('label', 'string')
             ->addColumn('url', 'string')
-            ->addColumn('position', 'integer')
+            ->addColumn('position', 'integer', array('null'=>true))
             ->addColumn('subtitle', 'string', array('null'=>true))
             ->addForeignKey('node_id', 'cms_menu_node', 'id', array('delete' => 'NO_ACTION', 'update' => 'NO_ACTION'))
             ->save();

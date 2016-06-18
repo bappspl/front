@@ -18,8 +18,8 @@ class CmsCreateUsers extends AbstractMigration
              ->addColumn('role', 'integer' , array('limit' => 1))
              ->addColumn('active', 'integer' , array('limit' => 1))
              ->addColumn('filename', 'string' , array('null' => true))
-             ->addColumn('registration_date', 'datetime')
-             ->addColumn('registration_token', 'string')
+             ->addColumn('registration_date', 'datetime', array('null' => true))
+             ->addColumn('registration_token', 'string', array('null' => true))
              ->addColumn('extra', 'text', array('null' => true))
              ->save();
 
