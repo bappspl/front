@@ -11,7 +11,7 @@ class CmsCreateMailConfig extends AbstractMigration
             ->addColumn('host', 'string')
             ->addColumn('username', 'string')
             ->addColumn('password', 'string')
-            ->addColumn('send', 'string')
+            ->addColumn('send', 'string', ['null' => true])
             ->save();
 
         $this->insertYamlValues('cms_mail_config');

@@ -1,8 +1,8 @@
 <?php
 return array(
     'modules' => array(
-        'DoctrineModule',
-        'DoctrineORMModule',
+//        'DoctrineModule',
+//        'DoctrineORMModule',
 
         'Application',
         'Page',
