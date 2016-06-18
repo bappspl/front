@@ -16,6 +16,7 @@ return array(
         'CmsIr\Page',
         'CmsIr\Post',
         'CmsIr\File',
+        'Konserwator',
     ),
     'module_listener_options' => array(
         'module_paths' => array(

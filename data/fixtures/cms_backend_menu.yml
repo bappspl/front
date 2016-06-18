@@ -53,6 +53,36 @@ usuwanie-stron:
   route: page/delete
   visible_in_primary: false
   parent_id: strony
+konserwator:
+  name: konserwator
+  label: Konserwatorzy
+  route: konserwator-main
+  class: fa fa-file-text-o
+  access: 2
+nowa-konserwator:
+  name: nowa-konserwator
+  label: Dodaj nowego
+  route: konserwator/create
+  visible_in_primary: true
+  parent_id: konserwator
+lista-konserwator:
+  name: lista-konserwator
+  label: Lista konserwatrów
+  route: konserwator
+  visible_in_primary: true
+  parent_id: konserwator
+edycja-konserwator:
+  name: edycja-konserwator
+  label: Edycja konserwatora
+  route: konserwator/edit
+  visible_in_primary: false
+  parent_id: konserwator
+usuwanie-konserwator:
+  name: usuwanie-stron
+  label: Usuwanie konserwatora
+  route: konserwator/delete
+  visible_in_primary: false
+  parent_id: konserwator
 #lista-rozbudowana:
 #  name: lista-rozbudowana
 #  label: Lista sekcji

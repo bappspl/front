@@ -78,6 +78,9 @@ return array(
                 'CmsIr\System\Console\FakeDataCommand' => array(
                     'all'	=> 'guest'
                 ),
+                'Konserwator\Controller\Konserwator' => array(
+                    'all'	=> 'user',
+                ),
             )
         )
     )

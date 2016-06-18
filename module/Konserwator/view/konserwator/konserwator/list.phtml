@@ -1,0 +1,47 @@
+<?php echo $this->partial('partial/flashmessages'); ?>
+    <!-- BEGIN DATA TABLE -->
+    <div class="the-box">
+        <div class="table-responsive">
+            <table class="table table-striped table-hover" id="datatable-konserwator" style="width: 100% !important;">
+                <thead class="the-box dark full">
+                <tr>
+                    <th class="dt-body-center"><input type="checkbox" name="check-all" class="check-all i-grey" data-toggle="tooltip" title="Podgląd" /></th>
+                    <th>Nazwa</th>
+                    <th>status_id</th>
+                    <th>Status</th>
+                    <th>Akcje</th>
+                </tr>
+                </thead>
+            </table>
+
+            <div class="row">
+                <div class="col-sm-12">
+                    <a class="btn btn-facebook pull-right" href="<?php echo $this->url('konserwator/create'); ?>">Dodaj nowego</a>
+                </div>
+            </div>
+
+        </div><!-- /.table-responsive -->
+    </div><!-- /.the-box .default -->
+    <div class="massive-action">
+        <select name="massive-action">
+            <option value="">Masowe działania</option>
+            <option value="delete">Usuń wybrane</option>
+            <option value="status">Zmień status</option>
+        </select>
+    </div>
+
+
+    <!-- END DATA TABLE -->
+<?php echo $this->partial('partial/delete-modal'); ?>
+<?php echo $this->partial('partial/delete-massive-konserwator-modal'); ?>
+<?php echo $this->partial('partial/status-massive-konserwator-modal'); ?>
+
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/jquery.dataTables.css'); ?>
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/jquery.dataTables.responsive.css'); ?>
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/bootstrap.datatable.min.css'); ?>
+<?php $this->headLink()->appendStylesheet($this->basePath().'/css/konserwator.css'); ?>
+
+<?php $this->headScript()->appendFile($this->basePath().'/js/jquery.dataTables.min.js'); ?>
+<?php $this->headScript()->appendFile($this->basePath().'/js/jquery.dataTables.responsive.js'); ?>
+<?php $this->headScript()->appendFile($this->basePath().'/js/bootstrap.datatable.js'); ?>
+<?php $this->headScript()->appendFile($this->basePath().'/js/konserwator-list.js'); ?>

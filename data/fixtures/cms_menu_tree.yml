@@ -2,3 +2,7 @@ menu:
   name: Menu główne
   machine_name: main-menu
   position: 1
+menu1:
+  name: Menu dolne
+  machine_name: bottom-menu
+  position: 1
